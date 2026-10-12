@@ -338,6 +338,20 @@ th,td{padding:10px 14px}
 section{gap:16px}
 section.match{gap:16px}
 .grid2,.areas,.stats,.mu-cards,.mu-score,.siding{gap:14px}
+.ten-oh{display:grid;gap:16px;min-width:0}
+@media (max-width:640px){
+  #ten-oh .tbl table,#ten-oh .tbl tbody{display:block}
+  #ten-oh thead{display:none}
+  #ten-oh tr{display:grid;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  #ten-oh tr:last-child{border-bottom:0}
+  #ten-oh td{display:block;padding:0;border:0}
+  #ten-oh td:first-child{display:none}
+  #ten-oh td:nth-child(3)::before,#ten-oh td:nth-child(4)::before,#ten-oh td:nth-child(5)::before{display:block;margin:4px 0 4px;font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  #ten-oh td:nth-child(3)::before{content:"Going 1st"}
+  #ten-oh td:nth-child(4)::before{content:"Going 2nd"}
+  #ten-oh td:nth-child(5){text-align:left}
+  #ten-oh td:nth-child(5)::before{content:"Interruptions · odds of 3+ in 6"}
+}
 </style>
 
 <div class="wrap">

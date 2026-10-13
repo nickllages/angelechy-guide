@@ -352,9 +352,229 @@ section.match{gap:16px}
   #ten-oh td:nth-child(5){text-align:left}
   #ten-oh td:nth-child(5)::before{content:"Interruptions · odds of 3+ in 6"}
 }
+/* v3-css-start */
+/* ===== v3: app navigation, learn pages, tools ===== */
+:root{--bar-h:52px;--sub-h:46px;--tab-h:60px}
+/* old navigation is replaced */
+nav.toc{display:none!important}
+/* header only on the home page */
+body:not([data-page="home"]) header.top{display:none}
+/* app bar (phones and tablets) */
+.appbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--bar-h);margin-inline:-20px;padding-inline:20px;background:var(--bg);border-bottom:1px solid var(--line)}
+.appbar .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:650;font-size:17px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.appbar .brand .pc{color:var(--gold);font-size:19px}
+.search-btn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--body);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;flex:none}
+.search-btn:hover{border-color:var(--accent);color:var(--ink)}
+.search-btn svg{width:16px;height:16px}
+.search-btn kbd{font:600 11px var(--mono);border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--muted)}
+@media (hover:none){.search-btn kbd{display:none}}
+/* page chips under the app bar */
+.subnav{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--bar-h));z-index:35;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;height:var(--sub-h);align-items:center;margin-inline:-20px;padding-inline:20px;background:var(--bg);border-bottom:1px solid var(--line)}
+.subnav::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font:600 13.5px/1 var(--body);text-decoration:none;color:var(--muted);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 13px;white-space:nowrap}
+.subnav a:hover{color:var(--ink);border-color:var(--accent)}
+.subnav a.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* bottom tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:repeat(5,1fr);background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -6px 20px rgb(0 0 0 / .06)}
+.tabbar a{position:relative;display:grid;justify-items:center;align-content:center;gap:2px;height:var(--tab-h);text-decoration:none;color:var(--muted);font:600 11.5px/1.1 var(--body);letter-spacing:.01em}
+.tabbar a .pc{font-size:22px;line-height:1;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",serif}
+.tabbar a.active{color:var(--accent)}
+.tabbar a.active::before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.tabbar a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:8px}
+body{padding-bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px))}
+/* sidebar (wide screens) */
+.sidenav{display:none}
+@media (min-width:1180px){
+  .appbar,.subnav,.tabbar{display:none}
+  body{padding-bottom:0}
+  .sidenav{display:block;position:fixed;top:calc(env(safe-area-inset-top,0px) + 28px);left:max(20px,calc(50% - 635px + 20px));width:252px;max-height:calc(100vh - 56px);overflow-y:auto;scrollbar-width:thin;padding:16px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;z-index:30}
+  .sidenav .brand{display:block;padding:0 10px 10px;text-decoration:none;color:var(--ink)}
+  .sidenav .brand b{display:block;font-family:var(--display);font-size:18px}
+  .sidenav .search-btn{width:calc(100% - 20px);margin:0 10px 12px;justify-content:space-between}
+  .sidenav .grp{border-top:1px solid var(--line);padding:8px 0}
+  .sidenav .grp>a,.sidenav .grp>summary{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;font:700 14px var(--body);color:var(--ink);text-decoration:none;cursor:pointer;list-style:none}
+  .sidenav .grp>summary::-webkit-details-marker{display:none}
+  .sidenav .grp .pc{color:var(--gold);width:18px;text-align:center;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",serif}
+  .sidenav ul{list-style:none;margin:2px 0 0 18px;padding:0 0 0 8px;border-left:1px solid var(--line);display:grid;gap:1px}
+  .sidenav ul a{display:block;padding:5px 10px;border-radius:6px;font:500 13.5px var(--body);color:var(--muted);text-decoration:none}
+  .sidenav a:hover{background:var(--accent-soft);color:var(--accent)}
+  .sidenav ul a.active{background:var(--accent-soft);color:var(--accent);font-weight:650}
+  .sidenav details.grp summary::after{content:"";margin-left:auto;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+  .sidenav details.grp[open] summary::after{transform:rotate(225deg)}
+}
+/* sticky offsets for anchors and matchup tabs */
+#view-guide [id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + var(--sub-h) + 12px)}
+.mu-tabs{top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + var(--sub-h))}
+@media (min-width:1180px){#view-guide [id]{scroll-margin-top:20px}.mu-tabs{top:env(safe-area-inset-top,0px)}}
+@media (max-width:560px){.appbar,.subnav{margin-inline:-16px;padding-inline:16px}}
+#view-guide>section,#view-guide>footer{padding-top:22px}
+/* search */
+.search-ov{position:fixed;inset:0;z-index:60;background:rgb(10 12 18 / .45);display:grid;align-items:start;justify-items:center;padding:calc(env(safe-area-inset-top,0px) + 10px) 10px 10px}
+.search-ov[hidden]{display:none!important}
+.search-box{width:min(640px,100%);max-height:calc(100dvh - 20px - env(safe-area-inset-top,0px));display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 60px rgb(0 0 0 / .25);overflow:hidden}
+@media (min-width:700px){.search-ov{padding-top:10vh}}
+.search-top{display:flex;gap:8px;align-items:center;padding:10px;border-bottom:1px solid var(--line)}
+.search-top input{flex:1;min-width:0;font:500 16px var(--body);padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.search-top input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.search-top button{font:600 14px var(--body);background:none;border:none;color:var(--accent);cursor:pointer;padding:8px}
+.search-res{list-style:none;margin:0;padding:6px;overflow-y:auto}
+.search-res li a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--ink)}
+.search-res li a span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);flex:none}
+.search-res li a[aria-selected="true"],.search-res li a:hover{background:var(--accent-soft);color:var(--accent)}
+.search-empty{padding:16px;color:var(--muted);font-size:14.5px}
+/* prev / next at the end of a page */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.pager a{display:grid;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);text-decoration:none;color:var(--ink)}
+.pager a:hover{border-color:var(--accent)}
+.pager a span{font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.pager a b{font-weight:650}
+.pager a.next{text-align:right;grid-column:2}
+/* home learning path */
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;counter-reset:p;list-style:none;margin:0;padding:0}
+.path li{counter-increment:p}
+.path a{display:grid;gap:4px;height:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);text-decoration:none;color:var(--ink)}
+.path a::before{content:counter(p);font:700 12px var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:4px;width:22px;height:22px;display:grid;place-items:center}
+.path a:hover{border-color:var(--accent)}
+.path a span{font-size:13.5px;color:var(--muted)}
+/* in-page jump chips */
+.jump{display:flex;flex-wrap:wrap;gap:6px}
+.jump a{font:600 13px var(--body);text-decoration:none;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 12px}
+.jump a:hover{text-decoration:underline}
+/* glossary */
+.kv-wide{grid-template-columns:minmax(96px,auto) 1fr;gap:10px 16px}
+.kv-wide dt{padding-top:2px}
+@media (max-width:520px){.kv-wide{grid-template-columns:1fr;gap:2px}.kv-wide dd{margin-bottom:10px}}
+/* card entries */
+.cxlist{display:grid;gap:8px}
+.cx{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);scroll-margin-top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + var(--sub-h) + 12px)}
+.cx[open]{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cx>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto 14px;gap:2px 10px;padding:12px 14px;align-items:center}
+.cx>summary::-webkit-details-marker{display:none}
+.cx>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r)}
+.cx-n{font-weight:700;font-size:15.5px}
+.cx-c{font:700 13px var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 9px;white-space:nowrap;justify-self:end}
+.cx-c small{font-weight:600;font-size:11px}
+.cx-c.out{color:var(--muted);background:color-mix(in srgb,var(--line) 60%,transparent)}
+.cx-r{grid-column:1/-1;color:var(--muted);font-size:14px}
+.cx>summary::after{content:"";grid-column:3;grid-row:1;align-self:center;justify-self:center;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-2px) rotate(45deg);transition:transform .15s ease}
+.cx[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.cx-n{grid-column:1;grid-row:1}.cx-c{grid-column:2;grid-row:1}
+.cx-b{padding:0 14px 14px;display:grid;gap:8px}
+.cx-b p{max-width:75ch}
+.cx-t{font:600 12px var(--mono);letter-spacing:.04em;color:var(--gold)}
+.cx-b dl{margin:0;display:grid;grid-template-columns:150px 1fr;gap:8px 16px}
+.cx-b dt{font:600 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.cx-b dd{margin:0;max-width:72ch}
+@media (max-width:640px){.cx-b dl{grid-template-columns:1fr;gap:2px}.cx-b dd{margin-bottom:8px}}
+/* field diagram */
+.fieldmap{margin:0;display:grid;gap:6px;justify-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 10px}
+.fm-side{display:grid;gap:5px;justify-items:center;width:100%}
+.fm-row{display:grid;grid-template-columns:repeat(5,minmax(0,64px));gap:5px;justify-content:center;width:100%}
+.fm-row i,.fm-field i{display:grid;place-items:center;text-align:center;min-height:52px;padding:3px;border:1px dashed var(--line);border-radius:6px;font:600 10.5px/1.15 var(--body);font-style:normal;color:var(--ink);position:relative;background:var(--bg)}
+.fm-row i em,.fm-field i em{position:absolute;top:-7px;right:-5px;font:700 9.5px var(--mono);font-style:normal;background:var(--gold);color:var(--bg);border-radius:999px;padding:1px 5px}
+.fm-row i.c{border:1.5px solid var(--accent);background:var(--accent-soft)}
+.fm-row i.p{border:1.5px solid var(--gold);background:var(--gold-soft)}
+.fm-row i.s{border:1.5px solid var(--muted);background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 4px,var(--surface) 4px,var(--surface) 8px)}
+.fm-emz{grid-template-columns:64px 1fr 64px;max-width:200px}
+.fm-emz span{border-top:1px dotted var(--line);align-self:center}
+.fm-field{display:flex;gap:10px;align-items:center;justify-content:center;width:100%}
+.fm-field i{width:64px;border:1.5px solid var(--good);background:var(--good-soft)}
+.fm-lbl{font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.fieldmap figcaption{max-width:62ch;text-align:left;margin-top:6px}
+table.pieces td:first-child{white-space:nowrap}
+/* matchup ratings */
+.rt{display:inline-block;font:700 11.5px var(--mono);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.rt.r4{background:var(--good);color:var(--surface)}
+.rt.r3{background:var(--good-soft);color:var(--good)}
+.rt.r2{background:var(--gold-soft);color:var(--gold)}
+.rt.r1{background:var(--bad-soft);color:var(--bad)}
+.rt.r0{color:var(--muted)}
+.matrix td,.matrix th{text-align:center;white-space:nowrap}
+.matrix td:first-child,.matrix th:first-child{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1}
+.matrix tr.side td:first-child small{color:var(--muted)}
+.breakers td:first-child{min-width:150px}
+.breakers td:nth-child(2),.breakers td:nth-child(3){min-width:220px}
+/* ===== life points ===== */
+.lp{display:grid;gap:12px;max-width:560px;margin-inline:auto;width:100%}
+.lp-players{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lp-p{display:grid;gap:2px;justify-items:center;padding:14px 8px;border:2px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;font:inherit;transition:border-color .12s ease}
+.lp-p[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.lp-name{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lp-val{font:700 clamp(40px,12vw,58px)/1 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lp-p.zero .lp-val{color:var(--bad)}
+.lp-last{font:600 13px var(--mono);min-height:18px;color:var(--muted)}
+.lp-last.dn{color:var(--bad)}.lp-last.up{color:var(--good)}
+.lp-entry{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.lp-entry span{font:600 13px var(--body);color:var(--muted)}
+.lp-entry output{font:700 30px var(--mono);font-variant-numeric:tabular-nums}
+.lp-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lp-keys button,.lp-go button,.lp-quick button,.lp-tools button,.lp-timer button{font:600 18px var(--body);min-height:52px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);cursor:pointer;touch-action:manipulation}
+.lp-keys button:active,.lp-go button:active,.lp-quick button:active{transform:scale(.97)}
+.lp-go{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lp-go .dmg{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.lp-go .gain{background:var(--good);border-color:var(--good);color:var(--surface)}
+.lp-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.lp-quick button{font-size:15px;min-height:44px}
+.lp-quick .burn{grid-column:span 2;font-size:14px;color:var(--bad)}
+.lp-tools{display:flex;flex-wrap:wrap;gap:8px}
+.lp-tools button{flex:1 1 auto;font-size:14px;min-height:42px;padding-inline:12px}
+.lp-tools button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.lp-tools button.armed{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
+.lp-roll{min-height:22px;text-align:center;font:600 15px var(--body)}
+.lp-timer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.lp-timer output{font:700 26px var(--mono);font-variant-numeric:tabular-nums;margin-right:auto}
+.lp-timer output.done{color:var(--bad)}
+.lp-timer button{font-size:14px;min-height:40px;padding-inline:12px}
+.lp-timer select{font:600 14px var(--body);min-height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:0 8px}
+.lp-hist ol{margin:8px 0 0;padding-left:22px;display:grid;gap:3px;font:500 14px var(--mono);max-height:220px;overflow-y:auto}
+.lp-hist summary{cursor:pointer;font-weight:600}
+@keyframes lpflash{from{background:var(--gold-soft)}to{background:var(--surface)}}
+.lp-p.hit{animation:lpflash .5s ease}
+@media (prefers-reduced-motion:reduce){.lp-p.hit{animation:none}.lp-keys button:active,.lp-go button:active,.lp-quick button:active{transform:none}}
+/* ===== match tracker ===== */
+.tr-form{display:grid;gap:12px}
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tr-form label{display:grid;gap:4px;font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tr-form input,.tr-form select,.tr-form textarea{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+.tr-form textarea{resize:vertical}
+.tr-form .wide{grid-column:1/-1}
+.tr-games{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.tr-game{border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:8px;margin:0;min-width:0}
+.tr-game legend{font:700 12px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:0 4px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{font:600 14px var(--body);min-height:40px;border:none;border-left:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;padding:0 6px}
+.seg button:first-child{border-left:none}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button[data-v="W"][aria-pressed="true"]{background:var(--good);color:var(--surface)}
+.seg button[data-v="L"][aria-pressed="true"]{background:var(--bad);color:var(--surface)}
+.tr-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tr-stats .stat b{font-size:24px}
+.tr-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tr-item{display:grid;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.tr-item .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:baseline}
+.tr-item .res{font:700 13px var(--mono);border-radius:999px;padding:2px 9px}
+.tr-item .res.W{background:var(--good-soft);color:var(--good)}.tr-item .res.L{background:var(--bad-soft);color:var(--bad)}.tr-item .res.D{background:var(--gold-soft);color:var(--gold)}
+.tr-item .gms{display:flex;flex-wrap:wrap;gap:6px;font:600 12px var(--mono);color:var(--muted)}
+.tr-item .gms span{border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.tr-item .row2{display:flex;gap:8px}
+.tr-item .row2 button{font:600 13px var(--body);background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--ink);cursor:pointer}
+.tr-item .row2 button.armed{border-color:var(--bad);color:var(--bad);background:var(--bad-soft)}
+.tr-empty{color:var(--muted)}
+.tr-backup summary{cursor:pointer;font-weight:700}
+.tr-backup textarea{width:100%;min-height:110px;font:12px var(--mono);border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:8px}
+.tr-backup .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tr-warn{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:14px}
+
+.cx.flash{animation:flash 1.6s ease}
+@media (max-width:1179px){.wrap{padding-top:0}header.top{padding-top:18px}}
+.stat b small{font-size:.62em;color:var(--muted);font-weight:600}
+/* v3-css-end */
 </style>
 
 <div class="wrap">
+<!-- v3-appbar -->
+<div class="appbar" id="appbar"><a class="brand" href="#home"><span class="pc" aria-hidden="true">♔&#xFE0E;</span>Angelechy Guide</a><button type="button" class="search-btn" data-open-search aria-label="Search the guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>/</kbd></button></div>
+<!-- /v3-appbar -->
 <header class="top">
   <div>
     <div class="eyebrow">Living guide · current format: post–Beyond the Brave · last updated Oct 13, 2026 · TCG</div>
@@ -367,39 +587,20 @@ section.match{gap:16px}
   </div>
 </header>
 
-<nav class="toc" id="toc" aria-label="Guide">
-  <div class="nav-bar">
-    <a class="brand" href="#home"><span class="eyebrow">Contents</span><span class="brand-name">Angelechy Guide</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-groups">Sections</button>
-  </div>
-  <ul class="groups" id="nav-groups">
-    <li><a class="top" href="#home" data-area="home"><span class="glyph" aria-hidden="true">♔</span>Home</a></li>
-    <li><a class="top" href="#meta" data-area="meta"><span class="glyph" aria-hidden="true">♗</span>Meta</a></li>
-    <li><details class="grp" data-grp="deck"><summary><span class="glyph" aria-hidden="true">♕</span>Your deck</summary><ul>
-      <li><a href="#deck">By the numbers</a></li>
-      <li><a href="#lines">Lines through hand traps</a></li>
-      <li><a href="#builds">Builds compared</a></li>
-      <li><a href="#decklist">Decklist tracker</a></li>
-      <li><a href="#side">Side deck</a></li>
-    </ul></details></li>
-    <li><details class="grp" data-grp="matchups"><summary><span class="glyph" aria-hidden="true">♘</span>Matchups</summary><ul id="nav-matchups">
-      <li><a href="#matchups">All matchups</a></li>
-    </ul></details></li>
-    <li><details class="grp" data-grp="siding"><summary><span class="glyph" aria-hidden="true">♖</span>Siding &amp; odds</summary><ul>
-      <li><a href="#siding">Siding plans</a></li>
-      <li><a href="#plays">Plays &amp; odds</a></li>
-      <li><a href="#calc">Calculator</a></li>
-    </ul></details></li>
-    <li><a class="top" href="#sources" data-area="sources"><span class="glyph" aria-hidden="true">♜</span>Sources</a></li>
-  </ul>
-</nav>
+<!-- v3-nav -->
+<nav class="subnav" id="subnav" aria-label="Pages"></nav>
+<nav class="sidenav" id="sidenav" aria-label="Guide"></nav>
+<nav class="tabbar" id="tabbar" aria-label="Sections"></nav>
+<div class="search-ov" id="search-ov" role="dialog" aria-modal="true" aria-label="Search the guide" hidden><div class="search-box"><div class="search-top"><input type="search" id="search-q" placeholder="Search cards, matchups, lines…" autocomplete="off" enterkeyhint="go" aria-controls="search-res"><button type="button" id="search-close">Close</button></div><ul class="search-res" id="search-res" role="listbox" aria-label="Results"></ul></div></div>
+<!-- /v3-nav -->
 <div id="view-guide">
 <section id="home" class="home">
   <div class="cta">
-    <a class="btn primary" href="#matchups">Browse matchups</a>
+    <a class="btn primary" href="#learn">Start learning</a>
+    <a class="btn" href="#matchups">Matchups</a>
     <a class="btn" href="#siding">Siding plans</a>
-    <a class="btn" href="#decklist">Your decklist</a>
-    <a class="btn" href="#endgame-lines">Endgame lines</a>
+    <a class="btn" href="#lp">Life points</a>
+    <a class="btn" href="#tracker">Match tracker</a>
   </div>
   <div class="stats">
     <div class="stat"><b id="stat-mu">18</b><span>matchups broken down</span></div>
@@ -407,11 +608,21 @@ section.match{gap:16px}
     <div class="stat"><b>77%</b><span>post-side play that survives 1 hand trap</span></div>
     <div class="stat"><b>24</b><span>interruptions in your main (84% to open 3+); 27 after siding</span></div>
   </div>
+  <div class="panel"><h4>New to Angelechy? Follow this path</h4>
+    <ol class="path">
+      <li><a href="#learn"><b>Basics</b><span>The pieces and the count</span></a></li>
+      <li><a href="#cards"><b>Every card</b><span>What each does, and why it's in</span></a></li>
+      <li><a href="#handtraps"><b>Hand traps</b><span>When to use each one</span></a></li>
+      <li><a href="#lines"><b>Lines</b><span>A, then C and EG1</span></a></li>
+      <li><a href="#matchups"><b>Matchups</b><span>Elfnote, ROLAD, mirror</span></a></li>
+      <li><a href="#siding"><b>Siding</b><span>Games 2 and 3</span></a></li>
+    </ol></div>
   <div class="areas">
-    <a class="area" href="#meta"><span class="eyebrow">01 · Meta</span><h3>What's topping</h3><p>Post–Beyond the Brave results, creator takes and the decks to expect.</p></a>
-    <a class="area" href="#deck"><span class="eyebrow">02 · Your deck</span><h3>Lines, builds, list</h3><p>Opening odds, lines through hand traps, builds compared and your 70 cards with flex spots.</p></a>
-    <a class="area" href="#matchups"><span class="eyebrow">03 · Matchups</span><h3>Every deck you'll face</h3><p>How each deck plays, where it breaks, what hurts you, and what to do going 1st and 2nd.</p></a>
-    <a class="area" href="#siding"><span class="eyebrow">04 · Siding &amp; odds</span><h3>What to side, and why</h3><p>Trif's rules applied, the per-matchup plans, simulated odds and a hypergeometric calculator.</p></a>
+    <a class="area" href="#learn"><span class="eyebrow">01 · Learn</span><h3>How the deck works</h3><p>The pieces, every card and why it's in, hand traps and breakers, lines, your list and builds.</p></a>
+    <a class="area" href="#matchups"><span class="eyebrow">02 · Matchups</span><h3>Every deck you'll face</h3><p>How each deck plays, where it breaks, what hurts you, and what to do going 1st and 2nd.</p></a>
+    <a class="area" href="#siding"><span class="eyebrow">03 · Siding</span><h3>What to side, and why</h3><p>Per-matchup plans going 1st and 2nd, simulated odds and a hypergeometric calculator.</p></a>
+    <a class="area" href="#lp"><span class="eyebrow">04 · Tools</span><h3>At the table</h3><p>Life points with burn buttons and a round timer, plus a match tracker that stays on your device.</p></a>
+    <a class="area" href="#meta"><span class="eyebrow">05 · Meta</span><h3>What's topping</h3><p>Post–Beyond the Brave results, creator takes and the decks to expect.</p></a>
   </div>
   <div class="panel"><h4>Your list at a glance</h4>
       <p><b>Engine</b> 3 Strategy Score · 3 Opposition · 3 Problem · 3 Opening to e4 · 3 Foolish Burial Goods · 1 Terraforming · 1 Endgame Problem · 1 Verdict · 1 Disturbance</p>
@@ -421,7 +632,7 @@ section.match{gap:16px}
   <div class="panel" id="access"><h4>Open this guide anywhere</h4>
       <p><b>Any browser:</b> nickllages.github.io/angelechy-guide — on a phone, use Share → <b>Add to Home Screen</b> (iPhone, Safari) or ⋮ → <b>Add to Home screen</b> (Android, Chrome) to open it like an app.</p>
       <p><b>GitHub app:</b> Home → <b>Repositories</b> → <b>angelechy-guide</b>, then tap the website link under the description (or the link in the README). Star the repository to find it under <b>Starred</b>.</p>
-      <p><b>Jump straight to a part</b> by adding it after the address: <b>#siding</b>, <b>#matchups</b>, <b>#endgame-lines</b>, <b>#decklist</b>. Updates appear when you reload.</p></div>
+      <p><b>Getting around:</b> the tabs at the bottom (Home, Learn, Matchups, Siding, Tools) switch sections, the chips under the top bar switch pages, and <b>Search</b> finds any card, matchup or line. On a computer the menu is on the left; press <b>/</b> to search.</p><p><b>Jump straight to a part</b> by adding it after the address: <b>#learn</b>, <b>#cards</b>, <b>#handtraps</b>, <b>#siding</b>, <b>#matchups</b>, <b>#lp</b>, <b>#tracker</b>. Updates appear when you reload.</p></div>
 </section>
 
 
@@ -471,6 +682,702 @@ section.match{gap:16px}
 </section>
 
 <!-- YOUR DECK -->
+<!-- v3-learn -->
+<section id="learn">
+  <div class="sec-head">
+    <div class="eyebrow">Learn · start here</div>
+    <h2>How Angelechy works</h2>
+  </div>
+  <p class="prose">Angelechy is a chess-themed Fairy deck whose monsters all live in the Extra Deck. Your Spells and Traps do one of two things with them: <b>Special Summon</b> them, or <b>place</b> them face-up in your Spell &amp; Trap Zone as Continuous Spells. A placed Angelechy fires one effect when it lands (a search, a send to the GY, or placing the next piece), then keeps a continuous effect for as long as it stays. Every Angelechy Monster Card on the field, summoned or placed, yours or theirs, also counts for <b>Angelechy Verdict</b>, which banishes your opponent's whole field at 5 or more.</p>
+  <p class="prose">Your 40 is half engine and half interaction. 19 engine cards build that board; 21 hand traps and Dominus Traps (24 interruptions counting Opening to e4) stop the opponent. Going first you build a board that limits what they can do. Going second you start building during their Standby Phase with Opening to e4 and spend hand traps on their key steps.</p>
+
+  <div class="panel">
+    <h4>Words this guide uses</h4>
+    <dl class="kv kv-wide">
+      <dt>Placed</dt><dd>An Angelechy monster in your Spell &amp; Trap Zone as a face-up Continuous Spell. It still counts as an Angelechy Monster Card (for Verdict and Endgame Problem), but its effects are Spell effects: Ghost Ogre destroys it, yet its “when placed” effect still resolves, and Inspector Boarder doesn't count it as a monster type.</dd>
+      <dt>The count</dt><dd>Angelechy Monster Cards on the whole field: both players, Monster Zones and Spell &amp; Trap Zones. Verdict reads it: 1–4 negates one card, 5+ banishes everything they control.</dd>
+      <dt>Field Spells</dt><dd>Angelechy Problem (your starter) and Angelechy Endgame Problem (the payoff Opening to e4 places on their turn). You can have one Field Spell; a new one sends the old one to the GY.</dd>
+      <dt>Chess names</dt><dd>Creators call Enlisted the pawn, Castellan the bishop, Bastion the rook, Shatranga the king and Destrier the knight. Opening to e4 is chess's most common first move.</dd>
+      <dt>Starter</dt><dd>A card that begins your combo by itself: Strategy Score, Problem, Terraforming, Opposition, Foolish Burial Goods. You run 13 (87.7% to open one going first).</dd>
+      <dt>Spare</dt><dd>Any Spell or Trap you can discard to Problem. Best: Verdict or Disturbance, because their GY effects still work afterwards.</dd>
+      <dt>Hand trap</dt><dd>A card you use from your hand during the opponent's turn: your monsters (Ash, Ghost Ogre, Fuwalos, Nibiru, Droll), the Dominus Traps, and Opening to e4 on their first Standby Phase.</dd>
+      <dt>Dominus lock</dt><dd>Activating a Dominus Trap from your hand stops you activating monsters of certain Attributes for the rest of the duel. A Set Dominus never locks anything. <a href="#ht-rules">The lock table</a>.</dd>
+      <dt>Interruptions</dt><dd>Cards that can stop the opponent. Going second you want 3 in your opening 6; with 24 that's 84% (Trif's minimum).</dd>
+    </dl>
+  </div>
+
+  <h3>The pieces</h3>
+  <p class="prose note">Each placed piece gives you one effect when it lands and one while it stays. As monsters, most of them can banish.</p>
+  <div class="tbl"><table class="pieces">
+    <thead><tr><th>Piece</th><th>When it's placed</th><th>While it stays placed</th><th>As a monster on the field</th></tr></thead>
+    <tbody>
+      <tr><td><b>Castellan</b><br><span class="note">Lv7 · bishop · 1 copy</span></td><td>Send 1 Angelechy card from your Deck to the GY (Verdict or Disturbance)</td><td>Each player can activate only 1 card or effect per Chain</td><td>Banish a monster in the next column, or a Spell/Trap 2 columns away</td></tr>
+      <tr><td><b>Destrier</b><br><span class="note">Lv7 · knight · 2 copies</span></td><td>Add 1 Angelechy Spell from your Deck</td><td>They take 500 damage each time they activate a card or effect</td><td>Banish a monster in another column</td></tr>
+      <tr><td><b>Bastion</b><br><span class="note">Lv8 · rook · 2 copies</span></td><td>Place Shatranga from your Extra Deck</td><td>Your <em>other</em> Angelechy cards can't be destroyed by their effects (Bastion itself can)</td><td>Banish another card in its column</td></tr>
+      <tr><td><b>Shatranga</b><br><span class="note">Lv10 · king · 2 copies</span></td><td>Add 1 Angelechy Trap from your Deck or GY</td><td>They can only attempt 5 monster effects per turn</td><td>Banish a monster they control</td></tr>
+      <tr><td><b>Enlisted</b><br><span class="note">Lv2 Tuner · pawn · 3 copies</span></td><td>— (Problem and Opening to e4 summon it)</td><td>—</td><td>Banish their monster in the next column, then move to their field. When its control changes it returns to your Extra Deck and you Special Summon any Angelechy.</td></tr>
+      <tr><td><b>Seneschal</b><br><span class="note">Lv10 DARK · 2 copies</span></td><td>— (Opposition summons it to <em>their</em> field)</td><td>—</td><td>When summoned, each player can summon a Fairy Synchro (effects negated). If your Angelechy attacks it, it comes back to you.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>What a finished board looks like</h3>
+  <p class="prose note">Line A going first: Opposition gives them Seneschal and places Bastion, Bastion places Shatranga, Shatranga adds Verdict, and Problem adds Enlisted and Destrier. Seneschal's trigger lets you summon a second Destrier as a body.</p>
+  <figure class="fieldmap" aria-label="Line A end board">
+    <div class="fm-side fm-opp">
+      <span class="fm-lbl">Opponent</span>
+      <div class="fm-row"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="fm-row"><i></i><i></i><i class="c">Seneschal<em>+1</em></i><i></i><i></i></div>
+    </div>
+    <div class="fm-row fm-emz"><i></i><span></span><i></i></div>
+    <div class="fm-side fm-you">
+      <div class="fm-row"><i></i><i class="c">Enlisted<em>+1</em></i><i class="c">Destrier #2<em>+1</em></i><i></i><i></i></div>
+      <div class="fm-row"><i class="p">Bastion<em>+1</em></i><i class="p">Shatranga<em>+1</em></i><i class="p">Destrier<em>+1</em></i><i class="s">Verdict<br>(Set)</i><i></i></div>
+      <div class="fm-field"><i class="f">Problem</i><span class="fm-lbl">You · count 6</span></div>
+    </div>
+    <figcaption class="note">Count 6: Seneschal + Destrier #2 + Enlisted + Bastion + Shatranga + Destrier. On their turn, once they commit, Verdict banishes everything they control. Shatranga caps them at 5 monster effects, Destrier burns 500 per activation, and Bastion keeps your other pieces from being destroyed.</figcaption>
+  </figure>
+
+  <h3>How a game goes</h3>
+  <div class="grid2">
+    <div class="panel"><h4>Going first</h4>
+      <ol class="tight">
+        <li>Build to 4+ placed pieces with Verdict Set and a Dominus or Opening to e4 behind it (<a href="#lines">line A or B</a>).</li>
+        <li>Place <b>Bastion early</b> against destruction (Typhoon, Spell Shattering Sword, The Fallen &amp; The Virtuous): it protects the others, not itself.</li>
+        <li>On their turn, let them commit, then Verdict at 5+. Ghost Ogre on a piece doesn't stop its “when placed” effect.</li>
+        <li>After siding: Inspector Boarder first (lines E and F). With no Extra Deck monsters out, they can't activate monster hand traps at all.</li>
+      </ol></div>
+    <div class="panel"><h4>Going second</h4>
+      <ol class="tight">
+        <li>Their Standby Phase: <b>Fuwalos first</b> (it needs you to control no cards), then <b>Opening to e4</b>. With Castellan placed you can loop into a 2nd e4 (<a href="#lines">line C</a>, <a href="#endgame-lines">EG1</a>).</li>
+        <li>Their Main Phase: hand traps on their key steps (each <a href="#matchups">matchup page</a> lists them). Monster hand traps first, Dominus from hand last.</li>
+        <li>Your turn: Verdict at 5+ banishes their field; Kusanagi or Black-Winged Assault Dragon finish (lines D and G).</li>
+      </ol></div>
+  </div>
+
+  <h3>Mistakes every new Angelechy player makes</h3>
+  <ol class="tight prose">
+    <li><b>Dominus from hand first.</b> Impulse from hand locks Ghost Ogre, Nibiru, Veiler, Fuwalos and Droll for the rest of the duel. One replay lost to Elfnote this way.</li>
+    <li><b>e4 before Fuwalos.</b> Once you control a card, Fuwalos and Purulia can't be activated.</li>
+    <li><b>Counting only your side for Verdict.</b> The Seneschal you gave them counts too.</li>
+    <li><b>Opposition into Bastion when you still need a Spell.</b> Place Destrier to search instead (DB Grinder).</li>
+    <li><b>Synchros in Attack Position against ROLAD.</b> Dark Charmer crashes into them; summon in Defense.</li>
+    <li><b>Forgetting Seneschal has 3,000 ATK.</b> With Boarder out it can attack over Boarder; line F sends it back.</li>
+    <li><b>Not reading their cards.</b> Opponents misread this deck and concede early; read their cards just as carefully. DB Grinder: “read the cards once a week”.</li>
+  </ol>
+
+  <div class="callout blue">
+    <strong>Your learning path</strong>
+    <ol class="steps">
+      <li><span><b>This page</b>: the pieces and the count.</span></li>
+      <li><span><a href="#cards"><b>Every card</b></a>: what each card in your 70 does, why it's in, and why that many copies.</span></li>
+      <li><span><a href="#handtraps"><b>Hand traps &amp; breakers</b></a>: when to use each one, techs outside your list, and board breakers.</span></li>
+      <li><span><a href="#lines"><b>Lines</b></a>: start with A (going first) and C or EG1 (going second).</span></li>
+      <li><span><a href="#matchups"><b>Matchups</b></a>: Elfnote, ROLAD and the mirror first.</span></li>
+      <li><span><a href="#siding"><b>Siding plans</b></a>: what comes in and out, going first and second.</span></li>
+      <li><span><a href="#tracker"><b>Match tracker</b></a>: log your games and see which matchups to work on.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="sec-head">
+    <div class="eyebrow">Learn · every card</div>
+    <h2>Every card in your 70, and why</h2>
+  </div>
+  <p class="prose">Tap a card to open it. Each one says what it does in plain words, why it's in the deck, why you run that many, and how to use it well. Cards outside your list are at the end, with the reason they're out.</p>
+  <nav class="jump" aria-label="Card groups">
+    <a href="#cards-engine">Engine · 19</a><a href="#cards-interaction">Hand traps · 21</a><a href="#cards-extra">Extra Deck · 15</a><a href="#cards-side">Side deck · 15</a><a href="#cards-out">Not in your list</a>
+  </nav>
+
+  <div class="panel" id="ratios">
+    <h4>Why 3, 2 or 1 copies</h4>
+    <p class="note">Chance to see at least one copy in your opening hand:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Copies</th><th class="num">5 cards<br><small>going 1st</small></th><th class="num">6 cards<br><small>going 2nd</small></th></tr></thead>
+      <tbody>
+        <tr><td>3</td><td class="num">33.8%</td><td class="num">39.4%</td></tr>
+        <tr><td>2</td><td class="num">23.7%</td><td class="num">28.1%</td></tr>
+        <tr><td>1</td><td class="num">12.5%</td><td class="num">15.0%</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="tight">
+      <li><b>3 of every starter</b>, so you open one almost every game: 13 starters give 87.7%.</li>
+      <li><b>1 of anything the deck fetches.</b> Shatranga adds Verdict, Castellan and Foolish Burial Goods send Verdict or Disturbance, Opening to e4 places Endgame, and Opposition shuffles spent copies back into the Deck.</li>
+      <li><b>Fewer of anything “once per turn”</b> (Foolish Burial Goods, Nibiru, Droll, Triple Tactics): a second copy does nothing that turn.</li>
+      <li><b>Exactly 40 cards.</b> Every extra card lowers the odds of drawing your starters.</li>
+    </ul>
+  </div>
+
+  <h3 id="cards-engine">Main deck · engine (19)</h3>
+  <div class="cxlist">
+
+  <details class="cx" id="c-opposition" data-idx="Angelechy Opposition">
+    <summary><span class="cx-n">Angelechy Opposition</span><span class="cx-c">×3</span><span class="cx-r">Your best card: one card makes two Angelechy cards</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · 1 activation per turn</p><dl>
+      <dt>What it does</dt><dd>Choose 2 Angelechy monsters in your Extra Deck whose names aren't already in your Spell &amp; Trap Zone. Special Summon one to your <b>opponent's</b> Main Monster Zone and place the other in your Spell &amp; Trap Zone. From the GY, banish it to shuffle up to 5 Angelechy cards from your GY or banishment back into the Deck (Extra Deck monsters go back to the Extra Deck). The turn you activate it, you can only Special Summon LIGHT or DARK Synchros from the Extra Deck.</dd>
+      <dt>Why you play it</dt><dd>It starts a combo by itself and isn't a search, so Ash, Droll and Purge can't touch it; only Impulse stops it. You usually give them <b>Seneschal</b>. Its mandatory trigger lets you summon a Fairy Synchro too (a negated Destrier works as a body), it counts for Verdict from their side, and because it's <em>their</em> monster effect during your Main Phase it turns on Triple Tactics Thrust and Talent. The GY effect refills your single Verdict and Disturbance.</dd>
+      <dt>Why 3</dt><dd>It's the starter you most want to open, and a second copy is next turn's play. Never side it out.</dd>
+      <dt>Tips</dt><dd>Place Destrier (search a Spell) rather than Bastion when you still need a Spell later (DB Grinder). Against Elfnote, put Seneschal in their center Main Monster Zone: Regina only summons from the Deck from the center (Lucas Sacco). Impulse negates the whole effect, so make them spend it on something else first when you can.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-problem" data-idx="Angelechy Problem">
+    <summary><span class="cx-n">Angelechy Problem</span><span class="cx-c">×3</span><span class="cx-r">Main starter: any Spell or Trap becomes Enlisted plus a piece</span></summary>
+    <div class="cx-b"><p class="cx-t">Field Spell</p><dl>
+      <dt>What it does</dt><dd>Once per turn: discard a Spell or Trap to Special Summon a Level 2 Angelechy (Enlisted) from your Extra Deck and place an Angelechy. Also, when a face-up Angelechy Monster Card you control is destroyed, you can return a placed Angelechy to the Extra Deck and then Special Summon it.</dd>
+      <dt>Why you play it</dt><dd>One card and a spare become two pieces: usually Enlisted plus Castellan (send Verdict or Disturbance) or Destrier (search a Spell). Opening to e4 places it from the Deck, and Strategy Score and Terraforming fetch it. The once per turn belongs to each copy, so a second Problem gets its own use (line B).</dd>
+      <dt>Why 3</dt><dd>It's the starter most of your hands use.</dd>
+      <dt>Tips</dt><dd>Discard Verdict or Disturbance when you can, because their GY effects still work. Otherwise discard Endgame, a sided Thrust, or a Dominus you won't Set.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-strategy" data-idx="Angelechy Strategy Score">
+    <summary><span class="cx-n">Angelechy Strategy Score</span><span class="cx-c">×3</span><span class="cx-r">Searches whichever piece your hand is missing</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · each effect once per turn</p><dl>
+      <dt>What it does</dt><dd>Add any Angelechy Spell or Trap from your Deck except Strategy Score. For the rest of that turn you can only Special Summon LIGHT or DARK Synchros from the Extra Deck. On a later turn, from the GY: banish it to return a placed Angelechy to the Extra Deck, then you can Special Summon it.</dd>
+      <dt>Why you play it</dt><dd>It's a copy of Problem, Opposition, Opening to e4 or Verdict, whichever you need.</dd>
+      <dt>Why 3</dt><dd>More starters. It's a search, so Ash, Droll and Purge can stop it; Opposition and Problem dodge those.</dd>
+      <dt>Tips</dt><dd>The GY effect turns a placed piece back into a monster on a later turn, so you can use Shatranga's or Destrier's banish.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-fbg" data-idx="Foolish Burial Goods">
+    <summary><span class="cx-n">Foolish Burial Goods</span><span class="cx-c">×3</span><span class="cx-r">A starter through Disturbance or Verdict in the GY</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · 1 per turn</p><dl>
+      <dt>What it does</dt><dd>Send 1 Spell or Trap from your Deck to the GY.</dd>
+      <dt>Why you play it</dt><dd>Send Disturbance, then banish it to add any Angelechy Spell or Trap (Problem, Opposition, e4). Or send Verdict, whose GY effect sends an Angelechy card from your hand or field to place a piece.</dd>
+      <dt>Why 3</dt><dd>It's one of your 13 starters. Only one per turn, so an extra copy becomes a spare for Problem.</dd>
+      <dt>Tips</dt><dd>Ash can negate the send. Going 2nd, two copies are the first engine cards you side out, together with Terraforming: they don't interrupt anything.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-terraforming" data-idx="Terraforming">
+    <summary><span class="cx-n">Terraforming</span><span class="cx-c">×1</span><span class="cx-r">A fourth Problem</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · Limited (max 1)</p><dl>
+      <dt>What it does</dt><dd>Add 1 Field Spell from your Deck to your hand: Problem, or Endgame Problem.</dd>
+      <dt>Why 1</dt><dd>It's Limited. Going 2nd it comes out first, with 2 Foolish Burial Goods. It's a search, so Ash, Droll and Purge stop it.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-endgame" data-idx="Angelechy Endgame Problem">
+    <summary><span class="cx-n">Angelechy Endgame Problem</span><span class="cx-c">×1</span><span class="cx-r">The payoff Opening to e4 places on their turn</span></summary>
+    <div class="cx-b"><p class="cx-t">Field Spell</p><dl>
+      <dt>What it does</dt><dd>Gains effects from the Angelechy Monster Cards in your Spell &amp; Trap Zone. 1+: draw 1 during their Standby Phase. 2+: you choose the zones they Special Summon to. 3+: once per turn, activate an Angelechy Trap the turn you Set it. 4+: once per turn, banish the monster(s) they Special Summon. 5: once per turn, Special Summon an Angelechy from your Extra Deck.</dd>
+      <dt>Why you play it</dt><dd>Going 2nd, your second Opening to e4 places it during their Standby Phase with 4 pieces out. You draw, choose where they summon, and banish the summon that matters (TY-PHON, Junoldo's Synchro). On your turn, 3+ lets you Set Verdict and use it at once (line EG4).</dd>
+      <dt>Why 1</dt><dd>e4 takes it from the Deck, so you never need to draw it. A drawn copy only works as a discard for Problem (Trif and Lucas Sacco call a 2nd copy a brick). Going 1st it comes out for Boarder.</dd>
+      <dt>More</dt><dd><a href="#endgame-lines">Endgame lines EG1–EG4</a>.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-e4" data-idx="Angelechy Opening to e4">
+    <summary><span class="cx-n">Angelechy Opening to e4</span><span class="cx-c">×3</span><span class="cx-r">Your best card going 2nd: a board before they play</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · from your hand on their first Standby Phase</p><dl>
+      <dt>What it does</dt><dd>If your opponent goes first, you can activate it from your hand during the Standby Phase of their first turn. Place an Angelechy Field Spell from your hand, Deck or GY, Special Summon a Level 2 or 7 Angelechy (Enlisted, Castellan or Destrier) to the Extra Monster Zone, and place an Angelechy. Until the end of your next turn you can only Special Summon Synchros from the Extra Deck.</dd>
+      <dt>Why you play it</dt><dd>It builds before they act. Place Castellan and it starts the double e4: Castellan sends Verdict, Verdict places Bastion, Bastion places Shatranga, and Shatranga adds your 2nd e4, which isn't once per turn (line C, EG1). Going 1st, Set it as an interruption for their turn.</dd>
+      <dt>Why 3</dt><dd>39% to have it going 2nd. Never side it out going 2nd. One comes out going 1st for Boarder, because your e4 on their turn would put a Synchro on the field and give them a card type.</dd>
+      <dt>Tips</dt><dd>Use Fuwalos before e4; Fuwalos needs you to control no cards. Impulse negates e4. Ash on Castellan's send stops the loop; if you see Ash, place Bastion first and take a smaller board.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-verdict" data-idx="Angelechy Verdict">
+    <summary><span class="cx-n">Angelechy Verdict</span><span class="cx-c">×1 <small>+1 side</small></span><span class="cx-r">Negate at 1–4, banish their whole field at 5+</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · each effect once per turn</p><dl>
+      <dt>What it does</dt><dd>Counts the Angelechy Monster Cards on the whole field. 1–4: negate 1 face-up card they control. 5+: banish every card they control, without targeting. From the GY: banish it, send an Angelechy card from your hand or face-up field to the GY, then place an Angelechy with a name you don't already have placed.</dd>
+      <dt>Why you play it</dt><dd>It's your board's interruption and your way through theirs. The GY effect is a free placement: Castellan sends it, and you can chain it to put Bastion back when they Ghost Ogre or Typhoon your pieces (Lucas Sacco).</dd>
+      <dt>Why 1</dt><dd>Shatranga adds it from the Deck or GY, Castellan and Foolish Burial Goods send it, and Opposition shuffles a spent copy back. The 2nd copy is in your side for the mirror (“the god card in the mirror”, Trif).</dd>
+      <dt>Tips</dt><dd>Count both fields: the Seneschal you gave them counts. It doesn't target, so Magician of Dark Chaos (and Black Chaos while a Ritual Spell is in their GY) is unaffected, and Magician also stops their Spells and Traps being banished.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-disturbance" data-idx="Angelechy Disturbance">
+    <summary><span class="cx-n">Angelechy Disturbance</span><span class="cx-c">×1</span><span class="cx-r">Mostly a GY search for any Angelechy Spell or Trap</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · each effect once per turn</p><dl>
+      <dt>What it does</dt><dd>Give your opponent control of an Angelechy monster you control until the End Phase, then negate their face-up cards in the zones next to it. From the GY: banish it to add any Angelechy Spell or Trap except Disturbance.</dd>
+      <dt>Why you play it</dt><dd>The GY effect is what Foolish Burial Goods and Castellan want: it becomes whichever piece you need. Handing them Enlisted also triggers Enlisted's return: it goes back to your Extra Deck and you Special Summon any Angelechy (line D).</dd>
+      <dt>Why 1</dt><dd>Opposition recycles it. Trif: you go through Disturbance and Verdict on turn 1, then shuffle them back. Lists run 1–3. Never side out your only copy going 2nd.</dd>
+    </dl></div>
+  </details>
+  </div>
+
+  <h3 id="cards-interaction">Main deck · hand traps and Dominus (21)</h3>
+  <p class="prose note">Short versions here. Matchup ratings, timing and what would change each count are on <a href="#handtraps">Hand traps &amp; breakers</a>.</p>
+  <div class="cxlist">
+  <details class="cx" id="c-ash" data-idx="Ash Blossom &amp; Joyous Spring"><summary><span class="cx-n">Ash Blossom &amp; Joyous Spring</span><span class="cx-c">×3</span><span class="cx-r">Negates a search, a Deck summon or a Deck send</span></summary><div class="cx-b"><p>Good against every top deck. FIRE, so your own Purge or Spark from hand locks it: use Ash first. <a href="#ht-ash">More</a></p></div></details>
+  <details class="cx" id="c-ogre" data-idx="Ghost Ogre &amp; Snow Rabbit"><summary><span class="cx-n">Ghost Ogre &amp; Snow Rabbit</span><span class="cx-c">×3</span><span class="cx-r">Destroys a card that activates on the field</span></summary><div class="cx-b"><p>Your best card in the mirror and an MVP against Elfnote. All 3 come out against Mitsurugi, Destiny HERO and Invoked. LIGHT: only Impulse locks it. <a href="#ht-ogre">More</a></p></div></details>
+  <details class="cx" id="c-fuwalos" data-idx="Mulcharmy Fuwalos"><summary><span class="cx-n">Mulcharmy Fuwalos</span><span class="cx-c">×3</span><span class="cx-r">Draw each time they summon from the Deck or Extra Deck</span></summary><div class="cx-b"><p>Great in almost every matchup going 2nd; dead going 1st, so it comes out. Use it before your Standby e4. <a href="#ht-fuwalos">More</a></p></div></details>
+  <details class="cx" id="c-nibiru" data-idx="Nibiru, the Primal Being"><summary><span class="cx-n">Nibiru, the Primal Being</span><span class="cx-c">×2</span><span class="cx-r">Wipes their monsters after their 5th summon</span></summary><div class="cx-b"><p>Best against Elfnote, Patron and Yummy; does nothing in the mirror. Once per turn, so 2 copies. <a href="#ht-nibiru">More</a></p></div></details>
+  <details class="cx" id="c-droll" data-idx="Droll &amp; Lock Bird"><summary><span class="cx-n">Droll &amp; Lock Bird</span><span class="cx-c">×1 <small>+1 side</small></span><span class="cx-r">Stops every search after their first</span></summary><div class="cx-b"><p>Semi-Limited (2 max). Great against ROLAD, Patron and Mitsurugi; weak against Elfnote, the mirror and Branded. <a href="#ht-droll">More</a></p></div></details>
+  <details class="cx" id="c-impulse" data-idx="Dominus Impulse"><summary><span class="cx-n">Dominus Impulse</span><span class="cx-c">×3</span><span class="cx-r">Negates a Special Summon effect</span></summary><div class="cx-b"><p>From hand it locks LIGHT, EARTH and WIND for the duel, including your Angelechy monster effects: use it last. <a href="#ht-impulse">More</a></p></div></details>
+  <details class="cx" id="c-purge" data-idx="Dominus Purge"><summary><span class="cx-n">Dominus Purge</span><span class="cx-c">×3</span><span class="cx-r">Negates a search</span></summary><div class="cx-b"><p>A Trap version of Ash that Inspector Boarder doesn't limit. From hand it locks DARK, WATER and FIRE (Ash, Purulia). <a href="#ht-purge">More</a></p></div></details>
+  <details class="cx" id="c-spark" data-idx="Dominus Spark"><summary><span class="cx-n">Dominus Spark</span><span class="cx-c">×3</span><span class="cx-r">Banishes one of their monsters</span></summary><div class="cx-b"><p>From hand only on a turn they've activated a monster effect in the hand or GY. It locks no LIGHT, so it's the friendliest Dominus to use from hand. <a href="#ht-spark">More</a></p></div></details>
+  </div>
+
+  <h3 id="cards-extra">Extra Deck (15)</h3>
+  <div class="cxlist">
+  <details class="cx" id="c-enlisted" data-idx="Angelechy Enlisted">
+    <summary><span class="cx-n">Angelechy Enlisted</span><span class="cx-c">×3</span><span class="cx-r">The pawn: the body Problem and e4 summon</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro Tuner · Level 2 · LIGHT Fairy · 1500/1500</p><dl>
+      <dt>What it does</dt><dd>Target an opponent's monster in the next column: banish it, then move Enlisted to their Main Monster Zone. When its control changes, it returns to the Extra Deck and its owner (you) Special Summons any Angelechy from the Extra Deck. Each effect once per turn.</dd>
+      <dt>Why you play it</dt><dd>It's the monster half of Problem and Opening to e4. On your turn it's removal that “promotes” into a bigger Angelechy. It's also your Tuner: with Destrier it makes Kusanagi (Level 9), with Bastion it makes Black-Winged Assault Dragon or Chaos Angel (Level 10).</dd>
+      <dt>Why 3</dt><dd>The double e4 summons two and Problem a third. Verdict's GY effect sends one to the GY, and the others return to the Extra Deck when their control changes.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-castellan" data-idx="Angelechy Castellan">
+    <summary><span class="cx-n">Angelechy Castellan</span><span class="cx-c">×1</span><span class="cx-r">The bishop: sends Verdict or Disturbance, then locks chains</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 7 · LIGHT Fairy · 2000/2500</p><dl>
+      <dt>When placed</dt><dd>Send 1 Angelechy card from your Deck to the GY, usually Verdict (for its placement) or Disturbance (for its search).</dd>
+      <dt>While placed</dt><dd>Each player can activate only 1 card or effect per Chain. They can't chain a second hand trap or answer your Nibiru, and Elfnote can't chain Regina responses.</dd>
+      <dt>As a monster</dt><dd>Banish an opponent's monster in the next column, or a card in their Spell &amp; Trap Zone 2 columns away.</dd>
+      <dt>Why 1</dt><dd>One per board is enough. The Louisville Top 4 ran 2 to cover it being used up or removed. Its send is the chokepoint of the double e4: Ash there stops the loop.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-destrier" data-idx="Angelechy Destrier">
+    <summary><span class="cx-n">Angelechy Destrier</span><span class="cx-c">×2</span><span class="cx-r">The knight: searches a Spell, then burns 500 per activation</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 7 · LIGHT Fairy · 2500/2000</p><dl>
+      <dt>When placed</dt><dd>Add 1 Angelechy Spell from your Deck (Problem, Opposition, Strategy Score).</dd>
+      <dt>While placed</dt><dd>They take 500 damage each time they activate a card or effect.</dd>
+      <dt>As a monster</dt><dd>Banish a monster in another column. It's also Kusanagi's best material: Enlisted + Destrier is Level 9.</dd>
+      <dt>Why 2</dt><dd>Seneschal's free summon or Opening to e4 can put one on the field while another is placed. Trif's board runs both placed, with Black-Winged Assault Dragon: 1,700 damage per monster effect.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-bastion" data-idx="Angelechy Bastion">
+    <summary><span class="cx-n">Angelechy Bastion</span><span class="cx-c">×2</span><span class="cx-r">The rook: places Shatranga and protects your other pieces</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 8 · LIGHT Fairy · 3000/2500</p><dl>
+      <dt>When placed</dt><dd>Place Angelechy Shatranga from your Extra Deck.</dd>
+      <dt>While placed</dt><dd>Your <em>other</em> Angelechy cards on the field can't be destroyed by their card effects. Bastion itself can be, and banishing or bouncing gets past it.</dd>
+      <dt>As a monster</dt><dd>Banish another card in its column.</dd>
+      <dt>Why 2</dt><dd>Lucas Sacco: two are “absolutely super needed”. With Verdict in the GY, you chain its effect to place the 2nd Bastion when they Ghost Ogre, Typhoon or Sword your backrow.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-shatranga" data-idx="Angelechy Shatranga">
+    <summary><span class="cx-n">Angelechy Shatranga</span><span class="cx-c">×2</span><span class="cx-r">The king: adds a Trap, then caps their monster effects at 5</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 10 · LIGHT Fairy · 3000/0</p><dl>
+      <dt>When placed</dt><dd>Add 1 Angelechy Trap from your Deck or GY: Verdict, Opening to e4 or Disturbance. Droll only stops the Deck add, not the GY add.</dd>
+      <dt>While placed</dt><dd>They can only attempt to activate 5 monster effects per turn. Elfnote's line runs about 25.</dd>
+      <dt>As a monster</dt><dd>Banish a monster they control.</dd>
+      <dt>Why 2</dt><dd>Bastion's placement needs one in your Extra Deck; the 2nd covers the first being in the GY or banished.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-seneschal" data-idx="Angelechy Seneschal">
+    <summary><span class="cx-n">Angelechy Seneschal</span><span class="cx-c">×2</span><span class="cx-r">The piece Opposition gives them</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 10 · DARK Fairy · 3000/0</p><dl>
+      <dt>What it does</dt><dd>When Special Summoned (mandatory): each player can Special Summon 1 Fairy Synchro from their Extra Deck with its effects negated. Seneschal and those monsters can't be Xyz or Link material and return to the Extra Deck when they leave the field. If an Angelechy targets it for an attack, the attack is negated and control passes to the other player, so you take it back.</dd>
+      <dt>Why you play it</dt><dd>On their field it counts for Verdict, blocks a zone they can't Link or Xyz off, and its trigger is <em>their</em> monster effect: it turns on Thrust and Talent and uses up their one effect under Boarder (line F).</dd>
+      <dt>Why 2</dt><dd>It goes back to your Extra Deck, so one copy can be reused; the 2nd is a flex slot (Centur-Ion Legatia is the usual swap).</dd>
+      <dt>Watch out</dt><dd>3,000 ATK attacks over Boarder; line F has Enlisted send it back. DARK, so your own Purge from hand locks its effect if you control it.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-chaosangel" data-idx="Chaos Angel">
+    <summary><span class="cx-n">Chaos Angel</span><span class="cx-c">×1</span><span class="cx-r">Banish 1 card when summoned</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 10 · DARK Fiend · 3500/2800</p><dl>
+      <dt>What it does</dt><dd>You can treat a LIGHT or DARK monster as a Tuner for its Synchro Summon. When Special Summoned, banish 1 card on the field (targets). With LIGHT material your Synchros are unaffected by their activated monster effects; with DARK material your monsters can't be destroyed by battle.</dd>
+      <dt>Why 1</dt><dd>A generic out (Enlisted + Bastion). It's one of the weaker Extra Deck slots: Tyler Holland never summoned it all event. Brian Serio played Centur-Ion Auxila instead.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-bwad" data-idx="Black-Winged Assault Dragon">
+    <summary><span class="cx-n">Black-Winged Assault Dragon</span><span class="cx-c">×1</span><span class="cx-r">700 damage every time they activate a monster effect</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 10 · DARK Dragon · 3200 ATK</p><dl>
+      <dt>What it does</dt><dd>Needs a Tuner Synchro + a non-Tuner: Enlisted + Bastion. Each time they activate a monster effect it gets a counter and deals 700 damage. On their turn, Tribute it with 4+ counters to destroy every card on the field.</dd>
+      <dt>Why 1</dt><dd>Line G (Lucas Sacco) ends on it; with two Destrier placed it's 1,700 damage per monster effect, which kills combo decks. It's rare in tournament lists, so it's a flex slot.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-kusanagi" data-idx="Assault Blackwing - Kusanagi the Gathering Storm">
+    <summary><span class="cx-n">Assault Blackwing – Kusanagi the Gathering Storm</span><span class="cx-c">×1</span><span class="cx-r">Your game-ender</span></summary>
+    <div class="cx-b"><p class="cx-t">Synchro · Level 9 · DARK Winged Beast · 3000 ATK</p><dl>
+      <dt>What it does</dt><dd>When Synchro Summoned it gains the original ATK of the Synchro materials until end of turn: Enlisted (1,500) + Destrier (2,500) makes 7,000. It can attack every monster they control once each and deals piercing damage.</dd>
+      <dt>Why 1</dt><dd>It's your OTK (line D). Opposition's and Strategy Score's “LIGHT or DARK Synchros only” restrictions allow it. Against Branded ROLAD, Black Chaos's 3,000 ATK loses to it.</dd>
+    </dl></div>
+  </details>
+  </div>
+
+  <h3 id="cards-side">Side deck (15)</h3>
+  <div class="cxlist">
+  <details class="cx" id="c-boarder" data-idx="Inspector Boarder">
+    <summary><span class="cx-n">Inspector Boarder</span><span class="cx-c">×3</span><span class="cx-r">Going 1st: turns off their monster hand traps on your turn</span></summary>
+    <div class="cx-b"><p class="cx-t">Effect Monster · Level 4 · LIGHT · 2000</p><dl>
+      <dt>What it does</dt><dd>Each player can only activate as many monster effects per turn as there are monster card types on the field (Ritual, Fusion, Synchro, Xyz, Pendulum, Link). Can't be summoned if you control a monster.</dd>
+      <dt>Why you play it</dt><dd>Normal Summon it first: with 0 types out they can't use Ash, Ogre, Nibiru, Veiler, Fuwalos or Purulia at all. Your placed pieces are Spells and don't add types. It's strongest against Elfnote and weakest against ROLAD and Mitsurugi, whose Ritual Spells reach a type without a monster effect. <a href="#boarder">Full breakdown</a>.</dd>
+      <dt>Why 3</dt><dd>You want it in your opening hand going 1st; it comes in for 16 of 17 matchups (not the mirror).</dd>
+      <dt>Tips</dt><dd>Imperm from hand is its main answer, so use Talent's hand look on it. Seneschal's 3,000 ATK can attack over it; line F has Enlisted send Seneschal back.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-thrust" data-idx="Triple Tactics Thrust">
+    <summary><span class="cx-n">Triple Tactics Thrust</span><span class="cx-c">×3</span><span class="cx-r">Insurance after a hand trap, or free off your own Seneschal</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · 1 per turn</p><dl>
+      <dt>What it does</dt><dd>If your opponent has activated a monster effect this turn: Set a Normal Spell or Trap from your Deck (it can't be activated this turn), or, if they control a monster, add it to your hand instead.</dd>
+      <dt>Why you play it</dt><dd>Going 1st, their hand trap turns it on, and the Set mode isn't a search, so it works under Droll. Your own Opposition turns it on too: Seneschal's trigger is their monster effect and Seneschal is a monster they control, so Thrust can add Opposition or Strategy Score. That's why it also comes in going 2nd in the mirror.</dd>
+      <dt>Why 3</dt><dd>2 in every going-1st plan; 3 where Ghost Ogre comes out (Mitsurugi, Destiny HERO, Invoked). The 3rd copy is your weakest side slot (<a href="#ht-breakers">Lava Golem</a> is the candidate to replace it).</dd>
+      <dt>Tips</dt><dd>Going 1st, Set Opening to e4 after you've been hand-trapped. Don't use it to get e4 going 2nd: e4 only works from the hand on their first Standby Phase.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-talent" data-idx="Triple Tactics Talent">
+    <summary><span class="cx-n">Triple Tactics Talent</span><span class="cx-c">×1</span><span class="cx-r">Draw 2, steal a monster, or take a card from their hand</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Spell · 1 per turn</p><dl>
+      <dt>What it does</dt><dd>If your opponent has activated a monster effect during your Main Phase this turn: draw 2, take control of 1 of their monsters until the End Phase, or look at their hand and shuffle 1 card into the Deck.</dd>
+      <dt>Why you play it</dt><dd>Opposition turns it on by itself through Seneschal's trigger. Going 1st, the hand look takes away the Imperm they'd use on Boarder; going 2nd, stealing a monster helps you push for game.</dd>
+      <dt>Why 1</dt><dd>Once per turn, and the side has no room for a 2nd.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="c-verdict2" data-idx="Angelechy Verdict (2nd copy, side)">
+    <summary><span class="cx-n">Angelechy Verdict</span><span class="cx-c">+1</span><span class="cx-r">Mirror only</span></summary>
+    <div class="cx-b"><p>Trif calls Verdict “the god card in the mirror”: it counts both fields, and the mirror puts many Angelechy cards on each side. It comes in both going 1st and going 2nd against Angelechy. <a href="#c-verdict">Card details</a></p></div>
+  </details>
+
+  <details class="cx" id="c-purulia" data-idx="Mulcharmy Purulia">
+    <summary><span class="cx-n">Mulcharmy Purulia</span><span class="cx-c">×2</span><span class="cx-r">Draw each time they summon from the hand</span></summary>
+    <div class="cx-b"><p>Comes in going 2nd against decks that summon from the hand: ROLAD, Branded, Blitzclique, Yummy, Mitsurugi and more (11 plans). Bad against Ars Magna decks (Trif). <a href="#ht-purulia">More</a></p></div>
+  </details>
+
+  <details class="cx" id="c-typhoon" data-idx="Typhoon">
+    <summary><span class="cx-n">Typhoon</span><span class="cx-c">×2</span><span class="cx-r">Destroys a face-up Spell or Trap; from hand before you place anything</span></summary>
+    <div class="cx-b"><p>Mirror (hit their Bastion first), Blitzclique, Sky Striker, Invoked's Magical Meltdown, Sacred Beast, and Yummy's Anti-Spell Fragrance if you see it. From hand only if they control 2+ Spells/Traps and you control none. <a href="#ht-breakers">More</a></p></div>
+  </details>
+
+  <details class="cx" id="c-veiler" data-idx="Effect Veiler">
+    <summary><span class="cx-n">Effect Veiler</span><span class="cx-c">×2</span><span class="cx-r">Negates a monster on the field during their Main Phase</span></summary>
+    <div class="cx-b"><p>Your only side card for Elfnote, and in 10 going-2nd plans. LIGHT: only Impulse locks it. <a href="#ht-veiler">More</a></p></div>
+  </details>
+
+  <details class="cx" id="c-droll2" data-idx="Droll &amp; Lock Bird (2nd copy, side)">
+    <summary><span class="cx-n">Droll &amp; Lock Bird</span><span class="cx-c">+1</span><span class="cx-r">The 2nd copy, for search engines going 2nd</span></summary>
+    <div class="cx-b"><p>Droll is Semi-Limited, so this is your 2nd and last. It comes in going 2nd against ROLAD, Branded ROLAD, Patron, Mitsurugi, Blitz, Destiny HERO, Dark Time Wizard, Sky Striker, Invoked and Sacred Beast. <a href="#ht-droll">More</a></p></div>
+  </details>
+  </div>
+
+  <h3 id="cards-out">Not in your list, and why</h3>
+  <div class="cxlist">
+  <details class="cx" id="c-brilliant" data-idx="Angelechy Brilliant Move">
+    <summary><span class="cx-n">Angelechy Brilliant Move</span><span class="cx-c out">0</span><span class="cx-r">Win more: it needs your engine already running</span></summary>
+    <div class="cx-b"><dl>
+      <dt>What it does</dt><dd>Return a placed Angelechy to the Extra Deck, then you can Special Summon it. From the GY: banish it and send an Angelechy card from your hand or field to Special Summon an Angelechy from the Extra Deck.</dd>
+      <dt>Why it's out</dt><dd>It needs a piece already placed, so it's only good in hands that are already winning (Trif: “win more… don't play it”). DB Grinder rates it well going 2nd once your engine is established; Brian Serio used it going 2nd for OTKs.</dd>
+    </dl></div>
+  </details>
+  <details class="cx" id="c-endgame2" data-idx="Second Endgame Problem">
+    <summary><span class="cx-n">2nd Endgame Problem</span><span class="cx-c out">0</span><span class="cx-r">Two draws off one e4, but a brick otherwise</span></summary>
+    <div class="cx-b"><p>With two, one e4 at their Standby Phase draws 2 (line EG2); the Burnaby Top 4, Louisville Top 4 and iGrind 10-0 lists ran 2. Lucas Sacco: it's only relevant “when you open e4 and you're going second… besides that… a useless… brick”.</p></div>
+  </details>
+  <details class="cx" id="c-disturbance2" data-idx="More Disturbance">
+    <summary><span class="cx-n">2nd and 3rd Disturbance</span><span class="cx-c out">0</span><span class="cx-r">Opposition recycles your one copy</span></summary>
+    <div class="cx-b"><p>Disturbance is the best card for Foolish Burial Goods and Castellan to send. Duel Evolution ran 3, the 7-0 list and the Louisville Top 4 ran 2. You cut the 2nd for Endgame: Opposition's GY effect shuffles the spent copy back.</p></div>
+  </details>
+  <details class="cx" id="c-thrustmain" data-idx="Thrust in the main deck">
+    <summary><span class="cx-n">Triple Tactics Thrust in the main</span><span class="cx-c out">0</span><span class="cx-r">A going-1st card; it lives in your side</span></summary>
+    <div class="cx-b"><p>Trif's and Lucas Sacco's lists main none. Move it back to the main only if you find you're going first in most game 1s.</p></div>
+  </details>
+  <details class="cx" id="c-bishop" data-idx="Chaospawn Bishop and Witness of the Ancient">
+    <summary><span class="cx-n">Chaospawn Bishop + Witness of the Ancient</span><span class="cx-c out">0</span><span class="cx-r">A monster engine that's easier to interrupt</span></summary>
+    <div class="cx-b"><dl>
+      <dt>What they do</dt><dd>Chaospawn Bishop (Level 4 Tuner) summons a second Bishop from your hand, Deck or GY: two Level 4s for a Level 8 Synchro. Witness of the Ancient summons itself from the hand if you have a Synchro in your field or GY, then places up to 3 Synchros from your Extra Deck or GY.</dd>
+      <dt>Why they're out</dt><dd>Garrett won five locals with 3 Bishop + 1 Witness, but keeps Bishop as “a last push” because it's easier to interrupt, and lost to Elfnote. Every Bishop step is a monster effect that Ash, Veiler and Ogre can hit. You chose not to play it.</dd>
+    </dl></div>
+  </details>
+  <details class="cx" id="c-songs" data-idx="Songs of the Dominators">
+    <summary><span class="cx-n">Songs of the Dominators</span><span class="cx-c out">0</span><span class="cx-r">Clashes with your monster hand traps</span></summary>
+    <div class="cx-b"><p>A Dominus support Trap: negate a monster effect on the field and search a Dominus. From the hand it stops you using monsters in your hand, GY and banishment until the end of the next turn, which shuts off your 12 monster hand traps. That's why post-set lists cut it. You chose not to play it.</p></div>
+  </details>
+  <details class="cx" id="c-bifrost" data-idx="Rainbow Bridge Bifrost">
+    <summary><span class="cx-n">Rainbow Bridge Bifrost</span><span class="cx-c out">0</span><span class="cx-r">More Problem access, paid for with Extra Deck pieces</span></summary>
+    <div class="cx-b"><p>Banish 3 Level 10+ monsters from your Extra Deck, including a LIGHT Synchro, to add a Field Spell. Your Shatranga, Seneschal, Chaos Angel and Black-Winged Assault Dragon qualify, and Opposition can shuffle banished Angelechys back. The 7-0 list ran 3. Worth testing only if you brick often; you already have 13 starters.</p></div>
+  </details>
+  <details class="cx" id="c-called" data-idx="Called by the Grave">
+    <summary><span class="cx-n">Called by the Grave</span><span class="cx-c out">0</span><span class="cx-r">Protects your turn from their Ash or Ogre</span></summary>
+    <div class="cx-b"><p>Limited. Banish a monster in their GY and negate its effects (and copies with the same name) until the end of the next turn, so their Ash or Ghost Ogre stops working. Anthony Mistretta and Garrett main 1. It's the flex pick if you keep losing going 1st to a single hand trap; Boarder does that job after siding.</p></div>
+  </details>
+  <details class="cx" id="c-goat" data-idx="The Black Goat Laughs">
+    <summary><span class="cx-n">The Black Goat Laughs</span><span class="cx-c out">0</span><span class="cx-r">Names one boss monster</span></summary>
+    <div class="cx-b"><p>Declare a monster name: neither player can Special Summon it this turn except from the GY. From the GY: stop on-field effects of a named monster this turn. Mistretta mains 1. Too narrow for your list.</p></div>
+  </details>
+  <details class="cx" id="c-legatia" data-idx="Centur-Ion Legatia">
+    <summary><span class="cx-n">Centur-Ion Legatia</span><span class="cx-c out">Extra</span><span class="cx-r">Draws and destroys; protects Boarder in battle</span></summary>
+    <div class="cx-b"><p>Level 12 LIGHT Synchro (Enlisted + Shatranga or Seneschal). When Special Summoned: draw 1, then destroy their highest-ATK monster. Your monsters with 2,000 or less ATK can't be destroyed by battle, which covers Boarder. Louisville Top 4, MBT and DB Grinder play it. The usual swap for your 2nd Seneschal.</p></div>
+  </details>
+  <details class="cx" id="c-auxila" data-idx="Centur-Ion Auxila">
+    <summary><span class="cx-n">Centur-Ion Auxila</span><span class="cx-c out">Extra</span><span class="cx-r">Your face-up Spells and Traps can't be destroyed</span></summary>
+    <div class="cx-b"><p>Level 12 DARK Synchro. While it's out, face-up cards in your Spell &amp; Trap Zone can't be destroyed by card effects, which covers Bastion too. Its search needs Centur-Ion cards, which you don't run. Brian Serio played it over Chaos Angel.</p></div>
+  </details>
+  <details class="cx" id="c-hyperion" data-idx="Masterflare Hyperion">
+    <summary><span class="cx-n">Masterflare Hyperion</span><span class="cx-c out">Extra</span><span class="cx-r">A quick-effect banish for Fairy decks</span></summary>
+    <div class="cx-b"><p>Level 10 LIGHT Synchro with Fairy non-Tuners (every Angelechy is a Fairy). When they activate a card or effect, banish a Fairy from your hand or GY to banish a card on the field. Louisville Top 4. Your Fairies live in the Extra Deck, so you only have fuel once some are in the GY.</p></div>
+  </details>
+  <details class="cx" id="c-odin" data-idx="Odin, Father of the Aesir">
+    <summary><span class="cx-n">Odin, Father of the Aesir</span><span class="cx-c out">Extra</span><span class="cx-r">The biggest Fairy Synchro for Seneschal's free summon</span></summary>
+    <div class="cx-b"><p>Seneschal's effect summons a Fairy Synchro with its effects negated, ignoring materials, so Odin is just a 4,000 ATK body. The 7-0 list played it.</p></div>
+  </details>
+  </div>
+</section>
+
+<section id="handtraps">
+  <div class="sec-head">
+    <div class="eyebrow">Learn · interaction</div>
+    <h2>Hand traps &amp; board breakers</h2>
+  </div>
+  <p class="prose">A hand trap is a card you use from your hand during your opponent's turn. Your 40 has <b>24 interruptions</b>: 12 monster hand traps, 9 Dominus Traps and 3 Opening to e4. With 24 you open 3+ going second 84% of the time; most siding plans take you to 27 (93%). This page covers when to use each one, why you run that many and what would change the count. After that come hand traps outside your list, and the cards that break a board you couldn't stop.</p>
+  <nav class="jump" aria-label="On this page">
+    <a href="#ht-rules">3 rules</a><a href="#ht-matrix">By matchup</a><a href="#ht-yours">Your hand traps</a><a href="#ht-out">Not in your list</a><a href="#ht-breakers">Board breakers</a><a href="#ht-change">What would change them</a>
+  </nav>
+
+  <h3 id="ht-rules">Three rules before you use any of them</h3>
+  <div class="grid2">
+    <div class="panel"><h4>1 · Dominus from hand locks Attributes for the whole duel</h4>
+      <div class="tbl"><table>
+        <thead><tr><th>From hand</th><th>Locks</th><th>Your cards it shuts off</th></tr></thead>
+        <tbody>
+          <tr><td>Impulse</td><td>LIGHT · EARTH · WIND</td><td>Ghost Ogre, Nibiru, Veiler, Fuwalos, Droll, and every Angelechy monster effect (Enlisted's banish and return, the pieces' banishes)</td></tr>
+          <tr><td>Purge</td><td>DARK · WATER · FIRE</td><td>Ash, Purulia, Seneschal if you control it</td></tr>
+          <tr><td>Spark</td><td>EARTH · WATER · FIRE · WIND</td><td>Ash, Fuwalos, Droll, Purulia; nothing LIGHT</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">So: monster hand traps first, then Spark or Purge, Impulse last. Set Dominus never lock. Attributes: Ash FIRE · Ogre LIGHT · Fuwalos WIND · Nibiru LIGHT · Droll WIND · Veiler LIGHT · Purulia WATER.</p>
+    </div>
+    <div class="panel"><h4>2 · “You control no cards” cards come before your e4</h4>
+      <p>Fuwalos, Purulia and Mulcharmy Meowls only work while you control no cards. Imperm from the hand and Evenly Matched need the same, Typhoon from the hand needs no Spells or Traps on your side, and Lightning Storm needs no face-up cards.</p>
+      <p>Your Standby Phase Opening to e4 gives you cards. Use these first, then e4.</p>
+    </div>
+    <div class="panel"><h4>3 · Once per turn, by name</h4>
+      <p>Ash, Ogre, Nibiru and each Dominus work once per turn, and a 2nd Droll adds nothing to the first. After one Mulcharmy you can activate only one other Mulcharmy that turn, so Fuwalos + Purulia is your maximum.</p>
+      <p class="note">Their copies follow the same rules, which is why baiting matters: make them use Ash on Strategy Score, not on Castellan's send.</p>
+    </div>
+  </div>
+
+  <h3 id="ht-matrix">Which hand trap, which matchup</h3>
+  <p class="prose note">From the matchup deep dives and your siding plans. “—” means the research has no clear read.</p>
+  <div class="tbl matrix"><table>
+    <thead><tr><th>Card</th><th>Elfnote</th><th>ROLAD</th><th>Mirror</th><th>Patron</th><th>Branded ROLAD</th><th>Mitsurugi</th><th>Yummy</th></tr></thead>
+    <tbody>
+      <tr><td><a href="#ht-ash">Ash</a></td><td><span class="rt r2">Some</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-ogre">Ghost Ogre</a></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-fuwalos">Fuwalos</a></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-nibiru">Nibiru</a></td><td><span class="rt r3">Good</span></td><td><span class="rt r2">Some</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-droll">Droll</a></td><td><span class="rt r1">Weak</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-impulse">Impulse</a></td><td><span class="rt r2">Some</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td></tr>
+      <tr><td><a href="#ht-purge">Purge</a></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr><td><a href="#ht-spark">Spark</a></td><td><span class="rt r2">Some</span></td><td><span class="rt r0">—</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r0">—</span></td><td><span class="rt r0">—</span></td></tr>
+      <tr class="side"><td><a href="#ht-veiler">Veiler</a> <small>side</small></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r0">—</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td></tr>
+      <tr class="side"><td><a href="#ht-purulia">Purulia</a> <small>side</small></td><td><span class="rt r1">Weak</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r1">Weak</span></td><td><span class="rt r4">Best</span></td><td><span class="rt r3">Good</span></td><td><span class="rt r3">Good</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="ht-yours">Your hand traps</h3>
+  <div class="cxlist">
+  <details class="cx" id="ht-ash" data-idx="Ash Blossom &amp; Joyous Spring (hand trap)">
+    <summary><span class="cx-n">Ash Blossom &amp; Joyous Spring</span><span class="cx-c">×3</span><span class="cx-r">The most flexible hand trap in the format</span></summary>
+    <div class="cx-b"><p class="cx-t">Tuner · FIRE · once per turn</p><dl>
+      <dt>Stops</dt><dd>Any effect that adds a card from the Deck to the hand, Special Summons from the Deck, or sends from the Deck to the GY.</dd>
+      <dt>Best against</dt><dd>Every search engine: Elfnote's Lucina and Ars Magna searches, ROLAD's Griffoh, Ragged Records and Curtain, the mirror's Castellan send and Strategy Score, Mitsurugi's Saji and Aramasa, Yummy's Cupsy.</dd>
+      <dt>Weak against</dt><dd>One Ash alone against Elfnote: they play through it. Pair it with Fuwalos or Ghost Ogre.</dd>
+      <dt>Why 3</dt><dd>It's live in every matchup, and every opponent sides 3 against you too.</dd>
+      <dt>What would change it</dt><dd>Nothing realistic; only a format where the top decks stop searching.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-ogre" data-idx="Ghost Ogre &amp; Snow Rabbit (hand trap)">
+    <summary><span class="cx-n">Ghost Ogre &amp; Snow Rabbit</span><span class="cx-c">×3</span><span class="cx-r">Destroys a card that activates on the field</span></summary>
+    <div class="cx-b"><p class="cx-t">Tuner · LIGHT · once per turn</p><dl>
+      <dt>Stops</dt><dd>When a monster on the field activates its effect, or a Spell/Trap already face-up on the field does, send Ogre to destroy that card. The effect still resolves; you take away the card.</dd>
+      <dt>Best against</dt><dd>Elfnote: Lucina or Welcome Home (Tyler Holland: “Nib and Ogre was MVP for sure”). The mirror: your best card, so hit the first piece they place. Yummy: Snatchy. ROLAD: Mind Shuffle.</dd>
+      <dt>Weak against</dt><dd>Mitsurugi (Saji gets Tributed instead and searches), Destiny HERO (destroying Dark City at Midnight is their combo) and Invoked. All 3 come out in those matchups.</dd>
+      <dt>Why 3</dt><dd>It's LIGHT, so Spark from hand doesn't lock it, and it beats Droll in your two most important matchups. That's why it's 3 Ogre + 1 Droll, not 2 + 2.</dd>
+      <dt>What would change it</dt><dd>A local field heavy on Mitsurugi, Destiny HERO or Invoked: then 2 Ogre + 2 Droll (the Burnaby Top 4 split).</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-fuwalos" data-idx="Mulcharmy Fuwalos (hand trap)">
+    <summary><span class="cx-n">Mulcharmy Fuwalos</span><span class="cx-c">×3</span><span class="cx-r">Makes every Deck and Extra Deck summon draw you a card</span></summary>
+    <div class="cx-b"><p class="cx-t">WIND · needs you to control no cards</p><dl>
+      <dt>Stops</dt><dd>Nothing directly. For the rest of the turn you draw 1 each time they Special Summon from the Deck or Extra Deck; in the End Phase you shuffle back down to their card count + 6. They either stop their combo or hand you a new hand.</dd>
+      <dt>Best against</dt><dd>Any Extra Deck combo: Elfnote (every creator's pick) and Power Patron (DB Grinder: it hurts them most). Trif: great in every matchup.</dd>
+      <dt>Weak against</dt><dd>Blitzclique (everything comes from the hand). Dead going 1st, because you'll control cards; it's the first card you side out.</dd>
+      <dt>Timing</dt><dd>At their Standby Phase before your e4. Once you control a card, it's dead.</dd>
+      <dt>Why 3</dt><dd>Next to e4, it's your best going-2nd card.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-nibiru" data-idx="Nibiru, the Primal Being (hand trap)">
+    <summary><span class="cx-n">Nibiru, the Primal Being</span><span class="cx-c">×2</span><span class="cx-r">Wipes their monsters after their 5th summon</span></summary>
+    <div class="cx-b"><p class="cx-t">LIGHT · once per turn</p><dl>
+      <dt>Stops</dt><dd>During the Main Phase, once they've Normal or Special Summoned 5+ monsters that turn: Tribute every face-up monster on the field and summon Nibiru, plus a Primal Being Token on their side.</dd>
+      <dt>Best against</dt><dd>Decks that summon 5+ times: Elfnote (time it for the 5th summon), Power Patron, Yummy, Branded ROLAD, Maliss. With Castellan placed they can't chain anything to it (Lucas Sacco: “this deck is insane with Nibiru”).</dd>
+      <dt>Weak against</dt><dd>The mirror, where it does nothing. Sky Striker. ROLAD once Dragoon is out. Elfnote's Welcome Home line is built to play through it (DB Grinder, Lucas Sacco).</dd>
+      <dt>Watch out</dt><dd>It also Tributes your monsters, including the Enlisted your Standby e4 left on the field.</dd>
+      <dt>Why 2</dt><dd>A 2nd copy in the same turn does nothing, and your own testing found it underwhelming. You run 2 Nibiru + 1 Droll.</dd>
+      <dt>What would change it</dt><dd>More Elfnote and Patron: 3rd Nibiru (side first). More ROLAD and Mitsurugi: Droll instead.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-droll" data-idx="Droll &amp; Lock Bird (hand trap)">
+    <summary><span class="cx-n">Droll &amp; Lock Bird</span><span class="cx-c">×1 <small>+1 side</small></span><span class="cx-r">After their first search, no more searches that turn</span></summary>
+    <div class="cx-b"><p class="cx-t">WIND · Semi-Limited (2 max)</p><dl>
+      <dt>Stops</dt><dd>After they add a card from the Main Deck to the hand outside the Draw Phase, neither player can add from the Main Deck for the rest of the turn.</dd>
+      <dt>Best against</dt><dd>Search engines: ROLAD (Trif: good here), Power Patron (DB Grinder: hurts them most), Mitsurugi, Destiny HERO, Dark Time Wizard, Sky Striker, Sacred Beast.</dd>
+      <dt>Weak against</dt><dd>Elfnote (Tinia, Regina and June Pride play through it; use it only alongside Veiler, and let them search once first), the mirror (Shatranga adds from the GY and Opposition recycles), pure Branded.</dd>
+      <dt>Watch out</dt><dd>It stops your own searches for the rest of that turn too, so finish your Standby e4 searches first.</dd>
+      <dt>Why 1 + 1</dt><dd>Semi-Limited. The main copy covers search decks in game 1; the 2nd comes in going 2nd in 10 plans.</dd>
+      <dt>What would change it</dt><dd>If Elfnote drops off, 2 in the main (the Burnaby Top 4 ran 2 Droll + 2 Ogre).</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-impulse" data-idx="Dominus Impulse (hand trap)">
+    <summary><span class="cx-n">Dominus Impulse</span><span class="cx-c">×3</span><span class="cx-r">Negates an effect that Special Summons</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · from hand if they control a card · 1 per turn</p><dl>
+      <dt>Stops</dt><dd>Negates an effect that Special Summons, then destroys that card if you have a Trap in your GY.</dd>
+      <dt>Best against</dt><dd>Elfnote's Past Lull and Welcome Home, ROLAD's Ritual Spell, Curtain and Gaze, the mirror's e4, Opposition and Problem (keep it for Opposition), the Mitsurugi Ritual, Patron's Nervedo and Theorealized Medius.</dd>
+      <dt>The cost</dt><dd>From the hand it locks LIGHT, EARTH and WIND for the duel: Ghost Ogre, Nibiru, Veiler, Fuwalos, Droll and every Angelechy monster effect. Set it whenever you can (going 1st, Thrust can Set it from the Deck); from the hand, use it last.</dd>
+      <dt>Why 3</dt><dd>Stopping summons matters in every matchup, and it's a Trap Boarder doesn't limit. Tyler Holland found Nibiru and Ogre more valuable than Impulse and Spark against the best decks.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-purge" data-idx="Dominus Purge (hand trap)">
+    <summary><span class="cx-n">Dominus Purge</span><span class="cx-c">×3</span><span class="cx-r">Negates a search</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · from hand if they control a card · 1 per turn</p><dl>
+      <dt>Stops</dt><dd>Negates an effect that adds a card from the Deck to the hand, then destroys that card if you have a Trap in your GY.</dd>
+      <dt>Best against</dt><dd>The same targets as Ash, but it's a Trap: Boarder doesn't limit it, and Elfnote's Lucina search, ROLAD's Pre-Preparation and Ragged Records, and the mirror's Strategy Score, Destrier and Shatranga searches all fall to it.</dd>
+      <dt>The cost</dt><dd>From hand it locks DARK, WATER and FIRE: Ash and Purulia.</dd>
+      <dt>Why 3</dt><dd>It's a second Ash.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-spark" data-idx="Dominus Spark (hand trap)">
+    <summary><span class="cx-n">Dominus Spark</span><span class="cx-c">×3</span><span class="cx-r">Banishes one of their monsters</span></summary>
+    <div class="cx-b"><p class="cx-t">Normal Trap · 1 per turn</p><dl>
+      <dt>Stops</dt><dd>Target a monster they control and banish it; then, if you have no Traps in your GY, they can Special Summon a monster from their hand. From the hand only on a turn they've activated a monster effect in the hand or GY. A Set Spark has no condition.</dd>
+      <dt>Best against</dt><dd>Blitzclique (live all game), Destiny HERO (Dark Law, Doom Overlord), Patron (Junoldo's negate-all Synchro).</dd>
+      <dt>Weak against</dt><dd>The mirror going 2nd (their first turn rarely activates a monster effect in the hand or GY), Sky Striker, Dark Time Wizard (Jinzo). It comes out in those plans. Black Chaos is unaffected while a Ritual Spell is in their GY.</dd>
+      <dt>The cost</dt><dd>From hand it locks EARTH, WATER, FIRE and WIND: Ash, Fuwalos, Droll, Purulia. It locks nothing LIGHT, so Ogre, Nibiru, Veiler and every Angelechy stay usable. It's the friendliest Dominus to use from the hand.</dd>
+      <dt>Why 3</dt><dd>It's been in the consensus main since Oct 13.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-veiler" data-idx="Effect Veiler (hand trap)">
+    <summary><span class="cx-n">Effect Veiler</span><span class="cx-c">side ×2</span><span class="cx-r">Negates a monster on the field during their Main Phase</span></summary>
+    <div class="cx-b"><p class="cx-t">Tuner · LIGHT</p><dl>
+      <dt>Stops</dt><dd>During their Main Phase, target an Effect Monster they control and negate its effects until the end of the turn.</dd>
+      <dt>Best against</dt><dd>Elfnote (your only side card for it, and the partner Droll needs there), Power Patron, Yummy (Snatchy), Mitsurugi (Futsu, Saji, revived monsters), Branded (the first Albaz or Aluber step), Dark Time Wizard (Jinzo's trigger), Sky Striker.</dd>
+      <dt>Weak against</dt><dd>Blitzclique (their effects happen in the hand) and the mirror.</dd>
+      <dt>Why 2 in the side</dt><dd>It comes in going 2nd in 10 plans. LIGHT, so only Impulse locks it.</dd>
+      <dt>What would change it</dt><dd>If Elfnote grows further: a 3rd Veiler. Trif pairs Droll with “baby” hand traps like Veiler and Ash.</dd>
+    </dl></div>
+  </details>
+
+  <details class="cx" id="ht-purulia" data-idx="Mulcharmy Purulia (hand trap)">
+    <summary><span class="cx-n">Mulcharmy Purulia</span><span class="cx-c">side ×2</span><span class="cx-r">Draw each time they summon from the hand</span></summary>
+    <div class="cx-b"><p class="cx-t">WATER · needs you to control no cards</p><dl>
+      <dt>Stops</dt><dd>Like Fuwalos, but for monsters Normal or Special Summoned from the hand.</dd>
+      <dt>Best against</dt><dd>Branded ROLAD (Black Chaos, Skull Archfiend and Incredible Ecclesia come from the hand), ROLAD (Black Chaos, Souls, Kuriboh, Diabellstar), Blitzclique (with Impulse, your best card), Yummy, Mitsurugi, Fairy Tail, Destiny HERO, Invoked (Aleister's Normal Summon), Maliss, Lunalight.</dd>
+      <dt>Weak against</dt><dd>Ars Magna decks: Elfnote and Patron (Trif). The mirror.</dd>
+      <dt>Why 2 in the side</dt><dd>It's in 11 going-2nd plans, and you wanted to keep it. With Fuwalos the same turn, that's your 2 Mulcharmies.</dd>
+      <dt>What would change it</dt><dd>More ROLAD and Branded: a 3rd copy.</dd>
+    </dl></div>
+  </details>
+  </div>
+
+  <h3 id="ht-out">Hand traps not in your list</h3>
+  <p class="prose note">What each does, where it would help, and what it costs this deck. None of these are recommendations to add; they're here so you know them, and know them when they're used against you.</p>
+  <div class="cxlist">
+  <details class="cx" id="ht-imperm" data-idx="Infinite Impermanence">
+    <summary><span class="cx-n">Infinite Impermanence</span><span class="cx-c out">0</span><span class="cx-r">Negates a face-up monster; from hand only if you control no cards</span></summary>
+    <div class="cx-b"><p>Target a face-up monster they control and negate its effects this turn; if it was Set, it also negates Spells and Traps in its column. From the hand only while you control no cards, so after your Standby e4 it has to be Set. Your Dominus Traps already fill the Trap slots. Opponents use it on your Boarder, and Set in an empty column it can lock your last open zone.</p></div>
+  </details>
+  <details class="cx" id="ht-belle" data-idx="Ghost Belle &amp; Haunted Mansion">
+    <summary><span class="cx-n">Ghost Belle &amp; Haunted Mansion</span><span class="cx-c out">0</span><span class="cx-r">Stops GY effects that summon, recycle or banish</span></summary>
+    <div class="cx-b"><dl>
+      <dt>What it does</dt><dd>Negates an effect that adds a card from the GY to the hand, Deck or Extra Deck, Special Summons from the GY, or banishes from the GY. EARTH Tuner, once per turn.</dd>
+      <dt>Where it helps</dt><dd>Elfnote and Patron (Medius's GY summon, Theorealize, Past Lull, Vidolium banishing the GYs), Mitsurugi (Great Purification), the mirror (Opposition's GY shuffle). The Louisville Top 4 sided 3.</dd>
+      <dt>The cost</dt><dd>EARTH: Impulse and Spark from hand lock it. It doesn't stop their main-line searches. Verdict's GY effect pays its banish as a cost, so Belle can't stop that one against you.</dd>
+    </dl></div>
+  </details>
+  <details class="cx" id="ht-lancea" data-idx="Artifact Lancea">
+    <summary><span class="cx-n">Artifact Lancea</span><span class="cx-c out">0</span><span class="cx-r">No banishing for the rest of the turn</span></summary>
+    <div class="cx-b"><dl>
+      <dt>What it does</dt><dd>On the opponent's turn, Tribute it from your hand: neither player can banish cards for the rest of the turn. LIGHT.</dd>
+      <dt>Where it helps</dt><dd>Maliss (their engine banishes itself), ROLAD's banish removal on your board going 1st (Black Chaos, Black Luster Soldier), the mirror (Verdict's GY placement pays a banish; Enlisted's and Castellan's banishes).</dd>
+      <dt>The cost</dt><dd>It also turns off your own Spark, Endgame's 4+ banish, Castellan's banish and Verdict's GY placement that turn. It's one of the two likeliest cards behind Trif's “number one hand trap against this deck” (a guess; he kept it for a paid course). If it's used on your turn, your placements and searches still work; Verdict's banishes don't.</dd>
+    </dl></div>
+  </details>
+  <details class="cx" id="ht-crow" data-idx="D.D. Crow">
+    <summary><span class="cx-n">D.D. Crow</span><span class="cx-c out">0</span><span class="cx-r">Banishes one card from their GY</span></summary>
+    <div class="cx-b"><dl>
+      <dt>What it does</dt><dd>Discard it to banish a card in the opponent's GY. DARK.</dd>
+      <dt>Where it helps</dt><dd>ROLAD: banishing their Ritual Spell turns off Black Chaos's immunity. Also Light and Darkness Ritual, Skull Archfiend, Medius, and the mirror's Verdict waiting in the GY. 7 of 29 pre-set Angelechy side decks ran it.</dd>
+      <dt>The cost</dt><dd>Purge from hand locks it. It's the other likely “secret hand trap” against you: if it's their turn when Castellan sends Verdict, they can banish Verdict before you use it.</dd>
+    </dl></div>
+  </details>
+  <details class="cx" id="ht-meowls" data-idx="Mulcharmy Meowls">
+    <summary><span class="cx-n">Mulcharmy Meowls</span><span class="cx-c out">0</span><span class="cx-r">Draw each time they summon from the GY or banishment</span></summary>
+    <div class="cx-b"><p>The third Mulcharmy: same rules as Fuwalos (you control no cards, two Mulcharmies a turn at most). It fits Ars Magna decks, where Medius comes back from the GY and Ars Magna returns from banishment. The Louisville Top 4 sided 2. EARTH: Impulse and Spark lock it.</p></div>
+  </details>
+  <details class="cx" id="ht-meister" data-idx="Skull Meister">
+    <summary><span class="cx-n">Skull Meister</span><span class="cx-c out">0</span><span class="cx-r">Negates an effect activated in their GY</span></summary>
+    <div class="cx-b"><p>Discard it when a card effect activates in the opponent's GY to negate it. It hits Medius, Past Lull and Theorealize, and against you Verdict's, Disturbance's and Opposition's GY effects. Trif names it as an answer to Angelechy. DARK: Purge from hand locks it.</p></div>
+  </details>
+  <details class="cx" id="ht-retaliating" data-idx="Retaliating &quot;C&quot;">
+    <summary><span class="cx-n">Retaliating “C”</span><span class="cx-c out">0</span><span class="cx-r">Punishes Spells that summon, but hurts you more</span></summary>
+    <div class="cx-b"><p>Summon it from the hand when they activate a Spell Card that Special Summons (ROLAD's Ritual Spells and Gaze, Elfnote's Past Lull). While it's face-up, cards sent to the GY are banished instead. That also banishes your own Verdict and Disturbance when Castellan or Foolish Burial Goods send them, so their GY effects never happen. EARTH.</p></div>
+  </details>
+  <details class="cx" id="ht-crossout" data-idx="Crossout Designator">
+    <summary><span class="cx-n">Crossout Designator</span><span class="cx-c out">0</span><span class="cx-r">Going 1st: turns off one of their hand traps by name</span></summary>
+    <div class="cx-b"><p>Limited Quick-Play. Name a card, banish a copy of it from your Main Deck, and every copy they have is negated this turn. Name Ash (you run 3) or Impulse to protect your turn. It's a Spell, so Boarder doesn't touch it; it's an alternative to Called by the Grave.</p></div>
+  </details>
+  <details class="cx" id="ht-mourner" data-idx="Ghost Mourner &amp; Moonlit Chill">
+    <summary><span class="cx-n">Ghost Mourner &amp; Moonlit Chill</span><span class="cx-c out">0</span><span class="cx-r">Negates a monster they summon</span></summary>
+    <div class="cx-b"><p>When they Special Summon, discard it to negate one of those monsters this turn; if that monster leaves the field, its controller takes damage equal to its ATK. Generic, but WIND, so Impulse and Spark lock it, and Veiler already does the job from the side.</p></div>
+  </details>
+  <details class="cx" id="ht-bystial" data-idx="Bystial Magnamhut">
+    <summary><span class="cx-n">Bystials</span><span class="cx-c out">0</span><span class="cx-r">Banish a LIGHT or DARK monster in either GY</span></summary>
+    <div class="cx-b"><p>Bystial Magnamhut (Limited) and friends banish a LIGHT or DARK monster from either GY to summon themselves, as a Quick Effect if the opponent controls a monster. They hit Dark Magician and Black Chaos lines and Branded's Albaz. Elfnote sides them. DARK: Purge locks them, and they don't fit a deck with no monster engine.</p></div>
+  </details>
+  <details class="cx" id="ht-banned" data-idx="Maxx C and Dimension Shifter (Forbidden)">
+    <summary><span class="cx-n">Maxx “C” · Dimension Shifter</span><span class="cx-c out">Forbidden</span><span class="cx-r">Not legal in the TCG</span></summary>
+    <div class="cx-b"><p>Both are Forbidden in the TCG. The Mulcharmies are this format's version of Maxx “C”.</p></div>
+  </details>
+  </div>
+
+  <h3 id="ht-breakers">Board breakers</h3>
+  <p class="prose">You already have three: <b>Verdict at 5+</b> (banishes everything, no targeting), <b>Kusanagi</b> (7,000 ATK, attacks every monster, piercing) and <b>Black-Winged Assault Dragon</b> (700 damage per monster effect; with 4 counters it destroys every card on the field). These are the cards people side to break a board they couldn't stop.</p>
+  <div class="tbl breakers"><table>
+    <thead><tr><th>Card</th><th>What it does</th><th>Fit for Angelechy</th><th>Best against</th></tr></thead>
+    <tbody>
+      <tr id="br-typhoon"><td><b>Typhoon</b><br><span class="tag t-known">your side ×2</span></td><td>Destroy 1 face-up Spell or Trap. From the hand only if they control 2+ Spells/Traps and you control none.</td><td>Good, but only before you place anything (it's dead after your Standby e4).</td><td>Mirror (Bastion first), Blitzclique, Sky Striker, Invoked's Magical Meltdown, Anti-Spell Fragrance</td></tr>
+      <tr id="br-golem"><td><b>Lava Golem</b><br><span class="tag t-new">best candidate</span></td><td>Special Summon it from your hand to their field by Tributing 2 of their monsters. They take 1,000 at each of their Standby Phases.</td><td>Excellent. It's a summon, not an activated effect, and it doesn't target, so Black Chaos, Dragoon and Mirrorjade can't stop it, and your Dominus locks don't apply. You can't Normal Summon that turn, which you rarely do going 2nd. They keep a 3,000 ATK monster.</td><td>ROLAD, Branded ROLAD, a finished Elfnote or Patron board</td></tr>
+      <tr id="br-sphere"><td><b>The Winged Dragon of Ra – Sphere Mode</b></td><td>Normal Summon it to their field by Tributing 3 of their monsters; it can't attack or be targeted and comes back to you at the end of the next turn.</td><td>Fair. Uses your Normal Summon and needs 3 monsters; poor in the mirror, where their board is mostly placed Spells.</td><td>Elfnote and Patron Synchro boards</td></tr>
+      <tr id="br-kaiju"><td><b>Kaiju</b> (Dogoran, Gameciel)</td><td>Special Summon to their field by Tributing 1 of their monsters. Only 1 Kaiju per player.</td><td>Fair. A cheaper 1-for-1 than Lava Golem; good against one boss.</td><td>ROLAD's single Black Chaos or Dragoon</td></tr>
+      <tr id="br-trunade"><td><b>Hey, Space Trunade!</b></td><td>Normal Spell: return up to 2 cards on the field to the hand, then each player puts that many cards from their hand on the bottom of their Deck. Doesn't target or destroy.</td><td>Good. Extra Deck monsters go back to the Extra Deck, so against Synchro and Fusion boards they put nothing back. Against you it bounces placed pieces straight past Bastion; Elfnote sides 2 for you.</td><td>Elfnote boards, the mirror</td></tr>
+      <tr id="br-raigeki"><td><b>Raigeki</b></td><td>Destroy every monster they control. Unlimited in the TCG.</td><td>Fair. Black Chaos ignores it while a Ritual Spell is in their GY, and Dragoon can negate it.</td><td>Elfnote and Patron monster boards</td></tr>
+      <tr id="br-darkhole"><td><b>Dark Hole</b></td><td>Destroy every monster on the field.</td><td>Fair. Your placed pieces are Spells and survive; if it destroys your Enlisted, Problem can bring a piece back.</td><td>Same as Raigeki</td></tr>
+      <tr id="br-duster"><td><b>Harpie's Feather Duster</b> <small>Limited</small></td><td>Destroy every Spell and Trap they control.</td><td>Fair. In the mirror Bastion protects their other pieces, so it mostly hits Bastion and their Set Dominus.</td><td>Floodgates (Anti-Spell Fragrance, Mistaken Arrest), Fairy Tail, Branded</td></tr>
+      <tr id="br-droplet"><td><b>Forbidden Droplet</b></td><td>Send any number of other cards from your hand or field; that many of their Effect Monsters get half ATK and lose their effects this turn. They can't respond with cards of the same type you sent.</td><td>Good for pushing for game; it doesn't stop damage. A placed Angelechy sent as cost should count as a Monster Card, which would stop monster-effect responses (check with a judge).</td><td>Elfnote, Patron, any negate-heavy board</td></tr>
+      <tr id="br-evenly"><td><b>Evenly Matched</b></td><td>At the end of your Battle Phase, if they control more cards, they banish face-down until it's even. From the hand only if you control no cards.</td><td>Poor. After your Standby e4 you control cards, so it has to be Set a turn ahead.</td><td>Elfnote, ROLAD, Patron</td></tr>
+      <tr id="br-storm"><td><b>Lightning Storm</b></td><td>If you control no face-up cards: destroy all their Attack Position monsters, or all their Spells and Traps.</td><td>Poor. It clashes with your Standby e4 and Problem.</td><td>Decks you face without your engine</td></tr>
+      <tr id="br-drnm"><td><b>Dark Ruler No More</b></td><td>Negate every face-up monster they control this turn; they take no damage this turn.</td><td>Poor for you. It cancels the OTK you'd use it for.</td><td>—</td></tr>
+      <tr id="br-cyclone"><td><b>Cosmic Cyclone</b></td><td>Pay 1,000 LP, banish 1 Spell or Trap.</td><td>Not in your list (you passed on it). Banishing gets past Bastion.</td><td>Mirror, floodgates</td></tr>
+      <tr id="br-bandit"><td><b>The Great Gallant Bandit</b></td><td>Tribute Summon it by Tributing monsters from your hand or their field while you control no monsters. When Normal Summoned, it negates effects from the hand, GY or banishment.</td><td>Fair. Anthony Mistretta sided 3. DB Grinder says it's out of main decks this format.</td><td>Mitsurugi, rogue decks</td></tr>
+      <tr id="br-talent"><td><b>Triple Tactics Talent</b><br><span class="tag t-known">your side</span></td><td>Take control of one of their monsters until the End Phase (or draw 2).</td><td>Good. Your own Opposition turns it on.</td><td>Any board with one big monster</td></tr>
+      <tr id="br-sloth"><td><b>Pot of Sloth</b></td><td>Draw cards equal to the cards they control, then put all but 1 on the bottom.</td><td>Good in the mirror (their board is many cards). Ash, Purge and an earlier Droll stop it; Destrier burns you 500.</td><td>Mirror, any big board</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="ht-change">What would change your hand traps</h3>
+  <div class="grid2">
+    <div class="panel"><h4>More Elfnote</h4><p>Ghost Ogre, Fuwalos, Nibiru and Veiler matter most; Droll is your weakest card and Purulia is bad. First adds: a 3rd Veiler or a 3rd Nibiru in the side.</p></div>
+    <div class="panel"><h4>More ROLAD or Branded ROLAD</h4><p>Droll and Purulia go up; Nibiru only works before Dragoon. Add Lava Golem to the side; D.D. Crow if Black Chaos keeps landing.</p></div>
+    <div class="panel"><h4>More mirrors</h4><p>Ghost Ogre, Typhoon and the 2nd Verdict; Nibiru, Veiler, Purulia, Droll and Spark come out going 2nd, for Thrust and Talent. Pot of Sloth or Hey, Space Trunade! if you need more.</p></div>
+    <div class="panel"><h4>More Mitsurugi, Destiny HERO or Invoked</h4><p>Ghost Ogre comes out; Droll comes in. If they're common locally, go to 2 Ogre + 2 Droll in the main.</p></div>
+    <div class="panel"><h4>Opponents siding Lancea, Crow or Skull Meister against you</h4><p>Your Verdict and Disturbance GY effects get stopped. Keep Bastion placed early, use Verdict's GY effect on your own turn when you can, and count before you commit.</p></div>
+    <div class="panel"><h4>Fewer search decks overall</h4><p>Droll and Purge lose value; Veiler, Ogre and Nibiru gain it. That's the direction Tyler Holland's “Nib and Ogre over Impulse and Spark” points.</p></div>
+  </div>
+</section>
+<!-- /v3-learn -->
 <section id="deck">
   <div class="sec-head">
     <div class="eyebrow">What you're working with</div>
@@ -591,7 +1498,7 @@ section.match{gap:16px}
     <ol class="steps">
       <li><span><b>Opposition</b>: Special Summon <b>Seneschal</b> to their Main Monster Zone and place <b>Bastion</b>. Your Bastion trigger and their mandatory Seneschal trigger chain together. Seneschal's effect lets <em>you</em> Special Summon a Fairy Synchro too: take <b>Destrier #2</b> (negated). Its body counts for Verdict and is Kusanagi material later.</span></li>
       <li><span><b>Bastion</b> places <b>Shatranga</b>. Shatranga adds <b>Verdict</b> from the Deck. This is the line's only search that matters.</span></li>
-      <li><span><b>Problem</b>: discard a spare Spell/Trap (ideally Brilliant Move or Disturbance, for their GY effects) → Special Summon <b>Enlisted</b> and place <b>Destrier</b>. Destrier adds Strategy Score, which adds Opening to e4 or a second Verdict.</span></li>
+      <li><span><b>Problem</b>: discard a spare Spell/Trap (ideally Disturbance, for its GY effect) → Special Summon <b>Enlisted</b> and place <b>Destrier</b>. Destrier adds Strategy Score, which adds Opening to e4 or a second Verdict.</span></li>
       <li><span><b>Set Verdict</b>. The count is now Seneschal + Destrier #2 + Enlisted + Bastion + Shatranga + Destrier = <b>6</b>. On their turn, after they commit, Verdict banishes everything they control.</span></li>
     </ol>
     <p class="thru"><b>Gets through:</b> Ash (any one search), Droll (once Verdict is in hand nothing else needs the Deck), Veiler, Imperm, Nibiru, and Ghost Ogre on Bastion (Shatranga still lands; Bastion protects every <em>other</em> Angelechy on the field from destruction, including their Seneschal). <b>Loses to:</b> Impulse on Opposition plus a second answer to Problem. <b>Against their Fuwalos:</b> skip Destrier #2 to give one fewer draw.</p>
@@ -617,13 +1524,13 @@ section.match{gap:16px}
       <li><span><b>Verdict (GY)</b>: send Enlisted, which frees the Extra Monster Zone → place <b>Bastion</b> → <b>Shatranga</b> → add <b>Opening to e4 #2</b>.</span></li>
       <li><span><b>e4 #2</b>: Special Summon Enlisted again and place <b>Destrier</b> → add Opposition for your turn. Their turn now runs under a 5-monster-effect cap, one card per chain, and 500 burn per activation.</span></li>
     </ol>
-    <p class="thru"><b>Ash on Castellan's send stops the whole loop</b> (DB Grinder). If you see Ash, place Bastion first instead and accept a smaller board. <b>Imperm Set in an empty column</b> can lock your last open zone. Answer it by having Destrier add <b>Brilliant Move</b> and activating it in that column first: if it's negated, banish it from the GY to Special Summon and free a zone (7-0 profile).</p>
+    <p class="thru"><b>Ash on Castellan's send stops the whole loop</b> (DB Grinder). If you see Ash, place Bastion first instead and accept a smaller board. <b>Imperm Set in an empty column</b> can lock your last open zone. The 7-0 profile answered it with Brilliant Move, which isn't in your list.</p>
   </div>
 
   <div class="line-card">
     <div class="hd"><h3>D · Breaking a board on your turn (going 2nd)</h3><span class="tag t-known">Known finisher</span></div>
     <ul class="tight">
-      <li><b>Assault Blackwing – Kusanagi</b>: Enlisted (Lv2 Tuner) + a Lv7 Destrier, either from Seneschal's effect or Brilliant Move's GY effect, makes Lv9. It gains its materials' original ATK (~7,000 with Destrier), attacks every monster and pierces. Opposition's lock still allows it because it's DARK.</li>
+      <li><b>Assault Blackwing – Kusanagi</b>: Enlisted (Lv2 Tuner) + a Lv7 Destrier, from Seneschal's effect (Brilliant Move's GY effect also works, but it isn't in your list), makes Lv9. It gains its materials' original ATK (~7,000 with Destrier), attacks every monster and pierces. Opposition's lock still allows it because it's DARK.</li>
       <li><b>Chaos Angel</b>: Enlisted + Bastion (Lv8) → banish 1 card when summoned; with LIGHT materials your Synchros are unaffected by their monster effects.</li>
       <li><b>Disturbance</b> Set on your turn and used on theirs: give Enlisted to them → negate their adjacent face-up cards. Enlisted's control change returns it to your Extra Deck and you Special Summon any Angelechy, such as Castellan to banish.</li>
     </ul>
@@ -636,7 +1543,7 @@ section.match{gap:16px}
       <li><span><b>Normal Summon Boarder</b>. There are no Extra Deck types on the field, so no monster hand trap can be activated against anything that follows.</span></li>
       <li><span><b>Strategy Score</b> → add <b>Verdict</b>. Ash and Droll can't be used here; only Purge (a Trap) can stop it.</span></li>
       <li><span><b>Problem</b>: discard Verdict → <b>Enlisted</b> (the count is now 1, so they get <b>one</b> monster effect this turn) + place <b>Bastion</b> → <b>Shatranga</b> → add <b>Disturbance</b> (or Opening to e4). If they spend their one effect here, Bastion and Shatranga still land.</span></li>
-      <li><span><b>Verdict (GY)</b>: send Enlisted, which puts the count back to 0 → place <b>Destrier</b> → add Brilliant Move or a second Problem.</span></li>
+      <li><span><b>Verdict (GY)</b>: send Enlisted, which puts the count back to 0 → place <b>Destrier</b> → add a second Problem.</span></li>
       <li><span>Set Impulse or Purge (or Disturbance, if you kept an Enlisted out).</span></li>
     </ol>
     <p class="thru"><b>End:</b> Boarder, Problem, Bastion, Shatranga and Destrier, two Set Traps, and 0 monster types. On their turn they get no monster effects until they summon an Extra Deck or Ritual monster without one; even then they're under Shatranga's 5-effect cap and Destrier's burn. <b>Gets through:</b> every monster hand trap until step 3, then one of them; Ghost Ogre on a placed card doesn't stop its effect. <b>Loses to:</b> Imperm from hand on Boarder (it's off until the end of the turn), Purge on Strategy Score, and Impulse on Problem.</p>
@@ -655,7 +1562,7 @@ section.match{gap:16px}
       <li><span><b>Opposition (GY)</b>: banish it → shuffle the banished <b>Verdict</b> (plus anything else spent) back into the Deck. Then <b>Disturbance (GY)</b>: banish it → add that <b>Verdict</b> again.</span></li>
       <li><span><b>Choose your finish.</b> <b>(a) Wipe:</b> Set Verdict. Count: Bastion, Shatranga, Destrier, Castellan + Enlisted = <b>5</b>, so it banishes everything they control on their turn. Enlisted keeps them at 1 type, so they get one monster effect. <b>(b) Full lock:</b> in step 6, send <b>Enlisted</b> instead of the hand card. That's 0 types on their turn, so no monster effects until they summon around Boarder. The count drops to 4, so the Set Verdict negates 1 card instead.</span></li>
     </ol>
-    <p class="thru"><b>Gets through:</b> every monster hand trap. <b>Loses to:</b> Impulse on Opposition (no Seneschal, so use line E), Purge on Shatranga's search, Imperm from hand on Boarder. <b>Extra trick with finish (a):</b> your second Disturbance, Set, can give them Enlisted on their turn. Its return-and-summon effect is mandatory and theirs to activate, so it uses up the one monster effect Boarder allows them, and you Special Summon an Angelechy from your Extra Deck. Confirm all three Boarder interactions with a judge: Seneschal's trigger counting as theirs, Enlisted not moving, and Enlisted's mandatory effect counting against their cap.</p>
+    <p class="thru"><b>Gets through:</b> every monster hand trap. <b>Loses to:</b> Impulse on Opposition (no Seneschal, so use line E), Purge on Shatranga's search, Imperm from hand on Boarder. <b>Extra trick with finish (a):</b> a second Disturbance (not in your current list), Set, can give them Enlisted on their turn. Its return-and-summon effect is mandatory and theirs to activate, so it uses up the one monster effect Boarder allows them, and you Special Summon an Angelechy from your Extra Deck. Confirm all three Boarder interactions with a judge: Seneschal's trigger counting as theirs, Enlisted not moving, and Enlisted's mandatory effect counting against their cap.</p>
   </div>
   <div class="line-card">
     <div class="hd"><h3>G · Opposition + any Spell/Trap → Black-Winged Assault Dragon</h3><span class="tag t-known">Lucas Sacco, Oct 12</span></div>
@@ -826,7 +1733,7 @@ section.match{gap:16px}
     <div><span>Interruptions going 2nd</span><b>27 <small>(93% open 3+)</small></b></div>
     <div class="wide"><span>Their key threat</span><b class="txt">Black Chaos, Mirrorjade, Fydraulis Harmonia on your on-field effects</b></div>
   </div>
-  <div class="keys"><h4>Keys to the matchup</h4><ol><li>Same Black Chaos rule as the ROLAD pile: stop the engine early or win in battle.</li><li>Harmonia and Kuriboh - Multiply! punish on-field monster effects — lean on placements (Spells) and Traps.</li><li>Bait Impulse/Retribution with Problem or Brilliant Move before Opposition.</li></ol></div>
+  <div class="keys"><h4>Keys to the matchup</h4><ol><li>Same Black Chaos rule as the ROLAD pile: stop the engine early or win in battle.</li><li>Harmonia and Kuriboh - Multiply! punish on-field monster effects — lean on placements (Spells) and Traps.</li><li>Bait Impulse/Retribution with Problem before Opposition.</li></ol></div>
   <div class="mu-pane" data-tab="Their plan"><p><b>Branded/Dogmatika:</b> Fallen of the White Dragon, Albaz, Incredible Ecclesia and Blazing Cartesia make Level 8 Fusions (Mirrorjade, Albion, Rindbrumm, Granguignol). <b>Ritual:</b> Ragged Records searches; Skull Archfiend and Celtic Mystic dig; Griffoh Sets a Quick-Play or Trap that mentions L&amp;D from the Deck. Payoffs: Black Chaos, Magician of Dark Chaos, Black Luster Soldier. 3 Fydraulis Harmonia main.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Ragged Records, Skull Archfiend's search, Celtic Mystic's draw</td><td>Ash, Droll, Purge</td><td></td></tr><tr><td>L&amp;D Ritual (Ritual Summon)</td><td>Impulse</td><td>Black Chaos's summon is inherent; Purulia draws off it.</td></tr><tr><td>Fallen of the White Dragon, Albaz Fusion, Branded Fusion</td><td>Ash, Veiler/Ogre on the field, Impulse</td><td></td></tr><tr><td>Their whole turn</td><td>Fuwalos, Nibiru</td><td>5+ summons are common.</td></tr></tbody></table></div>
@@ -973,7 +1880,7 @@ section.match{gap:16px}
     <div><span>Interruptions going 2nd</span><b>27 <small>(93% open 3+)</small></b></div>
     <div class="wide"><span>Their key threat</span><b class="txt">Mirrorjade, Branded Retribution (counters your Special Summon), Three Champions of Swordsoul</b></div>
   </div>
-  <div class="keys"><h4>Keys to the matchup</h4><ol><li>Bait Retribution with Problem or Brilliant Move before Opposition.</li><li>Mirrorjade/Albaz/Rindbrumm need your monsters — keep the board placed.</li><li>No Droll here (your call): Branded Fusion and Albaz don't search.</li></ol></div>
+  <div class="keys"><h4>Keys to the matchup</h4><ol><li>Bait Retribution with Problem before Opposition.</li><li>Mirrorjade/Albaz/Rindbrumm need your monsters — keep the board placed.</li><li>No Droll here (your call): Branded Fusion and Albaz don't search.</li></ol></div>
   <div class="mu-pane" data-tab="Their plan"><p>Aluber searches a Branded Spell/Trap; Branded Opening brings a Despia from the Deck; Nadir Servant searches; Fallen of the White Dragon summons Ecclesia; Blazing Cartesia fuses at Quick speed; Branded Fusion uses Deck materials. End board: Mirrorjade (banish a monster each turn), Albion, Rindbrumm (negates Fusion/Synchro/Xyz/Link effects), Titaniklad, Three Champions. Branded Retribution negates anything that Special Summons.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Aluber, Nadir Servant, Branded Opening, High Spirits</td><td>Ash, Purge</td><td></td></tr><tr><td>Branded Fusion (Deck materials), White Dragon summoning Ecclesia</td><td>Ash, Impulse</td><td></td></tr><tr><td>Albaz's Fusion trigger, Cartesia's Quick Fusion, Quem</td><td>Veiler, Ghost Ogre, Imperm, Impulse</td><td></td></tr><tr><td>Fusions; Cartesia/Ecclesia from hand</td><td>Fuwalos; Purulia</td><td></td></tr></tbody></table></div>
@@ -1151,6 +2058,43 @@ section.match{gap:16px}
   <div class="mu-pane" data-tab="Going 2nd"><p>Impulse Gold Leo's line or the first Fusion; Droll, Purulia, Veiler and Ogre are live.</p><div class="side-card"><div class="lbl">Siding going 2nd · 27 interruptions (93% to open 3+)</div><div><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+2 Purulia</span></div></div></div>
   
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2092,6 +3036,95 @@ section.match{gap:16px}
   </div>
 </section>
 
+<!-- v3-tools -->
+<section id="lp">
+  <div class="sec-head">
+    <div class="eyebrow">Tools · during a duel</div>
+    <h2>Life points</h2>
+  </div>
+  <div class="lp" id="lp-app">
+    <div class="lp-players" role="group" aria-label="Whose life points to change">
+      <button type="button" class="lp-p" data-p="0" aria-pressed="true"><span class="lp-name">You</span><b class="lp-val" id="lp-v0">8000</b><span class="lp-last" id="lp-l0"></span></button>
+      <button type="button" class="lp-p" data-p="1" aria-pressed="false"><span class="lp-name">Opponent</span><b class="lp-val" id="lp-v1">8000</b><span class="lp-last" id="lp-l1"></span></button>
+    </div>
+    <div class="lp-entry"><span id="lp-who">Amount for You</span><output id="lp-amt" aria-live="polite">0</output></div>
+    <div class="lp-keys" id="lp-keys">
+      <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
+      <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button>
+      <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button>
+      <button type="button" data-k="00">00</button><button type="button" data-k="0">0</button><button type="button" data-k="del" aria-label="Delete last digit">⌫</button>
+    </div>
+    <div class="lp-go">
+      <button type="button" class="dmg" data-act="dmg">− Damage</button>
+      <button type="button" class="gain" data-act="gain">+ Gain</button>
+    </div>
+    <div class="lp-quick" aria-label="Quick changes">
+      <button type="button" data-q="-500">−500</button><button type="button" data-q="-1000">−1000</button><button type="button" data-q="-2000">−2000</button><button type="button" data-q="half">Halve</button>
+      <button type="button" class="burn" data-burn="500">Destrier burn −500 <small>(opp)</small></button><button type="button" class="burn" data-burn="700">Assault Dragon −700 <small>(opp)</small></button>
+    </div>
+    <div class="lp-tools">
+      <button type="button" id="lp-undo">Undo</button>
+      <button type="button" id="lp-new">New duel</button>
+      <button type="button" id="lp-coin">Coin</button>
+      <button type="button" id="lp-die">Die</button>
+      <button type="button" id="lp-wake" aria-pressed="false">Keep screen on</button>
+    </div>
+    <p class="lp-roll" id="lp-roll" aria-live="polite"></p>
+    <div class="lp-timer" aria-label="Round timer">
+      <output id="tm-out">40:00</output>
+      <select id="tm-len" aria-label="Round length"><option value="40">40 min</option><option value="45">45 min</option><option value="50">50 min</option></select>
+      <button type="button" id="tm-go">Start</button>
+      <button type="button" id="tm-reset">Reset</button>
+    </div>
+    <details class="lp-hist"><summary>History</summary><ol id="lp-log"></ol></details>
+    <p class="note">Tap a player, type an amount, then Damage or Gain. Burn buttons always hit your opponent. Everything stays on this device, even if you close the page.</p>
+  </div>
+</section>
+
+<section id="tracker">
+  <div class="sec-head">
+    <div class="eyebrow">Tools · your results</div>
+    <h2>Match tracker</h2>
+  </div>
+  <p class="prose note">Saved only in this browser, on this device: nobody else can see it. Use <b>Backup</b> at the bottom to copy it to another device. Sign-in with sync is planned for later.</p>
+  <p class="tr-warn" id="tr-warn" hidden>This browser isn't letting the page save. Entries will be lost when you leave; try a normal (not private) window.</p>
+  <div class="stats tr-stats" id="tr-stats"></div>
+
+  <form class="panel tr-form" id="tr-form" autocomplete="off" novalidate>
+    <h4 id="tr-form-title">Log a match</h4>
+    <div class="tr-grid">
+      <label>Date<input type="date" name="date" required></label>
+      <label>Event<select name="event"><option>Locals</option><option>Regional / WCQ</option><option>YCS</option><option>Online</option><option>Testing</option></select></label>
+      <label class="wide">Opponent's deck<select name="deck" id="tr-deck"></select></label>
+      <label class="wide" id="tr-other-wrap" hidden>Deck name<input name="other" maxlength="60" placeholder="e.g. Snake-Eye"></label>
+    </div>
+    <div class="tr-games" id="tr-games"></div>
+    <label class="wide">Notes<textarea name="notes" rows="2" maxlength="600" placeholder="What decided it? e.g. Ghost Ogre on Castellan stopped my e4 loop"></textarea></label>
+    <div class="tr-actions">
+      <button type="submit" class="btn primary" id="tr-save">Save match</button>
+      <button type="button" class="btn" id="tr-cancel" hidden>Cancel edit</button>
+      <span id="tr-msg" class="note" aria-live="polite"></span>
+    </div>
+  </form>
+
+  <h3>By matchup</h3>
+  <div class="tbl"><table id="tr-table">
+    <thead><tr><th>Deck</th><th class="num">Matches</th><th class="num">Record</th><th class="num">Match win</th><th class="num">Games won</th><th class="num">Going 1st</th><th class="num">Going 2nd</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h3>History</h3>
+  <ul class="tr-list" id="tr-list"></ul>
+
+  <details class="panel tr-backup" id="tr-backup">
+    <summary>Backup and restore</summary>
+    <p class="note">Copy your data, paste it somewhere safe (or into this box on another device), then Restore.</p>
+    <div class="row"><button type="button" class="btn" id="tr-copy">Copy backup</button><span id="tr-copy-msg" class="note" aria-live="polite"></span></div>
+    <textarea id="tr-io" spellcheck="false" placeholder="Paste a backup here to restore it"></textarea>
+    <div class="row"><button type="button" class="btn" id="tr-restore">Restore from the box</button><span id="tr-restore-msg" class="note" aria-live="polite"></span></div>
+  </details>
+</section>
+<!-- /v3-tools -->
 <footer id="sources">
   <div class="eyebrow">Sources</div>
   <ul>
@@ -2169,38 +3202,6 @@ section.match{gap:16px}
 
 <script>
 (function(){
-  var KEY="ag-open-sections";
-  function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){return null}}
-  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
-  var saved=load()||{};
-  var secs=[].slice.call(document.querySelectorAll("#view-guide section:not(.home):not(.mu-index):not(.match), #view-updates section"));
-  var all=[];
-  secs.forEach(function(sec,ix){
-    var h2=sec.querySelector("h2"); if(!h2) return;
-    var id=sec.id||("sec"+ix);
-    // header = everything up to and including the h2 (or its .sec-head wrapper)
-    var head=h2.closest(".sec-head")||h2;
-    var body=document.createElement("div"); body.className="sec-body"; body.id=id+"-body";
-    var n=head.nextSibling; while(n){var nx=n.nextSibling; body.appendChild(n); n=nx;}
-    sec.appendChild(body);
-    var btn=document.createElement("button"); btn.className="sec-toggle"; btn.type="button";
-    btn.setAttribute("aria-controls",body.id);
-    btn.innerHTML='<span class="chev" aria-hidden="true">▶</span>';
-    var t=document.createElement("span"); while(h2.firstChild) t.appendChild(h2.firstChild); btn.appendChild(t); h2.appendChild(btn);
-    var isUpd=!!sec.closest("#view-updates");
-    function set(open,persist){btn.setAttribute("aria-expanded",open?"true":"false"); body.hidden=!open; if(persist){saved[id]=open; save(saved);} }
-    set(isUpd?true:saved[id]!==false,false);
-    btn.addEventListener("click",function(){set(body.hidden,true);});
-    all.push({id:id,set:set,sec:sec});
-  });
-  function openId(id){all.forEach(function(x){if(x.id===id) x.set(true,true);});}
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(){openId(a.getAttribute("href").slice(1));});});
-  if(location.hash) openId(location.hash.slice(1));
-  var toc=document.querySelector("nav.toc");
-  if(toc){var tl=document.createElement("div"); tl.className="tools";
-    tl.innerHTML='<button type="button" data-a="1">Expand all</button><button type="button" data-a="0">Collapse all</button>';
-    tl.addEventListener("click",function(e){var b=e.target.closest("button"); if(!b) return; var o=b.dataset.a==="1"; all.forEach(function(x){if(x.sec.closest("#view-guide")) x.set(o,true);});});
-    toc.appendChild(tl);}
   // expandable explanation cells
   var RX=/^(why|notes?|role|what it costs you|watch for|what it would replace|post-set evidence)$/i;
   document.querySelectorAll("table").forEach(function(tb){
@@ -2223,8 +3224,6 @@ section.match{gap:16px}
 <script>
 (function(){
   var vg=document.getElementById("view-guide"), vu=document.getElementById("view-updates")||document.createElement("div");
-  var nav=document.getElementById("toc"), groups=[].slice.call(nav.querySelectorAll("details.grp"));
-  var AREA={home:["home"],meta:["meta"],deck:["deck","lines","builds","decklist","side"],siding:["siding","plays","calc"],sources:["sources"]};
   var matches=[].slice.call(vg.querySelectorAll("section.match"));
   var idx=document.getElementById("matchups");
   var blocks=[].slice.call(vg.children).filter(function(e){return /^(SECTION|FOOTER)$/.test(e.tagName);});
@@ -2244,7 +3243,7 @@ section.match{gap:16px}
       a.querySelector(".threat span").textContent=m.dataset.threat||"";
       a.dataset.search=(nameOf(m)+" "+(m.dataset.short||"")+" "+m.textContent).toLowerCase();
       g.querySelector(".mu-cards").appendChild(a);
-      var li=document.createElement("li"); li.innerHTML='<a href="#'+m.id+'"></a>'; li.firstChild.textContent=m.dataset.short||nameOf(m); navMu.appendChild(li);
+      var li=document.createElement("li"); li.innerHTML='<a href="#'+m.id+'"></a>'; li.firstChild.textContent=m.dataset.short||nameOf(m); if(navMu) navMu.appendChild(li);
     });
     grid.appendChild(g);
   });
@@ -2298,43 +3297,6 @@ section.match{gap:16px}
   var hl=document.getElementById("home-latest");
   if(hl&&ups[0]){var d0=ups[0].querySelector(".upd-date"), h3=ups[0].querySelector("h3"); hl.innerHTML="";
     var p1=document.createElement("p"); p1.className="note"; p1.textContent=d0?d0.textContent:""; var p2=document.createElement("p"); p2.innerHTML="<b></b>"; p2.firstChild.textContent=h3?h3.textContent:""; hl.appendChild(p1); hl.appendChild(p2);}
-  function areaOf(id){
-    if(!id||id==="home"||id==="updates") return "home"; if(id==="matchups") return "matchups";
-    for(var k in AREA) if(AREA[k].indexOf(id)>=0) return k;
-    var el=document.getElementById(id); if(!el) return "home";
-    if(el.closest("#view-updates")) return "updates";
-    var b=el.closest("#view-guide > section, #view-guide > footer"); if(!b) return "home";
-    if(b.classList.contains("match")) return "matchups";
-    return b.id&&b.id!==id?areaOf(b.id):"home";
-  }
-  var wide=window.matchMedia("(min-width:1180px)"), hover=window.matchMedia("(hover:hover)"), pinned={};
-  function jump(y){try{window.scrollTo({top:y,behavior:"instant"});}catch(e){window.scrollTo(0,y);}}
-  function show(){
-    var id=decodeURIComponent(location.hash.slice(1)); var area=areaOf(id);
-    document.body.setAttribute("data-area",area);
-    vu.hidden=area!=="updates"; vg.hidden=area==="updates";
-    var target=document.getElementById(id), match=target&&target.closest("section.match");
-    blocks.forEach(function(b){ var on; if(area==="matchups") on = match ? b===match : b===idx; else on=(AREA[area]||[]).indexOf(b.id)>=0; b.hidden=!on; });
-    [].slice.call(nav.querySelectorAll("a")).forEach(function(a){a.classList.remove("active");});
-    var gl=nav.querySelector(".groups"), key=match?match.id:(area==="matchups"?"matchups":id||"home");
-    var act=gl.querySelector('a[href="#'+key+'"]')||gl.querySelector('a[data-area="'+area+'"]');
-    if(!act && AREA[area]) act=gl.querySelector('a[href="#'+AREA[area][0]+'"]');
-    if(act) act.classList.add("active");
-    groups.forEach(function(g){var on=!!(act&&g.contains(act)); g.classList.toggle("active",on); if(wide.matches) g.open=on||!!pinned[g.dataset.grp];});
-    nav.classList.remove("open"); nav.querySelector(".menu-btn").setAttribute("aria-expanded","false");
-    var first=(area==="matchups")?(match||idx):document.getElementById((AREA[area]||[])[0]);
-    if(target && target!==first && !(match&&target===match)){
-      var sb=target.closest(".sec-body[hidden]"); if(sb){var bt=sb.parentNode.querySelector(".sec-toggle"); if(bt) bt.click();}
-      setTimeout(function(){try{target.scrollIntoView({block:"start",behavior:"instant"});}catch(e){target.scrollIntoView();} if(target.tagName==="TR"){target.classList.remove("flash"); void target.offsetWidth; target.classList.add("flash");}},0);
-    } else jump(0);
-  }
-  nav.querySelector(".menu-btn").addEventListener("click",function(){var o=nav.classList.toggle("open"); this.setAttribute("aria-expanded",String(o));});
-  groups.forEach(function(d){
-    var s=d.querySelector("summary");
-    s.addEventListener("click",function(e){e.preventDefault(); d.open=!d.open; pinned[d.dataset.grp]=d.open;});
-    d.addEventListener("mouseenter",function(){if(hover.matches&&wide.matches) d.open=true;});
-    d.addEventListener("mouseleave",function(){if(hover.matches&&wide.matches&&!pinned[d.dataset.grp]&&!d.classList.contains("active")) d.open=false;});
-  });
   // siding planner
   var rows=[].slice.call(document.querySelectorAll("tr[data-mu]")), selD=document.getElementById("pl-deck"), out=document.getElementById("pl-out"), ord="1";
   if(selD&&out&&rows.length){
@@ -2354,9 +3316,382 @@ section.match{gap:16px}
     }
     render();
   }
-  window.addEventListener("hashchange",show); show();
 })();
 </script>
+<!-- v3-js -->
+<script>
+/* v3: navigation (tabs, page chips, sidebar, search, prev/next) */
+(function(){
+  var vg=document.getElementById("view-guide"); if(!vg) return;
+  var T="︎";
+  var AREAS=[
+    {k:"home",label:"Home",icon:"♔",pages:[["home","Home"],["meta","Meta"],["sources","Sources"]]},
+    {k:"learn",label:"Learn",icon:"♕",pages:[["learn","Basics"],["cards","Every card"],["handtraps","Hand traps"],["lines","Lines"],["decklist","Decklist"],["side","Side deck"],["builds","Builds"],["deck","Odds & locks"]]},
+    {k:"matchups",label:"Matchups",icon:"♘",pages:[["matchups","All matchups"]]},
+    {k:"siding",label:"Siding",icon:"♖",pages:[["siding","Plans"],["plays","Odds"],["calc","Calculator"]]},
+    {k:"tools",label:"Tools",icon:"♗",pages:[["lp","Life points"],["tracker","Match tracker"]]}
+  ];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function nameOf(m){var h=m.querySelector("h2"); return (h?h.textContent:m.id).replace(/\s+/g," ").trim();}
+  var matches=[].slice.call(vg.querySelectorAll("section.match"));
+  var order=[].slice.call(document.querySelectorAll("#mu-grid .mu-card")).map(function(a){return a.getAttribute("href").slice(1);});
+  if(order.length) matches.sort(function(a,b){return order.indexOf(a.id)-order.indexOf(b.id);});
+  var MU=AREAS[2];
+  matches.forEach(function(m){MU.pages.push([m.id,m.dataset.short||nameOf(m)]);});
+  var pageArea={}, pageLabel={};
+  AREAS.forEach(function(a){a.pages.forEach(function(p){pageArea[p[0]]=a.k; pageLabel[p[0]]=p[1];});});
+  var blocks=[].slice.call(vg.children).filter(function(e){return /^(SECTION|FOOTER)$/.test(e.tagName);});
+
+  // tab bar
+  var tab=document.getElementById("tabbar");
+  if(tab) tab.innerHTML=AREAS.map(function(a){return '<a href="#'+a.pages[0][0]+'" data-area="'+a.k+'"><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</a>';}).join("");
+  // sidebar
+  var side=document.getElementById("sidenav");
+  if(side){
+    var h='<a class="brand" href="#home"><span class="eyebrow">Living guide</span><b>Angelechy Guide</b></a>'+
+      '<button type="button" class="search-btn" data-open-search><span>Search</span><kbd>/</kbd></button>';
+    AREAS.forEach(function(a){
+      var list='<ul>'+a.pages.map(function(p){return '<li><a href="#'+p[0]+'" data-page="'+p[0]+'">'+esc(p[1])+'</a></li>';}).join("")+'</ul>';
+      if(a.k==="matchups") h+='<details class="grp" data-area="'+a.k+'"><summary><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</summary>'+list+'</details>';
+      else h+='<div class="grp" data-area="'+a.k+'"><a href="#'+a.pages[0][0]+'"><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</a>'+list+'</div>';
+    });
+    side.innerHTML=h;
+  }
+  // page chips
+  var sub=document.getElementById("subnav"), subArea=null;
+  function renderSub(area,pid){
+    if(!sub) return;
+    var a=AREAS.filter(function(x){return x.k===area;})[0]||AREAS[0];
+    if(subArea!==area){
+      sub.innerHTML=a.pages.map(function(p){return '<a href="#'+p[0]+'" data-page="'+p[0]+'">'+esc(p[1])+'</a>';}).join("");
+      sub.setAttribute("aria-label",a.label+" pages"); subArea=area;
+    }
+    var act=null;
+    [].forEach.call(sub.querySelectorAll("a"),function(x){var on=x.dataset.page===pid; x.classList.toggle("active",on); if(on){x.setAttribute("aria-current","page"); act=x;} else x.removeAttribute("aria-current");});
+    if(act) sub.scrollLeft=act.offsetLeft-(sub.clientWidth-act.offsetWidth)/2;
+  }
+  // prev / next across the learning flow
+  var FLOW=[];
+  AREAS.forEach(function(a){ if(a.k==="home") return; a.pages.forEach(function(p){ if(a.k==="matchups"&&p[0]!=="matchups") return; FLOW.push(p); }); });
+  FLOW.forEach(function(p,i){
+    var sec=document.getElementById(p[0]); if(!sec||sec.querySelector(":scope > .pager")) return;
+    var prev=FLOW[i-1], next=FLOW[i+1];
+    var n=document.createElement("nav"); n.className="pager"; n.setAttribute("aria-label","Previous and next page");
+    n.innerHTML=(prev?'<a class="prev" href="#'+prev[0]+'"><span>‹ Previous</span><b>'+esc(prev[1])+'</b></a>':'')+(next?'<a class="next" href="#'+next[0]+'"><span>Next ›</span><b>'+esc(next[1])+'</b></a>':'');
+    sec.appendChild(n);
+  });
+
+  // router: one page at a time
+  function show(){
+    var id=decodeURIComponent(location.hash.slice(1))||"home";
+    var el=document.getElementById(id);
+    var blk=el?el.closest("#view-guide > section, #view-guide > footer"):null;
+    if(!blk){blk=document.getElementById("home"); el=blk; id="home";}
+    var pid=blk.id, area=blk.classList.contains("match")?"matchups":(pageArea[pid]||"home");
+    blocks.forEach(function(b){b.hidden=(b!==blk);});
+    document.body.setAttribute("data-area",area); document.body.setAttribute("data-page",pid);
+    if(tab) [].forEach.call(tab.querySelectorAll("a"),function(a){var on=a.dataset.area===area; a.classList.toggle("active",on); if(on) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");});
+    if(side){
+      [].forEach.call(side.querySelectorAll("ul a"),function(a){a.classList.toggle("active",a.dataset.page===pid);});
+      var mg=side.querySelector('details.grp[data-area="matchups"]'); if(mg&&area==="matchups") mg.open=true;
+      var al=side.querySelector('ul a.active'); if(al&&al.scrollIntoView&&side.scrollHeight>side.clientHeight){var r=al.getBoundingClientRect(), s=side.getBoundingClientRect(); if(r.top<s.top||r.bottom>s.bottom) side.scrollTop+=r.top-s.top-s.height/2;}
+    }
+    renderSub(area,pid);
+    if(el&&el!==blk){
+      var d=el.closest("details"); while(d){d.open=true; d=d.parentElement&&d.parentElement.closest("details");}
+      if(el.tagName==="DETAILS") el.open=true;
+      requestAnimationFrame(function(){
+        try{el.scrollIntoView({block:"start"});}catch(e){el.scrollIntoView();}
+        if(el.tagName==="TR"||el.classList.contains("cx")){el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");}
+      });
+    } else { try{window.scrollTo({top:0,behavior:"instant"});}catch(e){window.scrollTo(0,0);} }
+  }
+  window.addEventListener("hashchange",show); show();
+  // the browser's own jump to #page on load would skip the header; land at the top instead
+  window.addEventListener("load",function(){var el=document.getElementById(decodeURIComponent(location.hash.slice(1))||"home"); if(!el||el.matches("#view-guide > section, #view-guide > footer")) try{window.scrollTo({top:0,behavior:"instant"});}catch(e){window.scrollTo(0,0);}});
+
+  // search
+  var ov=document.getElementById("search-ov"), q=document.getElementById("search-q"), res=document.getElementById("search-res");
+  if(!ov||!q||!res) return;
+  var IDX=[], seen={};
+  function add(t,k,h,x,rank){ if(!h||seen[h]||!t) return; seen[h]=1; IDX.push({t:t.replace(/\s+/g," ").trim(),k:k,h:h,x:(x||"").toLowerCase(),r:rank}); }
+  function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40);}
+  AREAS.forEach(function(a){a.pages.forEach(function(p){ if(a.k==="matchups"&&p[0]!=="matchups") return; var s=document.getElementById(p[0]); var h2=s&&s.querySelector("h2"); add(p[1],a.label,p[0],h2?h2.textContent:"",0); });});
+  matches.forEach(function(m){add(nameOf(m),"Matchup",m.id,(m.dataset.short||"")+" "+(m.dataset.blurb||""),1);});
+  [].forEach.call(vg.querySelectorAll("[data-idx]"),function(e){add(e.dataset.idx,e.closest("#handtraps")?"Hand trap":"Card",e.id,(e.querySelector(".cx-r")||{}).textContent,2);});
+  [].forEach.call(vg.querySelectorAll(".line-card"),function(c){var h3=c.querySelector("h3"); if(!h3) return; if(!c.id) c.id="line-"+slug(h3.textContent); add("Line "+h3.textContent,"Line",c.id,"",2);});
+  [].forEach.call(vg.querySelectorAll("tr[data-mu]"),function(r){if(!r.id) r.id="plan-"+r.dataset.mu; add("Siding vs "+r.children[1].textContent,"Siding",r.id,"side plan",3);});
+  [].forEach.call(vg.querySelectorAll("tr[id^='br-']"),function(r){var b=r.children[0].querySelector("b"); add((b||r.children[0]).textContent,"Breaker",r.id,"board breaker "+r.children[0].textContent,3);});
+  [].forEach.call(vg.querySelectorAll("h3[id]"),function(h){add(h.textContent,"Section",h.id,"",4);});
+  function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  var sel=0, cur=[];
+  function draw(){
+    var v=norm(q.value).trim(), toks=v.split(/\s+/).filter(Boolean);
+    if(!toks.length) cur=IDX.filter(function(e){return e.r<=1;}).slice(0,24);
+    else{
+      cur=IDX.map(function(e){
+        var t=norm(e.t), hay=t+" "+e.x+" "+norm(e.k);
+        for(var i=0;i<toks.length;i++) if(hay.indexOf(toks[i])<0) return null;
+        var s=t.indexOf(v)===0?0:(t.indexOf(" "+toks[0])>=0||t.indexOf(toks[0])===0?1:(t.indexOf(toks[0])>=0?2:3));
+        return {e:e,s:s*10+e.r};
+      }).filter(Boolean).sort(function(a,b){return a.s-b.s||a.e.t.length-b.e.t.length;}).slice(0,40).map(function(x){return x.e;});
+    }
+    sel=0;
+    res.innerHTML=cur.length?cur.map(function(e,i){return '<li><a href="#'+esc(e.h)+'" role="option" aria-selected="'+(i===0)+'">'+esc(e.t)+'<span>'+esc(e.k)+'</span></a></li>';}).join(""):'<li class="search-empty">Nothing found. Try a card name, a deck, or a word like “Boarder”.</li>';
+  }
+  function mark(){[].forEach.call(res.querySelectorAll("a"),function(a,i){a.setAttribute("aria-selected",String(i===sel)); if(i===sel&&a.scrollIntoView) a.scrollIntoView({block:"nearest"});});}
+  var last=null;
+  function open(){last=document.activeElement; ov.hidden=false; document.documentElement.style.overflow="hidden"; q.value=""; draw(); setTimeout(function(){q.focus();},0);}
+  function close(){ov.hidden=true; document.documentElement.style.overflow=""; if(last&&last.focus) try{last.focus({preventScroll:true});}catch(e){}}
+  document.addEventListener("click",function(e){var b=e.target.closest("[data-open-search]"); if(b){e.preventDefault(); open();}});
+  document.getElementById("search-close").addEventListener("click",close);
+  ov.addEventListener("click",function(e){if(e.target===ov) close(); var a=e.target.closest(".search-res a"); if(a) setTimeout(close,0);});
+  q.addEventListener("input",draw);
+  q.addEventListener("keydown",function(e){
+    var as=res.querySelectorAll("a");
+    if(e.key==="ArrowDown"){e.preventDefault(); if(as.length){sel=Math.min(as.length-1,sel+1); mark();}}
+    else if(e.key==="ArrowUp"){e.preventDefault(); if(as.length){sel=Math.max(0,sel-1); mark();}}
+    else if(e.key==="Enter"){e.preventDefault(); if(as[sel]){location.hash=as[sel].getAttribute("href").slice(1); close();}}
+    else if(e.key==="Escape"){e.preventDefault(); close();}
+  });
+  document.addEventListener("keydown",function(e){
+    if(!ov.hidden){ if(e.key==="Escape") close(); return; }
+    var t=e.target, typing=t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+    if((e.key==="/"&&!typing)||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k")){ if(document.body.getAttribute("data-page")==="lp"&&e.key==="/") return; e.preventDefault(); open(); }
+  });
+})();
+
+/* v3: life point calculator */
+(function(){
+  var app=document.getElementById("lp-app"); if(!app) return;
+  function $(id){return document.getElementById(id);}
+  var KEY="ag-lp-v1", TKEY="ag-timer-v1";
+  function load(k){try{return JSON.parse(localStorage.getItem(k)||"null");}catch(e){return null;}}
+  function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  function fresh(sel){return {lp:[8000,8000],sel:sel||0,hist:[],last:[null,null]};}
+  var st=load(KEY); if(!st||!Array.isArray(st.lp)||st.lp.length!==2) st=fresh(0);
+  var amt="", NAMES=["You","Opponent"];
+  var pb=[].slice.call(app.querySelectorAll(".lp-p")), vals=[$("lp-v0"),$("lp-v1")], lasts=[$("lp-l0"),$("lp-l1")];
+  var out=$("lp-amt"), who=$("lp-who"), log=$("lp-log"), roll=$("lp-roll");
+  function fmt(n){return (n>0?"+":n<0?"−":"")+Math.abs(n);}
+  function render(){
+    for(var i=0;i<2;i++){
+      vals[i].textContent=st.lp[i]; pb[i].classList.toggle("zero",st.lp[i]===0);
+      pb[i].setAttribute("aria-pressed",String(st.sel===i));
+      var d=st.last[i]; lasts[i].textContent=d?fmt(d):""; lasts[i].className="lp-last"+(d<0?" dn":d>0?" up":"");
+    }
+    who.textContent="Amount for "+NAMES[st.sel]; out.textContent=amt||"0";
+    log.innerHTML="";
+    st.hist.slice(-40).reverse().forEach(function(h){var li=document.createElement("li"); li.textContent=NAMES[h.p]+" "+fmt(h.d)+" → "+h.a+(h.why?" ("+h.why+")":""); log.appendChild(li);});
+  }
+  function bump(el){el.classList.remove("hit"); void el.offsetWidth; el.classList.add("hit");}
+  function apply(p,delta,why){
+    var before=st.lp[p], after=Math.max(0,before+delta);
+    if(after===before) {bump(pb[p]); return;}
+    st.lp[p]=after; st.last[p]=after-before;
+    st.hist.push({p:p,d:after-before,a:after,why:why||""}); if(st.hist.length>300) st.hist.shift();
+    store(KEY,st); render(); bump(pb[p]);
+    roll.textContent=after===0?(p===0?"You're at 0.":"Your opponent is at 0.")+" Tap New duel for the next game.":"";
+  }
+  pb.forEach(function(b){b.addEventListener("click",function(){st.sel=+b.dataset.p; store(KEY,st); render();});});
+  $("lp-keys").addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return; var k=b.dataset.k;
+    if(k==="del") amt=amt.slice(0,-1);
+    else if(amt.length<6){ amt=(amt+k).replace(/^0+/,""); if(amt.length>6) amt=amt.slice(0,6); }
+    render();
+  });
+  app.querySelector(".lp-go").addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return;
+    var n=parseInt(amt||"0",10); if(!n){bump(out.parentNode); return;}
+    apply(st.sel,b.dataset.act==="dmg"?-n:n); amt=""; render();
+  });
+  app.querySelector(".lp-quick").addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return;
+    if(b.dataset.burn){apply(1,-parseInt(b.dataset.burn,10),b.dataset.burn==="500"?"Destrier":"Assault Dragon"); return;}
+    if(b.dataset.q==="half"){var v=st.lp[st.sel]; apply(st.sel,Math.ceil(v/2)-v,"halved"); return;}
+    apply(st.sel,parseInt(b.dataset.q,10));
+  });
+  $("lp-undo").addEventListener("click",function(){
+    var h=st.hist.pop(); if(!h) return;
+    st.lp[h.p]=h.a-h.d; var prev=null; for(var i=st.hist.length-1;i>=0;i--) if(st.hist[i].p===h.p){prev=st.hist[i].d; break;}
+    st.last[h.p]=prev; store(KEY,st); render(); roll.textContent="Undid "+NAMES[h.p]+" "+fmt(h.d)+".";
+  });
+  var nb=$("lp-new"), nt=null;
+  nb.addEventListener("click",function(){
+    if(!nb.classList.contains("armed")){nb.classList.add("armed"); nb.textContent="Tap again to reset"; clearTimeout(nt); nt=setTimeout(function(){nb.classList.remove("armed"); nb.textContent="New duel";},3000); return;}
+    clearTimeout(nt); nb.classList.remove("armed"); nb.textContent="New duel";
+    st=fresh(st.sel); amt=""; store(KEY,st); render(); roll.textContent="New duel: 8000 each.";
+  });
+  function rnd(n){try{var a=new Uint32Array(1); crypto.getRandomValues(a); return a[0]%n;}catch(e){return Math.floor(Math.random()*n);}}
+  $("lp-coin").addEventListener("click",function(){roll.textContent="Coin: "+(rnd(2)?"Heads":"Tails");});
+  $("lp-die").addEventListener("click",function(){roll.textContent="Die: "+(rnd(6)+1);});
+  // keep the screen on
+  var wb=$("lp-wake"), lock=null, want=false;
+  function req(){
+    if(!("wakeLock" in navigator)){wb.textContent="Screen lock not available"; wb.disabled=true; return;}
+    navigator.wakeLock.request("screen").then(function(l){lock=l; wb.setAttribute("aria-pressed","true"); l.addEventListener("release",function(){lock=null; if(!want) wb.setAttribute("aria-pressed","false");});})
+      .catch(function(){want=false; wb.setAttribute("aria-pressed","false"); wb.textContent="Not allowed here";});
+  }
+  wb.addEventListener("click",function(){ want=!want; if(want) req(); else {wb.setAttribute("aria-pressed","false"); if(lock) lock.release().catch(function(){});} });
+  document.addEventListener("visibilitychange",function(){if(want&&!lock&&document.visibilityState==="visible") req();});
+  // keyboard on wide screens
+  document.addEventListener("keydown",function(e){
+    if(document.body.getAttribute("data-page")!=="lp") return;
+    var t=e.target; if(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
+    if(/^[0-9]$/.test(e.key)&&amt.length<6){amt=(amt+e.key).replace(/^0+/,""); render(); e.preventDefault();}
+    else if(e.key==="Backspace"){amt=amt.slice(0,-1); render(); e.preventDefault();}
+    else if(e.key==="-"||e.key==="+"||e.key==="Enter"){var n=parseInt(amt||"0",10); if(n){apply(st.sel,e.key==="+"?n:-n); amt=""; render();} e.preventDefault();}
+  });
+  // round timer
+  var tm=load(TKEY)||{len:40,rem:2400000,end:null}, to=$("tm-out"), tg=$("tm-go"), tl=$("tm-len"), iv=null;
+  tl.value=String(tm.len);
+  function left(){return tm.end?Math.max(0,tm.end-Date.now()):tm.rem;}
+  function tdraw(){
+    var ms=left(), s=Math.ceil(ms/1000), m=Math.floor(s/60), r=s%60;
+    to.textContent=ms<=0?"Time!":(m<10?"0":"")+m+":"+(r<10?"0":"")+r;
+    to.classList.toggle("done",ms<=0); tg.textContent=tm.end?"Pause":(ms<=0?"Start":(tm.rem<tm.len*60000?"Resume":"Start"));
+    if(tm.end&&ms<=0){tm.rem=0; tm.end=null; store(TKEY,tm); clearInterval(iv); iv=null; try{navigator.vibrate&&navigator.vibrate([300,150,300]);}catch(e){} tdraw();}
+  }
+  function run(){if(!iv) iv=setInterval(tdraw,250); tdraw();}
+  tg.addEventListener("click",function(){
+    if(tm.end){tm.rem=left(); tm.end=null; clearInterval(iv); iv=null;}
+    else{ if(tm.rem<=0) tm.rem=tm.len*60000; tm.end=Date.now()+tm.rem; run(); }
+    store(TKEY,tm); tdraw();
+  });
+  $("tm-reset").addEventListener("click",function(){tm.end=null; tm.rem=tm.len*60000; clearInterval(iv); iv=null; store(TKEY,tm); tdraw();});
+  tl.addEventListener("change",function(){tm.len=+tl.value; if(!tm.end){tm.rem=tm.len*60000;} store(TKEY,tm); tdraw();});
+  if(tm.end) run(); else tdraw();
+  render();
+})();
+
+/* v3: match tracker (stored on this device; swap Store for a backend later) */
+(function(){
+  var root=document.getElementById("tracker"); if(!root) return;
+  function $(id){return document.getElementById(id);}
+  var Store={
+    key:"ag-tracker-v1",
+    load:function(){try{var d=JSON.parse(localStorage.getItem(this.key)||"null"); if(valid(d)) return d;}catch(e){} return {v:1,matches:[]};},
+    save:function(d){try{localStorage.setItem(this.key,JSON.stringify(d)); return true;}catch(e){return false;}}
+  };
+  function valid(d){return d&&d.v===1&&Array.isArray(d.matches)&&d.matches.every(function(m){return m&&typeof m.deck==="string"&&Array.isArray(m.games);});}
+  try{localStorage.setItem("ag-probe","1"); localStorage.removeItem("ag-probe");}catch(e){ $("tr-warn").hidden=false; }
+  var data=Store.load(), editing=null;
+  var form=$("tr-form"), deckSel=$("tr-deck"), otherWrap=$("tr-other-wrap");
+  var decks=[].slice.call(document.querySelectorAll("#view-guide section.match")).map(function(m){var h=m.querySelector("h2"); return (h?h.textContent:m.id).replace(/\s+/g," ").trim();});
+  function opt(v,t){var o=document.createElement("option"); o.value=v; o.textContent=t; return o;}
+  deckSel.appendChild(opt("","Choose a deck…")); decks.forEach(function(d){deckSel.appendChild(opt(d,d));}); deckSel.appendChild(opt("__other","Other…"));
+  deckSel.addEventListener("change",function(){otherWrap.hidden=deckSel.value!=="__other";});
+  // games
+  var gwrap=$("tr-games"), gs=[];
+  function seg(k,items){return '<div class="seg" data-k="'+k+'">'+items.map(function(x){return '<button type="button" data-v="'+x[0]+'" aria-pressed="false">'+x[1]+'</button>';}).join("")+'</div>';}
+  for(var g=0;g<3;g++){
+    var fs=document.createElement("fieldset"); fs.className="tr-game"; fs.dataset.g=g;
+    fs.innerHTML='<legend>Game '+(g+1)+(g===2?' (if played)':'')+'</legend>'+seg("first",[["1","Went 1st"],["0","Went 2nd"]])+seg("res",[["W","Won"],["L","Lost"],["D","Draw"]]);
+    gwrap.appendChild(fs); gs.push({first:null,res:null});
+  }
+  function drawGames(){[].forEach.call(gwrap.querySelectorAll(".tr-game"),function(fs){var s=gs[+fs.dataset.g]; [].forEach.call(fs.querySelectorAll(".seg"),function(sg){var cur=s[sg.dataset.k]; [].forEach.call(sg.querySelectorAll("button"),function(b){var v=sg.dataset.k==="first"?(b.dataset.v==="1"):b.dataset.v; b.setAttribute("aria-pressed",String(cur!==null&&cur===v));});});});}
+  gwrap.addEventListener("click",function(e){
+    var b=e.target.closest(".seg button"); if(!b) return;
+    var s=gs[+b.closest(".tr-game").dataset.g], k=b.closest(".seg").dataset.k, v=k==="first"?(b.dataset.v==="1"):b.dataset.v;
+    s[k]=(s[k]===v)?null:v; drawGames();
+  });
+  function today(){var d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+  function reset(keep){
+    var ev=form.event.value, dt=form.date.value;
+    form.reset(); gs.forEach(function(s){s.first=null; s.res=null;}); drawGames();
+    form.date.value=keep&&dt?dt:today(); if(keep) form.event.value=ev;
+    otherWrap.hidden=true; editing=null; $("tr-cancel").hidden=true; $("tr-form-title").textContent="Log a match"; $("tr-save").textContent="Save match";
+  }
+  function result(m){var w=0,l=0; m.games.forEach(function(g){if(g.res==="W") w++; else if(g.res==="L") l++;}); return w>l?"W":l>w?"L":"D";}
+  function score(m){var w=0,l=0; m.games.forEach(function(g){if(g.res==="W") w++; else if(g.res==="L") l++;}); return w+"–"+l;}
+  function pct(n,d){return d?Math.round(100*n/d)+"%":"—";}
+  function persist(){ if(!Store.save(data)) $("tr-warn").hidden=false; render(); }
+  form.addEventListener("submit",function(e){
+    e.preventDefault(); var msg=$("tr-msg");
+    var deck=deckSel.value==="__other"?form.other.value.trim():deckSel.value;
+    var games=gs.filter(function(s){return s.res;}).map(function(s){return {first:s.first,res:s.res};});
+    if(!deck){msg.textContent="Pick the opponent's deck."; deckSel.focus(); return;}
+    if(!games.length){msg.textContent="Mark at least one game as Won, Lost or Draw."; return;}
+    var m={id:editing||(Date.now().toString(36)+Math.random().toString(36).slice(2,6)),date:form.date.value||today(),event:form.event.value,deck:deck,games:games,notes:form.notes.value.trim()};
+    if(editing){data.matches=data.matches.map(function(x){return x.id===editing?m:x;});} else data.matches.push(m);
+    persist(); msg.textContent=(editing?"Updated: ":"Saved: ")+(result(m)==="W"?"won ":result(m)==="L"?"lost ":"drew ")+score(m)+" vs "+deck+".";
+    reset(true);
+  });
+  $("tr-cancel").addEventListener("click",function(){reset(true); $("tr-msg").textContent="";});
+  function edit(id){
+    var m=data.matches.filter(function(x){return x.id===id;})[0]; if(!m) return;
+    reset(false); editing=id; form.date.value=m.date; form.event.value=m.event; form.notes.value=m.notes||"";
+    if(decks.indexOf(m.deck)>=0) deckSel.value=m.deck; else {deckSel.value="__other"; otherWrap.hidden=false; form.other.value=m.deck;}
+    m.games.forEach(function(g,i){if(i<3){gs[i].first=g.first; gs[i].res=g.res;}}); drawGames();
+    $("tr-cancel").hidden=false; $("tr-form-title").textContent="Edit match"; $("tr-save").textContent="Save changes";
+    try{form.scrollIntoView({block:"start"});}catch(e){form.scrollIntoView();}
+  }
+  function render(){
+    var M=data.matches, wins=0,losses=0,draws=0, gw=0,gn=0, f1w=0,f1n=0, f2w=0,f2n=0, by={};
+    M.forEach(function(m){
+      var r=result(m); if(r==="W") wins++; else if(r==="L") losses++; else draws++;
+      var b=by[m.deck]||(by[m.deck]={n:0,w:0,l:0,d:0,gw:0,gn:0,f1w:0,f1n:0,f2w:0,f2n:0}); b.n++; b[r.toLowerCase()]++;
+      m.games.forEach(function(g){ gn++; b.gn++; var won=g.res==="W"; if(won){gw++; b.gw++;}
+        if(g.first===true){f1n++; b.f1n++; if(won){f1w++; b.f1w++;}} else if(g.first===false){f2n++; b.f2n++; if(won){f2w++; b.f2w++;}} });
+    });
+    $("tr-stats").innerHTML=[
+      [M.length,"matches · "+wins+"–"+losses+(draws?"–"+draws:"")],
+      [pct(wins,M.length),"match win rate"],
+      [pct(gw,gn),"games won ("+gw+" of "+gn+")"],
+      [pct(f1w,f1n)+' <small>/ '+pct(f2w,f2n)+'</small>',"won going 1st / 2nd ("+f1n+" / "+f2n+" games)"]
+    ].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';}).join("");
+    var tb=$("tr-table").querySelector("tbody"); tb.innerHTML="";
+    Object.keys(by).sort(function(a,b){return by[b].n-by[a].n||a.localeCompare(b);}).forEach(function(k){
+      var b=by[k], tr=document.createElement("tr");
+      [k,b.n,b.w+"–"+b.l+(b.d?"–"+b.d:""),pct(b.w,b.n),pct(b.gw,b.gn),pct(b.f1w,b.f1n),pct(b.f2w,b.f2n)].forEach(function(v,i){var td=document.createElement("td"); if(i) td.className="num"; td.textContent=v; tr.appendChild(td);});
+      tb.appendChild(tr);
+    });
+    if(!M.length){var tr=document.createElement("tr"), td=document.createElement("td"); td.colSpan=7; td.className="tr-empty"; td.textContent="No matches yet. Log your first one above."; tr.appendChild(td); tb.appendChild(tr);}
+    var ul=$("tr-list"); ul.innerHTML="";
+    M.slice().sort(function(a,b){return (b.date||"").localeCompare(a.date||"")||(b.id<a.id?-1:1);}).forEach(function(m){
+      var li=document.createElement("li"); li.className="tr-item"; var r=result(m);
+      var top=document.createElement("div"); top.className="top";
+      var t=document.createElement("b"); t.textContent="vs "+m.deck; top.appendChild(t);
+      var rs=document.createElement("span"); rs.className="res "+r; rs.textContent=(r==="W"?"Won ":r==="L"?"Lost ":"Draw ")+score(m); top.appendChild(rs);
+      li.appendChild(top);
+      var meta=document.createElement("div"); meta.className="note";
+      var dt=m.date?new Date(m.date+"T12:00:00"):null; meta.textContent=(dt&&!isNaN(dt)?dt.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"}):"")+" · "+m.event; li.appendChild(meta);
+      var gm=document.createElement("div"); gm.className="gms";
+      m.games.forEach(function(g,i){var s=document.createElement("span"); s.textContent="G"+(i+1)+" "+(g.first===true?"1st ":g.first===false?"2nd ":"")+(g.res==="W"?"won":g.res==="L"?"lost":"draw"); gm.appendChild(s);});
+      li.appendChild(gm);
+      if(m.notes){var n=document.createElement("p"); n.textContent=m.notes; li.appendChild(n);}
+      var row=document.createElement("div"); row.className="row2";
+      var eb=document.createElement("button"); eb.type="button"; eb.textContent="Edit"; eb.addEventListener("click",function(){edit(m.id);});
+      var db=document.createElement("button"); db.type="button"; db.textContent="Delete"; var dtm=null;
+      db.addEventListener("click",function(){
+        if(!db.classList.contains("armed")){db.classList.add("armed"); db.textContent="Tap again to delete"; dtm=setTimeout(function(){db.classList.remove("armed"); db.textContent="Delete";},3000); return;}
+        clearTimeout(dtm); data.matches=data.matches.filter(function(x){return x.id!==m.id;}); if(editing===m.id) reset(true); persist();
+      });
+      row.appendChild(eb); row.appendChild(db); li.appendChild(row); ul.appendChild(li);
+    });
+  }
+  // backup
+  $("tr-copy").addEventListener("click",function(){
+    var txt=JSON.stringify(data), msg=$("tr-copy-msg"), io=$("tr-io");
+    function fallback(){io.value=txt; io.focus(); io.select(); msg.textContent="Copy it from the box below.";}
+    try{ if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function(){msg.textContent="Copied "+data.matches.length+" matches. Paste them somewhere safe.";},fallback); else fallback(); }catch(e){fallback();}
+  });
+  var rb=$("tr-restore"), rt=null, pending=null;
+  rb.addEventListener("click",function(){
+    var msg=$("tr-restore-msg");
+    if(!rb.classList.contains("armed")){
+      try{pending=JSON.parse($("tr-io").value);}catch(e){pending=null;}
+      if(!valid(pending)){msg.textContent="That isn't a tracker backup."; return;}
+      rb.classList.add("armed"); rb.textContent="Tap again: replace "+data.matches.length+" with "+pending.matches.length+" matches";
+      rt=setTimeout(function(){rb.classList.remove("armed"); rb.textContent="Restore from the box";},5000); return;
+    }
+    clearTimeout(rt); rb.classList.remove("armed"); rb.textContent="Restore from the box";
+    data=pending; persist(); msg.textContent="Restored "+data.matches.length+" matches."; reset(false);
+  });
+  reset(false); render();
+})();
+</script>
+<!-- /v3-js -->
 
 </body>
 </html>

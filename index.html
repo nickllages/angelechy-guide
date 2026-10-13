@@ -3382,6 +3382,7 @@ table.pieces td:first-child{white-space:nowrap}
   });
 
   // router: one page at a time
+  var lastPid=null;
   function show(){
     var id=decodeURIComponent(location.hash.slice(1))||"home";
     var el=document.getElementById(id);
@@ -3397,11 +3398,12 @@ table.pieces td:first-child{white-space:nowrap}
       var al=side.querySelector('ul a.active'); if(al&&al.scrollIntoView&&side.scrollHeight>side.clientHeight){var r=al.getBoundingClientRect(), s=side.getBoundingClientRect(); if(r.top<s.top||r.bottom>s.bottom) side.scrollTop+=r.top-s.top-s.height/2;}
     }
     renderSub(area,pid);
+    var samePage=lastPid===pid; lastPid=pid;
     if(el&&el!==blk){
       var d=el.closest("details"); while(d){d.open=true; d=d.parentElement&&d.parentElement.closest("details");}
       if(el.tagName==="DETAILS") el.open=true;
       requestAnimationFrame(function(){
-        try{el.scrollIntoView({block:"start"});}catch(e){el.scrollIntoView();}
+        try{el.scrollIntoView({block:"start",behavior:samePage?"smooth":"instant"});}catch(e){el.scrollIntoView();}
         if(el.tagName==="TR"||el.classList.contains("cx")){el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");}
       });
     } else { try{window.scrollTo({top:0,behavior:"instant"});}catch(e){window.scrollTo(0,0);} }

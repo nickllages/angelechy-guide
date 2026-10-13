@@ -568,6 +568,33 @@ table.pieces td:first-child{white-space:nowrap}
 .cx.flash{animation:flash 1.6s ease}
 @media (max-width:1179px){.wrap{padding-top:0}header.top{padding-top:18px}}
 .stat b small{font-size:.62em;color:var(--muted);font-weight:600}
+/* coin flip and die roll */
+.lp-stage{position:fixed;inset:0;z-index:70;display:grid;place-content:center;justify-items:center;gap:6px;background:rgb(10 12 18 / .45);cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
+.lp-stage[hidden]{display:none!important}
+.lp-obj{position:relative;width:220px;height:220px;perspective:800px}
+.toss,.tumble{position:absolute;inset:0;display:grid;place-items:center;transform-style:preserve-3d}
+.lp-stage[data-kind="coin"] .tumble,.lp-stage[data-kind="die"] .toss{display:none}
+.coin{position:relative;width:112px;height:112px;transform-style:preserve-3d}
+.coin .cf,.coin .ce{position:absolute;inset:0;border-radius:50%}
+.coin .cf{display:grid;place-content:center;justify-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:radial-gradient(circle at 34% 28%,#fff4c8 0,#f2cf6b 24%,#d6a63a 60%,#a77a1f 100%);box-shadow:inset 0 0 0 5px #c4952f,inset 0 0 0 7px #f3d27a,inset 0 0 0 9px #b0822a,0 0 0 1px #8a6418;color:#6a4a0e;text-shadow:0 1px 0 rgb(255 240 190 / .75)}
+.coin .cf span{font-size:48px;line-height:1;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",serif}
+.coin .cf small{font:700 10px var(--mono);letter-spacing:.2em;text-transform:uppercase;margin-top:3px}
+.coin .heads{transform:translateZ(3px)}
+.coin .tails{transform:rotateX(180deg) translateZ(3px)}
+.coin .ce{background:#9a7120;transform:translateZ(var(--z))}
+.die{position:relative;width:80px;height:80px;transform-style:preserve-3d}
+.die .df{position:absolute;inset:0;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:12px;border-radius:12px;background:linear-gradient(145deg,#ffffff,#e7e2d6);box-shadow:inset 0 0 0 1px rgb(0 0 0 / .14),inset 0 -6px 12px rgb(0 0 0 / .07);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.die .f1{transform:translateZ(40px)}.die .f6{transform:rotateY(180deg) translateZ(40px)}
+.die .f3{transform:rotateY(90deg) translateZ(40px)}.die .f4{transform:rotateY(-90deg) translateZ(40px)}
+.die .f2{transform:rotateX(90deg) translateZ(40px)}.die .f5{transform:rotateX(-90deg) translateZ(40px)}
+.die .p{width:14px;height:14px;border-radius:50%;align-self:center;justify-self:center;background:radial-gradient(circle at 35% 35%,#4b505f,#14161d 72%)}
+.die .f1 .p{width:20px;height:20px;background:radial-gradient(circle at 35% 35%,#e0566c,#8f1d2f 72%)}
+.die .p.tl{grid-area:1/1}.die .p.tr{grid-area:1/3}.die .p.ml{grid-area:2/1}.die .p.mr{grid-area:2/3}.die .p.c{grid-area:2/2}.die .p.bl{grid-area:3/1}.die .p.br{grid-area:3/3}
+.lp-shadow{position:absolute;left:50%;top:50%;width:104px;height:22px;margin:52px 0 0 -52px;border-radius:50%;background:radial-gradient(closest-side,rgb(0 0 0 / .38),transparent);pointer-events:none}
+.lp-stage[data-kind="die"] .lp-shadow{margin-top:40px;width:96px;margin-left:-48px}
+.lp-res{margin:0;min-height:42px;font:700 34px/1.2 var(--display);color:#fff;text-shadow:0 2px 14px rgb(0 0 0 / .55);opacity:0;transition:opacity .25s ease}
+.lp-hint{margin:0;font:600 13px var(--body);color:rgb(255 255 255 / .88);text-shadow:0 1px 6px rgb(0 0 0 / .5);opacity:0;transition:opacity .25s ease .25s}
+.lp-res.on,.lp-hint.on{opacity:1}
 /* v3-css-end */
 </style>
 
@@ -3077,6 +3104,18 @@ table.pieces td:first-child{white-space:nowrap}
       <button type="button" id="tm-reset">Reset</button>
     </div>
     <details class="lp-hist"><summary>History</summary><ol id="lp-log"></ol></details>
+    <div class="lp-stage" id="lp-stage" role="dialog" aria-modal="true" aria-label="Coin flip or die roll" hidden>
+      <div class="lp-obj">
+        <div class="toss" id="lp-toss"><div class="coin" id="lp-coinobj">
+          <div class="cf heads"><span>♔&#xFE0E;</span><small>Heads</small></div><i class="ce" style="--z:-2.5px"></i><i class="ce" style="--z:-1.5px"></i><i class="ce" style="--z:-0.5px"></i><i class="ce" style="--z:0.5px"></i><i class="ce" style="--z:1.5px"></i><i class="ce" style="--z:2.5px"></i>
+          <div class="cf tails"><span>♖&#xFE0E;</span><small>Tails</small></div>
+        </div></div>
+        <div class="tumble" id="lp-tumble"><div class="die" id="lp-dieobj"><div class="df f1"><i class="p c"></i></div><div class="df f2"><i class="p tl"></i><i class="p br"></i></div><div class="df f3"><i class="p tl"></i><i class="p c"></i><i class="p br"></i></div><div class="df f4"><i class="p tl"></i><i class="p tr"></i><i class="p bl"></i><i class="p br"></i></div><div class="df f5"><i class="p tl"></i><i class="p tr"></i><i class="p c"></i><i class="p bl"></i><i class="p br"></i></div><div class="df f6"><i class="p tl"></i><i class="p ml"></i><i class="p bl"></i><i class="p tr"></i><i class="p mr"></i><i class="p br"></i></div></div></div>
+        <div class="lp-shadow" id="lp-shadow"></div>
+      </div>
+      <p class="lp-res" id="lp-res" aria-live="polite"></p>
+      <p class="lp-hint" id="lp-hint">Tap anywhere to close</p>
+    </div>
     <p class="note">Tap a player, type an amount, then Damage or Gain. Burn buttons always hit your opponent. Everything stays on this device, even if you close the page.</p>
   </div>
 </section>
@@ -3525,8 +3564,59 @@ table.pieces td:first-child{white-space:nowrap}
     st=fresh(st.sel); amt=""; store(KEY,st); render(); roll.textContent="New duel: 8000 each.";
   });
   function rnd(n){try{var a=new Uint32Array(1); crypto.getRandomValues(a); return a[0]%n;}catch(e){return Math.floor(Math.random()*n);}}
-  $("lp-coin").addEventListener("click",function(){roll.textContent="Coin: "+(rnd(2)?"Heads":"Tails");});
-  $("lp-die").addEventListener("click",function(){roll.textContent="Die: "+(rnd(6)+1);});
+  // coin flip and die roll, animated on screen
+  var stage=$("lp-stage"), toss=$("lp-toss"), coin=$("lp-coinobj"), tumble=$("lp-tumble"), die=$("lp-dieobj"), shadow=$("lp-shadow"), resEl=$("lp-res"), hint=$("lp-hint");
+  var reduce=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches), busy=false, anims=[];
+  var FACE={1:[0,0],2:[-90,0],3:[0,-90],4:[0,90],5:[90,0],6:[0,180]};
+  function stopAll(){anims.forEach(function(a){try{a.cancel();}catch(e){}}); anims=[];}
+  function anim(el,kf,opt){var a=el.animate(kf,opt); anims.push(a); return a;}
+  function openStage(kind){stopAll(); stage.setAttribute("data-kind",kind); resEl.textContent=""; resEl.classList.remove("on"); hint.classList.remove("on"); stage.hidden=false; busy=true; try{stage.focus({preventScroll:true});}catch(e){}}
+  function land(text,log){busy=false; resEl.textContent=text; resEl.classList.add("on"); hint.classList.add("on"); roll.textContent=log; try{navigator.vibrate&&navigator.vibrate(18);}catch(e){}}
+  function closeStage(){if(busy) return; stopAll(); stage.hidden=true;}
+  stage.setAttribute("tabindex","-1");
+  stage.addEventListener("click",closeStage);
+  document.addEventListener("keydown",function(e){if(!stage.hidden&&/^(Escape|Enter| )$/.test(e.key)){e.preventDefault(); closeStage();}});
+  function shadowKf(peak,landAt){return [{transform:"scale(.9)",opacity:.9},{transform:"scale(.45)",opacity:.2,offset:peak},{transform:"scale(1)",opacity:1,offset:landAt},{transform:"scale(1)",opacity:1}];}
+  function flip(){
+    var heads=rnd(2)===0, end=(4+rnd(2))*360+(heads?0:180), D=1750, txt=heads?"Heads":"Tails";
+    openStage("coin"); coin.style.transform="rotateX("+end+"deg)"; toss.style.transform="";
+    if(reduce||!coin.animate){land(txt,"Coin: "+txt); return;}
+    anim(toss,[
+      {transform:"translateY(30px) scale(.92)",easing:"cubic-bezier(.2,.7,.4,1)"},
+      {transform:"translateY(-150px) scale(1.32)",offset:.44,easing:"cubic-bezier(.55,0,.85,.4)"},
+      {transform:"translateY(0) scale(1)",offset:.78,easing:"ease-out"},
+      {transform:"translateY(-12px) scale(1.04)",offset:.86,easing:"ease-in"},
+      {transform:"translateY(0) scale(1)",offset:.93},
+      {transform:"translateY(0) scale(1)"}],{duration:D});
+    anim(shadow,shadowKf(.44,.78),{duration:D});
+    anim(coin,[
+      {transform:"rotateX(0deg)",easing:"cubic-bezier(.12,.5,.3,1)"},
+      {transform:"rotateX("+end+"deg)",offset:.78,easing:"ease-out"},
+      {transform:"rotateX("+(end+14)+"deg)",offset:.86,easing:"ease-in-out"},
+      {transform:"rotateX("+(end-5)+"deg)",offset:.93,easing:"ease-out"},
+      {transform:"rotateX("+end+"deg)"}],{duration:D}).onfinish=function(){land(txt,"Coin: "+txt);};
+  }
+  function rollDie(){
+    var n=rnd(6)+1, f=FACE[n], D=1700, sx=rnd(2)?1:-1, sy=rnd(2)?1:-1, side=rnd(2)?1:-1;
+    var end="rotateX("+(f[0]+sx*360*(2+rnd(2)))+"deg) rotateY("+(f[1]+sy*360*(2+rnd(2)))+"deg) rotateZ("+(side*360)+"deg)";
+    openStage("die"); die.style.transform=end; tumble.style.transform="";
+    if(reduce||!die.animate){land(String(n),"Die: "+n); return;}
+    anim(tumble,[
+      {transform:"translate("+side*190+"px,-70px) scale(1.35)",easing:"cubic-bezier(.45,0,.9,.55)"},
+      {transform:"translate("+side*95+"px,8px) scale(1)",offset:.26,easing:"cubic-bezier(.2,.65,.5,1)"},
+      {transform:"translate("+side*52+"px,-8px) scale(1.14)",offset:.42,easing:"cubic-bezier(.5,0,.9,.55)"},
+      {transform:"translate("+side*22+"px,4px) scale(1)",offset:.58,easing:"cubic-bezier(.2,.65,.5,1)"},
+      {transform:"translate("+side*8+"px,-2px) scale(1.04)",offset:.7,easing:"ease-in"},
+      {transform:"translate(0,0) scale(1)",offset:.82},
+      {transform:"translate(0,0) scale(1)"}],{duration:D});
+    anim(shadow,[{transform:"translateX("+side*190+"px) scale(.5)",opacity:.2},{transform:"translateX("+side*95+"px) scale(1)",opacity:.9,offset:.26},{transform:"translateX("+side*52+"px) scale(.8)",opacity:.6,offset:.42},{transform:"translateX("+side*22+"px) scale(1)",opacity:1,offset:.58},{transform:"translateX(0) scale(1)",opacity:1,offset:.82},{transform:"translateX(0) scale(1)",opacity:1}],{duration:D});
+    anim(die,[
+      {transform:"rotateX("+(-25+rnd(50))+"deg) rotateY("+(-25+rnd(50))+"deg) rotateZ(0deg)",easing:"cubic-bezier(.15,.45,.3,1)"},
+      {transform:end,offset:.82},
+      {transform:end}],{duration:D}).onfinish=function(){land(String(n),"Die: "+n);};
+  }
+  $("lp-coin").addEventListener("click",flip);
+  $("lp-die").addEventListener("click",rollDie);
   // keep the screen on
   var wb=$("lp-wake"), lock=null, want=false;
   function req(){
@@ -3539,6 +3629,7 @@ table.pieces td:first-child{white-space:nowrap}
   // keyboard on wide screens
   document.addEventListener("keydown",function(e){
     if(document.body.getAttribute("data-page")!=="lp") return;
+    var stg=document.getElementById("lp-stage"); if(stg&&!stg.hidden) return;
     var t=e.target; if(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
     if(/^[0-9]$/.test(e.key)&&amt.length<6){amt=(amt+e.key).replace(/^0+/,""); render(); e.preventDefault();}
     else if(e.key==="Backspace"){amt=amt.slice(0,-1); render(); e.preventDefault();}

@@ -595,6 +595,7 @@ table.pieces td:first-child{white-space:nowrap}
 .lp-res{margin:0;min-height:42px;font:700 34px/1.2 var(--display);color:#fff;text-shadow:0 2px 14px rgb(0 0 0 / .55);opacity:0;transition:opacity .25s ease}
 .lp-hint{margin:0;font:600 13px var(--body);color:rgb(255 255 255 / .88);text-shadow:0 1px 6px rgb(0 0 0 / .5);opacity:0;transition:opacity .25s ease .25s}
 .lp-res.on,.lp-hint.on{opacity:1}
+.coin .cf{overflow:hidden}.coin .cf .sh{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 30%,rgb(0 0 0 / .55),#000);opacity:0;pointer-events:none}
 /* v3-css-end */
 </style>
 
@@ -3107,8 +3108,8 @@ table.pieces td:first-child{white-space:nowrap}
     <div class="lp-stage" id="lp-stage" role="dialog" aria-modal="true" aria-label="Coin flip or die roll" hidden>
       <div class="lp-obj">
         <div class="toss" id="lp-toss"><div class="coin" id="lp-coinobj">
-          <div class="cf heads"><span>♔&#xFE0E;</span><small>Heads</small></div><i class="ce" style="--z:-2.5px"></i><i class="ce" style="--z:-1.5px"></i><i class="ce" style="--z:-0.5px"></i><i class="ce" style="--z:0.5px"></i><i class="ce" style="--z:1.5px"></i><i class="ce" style="--z:2.5px"></i>
-          <div class="cf tails"><span>♖&#xFE0E;</span><small>Tails</small></div>
+          <div class="cf heads"><span>♔&#xFE0E;</span><small>Heads</small><i class="sh"></i></div><i class="ce" style="--z:-2.5px"></i><i class="ce" style="--z:-1.5px"></i><i class="ce" style="--z:-0.5px"></i><i class="ce" style="--z:0.5px"></i><i class="ce" style="--z:1.5px"></i><i class="ce" style="--z:2.5px"></i>
+          <div class="cf tails"><span>♖&#xFE0E;</span><small>Tails</small><i class="sh"></i></div>
         </div></div>
         <div class="tumble" id="lp-tumble"><div class="die" id="lp-dieobj"><div class="df f1"><i class="p c"></i></div><div class="df f2"><i class="p tl"></i><i class="p br"></i></div><div class="df f3"><i class="p tl"></i><i class="p c"></i><i class="p br"></i></div><div class="df f4"><i class="p tl"></i><i class="p tr"></i><i class="p bl"></i><i class="p br"></i></div><div class="df f5"><i class="p tl"></i><i class="p tr"></i><i class="p c"></i><i class="p bl"></i><i class="p br"></i></div><div class="df f6"><i class="p tl"></i><i class="p ml"></i><i class="p bl"></i><i class="p tr"></i><i class="p mr"></i><i class="p br"></i></div></div></div>
         <div class="lp-shadow" id="lp-shadow"></div>
@@ -3581,29 +3582,40 @@ table.pieces td:first-child{white-space:nowrap}
   document.addEventListener("keydown",function(e){if(!stage.hidden&&/^(Escape|Enter| )$/.test(e.key)){e.preventDefault(); closeStage();}});
   var recent=[];
   function remember(x){recent.unshift(x); if(recent.length>12) recent.pop(); hint.textContent="Recent: "+recent.join(" ")+" · tap anywhere to close";}
-  var coinUp=rnd(2)===0; // the face currently showing; the next flip starts from it, like a real coin
+  var coinUp=rnd(2)===0, coinZ=rr(-20,20); // the face showing and its resting angle; the next flip starts from them, like a real coin
+  // Physically sampled coin toss: quick thumb-flick crouch, a gravity parabola with constant spin, one small bounce,
+  // then the rattle of a coin settling (tilt decays while its wobble speeds up). Every frame comes from the same formulas.
+  function coinPlan(heads){
+    var A=70, Tf=rr(1000,1200), H=Math.min(rr(150,210),Math.max(80,Math.round((window.innerHeight||700)/2-110))), dx=rr(-22,22), z0=coinZ, z1=rr(-22,22), dir=rnd(2)?1:-1;
+    var half=Math.round(rr(40,52)/10*Tf/1000*2), start=coinUp?0:180;
+    if((half%2===0)!==(heads===coinUp)) half+=1;            // even half-turns keep the same face up
+    var th1=start+dir*half*180, Tb=Math.round(Tf*.24), hb=Math.max(7,Math.round(H*.055)), R=rr(430,560), a0=rr(12,19), psi0=rnd(360), cyc=rr(22,30)/10;
+    var D=A+Tf+Tb+R, T=[], C=[], S=[], L=[];
+    function at(t){
+      var x=0,y=0,sc=1,th=start,z=z0,al=0,ps=psi0,u;
+      if(t<=A){u=t/A; y=3*u; sc=1-.04*u;}
+      else if(t<=A+Tf){u=(t-A)/Tf; y=3*(1-u)-4*H*u*(1-u); sc=.96+.04*u+.08*4*u*(1-u); th=start+dir*half*180*u; z=z0+(z1-z0)*u; x=dx*u;}
+      else if(t<=A+Tf+Tb){u=(t-A-Tf)/Tb; y=-4*hb*u*(1-u); th=th1; z=z1; x=dx; al=a0*u;}
+      else {u=Math.min(1,(t-A-Tf-Tb)/R); th=th1; z=z1; x=dx; al=a0*Math.pow(1-u,1.7); ps=psi0+360*cyc*(.6*u+.4*u*u);}
+      var r=ps*Math.PI/180, ax=al*Math.cos(r), ay=al*Math.sin(r), h=Math.max(0,-y), fr=Math.min(1,h/H);
+      var face=Math.abs(Math.cos((th+ax)*Math.PI/180)*Math.cos(ay*Math.PI/180));
+      return {o:t/D, toss:"translate("+x.toFixed(1)+"px,"+y.toFixed(1)+"px) scale("+sc.toFixed(3)+")",
+        coin:"rotateZ("+z.toFixed(1)+"deg) rotateX("+(th+ax).toFixed(1)+"deg) rotateY("+ay.toFixed(1)+"deg)",
+        sh:"translate("+x.toFixed(1)+"px,0) scale("+(1-.55*fr).toFixed(3)+")", so:+(1-.75*fr).toFixed(3), shade:+(.55*(1-face)).toFixed(3)};
+    }
+    for(var t=0;t<D;t+=16){var k=at(t); T.push({transform:k.toss,offset:k.o}); C.push({transform:k.coin,offset:k.o}); S.push({transform:k.sh,opacity:k.so,offset:k.o}); L.push({opacity:k.shade,offset:k.o});}
+    var e=at(D); T.push({transform:e.toss,offset:1}); C.push({transform:e.coin,offset:1}); S.push({transform:e.sh,opacity:e.so,offset:1}); L.push({opacity:e.shade,offset:1});
+    return {D:D,T:T,C:C,S:S,L:L,end:"rotateZ("+z1+"deg) rotateX("+th1+"deg) rotateY(0deg)",z1:z1};
+  }
   function flip(){
-    var heads=rnd(2)===0, txt=heads?"Heads":"Tails";
-    var dir=rnd(2)?1:-1, start=coinUp?0:180, spin=360*rr(3,6)+(heads===coinUp?0:180), end=start+dir*spin;
-    var D=rr(1450,2050), H=rr(110,190), dx=rr(-45,45), tilt=rr(-16,16), wob=rr(6,16)*(rnd(2)?1:-1), peak=rr(40,48)/100, landAt=rr(74,80)/100;
-    coinUp=heads; openStage("coin");
-    coin.style.transform="rotateY(0deg) rotateX("+end+"deg)"; toss.style.transform="";
+    var heads=rnd(2)===0, txt=heads?"Heads":"Tails", pl=coinPlan(heads);
+    coinUp=heads; coinZ=pl.z1; openStage("coin");
+    coin.style.transform=pl.end; toss.style.transform="";
+    var shades=[].slice.call(coin.querySelectorAll(".sh")); shades.forEach(function(x){x.style.opacity="0";});
     if(reduce||!coin.animate){land(txt,"Coin: "+txt); remember(txt[0]); return;}
-    anim(toss,[
-      {transform:"translate(0,30px) scale(.92)",easing:"cubic-bezier(.2,.7,.4,1)"},
-      {transform:"translate("+(dx/2)+"px,"+(-H)+"px) scale("+(1+H/600)+")",offset:peak,easing:"cubic-bezier(.55,0,.85,.4)"},
-      {transform:"translate("+dx+"px,0) scale(1)",offset:landAt,easing:"ease-out"},
-      {transform:"translate("+dx+"px,-"+rr(6,16)+"px) scale(1.03)",offset:landAt+.08,easing:"ease-in"},
-      {transform:"translate("+dx+"px,0) scale(1)",offset:Math.min(.97,landAt+.15)},
-      {transform:"translate("+dx+"px,0) scale(1)"}],{duration:D});
-    anim(shadow,[{transform:"translateX(0) scale(.9)",opacity:.9},{transform:"translateX("+(dx/2)+"px) scale(.45)",opacity:.2,offset:peak},{transform:"translateX("+dx+"px) scale(1)",opacity:1,offset:landAt},{transform:"translateX("+dx+"px) scale(1)",opacity:1}],{duration:D});
-    anim(coin,[
-      {transform:"rotateY(0deg) rotateX("+start+"deg)",easing:"cubic-bezier(.12,.5,.3,1)"},
-      {transform:"rotateY("+tilt+"deg) rotateX("+(start+dir*spin*.55)+"deg)",offset:peak,easing:"cubic-bezier(.3,.3,.4,1)"},
-      {transform:"rotateY(0deg) rotateX("+end+"deg)",offset:landAt,easing:"ease-out"},
-      {transform:"rotateY(0deg) rotateX("+(end+wob)+"deg)",offset:landAt+.08,easing:"ease-in-out"},
-      {transform:"rotateY(0deg) rotateX("+(end-wob/3)+"deg)",offset:Math.min(.97,landAt+.15),easing:"ease-out"},
-      {transform:"rotateY(0deg) rotateX("+end+"deg)"}],{duration:D}).onfinish=function(){land(txt,"Coin: "+txt); remember(txt[0]);};
+    anim(toss,pl.T,{duration:pl.D}); anim(shadow,pl.S,{duration:pl.D});
+    shades.forEach(function(x){anim(x,pl.L,{duration:pl.D});});
+    anim(coin,pl.C,{duration:pl.D}).onfinish=function(){land(txt,"Coin: "+txt); remember(txt[0]);};
   }
   function rollDie(){
     var n=rnd(6)+1, f=FACE[n], D=rr(1450,1950);

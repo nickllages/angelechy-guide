@@ -1,6 +1,6 @@
 # Angelechy Guide
 
-A living Yu-Gi-Oh! TCG guide for Angelechy: the meta, your list, lines through hand traps, Endgame Problem lines, every matchup, and siding plans with odds.
+A living Yu-Gi-Oh! TCG guide for Angelechy: how the deck works and every card in it, hand traps and board breakers, lines through hand traps, every matchup, siding plans with odds, plus a life point calculator and a match tracker.
 
 ## ▶ Open the guide: https://nickllages.github.io/angelechy-guide/
 
@@ -9,7 +9,7 @@ A living Yu-Gi-Oh! TCG guide for Angelechy: the meta, your list, lines through h
 2. On a phone, save it so it opens like an app:
    - **iPhone (Safari):** tap Share → **Add to Home Screen**.
    - **Android (Chrome):** tap ⋮ → **Add to Home screen**.
-3. Tap **Sections** (top right) for the menu. The home page has buttons for **Browse matchups**, **Siding plans**, **Your decklist** and **Endgame lines**.
+3. Use the **tabs at the bottom** (Home, Learn, Matchups, Siding, Tools) to switch sections and the **chips under the top bar** to switch pages. **Search** (top right) finds any card, matchup or line. On a computer the menu is on the left; press **/** to search.
 4. Reload to get the latest version. The guide is updated after research runs.
 
 ## In the GitHub app
@@ -25,11 +25,16 @@ Add one of these after the address:
 
 | Part | Link |
 |---|---|
+| Start here: how the deck works | https://nickllages.github.io/angelechy-guide/#learn |
+| Every card, and why it's in | https://nickllages.github.io/angelechy-guide/#cards |
+| Hand traps & board breakers | https://nickllages.github.io/angelechy-guide/#handtraps |
 | Siding plans (pick opponent + going 1st/2nd) | https://nickllages.github.io/angelechy-guide/#siding |
 | Every matchup | https://nickllages.github.io/angelechy-guide/#matchups |
 | Endgame Problem lines | https://nickllages.github.io/angelechy-guide/#endgame-lines |
 | Decklist | https://nickllages.github.io/angelechy-guide/#decklist |
 | Lines through hand traps | https://nickllages.github.io/angelechy-guide/#lines |
+| Life point calculator | https://nickllages.github.io/angelechy-guide/#lp |
+| Match tracker (saved on your device) | https://nickllages.github.io/angelechy-guide/#tracker |
 
 ## What's in this repository
 - `index.html`: the whole guide in one page, served by GitHub Pages.

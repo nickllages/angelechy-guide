@@ -3563,7 +3563,10 @@ table.pieces td:first-child{white-space:nowrap}
     clearTimeout(nt); nb.classList.remove("armed"); nb.textContent="New duel";
     st=fresh(st.sel); amt=""; store(KEY,st); render(); roll.textContent="New duel: 8000 each.";
   });
-  function rnd(n){try{var a=new Uint32Array(1); crypto.getRandomValues(a); return a[0]%n;}catch(e){return Math.floor(Math.random()*n);}}
+  // fair random integers in [0,n): crypto XOR Math.random (stays random if either source misbehaves), rejection sampling removes modulo bias
+  function rand32(){var x=0; try{var a=new Uint32Array(1); crypto.getRandomValues(a); x=a[0];}catch(e){} return (x^Math.floor(Math.random()*4294967296))>>>0;}
+  function rnd(n){var lim=Math.floor(4294967296/n)*n, v; do{v=rand32();}while(v>=lim); return v%n;}
+  function rr(a,b){return a+rnd(b-a+1);}
   // coin flip and die roll, animated on screen
   var stage=$("lp-stage"), toss=$("lp-toss"), coin=$("lp-coinobj"), tumble=$("lp-tumble"), die=$("lp-dieobj"), shadow=$("lp-shadow"), resEl=$("lp-res"), hint=$("lp-hint");
   var reduce=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches), busy=false, anims=[];
@@ -3576,44 +3579,54 @@ table.pieces td:first-child{white-space:nowrap}
   stage.setAttribute("tabindex","-1");
   stage.addEventListener("click",closeStage);
   document.addEventListener("keydown",function(e){if(!stage.hidden&&/^(Escape|Enter| )$/.test(e.key)){e.preventDefault(); closeStage();}});
-  function shadowKf(peak,landAt){return [{transform:"scale(.9)",opacity:.9},{transform:"scale(.45)",opacity:.2,offset:peak},{transform:"scale(1)",opacity:1,offset:landAt},{transform:"scale(1)",opacity:1}];}
+  var recent=[];
+  function remember(x){recent.unshift(x); if(recent.length>12) recent.pop(); hint.textContent="Recent: "+recent.join(" ")+" · tap anywhere to close";}
+  var coinUp=rnd(2)===0; // the face currently showing; the next flip starts from it, like a real coin
   function flip(){
-    var heads=rnd(2)===0, end=(4+rnd(2))*360+(heads?0:180), D=1750, txt=heads?"Heads":"Tails";
-    openStage("coin"); coin.style.transform="rotateX("+end+"deg)"; toss.style.transform="";
-    if(reduce||!coin.animate){land(txt,"Coin: "+txt); return;}
+    var heads=rnd(2)===0, txt=heads?"Heads":"Tails";
+    var dir=rnd(2)?1:-1, start=coinUp?0:180, spin=360*rr(3,6)+(heads===coinUp?0:180), end=start+dir*spin;
+    var D=rr(1450,2050), H=rr(110,190), dx=rr(-45,45), tilt=rr(-16,16), wob=rr(6,16)*(rnd(2)?1:-1), peak=rr(40,48)/100, landAt=rr(74,80)/100;
+    coinUp=heads; openStage("coin");
+    coin.style.transform="rotateY(0deg) rotateX("+end+"deg)"; toss.style.transform="";
+    if(reduce||!coin.animate){land(txt,"Coin: "+txt); remember(txt[0]); return;}
     anim(toss,[
-      {transform:"translateY(30px) scale(.92)",easing:"cubic-bezier(.2,.7,.4,1)"},
-      {transform:"translateY(-150px) scale(1.32)",offset:.44,easing:"cubic-bezier(.55,0,.85,.4)"},
-      {transform:"translateY(0) scale(1)",offset:.78,easing:"ease-out"},
-      {transform:"translateY(-12px) scale(1.04)",offset:.86,easing:"ease-in"},
-      {transform:"translateY(0) scale(1)",offset:.93},
-      {transform:"translateY(0) scale(1)"}],{duration:D});
-    anim(shadow,shadowKf(.44,.78),{duration:D});
+      {transform:"translate(0,30px) scale(.92)",easing:"cubic-bezier(.2,.7,.4,1)"},
+      {transform:"translate("+(dx/2)+"px,"+(-H)+"px) scale("+(1+H/600)+")",offset:peak,easing:"cubic-bezier(.55,0,.85,.4)"},
+      {transform:"translate("+dx+"px,0) scale(1)",offset:landAt,easing:"ease-out"},
+      {transform:"translate("+dx+"px,-"+rr(6,16)+"px) scale(1.03)",offset:landAt+.08,easing:"ease-in"},
+      {transform:"translate("+dx+"px,0) scale(1)",offset:Math.min(.97,landAt+.15)},
+      {transform:"translate("+dx+"px,0) scale(1)"}],{duration:D});
+    anim(shadow,[{transform:"translateX(0) scale(.9)",opacity:.9},{transform:"translateX("+(dx/2)+"px) scale(.45)",opacity:.2,offset:peak},{transform:"translateX("+dx+"px) scale(1)",opacity:1,offset:landAt},{transform:"translateX("+dx+"px) scale(1)",opacity:1}],{duration:D});
     anim(coin,[
-      {transform:"rotateX(0deg)",easing:"cubic-bezier(.12,.5,.3,1)"},
-      {transform:"rotateX("+end+"deg)",offset:.78,easing:"ease-out"},
-      {transform:"rotateX("+(end+14)+"deg)",offset:.86,easing:"ease-in-out"},
-      {transform:"rotateX("+(end-5)+"deg)",offset:.93,easing:"ease-out"},
-      {transform:"rotateX("+end+"deg)"}],{duration:D}).onfinish=function(){land(txt,"Coin: "+txt);};
+      {transform:"rotateY(0deg) rotateX("+start+"deg)",easing:"cubic-bezier(.12,.5,.3,1)"},
+      {transform:"rotateY("+tilt+"deg) rotateX("+(start+dir*spin*.55)+"deg)",offset:peak,easing:"cubic-bezier(.3,.3,.4,1)"},
+      {transform:"rotateY(0deg) rotateX("+end+"deg)",offset:landAt,easing:"ease-out"},
+      {transform:"rotateY(0deg) rotateX("+(end+wob)+"deg)",offset:landAt+.08,easing:"ease-in-out"},
+      {transform:"rotateY(0deg) rotateX("+(end-wob/3)+"deg)",offset:Math.min(.97,landAt+.15),easing:"ease-out"},
+      {transform:"rotateY(0deg) rotateX("+end+"deg)"}],{duration:D}).onfinish=function(){land(txt,"Coin: "+txt); remember(txt[0]);};
   }
   function rollDie(){
-    var n=rnd(6)+1, f=FACE[n], D=1700, sx=rnd(2)?1:-1, sy=rnd(2)?1:-1, side=rnd(2)?1:-1;
-    var end="rotateX("+(f[0]+sx*360*(2+rnd(2)))+"deg) rotateY("+(f[1]+sy*360*(2+rnd(2)))+"deg) rotateZ("+(side*360)+"deg)";
+    var n=rnd(6)+1, f=FACE[n], D=rr(1450,1950);
+    // final: screen-space spin (rotateZ, a multiple of 90) applied after the face-up rotation, plus whole extra tumbles on each axis
+    var zEnd=90*rnd(4)+(rnd(2)?1:-1)*360*rr(1,2), xEnd=f[0]+(rnd(2)?1:-1)*360*rr(1,3), yEnd=f[1]+(rnd(2)?1:-1)*360*rr(1,3);
+    var end="rotateZ("+zEnd+"deg) rotateX("+xEnd+"deg) rotateY("+yEnd+"deg)";
+    var th=rnd(360)*Math.PI/180, R=rr(170,215), ux=Math.cos(th), uy=Math.sin(th)*.7, bounces=rr(2,3);
     openStage("die"); die.style.transform=end; tumble.style.transform="";
-    if(reduce||!die.animate){land(String(n),"Die: "+n); return;}
-    anim(tumble,[
-      {transform:"translate("+side*190+"px,-70px) scale(1.35)",easing:"cubic-bezier(.45,0,.9,.55)"},
-      {transform:"translate("+side*95+"px,8px) scale(1)",offset:.26,easing:"cubic-bezier(.2,.65,.5,1)"},
-      {transform:"translate("+side*52+"px,-8px) scale(1.14)",offset:.42,easing:"cubic-bezier(.5,0,.9,.55)"},
-      {transform:"translate("+side*22+"px,4px) scale(1)",offset:.58,easing:"cubic-bezier(.2,.65,.5,1)"},
-      {transform:"translate("+side*8+"px,-2px) scale(1.04)",offset:.7,easing:"ease-in"},
-      {transform:"translate(0,0) scale(1)",offset:.82},
-      {transform:"translate(0,0) scale(1)"}],{duration:D});
-    anim(shadow,[{transform:"translateX("+side*190+"px) scale(.5)",opacity:.2},{transform:"translateX("+side*95+"px) scale(1)",opacity:.9,offset:.26},{transform:"translateX("+side*52+"px) scale(.8)",opacity:.6,offset:.42},{transform:"translateX("+side*22+"px) scale(1)",opacity:1,offset:.58},{transform:"translateX(0) scale(1)",opacity:1,offset:.82},{transform:"translateX(0) scale(1)",opacity:1}],{duration:D});
+    if(reduce||!die.animate){land(String(n),"Die: "+n); remember(n); return;}
+    var pts=bounces===3?[1,.5,.24,.09,0]:[1,.45,.15,0], offs=bounces===3?[0,.24,.42,.58,.8]:[0,.28,.5,.8], kf=[], sk=[];
+    pts.forEach(function(q,i){
+      var x=ux*R*q, y=uy*R*q+(i===0?-60:0), up=i===0?1.35:1;
+      kf.push({transform:"translate("+x.toFixed(1)+"px,"+y.toFixed(1)+"px) scale("+up+")",offset:offs[i],easing:i===0?"cubic-bezier(.45,0,.9,.55)":"cubic-bezier(.2,.65,.5,1)"});
+      sk.push({transform:"translate("+x.toFixed(1)+"px,"+(uy*R*q).toFixed(1)+"px) scale("+(i===0?.5:1)+")",opacity:i===0?.2:1,offset:offs[i]});
+      if(i<pts.length-1){var mq=(q+pts[i+1])/2, hop=1+.14*q; kf.push({transform:"translate("+(ux*R*mq).toFixed(1)+"px,"+(uy*R*mq-10*q).toFixed(1)+"px) scale("+hop.toFixed(3)+")",offset:(offs[i]+offs[i+1])/2,easing:"cubic-bezier(.5,0,.9,.55)"});}
+    });
+    kf.push({transform:"translate(0,0) scale(1)"}); sk.push({transform:"translate(0,0) scale(1)",opacity:1});
+    anim(tumble,kf,{duration:D});
+    anim(shadow,sk,{duration:D});
     anim(die,[
-      {transform:"rotateX("+(-25+rnd(50))+"deg) rotateY("+(-25+rnd(50))+"deg) rotateZ(0deg)",easing:"cubic-bezier(.15,.45,.3,1)"},
-      {transform:end,offset:.82},
-      {transform:end}],{duration:D}).onfinish=function(){land(String(n),"Die: "+n);};
+      {transform:"rotateZ("+rnd(360)+"deg) rotateX("+rnd(360)+"deg) rotateY("+rnd(360)+"deg)",easing:"cubic-bezier(.15,.45,.3,1)"},
+      {transform:end,offset:.8},
+      {transform:end}],{duration:D}).onfinish=function(){land(String(n),"Die: "+n); remember(n);};
   }
   $("lp-coin").addEventListener("click",flip);
   $("lp-die").addEventListener("click",rollDie);

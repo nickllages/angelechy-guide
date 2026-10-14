@@ -39,3 +39,4 @@ Add one of these after the address:
 ## What's in this repository
 - `index.html`: the whole guide in one page, served by GitHub Pages.
 - `README.md`: this file.
+- `brain/`: the research behind the guide — decisions, sources, matchup research, results, open questions and raw decklists (Markdown). Start at `brain/README.md`.

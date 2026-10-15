@@ -596,6 +596,104 @@ table.pieces td:first-child{white-space:nowrap}
 .lp-hint{margin:0;font:600 13px var(--body);color:rgb(255 255 255 / .88);text-shadow:0 1px 6px rgb(0 0 0 / .5);opacity:0;transition:opacity .25s ease .25s}
 .lp-res.on,.lp-hint.on{opacity:1}
 .coin .cf{overflow:hidden}.coin .cf .sh{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 30%,rgb(0 0 0 / .55),#000);opacity:0;pointer-events:none}
+/* ===== deckbuilder simulator ===== */
+.ds{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.ds{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:start}}
+.ds-deck{gap:12px}
+.ds-top{display:flex;flex-wrap:wrap;gap:10px;align-items:end;justify-content:space-between}
+.ds-lbl{display:grid;gap:4px;font:600 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ds-deck select{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;max-width:100%;min-width:0}
+.ds-top select{min-width:220px}
+.ds-count{font:700 14px var(--mono);padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.ds-count.bad{background:var(--bad-soft);color:var(--bad)}
+.ds-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ds-sum div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:2px;min-width:0}
+.ds-sum b{font:700 20px var(--mono);font-variant-numeric:tabular-nums}
+.ds-sum span{font-size:12.5px;color:var(--muted);line-height:1.25}
+.ds-add{display:grid;gap:4px}
+.ds-addrow{display:flex;gap:8px}
+.ds-addrow select{flex:1}
+.ds-list{display:grid;gap:12px}
+.ds-grp h5{margin:0 0 6px;font:700 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ds-rows{display:grid;gap:4px}
+.ds-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:6px 8px;border-radius:8px;background:var(--bg)}
+.ds-row .nm{font-weight:600;font-size:14.5px;min-width:0;overflow-wrap:anywhere}
+.ds-row .tg{grid-column:1;display:flex;flex-wrap:wrap;gap:4px}
+.ds-row .q{grid-column:2;grid-row:1/span 2;display:flex;align-items:center;gap:6px}
+.ds-row .q b{font:700 16px var(--mono);min-width:1.4em;text-align:center}
+.ds-row .q button{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 18px var(--body);cursor:pointer;touch-action:manipulation}
+.ds-row.over .q b{color:var(--bad)}
+.tg i{font:600 10.5px var(--mono);font-style:normal;padding:1px 7px;border-radius:999px;white-space:nowrap}
+.tg .st{background:var(--good-soft);color:var(--good)}
+.tg .sp{background:var(--gold-soft);color:var(--gold)}
+.tg .int{background:var(--accent-soft);color:var(--accent)}
+.tg .e4{background:var(--accent);color:var(--surface)}
+.tg .gy{background:var(--gold-soft);color:var(--gold)}
+.tg .bk{background:var(--warn-soft);color:var(--warn)}
+.tg .ms{background:color-mix(in srgb,var(--line) 60%,transparent);color:var(--muted)}
+.ds-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ds-res{display:grid;gap:14px}
+.ds-stats{display:grid;gap:6px}
+.ds-stat{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 10px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line)}
+.ds-stat:last-child{border-bottom:0}
+.ds-stat span{font-size:14.5px}
+.ds-stat b{font:700 18px var(--mono);font-variant-numeric:tabular-nums}
+.ds-stat em,.ds-sum em{font:600 12px var(--mono);font-style:normal;color:var(--muted);white-space:nowrap}
+.ds-stat em.up,.ds-sum em.up{color:var(--good)}
+.ds-stat em.dn,.ds-sum em.dn{color:var(--bad)}
+.ds-hist{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:118px;padding-top:6px}
+.ds-hist div{display:grid;grid-template-rows:auto 1fr auto;align-items:end;justify-items:center;height:100%;gap:2px}
+.ds-hist i{display:block;width:100%;max-width:38px;background:var(--accent);border-radius:5px 5px 0 0;min-height:2px}
+.ds-hist div.ok i{background:var(--good)}
+.ds-hist small{font:600 11px var(--mono);color:var(--muted)}
+.ds-hist b{font:700 11px var(--mono);color:var(--ink)}
+.ds-cap{text-align:center;font-size:12.5px}
+.ds-draw{display:flex;flex-wrap:wrap;gap:8px}
+.ds-hand{display:flex;flex-wrap:wrap;gap:6px;min-height:8px}
+.ds-hand span{font:600 13px var(--body);padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg)}
+.ds-hand span.st{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.ds-hand span.sp{border-color:var(--gold);background:var(--gold-soft);color:var(--gold)}
+.ds-hand span.int{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.ds-verdict{margin:0;font-size:14.5px}
+.ds-how summary{cursor:pointer;font-weight:700}
+.ds-how ul{margin-top:8px}
+@media (max-width:420px){.ds-sum b{font-size:17px}.ds-top select{min-width:0;width:100%}.ds-top label{flex:1}}
+.ds-decks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 10px;align-items:end}
+.ds-dbtns{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.ds-deck input{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+.ds-decks select{width:100%}
+.ds-search{display:grid;gap:6px}
+.ds-addrow{display:flex;gap:8px;align-items:stretch}
+.ds-addrow input{flex:1}
+.ds-to{flex:none}
+.ds-results{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-height:280px;overflow-y:auto}
+.ds-results:empty{display:none}
+.ds-results button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%;padding:8px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font:600 14px var(--body)}
+.ds-results button:hover,.ds-results button:focus-visible{border-color:var(--accent);color:var(--accent)}
+.ds-results small{font:500 12px var(--body);color:var(--muted);text-align:right}
+.ds-results .ban{color:var(--bad);font-weight:700}
+.ds-dbmsg{font-size:12.5px}
+.ds-row small{display:block;font:500 12px var(--body);color:var(--muted)}
+.ds-row .rl{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ds-row select.ds-role{font:600 12.5px var(--body);padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
+.ds-row select.ds-role[data-r="st"]{border-color:var(--good);color:var(--good)}
+.ds-row select.ds-role[data-r="sp"]{border-color:var(--gold);color:var(--gold)}
+.ds-row select.ds-role[data-r="int"]{border-color:var(--accent);color:var(--accent)}
+.ds-row select.ds-role[data-r="brick"]{border-color:var(--bad);color:var(--bad)}
+.ds-row .mv{font:600 12px var(--body);border:1px dashed var(--line);background:none;color:var(--muted);border-radius:999px;padding:3px 9px;cursor:pointer}
+.ds-row .mv:hover{color:var(--accent);border-color:var(--accent)}
+.ds-row .ban{font:700 11px var(--mono);color:var(--bad)}
+.ds-zone{display:grid;gap:10px;padding-top:6px;border-top:1px solid var(--line)}
+.ds-zone>h4{display:flex;justify-content:space-between;align-items:baseline;margin:0}
+.ds-cmp{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:end}
+.ds-cmp select{font:500 14.5px var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;max-width:100%}
+.ds-imp{display:grid;gap:8px}
+.ds-imp textarea{width:100%;min-height:150px;font:13px var(--mono);border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:10px}
+.ds-dbtns .btn.armed{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
+@media (max-width:520px){.ds-decks{grid-template-columns:1fr}.ds-addrow{flex-wrap:wrap}.ds-addrow input{flex-basis:100%}}
+.ds-row .rl{grid-column:1/-1;grid-row:2}.ds-row .q{grid-row:1}
+.ds-row .nm small{display:inline;margin-left:6px}
+@media (max-width:520px){.ds-row .nm small{display:block;margin-left:0}}
 /* v3-css-end */
 </style>
 
@@ -648,8 +746,8 @@ table.pieces td:first-child{white-space:nowrap}
   <div class="areas">
     <a class="area" href="#learn"><span class="eyebrow">01 · Learn</span><h3>How the deck works</h3><p>The pieces, every card and why it's in, hand traps and breakers, lines, your list and builds.</p></a>
     <a class="area" href="#matchups"><span class="eyebrow">02 · Matchups</span><h3>Every deck you'll face</h3><p>How each deck plays, where it breaks, what hurts you, and what to do going 1st and 2nd.</p></a>
-    <a class="area" href="#siding"><span class="eyebrow">03 · Siding</span><h3>What to side, and why</h3><p>Per-matchup plans going 1st and 2nd, simulated odds and a hypergeometric calculator.</p></a>
-    <a class="area" href="#lp"><span class="eyebrow">04 · Tools</span><h3>At the table</h3><p>Life points with burn buttons and a round timer, plus a match tracker that stays on your device.</p></a>
+    <a class="area" href="#siding"><span class="eyebrow">03 · Siding</span><h3>What to side, and why</h3><p>Per-matchup plans going 1st and 2nd, and how often each plan opens what it needs.</p></a>
+    <a class="area" href="#lp"><span class="eyebrow">04 · Tools</span><h3>At the table</h3><p>Life points, a match tracker, a deckbuilder simulator and an odds calculator.</p></a>
     <a class="area" href="#meta"><span class="eyebrow">05 · Meta</span><h3>What's topping</h3><p>Post–Beyond the Brave results, creator takes and the decks to expect.</p></a>
   </div>
   <div class="panel"><h4>Your list at a glance</h4>
@@ -3153,7 +3251,7 @@ table.pieces td:first-child{white-space:nowrap}
 
 <section id="calc">
   <div class="sec-head">
-    <div class="eyebrow">Check any odds</div>
+    <div class="eyebrow">Tools · any odds</div>
     <h2>Hypergeometric calculator</h2>
   </div>
   <div class="calc">
@@ -3276,6 +3374,69 @@ table.pieces td:first-child{white-space:nowrap}
     <textarea id="tr-io" spellcheck="false" placeholder="Paste a backup here to restore it"></textarea>
     <div class="row"><button type="button" class="btn" id="tr-restore">Restore from the box</button><span id="tr-restore-msg" class="note" aria-live="polite"></span></div>
   </details>
+</section>
+
+<section id="sim">
+  <div class="sec-head">
+    <div class="eyebrow">Tools · deckbuilding</div>
+    <h2>Deckbuilder</h2>
+  </div>
+  <p class="prose note">Build any deck from every TCG card, keep as many decks as you like, and see how often each one opens what it needs. Give each main-deck card a job (starter, extender, interruption…) and the odds update as you build. Decks stay on this device.</p>
+  <div class="ds">
+    <div class="panel ds-deck">
+      <div class="ds-decks">
+        <label class="ds-lbl">Deck<select id="ds-which"></select></label>
+        <label class="ds-lbl ds-namebox">Name<input id="ds-name" maxlength="60"></label>
+        <div class="ds-dbtns"><button type="button" class="btn" id="ds-new">New</button><button type="button" class="btn" id="ds-dup">Duplicate</button><button type="button" class="btn" id="ds-del">Delete</button></div>
+      </div>
+      <div class="ds-top">
+        <label class="ds-lbl">Load into this deck<select id="ds-preset"></select></label>
+        <span class="ds-count" id="ds-count"></span>
+      </div>
+      <div class="ds-sum" id="ds-sum" aria-live="polite"></div>
+      <div class="ds-search">
+        <label class="ds-lbl" for="ds-q">Add any card</label>
+        <div class="ds-addrow"><input id="ds-q" type="search" placeholder="Search every TCG card…" autocomplete="off" enterkeyhint="search" aria-controls="ds-results">
+          <div class="seg ds-to" id="ds-to" role="group" aria-label="Add to"><button type="button" data-v="main" aria-pressed="true">Main</button><button type="button" data-v="side" aria-pressed="false">Side</button></div></div>
+        <ul class="ds-results" id="ds-results"></ul>
+        <p class="note ds-dbmsg" id="ds-dbmsg"></p>
+      </div>
+      <p class="tr-warn" id="ds-warn" hidden></p>
+      <div id="ds-list" class="ds-list"></div>
+      <div class="ds-actions"><button type="button" class="btn" id="ds-copy">Copy list</button><button type="button" class="btn" id="ds-ydk">Copy .ydk</button><button type="button" class="btn" id="ds-impbtn" aria-expanded="false">Import</button><button type="button" class="btn" id="ds-clear">Clear deck</button><span id="ds-msg" class="note" aria-live="polite"></span></div>
+      <div class="ds-imp" id="ds-imp" hidden>
+        <textarea id="ds-imptext" spellcheck="false" placeholder="Paste a .ydk file, or a list such as:&#10;3 Ash Blossom &amp; Joyous Spring&#10;3 Angelechy Opposition&#10;Extra&#10;3 Angelechy Enlisted"></textarea>
+        <div class="ds-actions"><button type="button" class="btn primary" id="ds-impgo">Replace this deck with it</button><span id="ds-impmsg" class="note" aria-live="polite"></span></div>
+      </div>
+    </div>
+    <div class="ds-res">
+      <div class="panel"><div class="ds-cmp"><h4>Odds for the main deck</h4><label class="ds-lbl">Compare with<select id="ds-cmp"></select></label></div></div>
+      <div class="panel"><h4>Going first · 5 cards</h4><div class="ds-stats" id="ds-g1"></div></div>
+      <div class="panel"><h4>Going second · 6 cards</h4><div class="ds-stats" id="ds-g2"></div>
+        <div class="ds-hist" id="ds-hist" role="img" aria-label="Interruptions in your opening 6"></div><p class="note ds-cap">Interruptions in your opening 6 cards</p></div>
+      <div class="panel"><h4>Draw a sample hand</h4>
+        <div class="ds-draw"><button type="button" class="btn" data-n="5">5 cards · going 1st</button><button type="button" class="btn" data-n="6">6 cards · going 2nd</button></div>
+        <div id="ds-hand" class="ds-hand"></div><p id="ds-verdict" class="ds-verdict"></p></div>
+      <details class="panel ds-how"><summary>How it counts</summary>
+        <ul class="tight">
+          <li><b>Jobs.</b> Each main-deck card has a job you can change.
+            <ul class="tight">
+              <li><b>Starter:</b> makes a play by itself.</li>
+              <li><b>Starter + a spare:</b> needs another Spell or Trap to discard (like Angelechy Problem).</li>
+              <li><b>Extender:</b> continues a play.</li>
+              <li><b>Interruption:</b> a hand trap or similar.</li>
+              <li><b>Going-1st back-up:</b> a second route with a starter (like Thrust or Boarder).</li>
+              <li><b>Brick:</b> dead in the opening hand.</li>
+            </ul>
+            Cards get a guess to start: known Angelechy cards use the guide's roles, and cards whose text works from the hand on the opponent's turn start as interruptions.</li>
+          <li><b>A play:</b> at least one starter, or a "starter + a spare" with another Spell or Trap.</li>
+          <li><b>Survives one hand trap:</b> two plays, or a play plus an extender or a going-1st back-up. For Angelechy, the guide's rules also count Problem with Verdict or Disturbance, and Foolish Burial Goods with Opposition, Strategy Score or Problem. Foolish Burial Goods only starts if the deck has a Disturbance or Verdict.</li>
+          <li><b>How exact:</b> the interruption odds are exact. The play odds come from 40,000 simulated hands, so they can wobble by about half a point. It doesn't play the hand out, so it can't see what you'd draw into.</li>
+          <li><b>Limits and data:</b> card limits follow the TCG Forbidden &amp; Limited list in the card data (from YGOPRODeck), dated in the note under the search box.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
 </section>
 <!-- /v3-tools -->
 <footer id="sources">
@@ -3481,8 +3642,8 @@ table.pieces td:first-child{white-space:nowrap}
     {k:"home",label:"Home",icon:"♔",pages:[["home","Home"],["meta","Meta"],["sources","Sources"]]},
     {k:"learn",label:"Learn",icon:"♕",pages:[["learn","Basics"],["cards","Every card"],["handtraps","Hand traps"],["lines","Lines"],["decklist","Decklist"],["side","Side deck"],["builds","Builds"],["deck","Odds & locks"]]},
     {k:"matchups",label:"Matchups",icon:"♘",pages:[["matchups","All matchups"]]},
-    {k:"siding",label:"Siding",icon:"♖",pages:[["siding","Plans"],["plays","Odds"],["calc","Calculator"]]},
-    {k:"tools",label:"Tools",icon:"♗",pages:[["lp","Life points"],["tracker","Match tracker"]]}
+    {k:"siding",label:"Siding",icon:"♖",pages:[["siding","Plans"],["plays","Odds"]]},
+    {k:"tools",label:"Tools",icon:"♗",pages:[["lp","Life points"],["tracker","Match tracker"],["sim","Deckbuilder"],["calc","Odds calculator"]]}
   ];
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
   function nameOf(m){var h=m.querySelector("h2"); return (h?h.textContent:m.id).replace(/\s+/g," ").trim();}
@@ -3920,6 +4081,282 @@ table.pieces td:first-child{white-space:nowrap}
     data=pending; persist(); msg.textContent="Restored "+data.matches.length+" matches."; reset(false);
   });
   reset(false); render();
+})();
+
+/* v3: deckbuilder (any TCG deck; odds use the guide's rules — keep MAIN/EXTRA/SIDE in sync with the user's list) */
+(function(){
+  var root=document.getElementById("sim"); if(!root) return;
+  function $(id){return document.getElementById(id);}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  // cards the guide covers: [name, M/S/T, default job, max] — used for default jobs and as the search list if the full card list can't load
+  var POOL=[
+    ["Angelechy Strategy Score","S","st"],["Angelechy Opposition","S","st"],["Angelechy Problem","S","sp"],["Foolish Burial Goods","S","st"],["Terraforming","S","sp",1],
+    ["Rainbow Bridge Bifrost","S","sp"],["Angelechy Endgame Problem","S",""],["Angelechy Brilliant Move","S",""],["Angelechy Opening to e4","T","int"],
+    ["Angelechy Verdict","T",""],["Angelechy Disturbance","T",""],["Chaospawn Bishop","M","st"],["Witness of the Ancient","M",""],
+    ["Ash Blossom & Joyous Spring","M","int"],["Ghost Ogre & Snow Rabbit","M","int"],["Mulcharmy Fuwalos","M","int"],["Nibiru, the Primal Being","M","int"],
+    ["Droll & Lock Bird","M","int",2],["Effect Veiler","M","int"],["Mulcharmy Purulia","M","int"],["Mulcharmy Meowls","M","int"],["Ghost Belle & Haunted Mansion","M","int"],
+    ["D.D. Crow","M","int"],["Artifact Lancea","M","int"],["Ghost Mourner & Moonlit Chill","M","int"],["Dominus Impulse","T","int"],["Dominus Purge","T","int"],["Dominus Spark","T","int"],
+    ["Infinite Impermanence","T","int"],["Songs of the Dominators","T","int"],["Typhoon","T","int"],["Inspector Boarder","M","bk"],["Triple Tactics Thrust","S","bk"],
+    ["Triple Tactics Talent","S","bk"],["Called by the Grave","S","",1],["Crossout Designator","S","",1],["Lava Golem","M",""],["Pot of Sloth","S",""],["Pot of Desires","S",""],
+    ["Harpie's Feather Duster","S","",1],["Forbidden Droplet","S",""],["Hey, Space Trunade!","S",""],["Raigeki","S",""],["Evenly Matched","T",""],
+    ["Angelechy Enlisted","X",""],["Angelechy Bastion","X",""],["Angelechy Destrier","X",""],["Angelechy Shatranga","X",""],["Angelechy Seneschal","X",""],["Angelechy Castellan","X",""],
+    ["Chaos Angel","X",""],["Black-Winged Assault Dragon","X",""],["Assault Blackwing - Kusanagi the Gathering Storm","X",""]
+  ];
+  var PINFO={}; POOL.forEach(function(p){PINFO[p[0]]={t:p[1],r:p[2]||"",max:p[3]||3};});
+  var MAIN={"Ash Blossom & Joyous Spring":3,"Ghost Ogre & Snow Rabbit":3,"Mulcharmy Fuwalos":3,"Nibiru, the Primal Being":2,"Droll & Lock Bird":1,
+    "Angelechy Strategy Score":3,"Angelechy Opposition":3,"Angelechy Problem":3,"Foolish Burial Goods":3,"Terraforming":1,"Angelechy Endgame Problem":1,
+    "Angelechy Opening to e4":3,"Angelechy Verdict":1,"Angelechy Disturbance":1,"Dominus Impulse":3,"Dominus Purge":3,"Dominus Spark":3};
+  var EXTRA={"Angelechy Enlisted":3,"Angelechy Bastion":2,"Angelechy Destrier":2,"Angelechy Shatranga":2,"Angelechy Seneschal":2,"Angelechy Castellan":1,"Chaos Angel":1,
+    "Black-Winged Assault Dragon":1,"Assault Blackwing - Kusanagi the Gathering Storm":1};
+  var SIDE={"Inspector Boarder":3,"Triple Tactics Thrust":3,"Triple Tactics Talent":1,"Angelechy Verdict":1,"Mulcharmy Purulia":2,"Typhoon":2,"Effect Veiler":2,"Droll & Lock Bird":1};
+  var CHIP={"Fuwalos":"Mulcharmy Fuwalos","Ghost Ogre":"Ghost Ogre & Snow Rabbit","Nibiru":"Nibiru, the Primal Being","Droll":"Droll & Lock Bird","Spark":"Dominus Spark",
+    "Endgame Problem":"Angelechy Endgame Problem","Opening to e4":"Angelechy Opening to e4","Foolish Burial Goods":"Foolish Burial Goods","Terraforming":"Terraforming",
+    "Opposition":"Angelechy Opposition","Inspector Boarder":"Inspector Boarder","Triple Tactics Thrust":"Triple Tactics Thrust","Triple Tactics Talent":"Triple Tactics Talent",
+    "Verdict":"Angelechy Verdict","Effect Veiler":"Effect Veiler","Purulia":"Mulcharmy Purulia","Typhoon":"Typhoon","Impulse":"Dominus Impulse","Purge":"Dominus Purge"};
+  var JOBS=[["","Other"],["st","Starter"],["sp","Starter + a spare"],["ext","Extender"],["int","Interruption"],["bk","Going-1st back-up"],["brick","Brick"]];
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+
+  // ---- card data ----
+  var DB=null, BYNAME={}, BYLOW={}, BYID={}, TYPES=[], NAMES=[];
+  function indexDB(d){DB=d; TYPES=d.types||[]; d.c.forEach(function(r){BYNAME[r[1]]=r; BYLOW[r[1].toLowerCase()]=r; BYID[r[0]]=r;}); if(d.alt) for(var k in d.alt) if(BYID[d.alt[k]]) BYID[k]=BYID[d.alt[k]]; NAMES=d.c.map(function(r){return r[1];});}
+  var loading=null;
+  function loadDB(cb){
+    if(DB) return cb();
+    if(window.__agCardDB){indexDB(window.__agCardDB); return cb();}
+    if(!loading) loading=fetch("cards.json").then(function(r){if(!r.ok) throw new Error(r.status); return r.json();})
+      .then(function(d){indexDB(d); $("ds-dbmsg").textContent=d.c.length.toLocaleString()+" TCG cards, Forbidden & Limited status as of "+d.v+" (YGOPRODeck).";})
+      .catch(function(){NAMES=POOL.map(function(p){return p[0];}); $("ds-dbmsg").textContent="The full card list didn't load here, so search covers the cards this guide discusses. Typed names you import still work.";});
+    loading.then(cb);
+  }
+  function info(name){
+    var r=BYNAME[name], p=PINFO[name];
+    var zone=r?r[3]:(p?({M:0,S:1,T:2,X:3})[p.t]:0);
+    var ban=r?r[5]:0, max=r?[3,2,1,0][ban]:(p?p.max:3);
+    return {zone:zone, spell:zone===1||zone===2, ht:r?r[4]:(p&&p.r==="int"?1:0), ban:ban, max:max, id:r?r[0]:0,
+      type:r?TYPES[r[2]]:(p?({M:"Monster",S:"Spell",T:"Trap",X:"Extra Deck monster"})[p.t]:"Card not in the card list")};
+  }
+  function jobOf(d,name){if(d.roles&&d.roles[name]!==undefined) return d.roles[name]; var p=PINFO[name]; if(p) return p.r; return info(name).ht?"int":"";}
+
+  // ---- odds (same rules as tools/sim.py for Angelechy) ----
+  function lc(n){var s=0;for(var i=2;i<=n;i++)s+=Math.log(i);return s;}
+  function C(n,k){if(k<0||k>n)return 0;return Math.exp(lc(n)-lc(k)-lc(n-k));}
+  function pmf(N,K,n,k){return C(K,k)*C(N-K,n-k)/C(N,n);}
+  function atLeast(N,K,n,k){var s=0;for(var i=k;i<=Math.min(K,n);i++)s+=pmf(N,K,n,i);return s;}
+  function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  var F=["st","sp","ext","int","bk","brick","spell","stspell","fbg","opp","ss","prob","gy","e4"];
+  function flags(d,name){
+    var j=jobOf(d,name), inf=info(name), o={};
+    if(j) o[j]=1; if(inf.spell) o.spell=1; if(j==="st"&&inf.spell) o.stspell=1;
+    if(name==="Foolish Burial Goods"&&j==="st") o.fbg=1;
+    if(name==="Angelechy Opposition") o.opp=1; if(name==="Angelechy Strategy Score") o.ss=1;
+    if(name==="Angelechy Problem"||name==="Terraforming"||name==="Rainbow Bridge Bifrost") o.prob=1;
+    if(name==="Angelechy Verdict"||name==="Angelechy Disturbance") o.gy=1; if(name==="Angelechy Opening to e4") o.e4=1;
+    return o;
+  }
+  function evalHand(h,fbgOK){
+    var c={}; F.forEach(function(k){c[k]=0;}); h.forEach(function(f){for(var k in f) c[k]+=f[k];});
+    var st=c.st-(fbgOK?0:c.fbg);
+    if(c.sp>0&&c.spell>=2) st+=1;
+    var spare=c.spell-c.stspell-c.sp+(fbgOK?0:c.fbg);
+    var res=st>=2||(st>=1&&(c.bk>0||c.ext>0))||(c.prob>0&&c.gy>0&&spare+Math.max(0,st-1)>=1)||(fbgOK&&c.fbg>0&&(c.opp||c.ss||c.prob));
+    return {st:st,res:res,int:c.int,e4:c.e4,brick:c.brick};
+  }
+  function analyze(d){
+    var m=d.main||{}, N=0, list=[], K=0, E=0, B=0;
+    for(var nm in m){var f=flags(d,nm); N+=m[nm]; for(var i=0;i<m[nm];i++) list.push(f); if(f.int) K+=m[nm]; if(f.e4) E+=m[nm]; if(f.brick) B+=m[nm];}
+    var out={N:N,K:K,E:E,B:B}; if(N<6) return out;
+    var fbgOK=(m["Angelechy Disturbance"]||0)+(m["Angelechy Verdict"]||0)>0;
+    var rnd=mulberry(20261015), T=40000, idx=new Int32Array(N);
+    function run(n){var r={play:0,res:0,turn:0,both:0,b2:0};
+      for(var t=0;t<T;t++){for(var i=0;i<N;i++) idx[i]=i; var h=[];
+        for(var j=0;j<n;j++){var q=j+Math.floor(rnd()*(N-j)); var tmp=idx[j]; idx[j]=idx[q]; idx[q]=tmp; h.push(list[idx[j]]);}
+        var e=evalHand(h,fbgOK); if(e.st>=1) r.play++; if(e.res) r.res++; if(e.st>=1||e.e4>=1) r.turn++; if(e.int>=3&&(e.st>=1||e.e4>=1)) r.both++; if(e.brick>=2) r.b2++;}
+      for(var k in r) r[k]/=T; return r;}
+    var g1=run(5), g2=run(6);
+    out.play=g1.play; out.res=g1.res; out.brick=1-g1.play; out.b2=g1.b2;
+    out.i2=atLeast(N,K,6,2); out.i3=atLeast(N,K,6,3); out.i4=atLeast(N,K,6,4); out.e4=E?atLeast(N,E,6,1):null; out.turn=g2.turn; out.both=g2.both;
+    out.hist=[]; for(var k=0;k<=6;k++) out.hist.push(k<6?pmf(N,K,6,k):atLeast(N,K,6,6));
+    var bo=m["Inspector Boarder"]||0; out.boarder=bo?atLeast(N,bo,5,1):null;
+    return out;
+  }
+
+  // ---- saved decks ----
+  var KEY="ag-decks-v2", S=null;
+  try{S=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){}
+  if(!S||!S.decks){
+    var first={name:"Angelechy (your list)",main:clone(MAIN),extra:clone(EXTRA),side:clone(SIDE),roles:{},cmp:"main"};
+    try{var old=JSON.parse(localStorage.getItem("ag-deck-v1")||"null"); if(old&&typeof old==="object"&&!old.main){first.main=old;}}catch(e){}
+    S={cur:"d1",n:1,decks:{d1:first}};
+  }
+  function cur(){return S.decks[S.cur];}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+  function total(o){var n=0; for(var k in o) n+=o[k]; return n;}
+  function newId(){S.n=(S.n||1)+1; return "d"+S.n;}
+
+  // ---- siding presets (read from the guide's siding table) ----
+  function plans(){
+    var P=[];
+    [].forEach.call(document.querySelectorAll("tr[data-mu]"),function(r){[2,3].forEach(function(ci){
+      var d=clone(MAIN), sd=clone(SIDE), ok=true;
+      [].forEach.call(r.children[ci].querySelectorAll(".chip"),function(ch){var m=ch.textContent.trim().match(/^([−+-])(\d+)\s+(.+)$/); if(!m){ok=false;return;}
+        var nm=CHIP[m[3]]||m[3], v=(+m[2])*(m[1]==="+"?1:-1); d[nm]=(d[nm]||0)+v; sd[nm]=(sd[nm]||0)-v; if(d[nm]<=0) delete d[nm]; if(sd[nm]<=0) delete sd[nm];});
+      if(ok) P.push({g:ci===2?"1st":"2nd",name:r.children[1].textContent.trim(),main:d,side:sd});});});
+    return P;
+  }
+  var PL=plans();
+  window.__agSim={analyze:function(d){return analyze(d.main?d:{main:d,roles:{}});},MAIN:MAIN,plans:PL}; // read-only hook for tests
+
+  // ---- UI ----
+  function opt(v,t){var o=document.createElement("option"); o.value=v; o.textContent=t; return o;}
+  var preset=$("ds-preset");
+  preset.appendChild(opt("","Choose…")); preset.appendChild(opt("all","Your Angelechy list (main, Extra, side)"));
+  ["1st","2nd"].forEach(function(g){var og=document.createElement("optgroup"); og.label="Your list after siding, going "+g;
+    PL.forEach(function(p,i){if(p.g===g) og.appendChild(opt("p"+i,p.name));}); preset.appendChild(og);});
+  function pct(x){return (Math.round(x*1000)/10).toFixed(1)+"%";}
+  function delta(x,b,inv){if(b==null||x==null) return ""; var dd=Math.round((x-b)*1000)/10; if(Math.abs(dd)<0.5) return '<em>same</em>'; var good=inv?dd<0:dd>0; return '<em class="'+(good?"up":"dn")+'">'+(dd>0?"+":"−")+Math.abs(dd).toFixed(1)+'</em>';}
+  function stat(lbl,v,b,inv){return v==null?"":'<div class="ds-stat"><span>'+lbl+'</span><b>'+pct(v)+'</b>'+delta(v,b,inv)+'</div>';}
+  function deckSelect(){
+    var w=$("ds-which"); w.innerHTML=""; Object.keys(S.decks).forEach(function(id){w.appendChild(opt(id,S.decks[id].name||"Untitled deck"));}); w.value=S.cur;
+    $("ds-name").value=cur().name||"";
+    var c=$("ds-cmp"), d=cur(); c.innerHTML=""; c.appendChild(opt("","Nothing")); c.appendChild(opt("main","Your Angelechy main"));
+    Object.keys(S.decks).forEach(function(id){if(id!==S.cur) c.appendChild(opt(id,S.decks[id].name||"Untitled deck"));});
+    c.value=d.cmp!==undefined?d.cmp:"";
+  }
+  var timer=null;
+  function render(){
+    var d=cur(), z={main:d.main||(d.main={}),extra:d.extra||(d.extra={}),side:d.side||(d.side={})}, warn=[];
+    var nM=total(z.main), nE=total(z.extra), nS=total(z.side);
+    var cnt=$("ds-count"); cnt.textContent=nM+" · "+nE+" · "+nS; cnt.title="Main · Extra · Side"; cnt.classList.toggle("bad",nM<40||nM>60||nE>15||nS>15);
+    if(nM<40) warn.push("Main: "+(40-nM)+" more to reach 40."); if(nM>60) warn.push("Main: at most 60."); if(nE>15) warn.push("Extra: at most 15."); if(nS>15) warn.push("Side: at most 15.");
+    var all={}; ["main","extra","side"].forEach(function(k){for(var n in z[k]) all[n]=(all[n]||0)+z[k][n];});
+    for(var n in all){var inf=info(n); if(inf.max===0) warn.push(n+" is Forbidden."); else if(all[n]>inf.max) warn.push(n+": at most "+inf.max+" across main, Extra and side."); if(inf.zone===3&&z.main[n]) warn.push(n+" belongs in the Extra Deck.");}
+    var html="";
+    function rows(zone,names){return names.map(function(nm){var inf=info(nm), q=z[zone][nm], j=jobOf(d,nm);
+      var jobSel=zone==="main"?'<select class="ds-role" data-r="'+j+'" aria-label="Job of '+esc(nm)+'">'+JOBS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===j?" selected":"")+'>'+x[1]+'</option>';}).join("")+'</select>':"";
+      var mv=zone==="main"?'<button type="button" class="mv" data-mv="side">to side</button>':zone==="side"&&inf.zone!==3?'<button type="button" class="mv" data-mv="main">to main</button>':zone==="side"?'<button type="button" class="mv" data-mv="extra">to Extra</button>':"";
+      var ban=inf.ban?'<span class="ban">'+["","Semi-Limited","Limited","Forbidden"][inf.ban]+'</span>':"";
+      return '<div class="ds-row'+(all[nm]>inf.max?" over":"")+'" data-n="'+esc(nm)+'" data-z="'+zone+'"><span class="nm">'+esc(nm)+'<small>'+esc(inf.type)+'</small></span><span class="rl">'+jobSel+mv+ban+'</span><span class="q"><button type="button" data-d="-1" aria-label="One fewer '+esc(nm)+'">−</button><b>'+q+'</b><button type="button" data-d="1" aria-label="One more '+esc(nm)+'">+</button></span></div>';}).join("");}
+    function sorted(o){return Object.keys(o).sort(function(a,b){var A=info(a),B=info(b); return A.zone-B.zone||(PINFO[a]?0:1)-(PINFO[b]?0:1)||a.localeCompare(b);});}
+    var mainN=sorted(z.main);
+    html+='<div class="ds-zone"><h4>Main deck <span class="ds-count'+(nM<40||nM>60?" bad":"")+'">'+nM+'</span></h4>';
+    [[0,"Monsters"],[1,"Spells"],[2,"Traps"],[3,"Extra Deck cards (move them)"]].forEach(function(g){var arr=mainN.filter(function(n){return info(n).zone===g[0];}); if(arr.length) html+='<div class="ds-grp"><h5>'+g[1]+' · '+arr.reduce(function(s,x){return s+z.main[x];},0)+'</h5><div class="ds-rows">'+rows("main",arr)+'</div></div>';});
+    if(!mainN.length) html+='<p class="note">Empty. Search for cards above, load your Angelechy list, or import a deck.</p>';
+    html+='</div><div class="ds-zone"><h4>Extra Deck <span class="ds-count'+(nE>15?" bad":"")+'">'+nE+'</span></h4><div class="ds-rows">'+rows("extra",sorted(z.extra))+'</div></div>';
+    html+='<div class="ds-zone"><h4>Side deck <span class="ds-count'+(nS>15?" bad":"")+'">'+nS+'</span></h4><div class="ds-rows">'+rows("side",sorted(z.side))+'</div></div>';
+    $("ds-list").innerHTML=html;
+    var w=$("ds-warn"); w.hidden=!warn.length; w.textContent=warn.join(" ");
+    clearTimeout(timer); timer=setTimeout(stats,60);
+  }
+  var baseCache={};
+  function baseFor(key){if(!key) return null; var deckObj=key==="main"?{main:MAIN,roles:{}}:S.decks[key]; if(!deckObj) return null;
+    var sig=key+JSON.stringify(deckObj.main)+JSON.stringify(deckObj.roles||{}); if(!baseCache[sig]) baseCache[sig]=analyze(deckObj); return baseCache[sig];}
+  function stats(){
+    var d=cur(), N=total(d.main||{}), g1=$("ds-g1"), g2=$("ds-g2"), sum=$("ds-sum"), hist=$("ds-hist");
+    if(N<6){g1.innerHTML=g2.innerHTML='<p class="note">Add at least 6 main-deck cards.</p>'; sum.innerHTML=""; hist.innerHTML=""; return;}
+    var a=analyze(d), B=baseFor(d.cmp)||{};
+    sum.innerHTML='<div><b>'+pct(a.play)+'</b><span>a play going 1st '+delta(a.play,B.play)+'</span></div><div><b>'+pct(a.res)+'</b><span>survives a hand trap '+delta(a.res,B.res)+'</span></div><div><b>'+pct(a.i3)+'</b><span>3+ interruptions going 2nd '+delta(a.i3,B.i3)+'</span></div>';
+    g1.innerHTML=stat("A play",a.play,B.play)+stat("A play that survives one hand trap",a.res,B.res)+stat("No play (brick)",a.brick,B.brick,true)+(a.B?stat("2+ bricks in hand",a.b2,B.b2,true):"")+stat("Inspector Boarder in hand",a.boarder,B.boarder);
+    g2.innerHTML=stat("2+ interruptions",a.i2,B.i2)+stat("3+ interruptions",a.i3,B.i3)+stat("4+ interruptions",a.i4,B.i4)+stat("Opening to e4",a.e4,B.e4)+stat("A play"+(a.E?" or e4":""),a.turn,B.turn)+stat("3+ interruptions and a play"+(a.E?" or e4":""),a.both,B.both)
+      +'<p class="note">'+a.K+' interruptions in '+N+' cards'+(B.K!=null?' (comparison: '+B.K+' in '+B.N+')':'')+'.</p>';
+    var mx=Math.max.apply(null,a.hist)||1;
+    hist.innerHTML=a.hist.map(function(p,k){return '<div class="'+(k>=3?"ok":"")+'"><b>'+Math.round(p*100)+'%</b><i style="height:'+Math.max(2,Math.round(80*p/mx))+'px"></i><small>'+(k===6?"6+":k)+'</small></div>';}).join("");
+  }
+  function setMsg(t){$("ds-msg").textContent=t;}
+  function addCard(name,zone){var d=cur(); var inf=info(name); if(inf.zone===3) zone="extra"; else if(zone==="extra") zone="main"; d[zone]=d[zone]||{}; d[zone][name]=(d[zone][name]||0)+1; save(); render(); setMsg("Added "+name+(zone!=="main"?" to the "+(zone==="extra"?"Extra Deck":"side"):"")+".");}
+  // list events
+  $("ds-list").addEventListener("click",function(e){
+    var row=e.target.closest(".ds-row"); if(!row) return; var nm=row.getAttribute("data-n"), zone=row.getAttribute("data-z"), d=cur();
+    var b=e.target.closest("button[data-d]");
+    if(b){d[zone][nm]=(d[zone][nm]||0)+(+b.dataset.d); if(d[zone][nm]<=0) delete d[zone][nm]; save(); render(); preset.value=""; return;}
+    var mv=e.target.closest("button[data-mv]");
+    if(mv){var to=mv.dataset.mv; d[zone][nm]--; if(d[zone][nm]<=0) delete d[zone][nm]; d[to]=d[to]||{}; d[to][nm]=(d[to][nm]||0)+1; save(); render(); setMsg("Moved one "+nm+" to the "+(to==="main"?"main deck":to==="extra"?"Extra Deck":"side")+".");}
+  });
+  $("ds-list").addEventListener("change",function(e){var s=e.target.closest("select.ds-role"); if(!s) return; var nm=s.closest(".ds-row").getAttribute("data-n"), d=cur(); d.roles=d.roles||{}; d.roles[nm]=s.value; s.setAttribute("data-r",s.value); save(); clearTimeout(timer); timer=setTimeout(stats,60);});
+  // search
+  var q=$("ds-q"), res=$("ds-results"), addTo="main";
+  [].forEach.call($("ds-to").querySelectorAll("button"),function(b){b.addEventListener("click",function(){addTo=b.dataset.v; [].forEach.call($("ds-to").querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",String(x===b));});});});
+  function norm(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  function search(){
+    var v=norm(q.value.trim()); res.innerHTML=""; if(v.length<2) return;
+    var toks=v.split(/\s+/), hits=[];
+    for(var i=0;i<NAMES.length&&hits.length<400;i++){var n=norm(NAMES[i]); var okk=true; for(var t=0;t<toks.length;t++) if(n.indexOf(toks[t])<0){okk=false;break;} if(okk) hits.push([n.indexOf(v)===0?0:(n.indexOf(" "+toks[0])>=0?1:2),NAMES[i]]);}
+    hits.sort(function(a,b){return a[0]-b[0]||a[1].length-b[1].length;});
+    res.innerHTML=hits.slice(0,25).map(function(h){var inf=info(h[1]); return '<li><button type="button" data-name="'+esc(h[1])+'"><span>'+esc(h[1])+'</span><small>'+esc(inf.type)+(inf.ban?' · <span class="ban">'+["","Semi-Limited","Limited","Forbidden"][inf.ban]+'</span>':'')+'</small></button></li>';}).join("")||'<li class="note">No card found.</li>';
+  }
+  var st2=null;
+  q.addEventListener("input",function(){clearTimeout(st2); st2=setTimeout(search,90);});
+  q.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault(); var f=res.querySelector("button[data-name]"); if(f) f.click();}});
+  res.addEventListener("click",function(e){var b=e.target.closest("button[data-name]"); if(!b) return; addCard(b.getAttribute("data-name"),addTo);});
+  // decks
+  $("ds-which").addEventListener("change",function(){S.cur=this.value; save(); deckSelect(); render(); setMsg("");});
+  $("ds-name").addEventListener("input",function(){cur().name=this.value.slice(0,60); save(); var o=$("ds-which").querySelector('option[value="'+S.cur+'"]'); if(o) o.textContent=cur().name||"Untitled deck";});
+  $("ds-new").addEventListener("click",function(){var id=newId(); S.decks[id]={name:"New deck "+(Object.keys(S.decks).length+1),main:{},extra:{},side:{},roles:{},cmp:""}; S.cur=id; save(); deckSelect(); render(); setMsg("New empty deck."); q.focus();});
+  $("ds-dup").addEventListener("click",function(){var id=newId(), c=clone(cur()); c.name=(c.name||"Deck")+" (copy)"; S.decks[id]=c; S.cur=id; save(); deckSelect(); render(); setMsg("Duplicated.");});
+  var delB=$("ds-del"), dt=null;
+  delB.addEventListener("click",function(){
+    if(!delB.classList.contains("armed")){delB.classList.add("armed"); delB.textContent="Tap again to delete"; clearTimeout(dt); dt=setTimeout(function(){delB.classList.remove("armed"); delB.textContent="Delete";},3000); return;}
+    clearTimeout(dt); delB.classList.remove("armed"); delB.textContent="Delete";
+    var ids=Object.keys(S.decks);
+    if(ids.length<=1){S.decks[S.cur]={name:"New deck",main:{},extra:{},side:{},roles:{},cmp:""}; setMsg("Deck cleared (it was your only one).");}
+    else {delete S.decks[S.cur]; S.cur=Object.keys(S.decks)[0]; setMsg("Deleted.");}
+    save(); deckSelect(); render();
+  });
+  $("ds-cmp").addEventListener("change",function(){cur().cmp=this.value; save(); stats();});
+  preset.addEventListener("change",function(){var v=preset.value, d=cur(); if(!v) return;
+    if(v==="all"){d.main=clone(MAIN); d.extra=clone(EXTRA); d.side=clone(SIDE); d.roles={}; if(!d.cmp) d.cmp="main"; setMsg("Loaded your Angelechy list.");}
+    else {var p=PL[+v.slice(1)]; d.main=clone(p.main); d.side=clone(p.side); d.extra=clone(EXTRA); d.roles={}; if(!d.cmp) d.cmp="main"; setMsg("Loaded your list after siding going "+p.g+" vs "+p.name+" (sided-out cards are now in the side).");}
+    save(); deckSelect(); render();});
+  var clr=$("ds-clear"), ct=null;
+  clr.addEventListener("click",function(){
+    if(!clr.classList.contains("armed")){clr.classList.add("armed"); clr.textContent="Tap again to clear"; clearTimeout(ct); ct=setTimeout(function(){clr.classList.remove("armed"); clr.textContent="Clear deck";},3000); return;}
+    clearTimeout(ct); clr.classList.remove("armed"); clr.textContent="Clear deck"; var d=cur(); d.main={}; d.extra={}; d.side={}; d.roles={}; save(); render(); setMsg("Cleared.");});
+  // export
+  function copy(txt,okMsg){try{navigator.clipboard.writeText(txt).then(function(){setMsg(okMsg);},function(){showText(txt);});}catch(e){showText(txt);}}
+  function showText(txt){$("ds-imp").hidden=false; $("ds-impbtn").setAttribute("aria-expanded","true"); var t=$("ds-imptext"); t.value=txt; t.focus(); t.select(); setMsg("Copy didn't work here; the text is selected in the box below.");}
+  $("ds-copy").addEventListener("click",function(){var d=cur();
+    var txt=[["main","Main deck"],["extra","Extra Deck"],["side","Side deck"]].map(function(z){var o=d[z[0]]||{}, ks=Object.keys(o); return ks.length?z[1]+" ("+total(o)+")\n"+ks.map(function(n){return o[n]+" "+n;}).join("\n"):"";}).filter(Boolean).join("\n\n");
+    copy((d.name?d.name+"\n\n":"")+txt,"List copied.");});
+  $("ds-ydk").addEventListener("click",function(){loadDB(function(){var d=cur(), miss=[];
+    function ids(o){var out=[]; for(var n in o){var r=BYNAME[n]; if(!r){miss.push(n); continue;} for(var i=0;i<o[n];i++) out.push(r[0]);} return out.join("\n");}
+    var txt="#created by Angelechy Guide\n#main\n"+ids(d.main||{})+"\n#extra\n"+ids(d.extra||{})+"\n!side\n"+ids(d.side||{})+"\n";
+    copy(txt,".ydk copied"+(miss.length?" ("+miss.length+" card"+(miss.length>1?"s":"")+" not in the card list were left out)":"")+". Paste it into a .ydk file or a simulator that accepts YDK text.");});});
+  // import
+  $("ds-impbtn").addEventListener("click",function(){var box=$("ds-imp"); box.hidden=!box.hidden; this.setAttribute("aria-expanded",String(!box.hidden)); if(!box.hidden) $("ds-imptext").focus();});
+  function lookup(name){var r=BYNAME[name]||BYLOW[name.toLowerCase()]; if(r) return r[1]; if(PINFO[name]) return name;
+    var low=name.toLowerCase(); for(var i=0;i<NAMES.length;i++) if(NAMES[i].toLowerCase().indexOf(low)===0) return NAMES[i]; return null;}
+  $("ds-impgo").addEventListener("click",function(){loadDB(function(){
+    var txt=$("ds-imptext").value, z={main:{},extra:{},side:{}}, miss=[], zone="main";
+    function put(name,n,zn){var inf=info(name); if(inf.zone===3&&zn==="main") zn="extra"; z[zn][name]=(z[zn][name]||0)+n;}
+    if(/#main/i.test(txt)){
+      txt.split(/\r?\n/).forEach(function(line){line=line.trim(); if(/^#main/i.test(line)) zone="main"; else if(/^#extra/i.test(line)) zone="extra"; else if(/^!side/i.test(line)) zone="side";
+        else if(/^\d+$/.test(line)){var r=BYID[+line]; if(r) put(r[1],1,zone); else miss.push(line);}});
+    } else {
+      txt.split(/\r?\n/).forEach(function(line){line=line.trim(); if(!line) return;
+        var h=line.match(/^(main|extra|side)(\s*deck)?\s*(\(\d+\))?:?$/i); if(h){zone=h[1].toLowerCase(); return;}
+        var m=line.match(/^(\d+)\s*[x×]?\s+(.+)$/i)||line.match(/^(.+?)\s+[x×]\s*(\d+)$/i), n=1, name=line;
+        if(m){if(/^\d+$/.test(m[1])){n=+m[1]; name=m[2];} else {name=m[1]; n=+m[2];}}
+        var found=lookup(name.trim()); if(found) put(found,n,zone); else miss.push(name.trim());});
+    }
+    if(!total(z.main)&&!total(z.extra)&&!total(z.side)){$("ds-impmsg").textContent="Nothing recognised. Paste a .ydk file or lines like “3 Card Name”."; return;}
+    var d=cur(); d.main=z.main; d.extra=z.extra; d.side=z.side; d.roles={}; save(); render();
+    $("ds-impmsg").textContent="Imported "+total(z.main)+" · "+total(z.extra)+" · "+total(z.side)+(miss.length?". Not found: "+miss.slice(0,6).join(", ")+(miss.length>6?"…":""):"")+".";
+  });});
+  // sample hand
+  root.querySelector(".ds-draw").addEventListener("click",function(e){
+    var b=e.target.closest("button[data-n]"); if(!b) return; var n=+b.dataset.n, d=cur(), names=[];
+    for(var nm in d.main||{}) for(var i=0;i<d.main[nm];i++) names.push(nm);
+    if(names.length<n){$("ds-verdict").textContent="Not enough cards."; return;}
+    for(var j=0;j<n;j++){var r=j+Math.floor(Math.random()*(names.length-j)); var t=names[j]; names[j]=names[r]; names[r]=t;}
+    var hand=names.slice(0,n), fbgOK=((d.main["Angelechy Disturbance"]||0)+(d.main["Angelechy Verdict"]||0))>0;
+    var ev=evalHand(hand.map(function(x){return flags(d,x);}),fbgOK);
+    $("ds-hand").innerHTML=hand.map(function(nm){var j=jobOf(d,nm); var c=j==="st"?"st":j==="sp"?"sp":j==="int"?"int":""; return '<span class="'+c+'">'+esc(nm)+'</span>';}).join("");
+    $("ds-verdict").textContent=n===5?(ev.st>=1?("A play"+(ev.res?", and it survives one hand trap.":", but one hand trap on its key step stops it.")):"No play: this hand bricks going first.")
+      :(ev.int+" interruption"+(ev.int===1?"":"s")+(ev.e4?", including e4":"")+" · "+(ev.st>=1||ev.e4?"you have a play on your turn.":"no play on your turn."));
+  });
+  // start only when the page is opened
+  var started=false;
+  function start(){if(started||location.hash.slice(1)!=="sim") return; started=true; deckSelect(); render(); loadDB(function(){render(); if(!$("ds-dbmsg").textContent&&DB) $("ds-dbmsg").textContent=DB.c.length.toLocaleString()+" TCG cards, Forbidden & Limited status as of "+DB.v+" (YGOPRODeck).";});}
+  window.addEventListener("hashchange",start); start();
 })();
 </script>
 <!-- /v3-js -->

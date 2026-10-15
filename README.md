@@ -35,8 +35,11 @@ Add one of these after the address:
 | Lines through hand traps | https://nickllages.github.io/angelechy-guide/#lines |
 | Life point calculator | https://nickllages.github.io/angelechy-guide/#lp |
 | Match tracker (saved on your device) | https://nickllages.github.io/angelechy-guide/#tracker |
+| Deckbuilder (any deck, with opening odds) | https://nickllages.github.io/angelechy-guide/#sim |
+| Odds calculator | https://nickllages.github.io/angelechy-guide/#calc |
 
 ## What's in this repository
 - `index.html`: the whole guide in one page, served by GitHub Pages.
 - `README.md`: this file.
+- `cards.json`: the TCG card list the Deckbuilder searches (from the YGOPRODeck API).
 - `brain/`: the research behind the guide — decisions, sources, matchup research, results, open questions and raw decklists (Markdown). Start at `brain/README.md`.

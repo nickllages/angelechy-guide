@@ -112,3 +112,9 @@
 - **Oct 13:** I attributed to Trif that Kusanagi/Futsu "Extra Deck cards" were unnecessary. He meant other builds splashing Mitsurugi cards.
 - **Oct 13–14 (tools, not deck):** the coin "didn't seem random". It was random (2,000 flips 50.8%); the animation looked scripted. Measure before assuming.
 - **General:** don't trust WebFetch summaries of deck pages (they invent card names). Parse card IDs yourself.
+
+## Rulings: draws count as adding from the Deck (Oct 15, user correction, checked)
+- **Ash Blossom can negate draw effects, including Mulcharmy Fuwalos and Purulia.** Official ruling (Yugipedia, Card Rulings: Ash Blossom & Joyous Spring): Ash can be chained to Maxx "C"; Maxx "C" is then negated and draws nothing that turn. The Mulcharmies work the same way. So: your Ash stops their Fuwalos/Purulia on your turn, and their Ash can stop yours. Pairing a Mulcharmy with your Standby e4 does make them choose where Ash goes.
+- **Draws also count for Droll & Lock Bird.** A draw outside the Draw Phase triggers Droll, and Droll's lock stops further draws that turn. Your Droll shuts off their Mulcharmy after its first draw (and stops your own searches, so search first). Their Droll during your Standby e4 loop also blocks Endgame Problem's draw.
+- Also Ash-able for the same reason: Endgame Problem's Standby draw, Pot of Sloth, Triple Tactics Talent's draw-2 mode.
+- (I first told the user Ash couldn't touch a Mulcharmy; that was wrong and was reverted the same day.)

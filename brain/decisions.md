@@ -38,7 +38,7 @@ Counts: 13 starters (Strategy Score, Problem, Terraforming, Opposition, Foolish 
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct14.py` (2026-10-14).*
+*From `build/side_oct14.py` (2026-10-15).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|

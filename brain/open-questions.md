@@ -10,7 +10,7 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 
 ## Research to do
 
-0. **Emergency Forbidden & Limited list (announced Oct 14):** 34 Forbidden + 8 Limited, revealed Oct 16–18 at YCS Houston. When it's out: check every card in the 70 and the Builds section, the top-10 decks, and the hand-trap matrix; propose deck changes in the run summary.
+0. **Emergency Forbidden & Limited list (announced Oct 14):** 34 Forbidden + 8 Limited, revealed Oct 16–18 at YCS Houston. When it's out: check every card in the 70 and the Builds section, the top-10 decks, and the hand-trap matrix; propose deck changes in the run summary. Then rebuild the Deckbuilder's card list (`python3 tools/build_carddb.py`) and republish.
 
 4. **Trif's "number one hand trap against Angelechy"** (kept for his paid Metafy masterclass with Lucas Sacco, launched Oct 14). Never bypass the paywall; watch free sources. Card-text guesses: **D.D. Crow** (banishes Verdict in the GY before its effect; works at their own Standby against your e4 loop) and **Artifact Lancea** (on your turn nothing can be banished, which shuts off Verdict/Disturbance/Opposition/Strategy Score GY costs and Enlisted/Castellan/Endgame banishes). Ruled out: Dimension Shifter (Forbidden in the TCG), Retaliating "C" (only triggers on Spells that Special Summon).
 5. **Unposted lists:** the Belén winner (Kevin Sanchez Espinoza), Joshua Artavia (Belén Top 4), Prabhdeep Atwal (Burnaby 2nd). (Monterrey top cut posted Oct 14: no Angelechy.)

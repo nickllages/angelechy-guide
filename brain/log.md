@@ -68,3 +68,10 @@
 - Merged (v57): Meta — Monterrey row, "eight regionals" wording, emergency-ban-list callout, iGrind 15-0 in the locals row, header date Oct 14. Elfnote deep dive Replays — DB Grinder Angelechy vs Elfnote HR DB (Oct 14, 2-0; https://youtu.be/sl775c3dHG8).
 - Trif's #1 hand trap: still not named in free sources (masterclass launched Oct 14; Lucas Sacco's video links "Angelechy Full Grand Master Class" on Metafy — not opened).
 - Proposed: none. Not watched: Lucas Sacco "MUST KNOW Advanced FTK Angelechy Combos" (Oct 13, https://youtu.be/WeNp-0sC2eg) — Builds/FTK, likely moot until the ban list; YGOPD case-tournament profile (23 views), RebirthOfShien White Forest profile.
+
+## Oct 15, 2026 (session) — Deckbuilder + calculator moved to Tools (v58)
+- User: "move the hypergeometric calculator to the tools section and make a deckbuilder simulator in the tools section", then "I want the deckbuilder to be able to create any deck".
+- Tools now: Life points · Match tracker · Deckbuilder (#sim) · Odds calculator (#calc). Siding keeps Plans + Odds. Home blurbs updated (v3_apply.py step 7).
+- Deckbuilder (#sim): any TCG card (data/carddb.json, 13,984 cards from YGOPRODeck, built by tools/build_carddb.py; published as cards.json next to the page on both the artifact and GitHub Pages), Main/Extra/Side with Forbidden/Limited and size checks, several saved decks (localStorage ag-decks-v2), import .ydk or text lists, copy list / copy .ydk, siding presets from the guide's plans (swap main ↔ side), compare against another deck, sample hands. Odds: exact hypergeometric for interruptions; play / survives-a-hand-trap from a 40,000-hand seeded Monte Carlo using the card jobs (st/sp/ext/int/bk/brick) ported from tools/sim.py. Your 70: 87.5% play, 54.1% survives a hand trap, 84.0% 3+ interruptions going 2nd (matches the guide).
+- Verified live on GitHub Pages (card list loads, any-card search, stats). Tests: anytest 17 PASS, regression 26 PASS.
+- To do after the emergency F&L (Oct 16–18): rebuild the card list (`python3 tools/build_carddb.py`) so the deckbuilder shows the new status.

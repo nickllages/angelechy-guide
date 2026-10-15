@@ -596,43 +596,164 @@ table.pieces td:first-child{white-space:nowrap}
 .lp-hint{margin:0;font:600 13px var(--body);color:rgb(255 255 255 / .88);text-shadow:0 1px 6px rgb(0 0 0 / .5);opacity:0;transition:opacity .25s ease .25s}
 .lp-res.on,.lp-hint.on{opacity:1}
 .coin .cf{overflow:hidden}.coin .cf .sh{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 30%,rgb(0 0 0 / .55),#000);opacity:0;pointer-events:none}
-/* ===== deckbuilder simulator ===== */
-.ds{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
-@media (min-width:900px){.ds{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:start}}
-.ds-deck{gap:12px}
-.ds-top{display:flex;flex-wrap:wrap;gap:10px;align-items:end;justify-content:space-between}
-.ds-lbl{display:grid;gap:4px;font:600 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ds-deck select{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;max-width:100%;min-width:0}
-.ds-top select{min-width:220px}
-.ds-count{font:700 14px var(--mono);padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
-.ds-count.bad{background:var(--bad-soft);color:var(--bad)}
-.ds-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+/* ===== deckbuilder (DuelingBook-style, in the guide's palette) ===== */
+body[data-page="sim"] .wrap{max-width:1500px}
+@media (min-width:1180px){body[data-page="sim"] .wrap{max-width:none;margin:0;padding-left:calc(max(20px,50vw - 615px) + 290px);padding-right:24px}}
+.db{display:grid;gap:12px}
+.db-bar{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.db-lbl,.ds-lbl{display:grid;gap:4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.db-lbl select,.db-lbl input,.ds-cmp select{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0;max-width:100%}
+.db-which,.db-name{flex:1 1 200px}
+.db-which select,.db-name input{width:100%}
+.db-btns{display:flex;flex-wrap:wrap;gap:6px;align-items:center;flex:1 1 100%}
+.db-btns .btn:disabled{opacity:.45;cursor:default}
+.db-menu{position:relative}
+.db-menu>summary{list-style:none}
+.db-menu>summary::-webkit-details-marker{display:none}
+.db-menu-in{position:absolute;left:0;top:calc(100% + 6px);z-index:30;display:grid;gap:2px;width:250px;max-width:calc(100vw - 32px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 12px 30px rgb(0 0 0 / .18)}
+.db-menu-in>button{all:unset;cursor:pointer;padding:9px 10px;border-radius:8px;font:600 14px var(--body);color:var(--ink)}
+.db-menu-in>button:hover,.db-menu-in>button:focus-visible{background:var(--accent-soft);color:var(--accent)}
+.db-menu-in>button.armed{background:var(--bad-soft);color:var(--bad)}
+.db-menu-in .db-lbl{padding:4px 2px 8px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.ds-imp{flex:1 1 100%;display:grid;gap:8px}
+.ds-imp textarea{width:100%;min-height:140px;font:13px var(--mono);border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:10px}
+.db-impact{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.db-file{cursor:pointer}
+.ds-sum{flex:1 1 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ds-sum:empty{display:none}
 .ds-sum div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:2px;min-width:0}
 .ds-sum b{font:700 20px var(--mono);font-variant-numeric:tabular-nums}
 .ds-sum span{font-size:12.5px;color:var(--muted);line-height:1.25}
-.ds-add{display:grid;gap:4px}
-.ds-addrow{display:flex;gap:8px}
-.ds-addrow select{flex:1}
-.ds-list{display:grid;gap:12px}
-.ds-grp h5{margin:0 0 6px;font:700 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ds-rows{display:grid;gap:4px}
-.ds-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:6px 8px;border-radius:8px;background:var(--bg)}
-.ds-row .nm{font-weight:600;font-size:14.5px;min-width:0;overflow-wrap:anywhere}
-.ds-row .tg{grid-column:1;display:flex;flex-wrap:wrap;gap:4px}
-.ds-row .q{grid-column:2;grid-row:1/span 2;display:flex;align-items:center;gap:6px}
-.ds-row .q b{font:700 16px var(--mono);min-width:1.4em;text-align:center}
-.ds-row .q button{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 18px var(--body);cursor:pointer;touch-action:manipulation}
-.ds-row.over .q b{color:var(--bad)}
-.tg i{font:600 10.5px var(--mono);font-style:normal;padding:1px 7px;border-radius:999px;white-space:nowrap}
-.tg .st{background:var(--good-soft);color:var(--good)}
-.tg .sp{background:var(--gold-soft);color:var(--gold)}
-.tg .int{background:var(--accent-soft);color:var(--accent)}
-.tg .e4{background:var(--accent);color:var(--surface)}
-.tg .gy{background:var(--gold-soft);color:var(--gold)}
-.tg .bk{background:var(--warn-soft);color:var(--warn)}
-.tg .ms{background:color-mix(in srgb,var(--line) 60%,transparent);color:var(--muted)}
-.ds-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.ds-res{display:grid;gap:14px}
+/* deck zones */
+.db-main{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.db-main{grid-template-columns:minmax(0,1fr) minmax(300px,380px);align-items:start}}
+.db-deck{display:grid;gap:10px;align-content:start;min-width:0}
+.db-zone{--zc:var(--accent);--zs:var(--accent-soft);display:grid;gap:6px;padding:8px;border-radius:var(--r);background:var(--zs);border:1px solid color-mix(in srgb,var(--zc) 30%,transparent);transition:box-shadow .12s ease}
+.db-zone[data-z="extra"]{--zc:var(--gold);--zs:var(--gold-soft)}
+.db-zone[data-z="side"]{--zc:var(--good);--zs:var(--good-soft)}
+.db-zone.over{box-shadow:0 0 0 3px var(--zc)}
+.db-zone.nogo{box-shadow:0 0 0 3px var(--bad)}
+.db-zh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:0 2px}
+.db-zh b{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--zc)}
+.db-n{font:700 12.5px var(--mono);padding:1px 9px;border-radius:999px;background:var(--surface);color:var(--zc)}
+.db-n.bad{background:var(--bad);color:var(--surface)}
+.db-split{font:500 12px var(--mono);color:var(--muted);margin-left:auto}
+.db-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px}
+.db-slot{aspect-ratio:72/105;border-radius:4px;border:1px dashed color-mix(in srgb,var(--zc) 35%,transparent);background:color-mix(in srgb,var(--surface) 45%,transparent)}
+/* card tiles: the picture, with the name on a coloured face underneath in case the picture can't load */
+.cd{position:relative;display:block;aspect-ratio:72/105;border-radius:4px;overflow:hidden;background:var(--fc,var(--surface));color:var(--fi,var(--ink));box-shadow:0 1px 2px rgb(0 0 0 / .3)}
+.cd>b{position:absolute;inset:3px;overflow:hidden;font:700 8.5px/1.1 var(--body);overflow-wrap:break-word;hyphens:auto}
+@media (max-width:520px){.cd>b{font-size:7px;inset:2px}}
+.cd>i{position:absolute;inset:0;background-repeat:no-repeat;background-size:1600% 800%}
+.cd>em{position:absolute;top:2px;left:2px;min-width:15px;height:15px;padding:0 3px;border-radius:999px;background:var(--bad);color:var(--surface);font:700 10px/15px var(--mono);font-style:normal;text-align:center;box-shadow:0 0 0 1.5px var(--surface)}
+.cd.k-m{--fc:var(--gold-soft);--fi:var(--gold)}
+.cd.k-s{--fc:var(--good-soft);--fi:var(--good)}
+.cd.k-t{--fc:var(--bad-soft);--fi:var(--bad)}
+.cd.k-x{--fc:var(--accent-soft);--fi:var(--accent)}
+.cdb{all:unset;box-sizing:border-box;position:relative;display:block;cursor:grab;border-radius:4px;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.cdb:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.cdb.sel .cd{box-shadow:0 0 0 2px var(--accent)}
+.cdb.bad .cd{box-shadow:0 0 0 2px var(--bad)}
+.cdb.lift{opacity:.3}
+.cdb.ins::before{content:"";position:absolute;left:-3px;top:0;bottom:0;width:3px;border-radius:2px;background:var(--accent);z-index:2}
+.db-ghost{position:fixed;left:0;top:0;z-index:95;width:62px;pointer-events:none;filter:drop-shadow(0 8px 14px rgb(0 0 0 / .35))}
+.db-ghost .cd{transform:rotate(-4deg) scale(1.06)}
+body.db-dragging,body.db-dragging *{cursor:grabbing!important;-webkit-user-select:none;user-select:none}
+.db-hint{font-size:13px}
+/* search pane and card preview */
+.db-col{display:grid;gap:10px;min-width:0}
+.db-pane{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px;min-width:0}
+.db-ph{display:none}
+.db-find{display:flex;gap:6px;align-items:stretch}
+.db-find input{flex:1;min-width:0;font:500 15px var(--body);padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.db-find select{font:600 13px var(--body);border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:0 6px;max-width:110px}
+#db-ftog span{margin-left:6px;font:700 11px var(--mono);background:var(--accent);color:var(--surface);border-radius:999px;padding:1px 6px}
+#db-ftog span:empty{display:none}
+.db-filters{display:grid;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);max-height:44vh;overflow-y:auto}
+.db-fg{display:grid;gap:5px}
+.db-fg>span{font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.db-chips{display:flex;flex-wrap:wrap;gap:4px}
+.db-chips button{font:600 12.5px var(--body);padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.db-chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.db-rng{display:flex;flex-wrap:wrap;gap:6px 14px}
+.db-rng label{display:flex;gap:4px;align-items:center;font:600 12.5px var(--body);color:var(--muted)}
+.db-rng input{width:64px;font:600 13px var(--mono);padding:5px 6px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.db-fsel{font:500 14px var(--body);padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%}
+.db-fbtm{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13.5px}
+.db-fbtm label{display:flex;gap:6px;align-items:center}
+.db-rcount{margin:0;font:600 12px var(--mono);color:var(--muted)}
+.db-results{list-style:none;margin:0;padding:0;display:grid;gap:3px;align-content:start;overflow-y:auto;max-height:520px}
+.db-r{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:8px;align-items:center;padding:4px 6px;border-radius:8px;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.db-r:hover,.db-r.sel{background:var(--accent-soft)}
+.db-r:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.db-rt{min-width:0;display:grid;gap:1px}
+.db-rt b{font:650 13.5px/1.25 var(--body);overflow-wrap:anywhere}
+.db-rt small{font:500 11.5px/1.3 var(--body);color:var(--muted)}
+.db-rt .ban{color:var(--bad);font-weight:700}
+.db-radd{display:flex;align-items:center;gap:6px}
+.db-radd i{font:700 11.5px var(--mono);font-style:normal;color:var(--accent)}
+.db-radd button{all:unset;cursor:pointer;width:32px;height:32px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 18px/1 var(--body)}
+.db-radd button:hover,.db-radd button:focus-visible{border-color:var(--accent);color:var(--accent)}
+.db-more{padding:8px;text-align:center}
+.ds-dbmsg{font-size:12px;margin:0}
+.db-prev{display:grid;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;min-width:0}
+.db-prev:empty{display:none}
+.dp-top{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:start}
+.dp-top .cd{width:96px}
+.dp-info{display:grid;gap:4px;min-width:0}
+.dp-name{font:650 16.5px/1.25 var(--display);margin:0;padding-right:28px}
+.dp-meta{font:500 12.5px/1.4 var(--mono);color:var(--muted)}
+.dp-ban{font:700 12px var(--mono);color:var(--bad)}
+.dp-have{font:600 12.5px var(--body);color:var(--accent)}
+.dp-text{font-size:13.5px;line-height:1.5;white-space:pre-line;margin:0}
+.dp-act{display:flex;flex-wrap:wrap;gap:6px}
+.dp-act .btn{padding:6px 11px;font-size:13px}
+.dp-act select{font:600 13px var(--body);padding:6px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.dp-x{all:unset;cursor:pointer;position:absolute;top:8px;right:8px;width:32px;height:32px;display:none;place-items:center;border-radius:999px;font:700 18px var(--body);color:var(--muted)}
+.db-prev{position:relative}
+.dp-hint{color:var(--muted);font-size:13.5px;margin:0}
+.dp-link{font-size:13.5px;font-weight:600}
+@media (min-width:900px){
+  .db-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + var(--sub-h) + 10px);max-height:calc(100vh - var(--bar-h) - var(--sub-h) - var(--tab-h) - 30px);display:flex;flex-direction:column}
+  .db-pane{flex:1;min-height:260px}
+  .db-results{flex:1;min-height:0;max-height:none}
+  .db-prev{flex:none;max-height:44%;overflow-y:auto}
+  .db-addbtn{display:none}
+}
+@media (min-width:1180px){.db-col{top:20px;max-height:calc(100vh - 40px)}}
+@media (max-width:899px){
+  .db-col{display:contents}
+  .db-pane{position:fixed;inset:0;z-index:62;border:0;border-radius:0;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px calc(env(safe-area-inset-bottom,0px) + 10px);display:none}
+  .db.pane-open .db-pane{display:flex}
+  .db-ph{display:flex;align-items:center;gap:10px}
+  .db-ph b{font:650 17px var(--display)}
+  .db-pcount{font:600 12.5px var(--mono);color:var(--muted);margin-right:auto}
+  .db-results{flex:1;min-height:0;max-height:none}
+  .db-filters{max-height:38vh}
+  .db-prev{position:fixed;left:0;right:0;bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px));z-index:66;max-height:64vh;overflow-y:auto;border-radius:16px 16px 0 0;border-width:1px 0 0;box-shadow:0 -10px 30px rgb(0 0 0 / .22);display:none;padding-bottom:16px}
+  .db.prev-open .db-prev{display:grid}
+  .db.pane-open .db-prev{bottom:0;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+  .dp-x{display:grid}
+  .db.drag-out .db-pane,.db.drag-out .db-prev{opacity:.06;pointer-events:none}
+  .db-grid{gap:2px}
+}
+.db-toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px) + 14px);z-index:96;display:flex;gap:10px;align-items:center;background:var(--ink);color:var(--bg);border-radius:999px;padding:7px 7px 7px 16px;font:600 14px var(--body);box-shadow:0 8px 24px rgb(0 0 0 / .25);max-width:calc(100vw - 32px)}
+.db-toast[hidden]{display:none!important}
+.db-toast span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.db-toast button{all:unset;cursor:pointer;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--bg) 18%,transparent);font-weight:700}
+.db-toast button[hidden]{display:none}
+.db.pane-open~* .db-toast,.db.pane-open .db-toast{bottom:calc(env(safe-area-inset-bottom,0px) + 14px)}
+@media (min-width:1180px){.db-toast{bottom:22px}}
+/* odds, jobs, sample hands */
+.db-odds{padding:0}
+.db-odds>summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:14px 16px}
+.db-odds>summary::-webkit-details-marker{display:none}
+.db-odds>summary b{font:650 16px var(--display)}
+.db-odds>summary::after{content:"";margin-left:auto;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);align-self:center}
+.db-odds[open]>summary::after{transform:rotate(225deg)}
+.db-odds .ds-res{padding:0 12px 12px}
+.ds-res{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ds-cmp{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:end}
 .ds-stats{display:grid;gap:6px}
 .ds-stat{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 10px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line)}
 .ds-stat:last-child{border-bottom:0}
@@ -649,51 +770,25 @@ table.pieces td:first-child{white-space:nowrap}
 .ds-hist b{font:700 11px var(--mono);color:var(--ink)}
 .ds-cap{text-align:center;font-size:12.5px}
 .ds-draw{display:flex;flex-wrap:wrap;gap:8px}
-.ds-hand{display:flex;flex-wrap:wrap;gap:6px;min-height:8px}
-.ds-hand span{font:600 13px var(--body);padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg)}
-.ds-hand span.st{border-color:var(--good);background:var(--good-soft);color:var(--good)}
-.ds-hand span.sp{border-color:var(--gold);background:var(--gold-soft);color:var(--gold)}
-.ds-hand span.int{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.ds-hand{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.ds-hand:empty{display:none}
+.ds-hand figure{margin:0;display:grid;gap:3px;justify-items:center;text-align:center;font:600 11px/1.2 var(--body)}
+.ds-hand figure .cd{width:100%}
+.ds-hand figure.st figcaption{color:var(--good)}.ds-hand figure.sp figcaption{color:var(--gold)}.ds-hand figure.int figcaption{color:var(--accent)}
 .ds-verdict{margin:0;font-size:14.5px}
 .ds-how summary{cursor:pointer;font-weight:700}
 .ds-how ul{margin-top:8px}
-@media (max-width:420px){.ds-sum b{font-size:17px}.ds-top select{min-width:0;width:100%}.ds-top label{flex:1}}
-.ds-decks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 10px;align-items:end}
-.ds-dbtns{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
-.ds-deck input{font:500 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
-.ds-decks select{width:100%}
-.ds-search{display:grid;gap:6px}
-.ds-addrow{display:flex;gap:8px;align-items:stretch}
-.ds-addrow input{flex:1}
-.ds-to{flex:none}
-.ds-results{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-height:280px;overflow-y:auto}
-.ds-results:empty{display:none}
-.ds-results button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%;padding:8px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font:600 14px var(--body)}
-.ds-results button:hover,.ds-results button:focus-visible{border-color:var(--accent);color:var(--accent)}
-.ds-results small{font:500 12px var(--body);color:var(--muted);text-align:right}
-.ds-results .ban{color:var(--bad);font-weight:700}
-.ds-dbmsg{font-size:12.5px}
-.ds-row small{display:block;font:500 12px var(--body);color:var(--muted)}
-.ds-row .rl{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.ds-row select.ds-role{font:600 12.5px var(--body);padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
-.ds-row select.ds-role[data-r="st"]{border-color:var(--good);color:var(--good)}
-.ds-row select.ds-role[data-r="sp"]{border-color:var(--gold);color:var(--gold)}
-.ds-row select.ds-role[data-r="int"]{border-color:var(--accent);color:var(--accent)}
-.ds-row select.ds-role[data-r="brick"]{border-color:var(--bad);color:var(--bad)}
-.ds-row .mv{font:600 12px var(--body);border:1px dashed var(--line);background:none;color:var(--muted);border-radius:999px;padding:3px 9px;cursor:pointer}
-.ds-row .mv:hover{color:var(--accent);border-color:var(--accent)}
-.ds-row .ban{font:700 11px var(--mono);color:var(--bad)}
-.ds-zone{display:grid;gap:10px;padding-top:6px;border-top:1px solid var(--line)}
-.ds-zone>h4{display:flex;justify-content:space-between;align-items:baseline;margin:0}
-.ds-cmp{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:end}
-.ds-cmp select{font:500 14.5px var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;max-width:100%}
-.ds-imp{display:grid;gap:8px}
-.ds-imp textarea{width:100%;min-height:150px;font:13px var(--mono);border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:10px}
-.ds-dbtns .btn.armed{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
-@media (max-width:520px){.ds-decks{grid-template-columns:1fr}.ds-addrow{flex-wrap:wrap}.ds-addrow input{flex-basis:100%}}
-.ds-row .rl{grid-column:1/-1;grid-row:2}.ds-row .q{grid-row:1}
-.ds-row .nm small{display:inline;margin-left:6px}
-@media (max-width:520px){.ds-row .nm small{display:block;margin-left:0}}
+.db-jobs{display:grid;gap:4px;max-height:420px;overflow-y:auto}
+.db-job{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:8px;align-items:center;padding:3px 0}
+.db-job .cd{width:30px}
+.db-job span{font:600 13.5px var(--body);overflow-wrap:anywhere}
+.db-job select,.dp-act select.ds-role{font:600 12.5px var(--body);padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:170px}
+select.ds-role[data-r="st"]{border-color:var(--good);color:var(--good)}
+select.ds-role[data-r="sp"]{border-color:var(--gold);color:var(--gold)}
+select.ds-role[data-r="int"]{border-color:var(--accent);color:var(--accent)}
+select.ds-role[data-r="brick"]{border-color:var(--bad);color:var(--bad)}
+.db-legal{font-size:12px;text-align:right}
+@media (max-width:420px){.ds-sum b{font-size:17px}.db-find select{max-width:88px}}
 /* v3-css-end */
 </style>
 
@@ -3381,62 +3476,84 @@ table.pieces td:first-child{white-space:nowrap}
     <div class="eyebrow">Tools · deckbuilding</div>
     <h2>Deckbuilder</h2>
   </div>
-  <p class="prose note">Build any deck from every TCG card, keep as many decks as you like, and see how often each one opens what it needs. Give each main-deck card a job (starter, extender, interruption…) and the odds update as you build. Decks stay on this device.</p>
-  <div class="ds">
-    <div class="panel ds-deck">
-      <div class="ds-decks">
-        <label class="ds-lbl">Deck<select id="ds-which"></select></label>
-        <label class="ds-lbl ds-namebox">Name<input id="ds-name" maxlength="60"></label>
-        <div class="ds-dbtns"><button type="button" class="btn" id="ds-new">New</button><button type="button" class="btn" id="ds-dup">Duplicate</button><button type="button" class="btn" id="ds-del">Delete</button></div>
+  <div class="db" id="db">
+    <div class="db-bar">
+      <label class="db-lbl db-which">Deck<select id="ds-which"></select></label>
+      <label class="db-lbl db-name">Name<input id="ds-name" maxlength="60" autocomplete="off"></label>
+      <div class="db-btns">
+        <button type="button" class="btn primary db-addbtn" id="db-open">+ Add cards</button>
+        <button type="button" class="btn" id="ds-new">New</button>
+        <button type="button" class="btn" id="ds-dup">Copy</button>
+        <button type="button" class="btn" id="db-undo" disabled>Undo</button>
+        <button type="button" class="btn" id="db-sort">Sort</button>
+        <details class="db-menu"><summary class="btn">More</summary>
+          <div class="db-menu-in">
+            <label class="db-lbl">Load into this deck<select id="ds-preset"></select></label>
+            <button type="button" id="ds-impbtn" aria-expanded="false">Import a deck…</button>
+            <button type="button" id="ds-copy">Copy as a list</button>
+            <button type="button" id="ds-ydk">Copy as .ydk</button>
+            <button type="button" id="db-dl">Download .ydk</button>
+            <button type="button" id="ds-clear">Clear deck</button>
+            <button type="button" id="ds-del">Delete deck</button>
+          </div>
+        </details>
       </div>
-      <div class="ds-top">
-        <label class="ds-lbl">Load into this deck<select id="ds-preset"></select></label>
-        <span class="ds-count" id="ds-count"></span>
-      </div>
-      <div class="ds-sum" id="ds-sum" aria-live="polite"></div>
-      <div class="ds-search">
-        <label class="ds-lbl" for="ds-q">Add any card</label>
-        <div class="ds-addrow"><input id="ds-q" type="search" placeholder="Search every TCG card…" autocomplete="off" enterkeyhint="search" aria-controls="ds-results">
-          <div class="seg ds-to" id="ds-to" role="group" aria-label="Add to"><button type="button" data-v="main" aria-pressed="true">Main</button><button type="button" data-v="side" aria-pressed="false">Side</button></div></div>
-        <ul class="ds-results" id="ds-results"></ul>
-        <p class="note ds-dbmsg" id="ds-dbmsg"></p>
-      </div>
-      <p class="tr-warn" id="ds-warn" hidden></p>
-      <div id="ds-list" class="ds-list"></div>
-      <div class="ds-actions"><button type="button" class="btn" id="ds-copy">Copy list</button><button type="button" class="btn" id="ds-ydk">Copy .ydk</button><button type="button" class="btn" id="ds-impbtn" aria-expanded="false">Import</button><button type="button" class="btn" id="ds-clear">Clear deck</button><span id="ds-msg" class="note" aria-live="polite"></span></div>
       <div class="ds-imp" id="ds-imp" hidden>
         <textarea id="ds-imptext" spellcheck="false" placeholder="Paste a .ydk file, or a list such as:&#10;3 Ash Blossom &amp; Joyous Spring&#10;3 Angelechy Opposition&#10;Extra&#10;3 Angelechy Enlisted"></textarea>
-        <div class="ds-actions"><button type="button" class="btn primary" id="ds-impgo">Replace this deck with it</button><span id="ds-impmsg" class="note" aria-live="polite"></span></div>
+        <div class="db-impact"><button type="button" class="btn primary" id="ds-impgo">Replace this deck with it</button><label class="btn db-file">Open a .ydk file<input type="file" id="db-file" accept=".ydk,.txt,text/plain" hidden></label><span id="ds-impmsg" class="note" aria-live="polite"></span></div>
+      </div>
+      <div class="ds-sum" id="ds-sum" aria-live="polite"></div>
+    </div>
+    <div class="db-main">
+      <div class="db-deck" id="db-deck">
+        <div class="db-zone" data-z="main"><div class="db-zh"><b>Main deck</b><span class="db-n" id="db-n-main"></span><span class="db-split" id="db-s-main"></span></div><div class="db-grid" id="db-g-main"></div></div>
+        <div class="db-zone" data-z="extra"><div class="db-zh"><b>Extra Deck</b><span class="db-n" id="db-n-extra"></span><span class="db-split" id="db-s-extra"></span></div><div class="db-grid" id="db-g-extra"></div></div>
+        <div class="db-zone" data-z="side"><div class="db-zh"><b>Side deck</b><span class="db-n" id="db-n-side"></span><span class="db-split" id="db-s-side"></span></div><div class="db-grid" id="db-g-side"></div></div>
+        <p class="tr-warn" id="ds-warn" hidden></p>
+        <p class="note db-hint" id="db-hint"></p>
+        <p id="ds-msg" class="sr" aria-live="polite"></p>
+      </div>
+      <div class="db-col">
+        <div class="db-prev" id="db-prev" aria-live="polite"></div>
+        <aside class="db-pane" id="db-pane" aria-label="Card search">
+          <div class="db-ph"><b>Add cards</b><span class="db-pcount" id="db-pcount"></span><button type="button" class="btn primary" id="db-done">Done</button></div>
+          <div class="db-find">
+            <input id="ds-q" type="search" placeholder="Search cards…" autocomplete="off" enterkeyhint="search" aria-controls="ds-results">
+            <button type="button" class="btn" id="db-ftog" aria-expanded="false" aria-controls="db-filters">Filters<span id="db-fcount"></span></button>
+            <select id="db-sortby" aria-label="Sort results"><option value="pop">Popular</option><option value="name">Name</option><option value="lvl">Level / Rank</option><option value="atk">ATK</option><option value="def">DEF</option></select>
+          </div>
+          <div class="db-filters" id="db-filters" hidden></div>
+          <p class="db-rcount" id="db-rcount"></p>
+          <ul class="db-results" id="ds-results"></ul>
+          <p class="note ds-dbmsg" id="ds-dbmsg"></p>
+        </aside>
       </div>
     </div>
-    <div class="ds-res">
-      <div class="panel"><div class="ds-cmp"><h4>Odds for the main deck</h4><label class="ds-lbl">Compare with<select id="ds-cmp"></select></label></div></div>
-      <div class="panel"><h4>Going first · 5 cards</h4><div class="ds-stats" id="ds-g1"></div></div>
-      <div class="panel"><h4>Going second · 6 cards</h4><div class="ds-stats" id="ds-g2"></div>
-        <div class="ds-hist" id="ds-hist" role="img" aria-label="Interruptions in your opening 6"></div><p class="note ds-cap">Interruptions in your opening 6 cards</p></div>
-      <div class="panel"><h4>Draw a sample hand</h4>
-        <div class="ds-draw"><button type="button" class="btn" data-n="5">5 cards · going 1st</button><button type="button" class="btn" data-n="6">6 cards · going 2nd</button></div>
-        <div id="ds-hand" class="ds-hand"></div><p id="ds-verdict" class="ds-verdict"></p></div>
-      <details class="panel ds-how"><summary>How it counts</summary>
-        <ul class="tight">
-          <li><b>Jobs.</b> Each main-deck card has a job you can change.
-            <ul class="tight">
-              <li><b>Starter:</b> makes a play by itself.</li>
-              <li><b>Starter + a spare:</b> needs another Spell or Trap to discard (like Angelechy Problem).</li>
-              <li><b>Extender:</b> continues a play.</li>
-              <li><b>Interruption:</b> a hand trap or similar.</li>
-              <li><b>Going-1st back-up:</b> a second route with a starter (like Thrust or Boarder).</li>
-              <li><b>Brick:</b> dead in the opening hand.</li>
-            </ul>
-            Cards get a guess to start: known Angelechy cards use the guide's roles, and cards whose text works from the hand on the opponent's turn start as interruptions.</li>
-          <li><b>A play:</b> at least one starter, or a "starter + a spare" with another Spell or Trap.</li>
-          <li><b>Survives one hand trap:</b> two plays, or a play plus an extender or a going-1st back-up. For Angelechy, the guide's rules also count Problem with Verdict or Disturbance, and Foolish Burial Goods with Opposition, Strategy Score or Problem. Foolish Burial Goods only starts if the deck has a Disturbance or Verdict.</li>
-          <li><b>How exact:</b> the interruption odds are exact. The play odds come from 40,000 simulated hands, so they can wobble by about half a point. It doesn't play the hand out, so it can't see what you'd draw into.</li>
-          <li><b>Limits and data:</b> card limits follow the TCG Forbidden &amp; Limited list in the card data (from YGOPRODeck), dated in the note under the search box.</li>
-        </ul>
-      </details>
-    </div>
+    <div class="db-toast" id="db-toast" role="status" hidden><span></span><button type="button">Undo</button></div>
+    <div class="db-ghost" id="db-ghost" hidden></div>
+    <details class="db-odds panel" id="db-odds">
+      <summary><b>Odds, card jobs and sample hands</b><span class="note">How often this deck opens what it needs</span></summary>
+      <div class="ds-res">
+        <div class="panel"><div class="ds-cmp"><h4>Odds for the main deck</h4><label class="ds-lbl">Compare with<select id="ds-cmp"></select></label></div></div>
+        <div class="panel"><h4>Going first · 5 cards</h4><div class="ds-stats" id="ds-g1"></div></div>
+        <div class="panel"><h4>Going second · 6 cards</h4><div class="ds-stats" id="ds-g2"></div>
+          <div class="ds-hist" id="ds-hist" role="img" aria-label="Interruptions in your opening 6"></div><p class="note ds-cap">Interruptions in your opening 6 cards</p></div>
+        <div class="panel"><h4>Draw a sample hand</h4>
+          <div class="ds-draw"><button type="button" class="btn" data-n="5">5 cards · going 1st</button><button type="button" class="btn" data-n="6">6 cards · going 2nd</button></div>
+          <div id="ds-hand" class="ds-hand"></div><p id="ds-verdict" class="ds-verdict"></p></div>
+        <div class="panel db-jobs-p"><h4>Card jobs</h4><p class="note">What each main-deck card does in an opening hand. The odds above use these.</p><div class="db-jobs" id="db-jobs"></div></div>
+        <details class="panel ds-how"><summary>How it counts</summary>
+          <ul class="tight">
+            <li><b>Jobs.</b> Each main-deck card has a job you can change: <b>Starter</b> (makes a play by itself), <b>Starter + a spare</b> (needs another Spell or Trap to discard, like Angelechy Problem), <b>Extender</b> (continues a play), <b>Interruption</b>, <b>Going-1st back-up</b> (a second route with a starter, like Thrust or Boarder) and <b>Brick</b>. Known Angelechy cards start with the guide's roles, and cards whose text works from the hand on the opponent's turn start as interruptions.</li>
+            <li><b>A play:</b> at least one starter, or a “starter + a spare” with another Spell or Trap.</li>
+            <li><b>Survives one hand trap:</b> two plays, or a play plus an extender or a going-1st back-up. For Angelechy the guide's rules also count Problem with Verdict or Disturbance, and Foolish Burial Goods with Opposition, Strategy Score or Problem. Foolish Burial Goods only starts if the deck has a Disturbance or Verdict.</li>
+            <li><b>How exact:</b> interruption odds are exact. Play odds come from 40,000 simulated hands, so they can move by about half a point.</li>
+          </ul>
+        </details>
+      </div>
+    </details>
   </div>
+  <p class="note db-legal">Card pictures and data: YGOPRODeck. Yu-Gi-Oh! cards are © Konami; this is a fan guide.</p>
 </section>
 <!-- /v3-tools -->
 <footer id="sources">
@@ -4082,13 +4199,15 @@ table.pieces td:first-child{white-space:nowrap}
   });
   reset(false); render();
 })();
-
-/* v3: deckbuilder (any TCG deck; odds use the guide's rules — keep MAIN/EXTRA/SIDE in sync with the user's list) */
+/* v3: deckbuilder — DuelingBook-style: card search with filters, drag and drop between Main, Extra and Side (mouse, or press-and-hold
+   on touch), card pictures from img/s<N>.jpg sheets, several saved decks. Odds use the guide's rules (tools/sim.py).
+   Keep MAIN/EXTRA/SIDE in sync with the user's list. Card data: cards.json + text/t<N>.json, built by tools/build_carddb.py. */
 (function(){
   var root=document.getElementById("sim"); if(!root) return;
+  var db=document.getElementById("db");
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  // cards the guide covers: [name, M/S/T, default job, max] — used for default jobs and as the search list if the full card list can't load
+  // cards the guide covers: [name, M/S/T/X, default job, max] — default jobs, and the search list if the full card list can't load
   var POOL=[
     ["Angelechy Strategy Score","S","st"],["Angelechy Opposition","S","st"],["Angelechy Problem","S","sp"],["Foolish Burial Goods","S","st"],["Terraforming","S","sp",1],
     ["Rainbow Bridge Bifrost","S","sp"],["Angelechy Endgame Problem","S",""],["Angelechy Brilliant Move","S",""],["Angelechy Opening to e4","T","int"],
@@ -4114,28 +4233,74 @@ table.pieces td:first-child{white-space:nowrap}
     "Opposition":"Angelechy Opposition","Inspector Boarder":"Inspector Boarder","Triple Tactics Thrust":"Triple Tactics Thrust","Triple Tactics Talent":"Triple Tactics Talent",
     "Verdict":"Angelechy Verdict","Effect Veiler":"Effect Veiler","Purulia":"Mulcharmy Purulia","Typhoon":"Typhoon","Impulse":"Dominus Impulse","Purge":"Dominus Purge"};
   var JOBS=[["","Other"],["st","Starter"],["sp","Starter + a spare"],["ext","Extender"],["int","Interruption"],["bk","Going-1st back-up"],["brick","Brick"]];
+  var BANS=["","Semi-Limited","Limited","Forbidden"], ZN={main:"Main Deck",extra:"Extra Deck",side:"Side Deck"}, CAP={main:60,extra:15,side:15};
   function clone(o){return JSON.parse(JSON.stringify(o));}
+  function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  function fine(){return !!(window.matchMedia&&matchMedia("(hover:hover) and (pointer:fine)").matches);}
 
   // ---- card data ----
-  var DB=null, BYNAME={}, BYLOW={}, BYID={}, TYPES=[], NAMES=[];
-  function indexDB(d){DB=d; TYPES=d.types||[]; d.c.forEach(function(r){BYNAME[r[1]]=r; BYLOW[r[1].toLowerCase()]=r; BYID[r[0]]=r;}); if(d.alt) for(var k in d.alt) if(BYID[d.alt[k]]) BYID[k]=BYID[d.alt[k]]; NAMES=d.c.map(function(r){return r[1];});}
+  var DB=null, BYNAME={}, BYLOW={}, BYID={}, ROWS=[], NORM=[], PER=128, COLS=16, RPS=8;
+  function indexDB(d){
+    DB=d; PER=d.per||128; COLS=d.cols||16; RPS=d.rowsPer||8; ROWS=d.c;
+    ROWS.forEach(function(r){BYNAME[r[1]]=r; BYLOW[r[1].toLowerCase()]=r; BYID[r[0]]=r;});
+    if(d.alt) for(var k in d.alt) if(BYID[d.alt[k]]) BYID[k]=BYID[d.alt[k]];
+    NORM=ROWS.map(function(r){return norm(r[1]);});
+  }
+  function fallbackDB(){ // only the guide's own cards, no pictures
+    indexDB({v:"",types:["Monster","Spell","Trap","Extra Deck monster"],frames:[],races:[],attrs:[],archs:[],
+      c:POOL.map(function(p,i){var z={M:0,S:1,T:2,X:3}[p[1]]; return [0,p[0],z,z,p[2]==="int"?1:0,p[3]===1?2:p[3]===2?1:0,-1];})});
+    DB.fallback=true;
+  }
   var loading=null;
   function loadDB(cb){
-    if(DB) return cb();
-    if(window.__agCardDB){indexDB(window.__agCardDB); return cb();}
+    if(DB){if(cb) cb(); return;}
+    if(window.__agCardDB){indexDB(window.__agCardDB); dbMsg(); if(cb) cb(); return;}
     if(!loading) loading=fetch("cards.json").then(function(r){if(!r.ok) throw new Error(r.status); return r.json();})
-      .then(function(d){indexDB(d); $("ds-dbmsg").textContent=d.c.length.toLocaleString()+" TCG cards, Forbidden & Limited status as of "+d.v+" (YGOPRODeck).";})
-      .catch(function(){NAMES=POOL.map(function(p){return p[0];}); $("ds-dbmsg").textContent="The full card list didn't load here, so search covers the cards this guide discusses. Typed names you import still work.";});
-    loading.then(cb);
+      .then(function(d){indexDB(d); dbMsg();})
+      .catch(function(){fallbackDB(); $("ds-dbmsg").textContent="The full card list didn't load here, so search covers only the cards this guide discusses.";});
+    loading.then(function(){if(cb) cb();});
   }
+  function dbMsg(){$("ds-dbmsg").textContent=DB.c.length.toLocaleString()+" TCG cards · Forbidden & Limited list as of "+DB.v+" · card data and pictures from YGOPRODeck";}
   function info(name){
     var r=BYNAME[name], p=PINFO[name];
     var zone=r?r[3]:(p?({M:0,S:1,T:2,X:3})[p.t]:0);
     var ban=r?r[5]:0, max=r?[3,2,1,0][ban]:(p?p.max:3);
-    return {zone:zone, spell:zone===1||zone===2, ht:r?r[4]:(p&&p.r==="int"?1:0), ban:ban, max:max, id:r?r[0]:0,
-      type:r?TYPES[r[2]]:(p?({M:"Monster",S:"Spell",T:"Trap",X:"Extra Deck monster"})[p.t]:"Card not in the card list")};
+    var type=r&&DB&&DB.types[r[2]]?DB.types[r[2]]:(p?({M:"Monster",S:"Spell",T:"Trap",X:"Extra Deck monster"})[p.t]:"Card not in the card list");
+    return {r:r,zone:zone,spell:zone===1||zone===2,ht:r?r[4]:(p&&p.r==="int"?1:0),ban:ban,max:max,id:r?r[0]:0,type:type};
   }
-  function jobOf(d,name){if(d.roles&&d.roles[name]!==undefined) return d.roles[name]; var p=PINFO[name]; if(p) return p.r; return info(name).ht?"int":"";}
+  var KIND=["m","s","t","x"];
+  function tile(name){
+    var r=BYNAME[name], inf=info(name), im="", ban="";
+    if(r&&r[6]>=0){var n=r[6], c=n%PER, x=c%COLS, y=Math.floor(c/COLS);
+      im='<i style="background-image:url(img/s'+Math.floor(n/PER)+'.jpg);background-position:'+(x*100/(COLS-1)).toFixed(3)+'% '+(y*100/(RPS-1)).toFixed(3)+'%"></i>';}
+    if(inf.ban) ban='<em title="'+BANS[inf.ban]+'">'+(inf.ban===3?"✕":inf.max)+'</em>';
+    return '<span class="cd k-'+(KIND[inf.zone]||"m")+'"><b>'+esc(name)+'</b>'+im+ban+'</span>';
+  }
+  function isMon(r){return r[3]===0||r[3]===3;}
+  function frameOf(r){return DB&&DB.frames?(DB.frames[r[7]]||""):"";}
+  function typeLine(r){
+    if(!r||!DB||DB.fallback) return r?info(r[1]).type:"";
+    if(!isMon(r)) return DB.types[r[2]]||"";
+    var fr=frameOf(r), L=fr.indexOf("xyz")===0?"Rank ":fr==="link"?"Link-":"Level ";
+    return [DB.attrs[r[10]]||"",L+r[11],DB.races[r[8]]||""].filter(Boolean).join(" · ");
+  }
+  function statLine(r){if(!r||!isMon(r)||r.length<13) return ""; function f(v){return v===-1?"?":v;} return "ATK "+f(r[12])+(r[13]===-2?"":" / DEF "+f(r[13]));}
+
+  // ---- card texts (16 shards, loaded when needed) ----
+  var TXT={}, TXTP={}, TEXTN=null;
+  function shard(sh){
+    if(TXT[sh]) return Promise.resolve(TXT[sh]);
+    if(window.__agCardText) return Promise.resolve(TXT[sh]=window.__agCardText);
+    if(!TXTP[sh]) TXTP[sh]=fetch("text/t"+sh+".json").then(function(r){if(!r.ok) throw 0; return r.json();}).then(function(j){TXT[sh]=j; return j;}).catch(function(){delete TXTP[sh]; return null;});
+    return TXTP[sh];
+  }
+  function cardText(id,cb){shard(id%16).then(function(j){cb(j?j[id]:null);});}
+  var textLoading=false;
+  function loadAllText(cb){
+    if(TEXTN){cb(); return;} if(textLoading) return; textLoading=true;
+    var ps=[]; for(var i=0;i<16;i++) ps.push(shard(i));
+    Promise.all(ps).then(function(all){TEXTN={}; all.forEach(function(j){if(j) for(var k in j) TEXTN[k]=norm(j[k]);}); textLoading=false; cb();});
+  }
 
   // ---- odds (same rules as tools/sim.py for Angelechy) ----
   function lc(n){var s=0;for(var i=2;i<=n;i++)s+=Math.log(i);return s;}
@@ -4143,7 +4308,10 @@ table.pieces td:first-child{white-space:nowrap}
   function pmf(N,K,n,k){return C(K,k)*C(N-K,n-k)/C(N,n);}
   function atLeast(N,K,n,k){var s=0;for(var i=k;i<=Math.min(K,n);i++)s+=pmf(N,K,n,i);return s;}
   function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-  var F=["st","sp","ext","int","bk","brick","spell","stspell","fbg","opp","ss","prob","gy","e4"];
+  function counts(a){var o={}; (a||[]).forEach(function(n){o[n]=(o[n]||0)+1;}); return o;}
+  function mainMap(d){return Array.isArray(d.main)?counts(d.main):(d.main||{});}
+  function jobOf(d,name){if(d.roles&&d.roles[name]!==undefined) return d.roles[name]; var p=PINFO[name]; if(p) return p.r; return info(name).ht?"int":"";}
+  var F_=["st","sp","ext","int","bk","brick","spell","stspell","fbg","opp","ss","prob","gy","e4"];
   function flags(d,name){
     var j=jobOf(d,name), inf=info(name), o={};
     if(j) o[j]=1; if(inf.spell) o.spell=1; if(j==="st"&&inf.spell) o.stspell=1;
@@ -4154,7 +4322,7 @@ table.pieces td:first-child{white-space:nowrap}
     return o;
   }
   function evalHand(h,fbgOK){
-    var c={}; F.forEach(function(k){c[k]=0;}); h.forEach(function(f){for(var k in f) c[k]+=f[k];});
+    var c={}; F_.forEach(function(k){c[k]=0;}); h.forEach(function(f){for(var k in f) c[k]+=f[k];});
     var st=c.st-(fbgOK?0:c.fbg);
     if(c.sp>0&&c.spell>=2) st+=1;
     var spare=c.spell-c.stspell-c.sp+(fbgOK?0:c.fbg);
@@ -4162,7 +4330,7 @@ table.pieces td:first-child{white-space:nowrap}
     return {st:st,res:res,int:c.int,e4:c.e4,brick:c.brick};
   }
   function analyze(d){
-    var m=d.main||{}, N=0, list=[], K=0, E=0, B=0;
+    var m=mainMap(d), N=0, list=[], K=0, E=0, B=0;
     for(var nm in m){var f=flags(d,nm); N+=m[nm]; for(var i=0;i<m[nm];i++) list.push(f); if(f.int) K+=m[nm]; if(f.e4) E+=m[nm]; if(f.brick) B+=m[nm];}
     var out={N:N,K:K,E:E,B:B}; if(N<6) return out;
     var fbgOK=(m["Angelechy Disturbance"]||0)+(m["Angelechy Verdict"]||0)>0;
@@ -4180,18 +4348,23 @@ table.pieces td:first-child{white-space:nowrap}
     return out;
   }
 
-  // ---- saved decks ----
-  var KEY="ag-decks-v2", S=null;
+  // ---- saved decks: zones are ordered lists of card names ----
+  var KEY="ag-decks-v3", S=null;
+  function expand(o){var a=[]; for(var n in o) for(var i=0;i<o[n];i++) a.push(n); return a;}
+  function blank(name){return {name:name,main:[],extra:[],side:[],roles:{},cmp:""};}
   try{S=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){}
-  if(!S||!S.decks){
-    var first={name:"Angelechy (your list)",main:clone(MAIN),extra:clone(EXTRA),side:clone(SIDE),roles:{},cmp:"main"};
-    try{var old=JSON.parse(localStorage.getItem("ag-deck-v1")||"null"); if(old&&typeof old==="object"&&!old.main){first.main=old;}}catch(e){}
-    S={cur:"d1",n:1,decks:{d1:first}};
+  if(!S||!S.decks||!Object.keys(S.decks).length){
+    var v2=null; try{v2=JSON.parse(localStorage.getItem("ag-decks-v2")||"null");}catch(e){}
+    if(v2&&v2.decks&&Object.keys(v2.decks).length){
+      S={cur:v2.cur,n:v2.n||1,decks:{}};
+      for(var id0 in v2.decks){var o=v2.decks[id0]; S.decks[id0]={name:o.name||"Deck",main:expand(o.main||{}),extra:expand(o.extra||{}),side:expand(o.side||{}),roles:o.roles||{},cmp:o.cmp||""};}
+      if(!S.decks[S.cur]) S.cur=Object.keys(S.decks)[0];
+    } else S={cur:"d1",n:1,decks:{d1:{name:"Angelechy (your list)",main:expand(MAIN),extra:expand(EXTRA),side:expand(SIDE),roles:{},cmp:"main"}}};
   }
   function cur(){return S.decks[S.cur];}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
-  function total(o){var n=0; for(var k in o) n+=o[k]; return n;}
-  function newId(){S.n=(S.n||1)+1; return "d"+S.n;}
+  function newId(){S.n=(S.n||1)+1; while(S.decks["d"+S.n]) S.n++; return "d"+S.n;}
+  function allCounts(d){var o={}; ["main","extra","side"].forEach(function(z){d[z].forEach(function(n){o[n]=(o[n]||0)+1;});}); return o;}
 
   // ---- siding presets (read from the guide's siding table) ----
   function plans(){
@@ -4204,17 +4377,316 @@ table.pieces td:first-child{white-space:nowrap}
     return P;
   }
   var PL=plans();
-  window.__agSim={analyze:function(d){return analyze(d.main?d:{main:d,roles:{}});},MAIN:MAIN,plans:PL}; // read-only hook for tests
 
-  // ---- UI ----
+  // ---- undo ----
+  var HIST=[];
+  function snap(){HIST.push(JSON.stringify({cur:S.cur,d:cur()})); if(HIST.length>50) HIST.shift(); $("db-undo").disabled=false;}
+  function undo(){var h=HIST.pop(); if(!h) return; var o=JSON.parse(h); S.decks[o.cur]=o.d; S.cur=o.cur; save(); deckSelect(); render(); $("db-undo").disabled=!HIST.length; toast("Undone.",false);}
+
+  // ---- editing ----
+  function fit(name,z){var ex=info(name).zone===3; if(z==="main"&&ex) return "extra"; if(z==="extra"&&!ex) return "main"; return z;}
+  function full(d,z){return d[z].length>=CAP[z]?ZN[z]+" is full ("+CAP[z]+" cards).":"";}
+  function addCard(name,z,at){
+    var d=cur(), z0=z||"main"; z=fit(name,z0); if(z!==z0) at=null;
+    var e=full(d,z)||(((allCounts(d)[name]||0)>=3)?"3 copies is the most a deck can run.":""); if(e){toast(e,false); return false;}
+    snap(); var arr=d[z]; if(at==null||at>arr.length){var li=arr.lastIndexOf(name); at=li>=0?li+1:arr.length;} arr.splice(at,0,name);
+    save(); render();
+    var n=allCounts(d)[name], inf=info(name);
+    toast("Added "+name+(z!=="main"?" to the "+ZN[z]:"")+(n>1?" ("+n+")":"")+(n>inf.max?" · over the "+BANS[inf.ban]+" limit":""),true);
+    return true;
+  }
+  function moveCard(fz,i,tz,at){
+    var d=cur(), name=d[fz][i]; if(name==null) return false;
+    if(fz===tz){ if(at==null) at=d[fz].length; if(at===i||at===i+1) return false; snap(); d[fz].splice(i,1); if(at>i) at--; d[fz].splice(at,0,name); save(); render(); return true; }
+    var t=fit(name,tz);
+    if(t===fz||(tz==="extra"&&t!=="extra")){toast(name+(info(name).zone===3?" belongs in the Extra Deck.":" belongs in the Main Deck."),false); return false;}
+    var e=full(d,t); if(e){toast(e,false); return false;}
+    snap(); d[fz].splice(i,1); if(at==null||t!==tz||at>d[t].length){var li=d[t].lastIndexOf(name); at=li>=0?li+1:d[t].length;} d[t].splice(at,0,name);
+    save(); render(); toast("Moved "+name+" to the "+ZN[t]+".",true); return true;
+  }
+  function removeAt(z,i){var d=cur(), name=d[z][i]; if(name==null) return; snap(); d[z].splice(i,1); if(selKey===z+":"+i) selKey=null; save(); render(); toast("Removed "+name+".",true);}
+  function sortKey(name){
+    var r=BYNAME[name], inf=info(name), g=inf.zone, fr=r?frameOf(r):"";
+    if(inf.zone===3) g=3+(fr.indexOf("fusion")===0?0:fr.indexOf("synchro")===0?1:fr.indexOf("xyz")===0?2:fr==="link"?3:4);
+    return [g,inf.zone===3&&r?(r[11]||0):0,name];
+  }
+  function sortList(a){return a.slice().sort(function(x,y){var A=sortKey(x),B=sortKey(y); return A[0]-B[0]||A[1]-B[1]||(A[2]<B[2]?-1:A[2]>B[2]?1:0);});}
+
+  // ---- render the deck ----
+  var selKey=null, timer=null;
+  function split(z,arr){
+    if(z==="extra"){var c={F:0,S:0,X:0,L:0,O:0}; arr.forEach(function(n){var r=BYNAME[n], f=r?frameOf(r):""; c[f.indexOf("fusion")===0?"F":f.indexOf("synchro")===0?"S":f.indexOf("xyz")===0?"X":f==="link"?"L":"O"]++;});
+      return [["F","Fusion"],["S","Synchro"],["X","Xyz"],["L","Link"]].filter(function(x){return c[x[0]];}).map(function(x){return c[x[0]]+" "+x[1];}).join(" · ");}
+    var m=0,s=0,t=0; arr.forEach(function(n){var zz=info(n).zone; if(zz===1) s++; else if(zz===2) t++; else m++;});
+    return arr.length?m+" monster"+(m===1?"":"s")+" · "+s+" spell"+(s===1?"":"s")+" · "+t+" trap"+(t===1?"":"s"):"";
+  }
+  function render(){
+    var d=cur(), all=allCounts(d), warn=[];
+    ["main","extra","side"].forEach(function(z){
+      var arr=d[z], html="";
+      arr.forEach(function(nm,i){var inf=info(nm), bad=inf.max===0||all[nm]>inf.max||(z==="main"&&inf.zone===3)||(z==="extra"&&inf.zone!==3);
+        html+='<button type="button" class="cdb'+(bad?" bad":"")+(selKey===z+":"+i?" sel":"")+'" data-z="'+z+'" data-i="'+i+'" aria-label="'+esc(nm)+(bad?" (not allowed)":"")+'">'+tile(nm)+'</button>';});
+      var show=z==="main"?Math.min(60,Math.max(40,Math.ceil(arr.length/10)*10)):15;
+      for(var k=arr.length;k<show;k++) html+='<span class="db-slot" aria-hidden="true"></span>';
+      $("db-g-"+z).innerHTML=html;
+      var n=arr.length, b=z==="main"?(n<40||n>60):n>15, nEl=$("db-n-"+z); nEl.textContent=n; nEl.classList.toggle("bad",b);
+      $("db-s-"+z).textContent=split(z,arr);
+    });
+    var nM=d.main.length;
+    if(nM<40) warn.push("Main Deck: "+(40-nM)+" more to reach 40.");
+    for(var n in all){var inf=info(n); if(inf.max===0) warn.push(n+" is Forbidden."); else if(all[n]>inf.max) warn.push(n+": "+all[n]+" copies, but it's "+(inf.ban?BANS[inf.ban]+" ("+inf.max+")":"3 at most")+".");}
+    var w=$("ds-warn"); w.hidden=!warn.length; w.textContent=warn.join(" ");
+    $("db-pcount").textContent=d.main.length+" · "+d.extra.length+" · "+d.side.length;
+    [].forEach.call($("ds-results").querySelectorAll(".db-r"),function(r){var c=r.querySelector("[data-c]"); if(c) c.textContent=all[r.dataset.name]?"×"+all[r.dataset.name]:"";});
+    if(prevName) showPrev(prevName,false,prevZone);
+    renderJobs();
+    clearTimeout(timer); timer=setTimeout(stats,90);
+  }
+  var tT=null;
+  function toast(msg,canUndo){
+    var t=$("db-toast"); t.querySelector("span").textContent=msg; t.querySelector("button").hidden=!canUndo; t.hidden=false;
+    clearTimeout(tT); tT=setTimeout(function(){t.hidden=true;},canUndo?4000:2600); $("ds-msg").textContent=msg;
+  }
+  $("db-toast").querySelector("button").addEventListener("click",function(){undo(); $("db-toast").hidden=true;});
+
+  // ---- card preview ----
+  var prevName=null, prevZone=null, GUIDE={};
+  [].forEach.call(document.querySelectorAll("#cards [data-idx], #handtraps [data-idx]"),function(e){var k=e.getAttribute("data-idx").replace(/ \(hand trap\)$/,""); if(!GUIDE[k]) GUIDE[k]=e.id;});
+  function showPrev(name,open,zone){
+    prevName=name; prevZone=zone||null;
+    var r=BYNAME[name], inf=info(name), d=cur(), c={main:0,extra:0,side:0};
+    ["main","extra","side"].forEach(function(z){d[z].forEach(function(n){if(n===name) c[z]++;});});
+    var have=[], tot=c.main+c.extra+c.side; ["main","extra","side"].forEach(function(z){if(c[z]) have.push(c[z]+" in "+ZN[z]);});
+    var meta=esc(inf.type); if(r&&isMon(r)&&!DB.fallback) meta+='<br>'+esc(typeLine(r))+'<br>'+esc(statLine(r)); if(r&&DB.archs&&r[9]>=0) meta+='<br>Archetype: '+esc(DB.archs[r[9]]);
+    var job=c.main?'<label class="sr" for="dp-job">Job in the odds</label><select id="dp-job" class="ds-role" data-r="'+jobOf(d,name)+'">'+JOBS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===jobOf(d,name)?" selected":"")+'>Job: '+x[1]+'</option>';}).join("")+'</select>':"";
+    var h='<button type="button" class="dp-x" aria-label="Close">×</button><div class="dp-top">'+tile(name)+'<div class="dp-info"><h3 class="dp-name">'+esc(name)+'</h3><div class="dp-meta">'+meta+'</div>'
+      +(inf.ban?'<div class="dp-ban">'+BANS[inf.ban]+(inf.max?" ("+inf.max+")":"")+' in the TCG</div>':'')
+      +'<div class="dp-have">'+(tot?"In this deck: "+have.join(" · "):"Not in this deck")+'</div></div></div>'
+      +'<div class="dp-act"><button type="button" class="btn primary" data-a="add">+ '+(inf.zone===3?"Extra Deck":"Main Deck")+'</button><button type="button" class="btn" data-a="side">+ Side</button>'
+      +(tot?'<button type="button" class="btn" data-a="minus">− Remove one</button>':'')+job+'</div>'
+      +'<p class="dp-text" id="dp-text">'+(r&&r[0]?"Loading card text…":"")+'</p>'
+      +(GUIDE[name]?'<a class="dp-link" href="#'+GUIDE[name]+'">Read about it in the guide →</a>':'');
+    var el=$("db-prev"); el.innerHTML=h; if(open) db.classList.add("prev-open");
+    if(r&&r[0]) cardText(r[0],function(t){if(prevName===name&&$("dp-text")) $("dp-text").textContent=t||"Card text isn't available offline.";});
+  }
+  $("db-prev").addEventListener("click",function(e){
+    if(e.target.closest(".dp-x")){db.classList.remove("prev-open"); return;}
+    var b=e.target.closest("button[data-a]"); if(!b||!prevName) return; var a=b.dataset.a, d=cur();
+    if(a==="add") addCard(prevName,"main"); else if(a==="side") addCard(prevName,"side");
+    else if(a==="minus"){var zs=prevZone?[prevZone]:[]; zs=zs.concat(["side","main","extra"]); for(var k=0;k<zs.length;k++){var i=d[zs[k]].lastIndexOf(prevName); if(i>=0){removeAt(zs[k],i); break;}}}
+  });
+  $("db-prev").addEventListener("change",function(e){var s=e.target.closest("select.ds-role"); if(!s||!prevName) return; setJob(prevName,s.value);});
+  function setJob(name,v){var d=cur(); d.roles=d.roles||{}; d.roles[name]=v; save(); renderJobs(); clearTimeout(timer); timer=setTimeout(stats,60); var s=$("dp-job"); if(s) s.setAttribute("data-r",v);}
+
+  // ---- search and filters ----
+  var q=$("ds-q"), res=$("ds-results"), HITS=[], shown=0, PAGE=40;
+  var F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},arch:"",ht:false,text:false};
+  function on(o){return Object.keys(o).filter(function(k){return o[k];});}
+  function nActive(){return (F.kind?1:0)+on(F.frames).length+on(F.attrs).length+(F.race!==""?1:0)+["lmin","lmax","amin","amax","dmin","dmax"].filter(function(k){return F[k]!=="";}).length+on(F.st).length+on(F.ban).length+(F.arch?1:0)+(F.ht?1:0)+(F.text?1:0);}
+  function buildFilters(){
+    if(!DB||DB.fallback){$("db-ftog").hidden=true; return;}
+    function chips(key,items){return '<div class="db-chips" data-k="'+key+'">'+items.map(function(x){return '<button type="button" data-v="'+esc(x[0])+'" aria-pressed="false">'+esc(x[1])+'</button>';}).join("")+'</div>';}
+    function grp(t,b){return '<div class="db-fg"><span>'+t+'</span>'+b+'</div>';}
+    var monRaces={}; ROWS.forEach(function(r){if(isMon(r)) monRaces[r[8]]=1;});
+    var races=Object.keys(monRaces).map(Number).sort(function(a,b){return DB.races[a]<DB.races[b]?-1:1;});
+    var h=grp("Card",chips("kind",[["","Any"],["m","Monster"],["s","Spell"],["t","Trap"]]))
+      +grp("Monster card",chips("frames",[["normal","Normal"],["effect","Effect"],["ritual","Ritual"],["fusion","Fusion"],["synchro","Synchro"],["xyz","Xyz"],["link","Link"],["pendulum","Pendulum"],["tuner","Tuner"]]))
+      +grp("Attribute",chips("attrs",DB.attrs.map(function(a,i){return [String(i),a.charAt(0)+a.slice(1).toLowerCase()];})))
+      +grp("Monster type",'<select class="db-fsel" id="db-race"><option value="">Any</option>'+races.map(function(i){return '<option value="'+i+'">'+esc(DB.races[i])+'</option>';}).join("")+'</select>')
+      +grp("Level / Rank / Link, ATK, DEF",'<div class="db-rng">'+[["lmin","lmax","Level"],["amin","amax","ATK"],["dmin","dmax","DEF"]].map(function(x){return '<label>'+x[2]+' <input type="number" inputmode="numeric" min="0" data-r="'+x[0]+'" placeholder="min" aria-label="'+x[2]+' at least"> – <input type="number" inputmode="numeric" min="0" data-r="'+x[1]+'" placeholder="max" aria-label="'+x[2]+' at most"></label>';}).join("")+'</div>')
+      +grp("Spell / Trap",chips("st",[["Normal","Normal"],["Quick-Play","Quick-Play"],["Continuous","Continuous"],["Field","Field"],["Equip","Equip"],["Ritual","Ritual"],["Counter","Counter"]]))
+      +grp("Forbidden & Limited",chips("ban",[["3","Forbidden"],["2","Limited"],["1","Semi-Limited"],["0","Unlimited"]]))
+      +grp("Archetype",'<input class="db-fsel" id="db-arch" list="db-archs" placeholder="e.g. Angelechy, Elfnote, Dominus" autocomplete="off"><datalist id="db-archs">'+DB.archs.slice().sort().map(function(a){return '<option value="'+esc(a)+'">';}).join("")+'</datalist>')
+      +'<div class="db-fbtm"><label><input type="checkbox" id="db-ht"> Hand traps only</label><label><input type="checkbox" id="db-tx"> Search card text too</label><button type="button" class="btn" id="db-freset">Reset filters</button></div>';
+    var el=$("db-filters"); el.innerHTML=h;
+    el.addEventListener("click",function(e){
+      var b=e.target.closest(".db-chips button"); if(b){var k=b.parentNode.dataset.k, v=b.dataset.v;
+        if(k==="kind"){F.kind=v; [].forEach.call(b.parentNode.children,function(x){x.setAttribute("aria-pressed",String(x===b));});}
+        else {F[k][v]=!F[k][v]; b.setAttribute("aria-pressed",String(!!F[k][v]));}
+        changed(); return;}
+      if(e.target.id==="db-freset") resetFilters();
+    });
+    el.addEventListener("input",function(e){var t=e.target;
+      if(t.dataset.r){F[t.dataset.r]=t.value===""?"":String(Math.max(0,parseInt(t.value,10)||0));}
+      else if(t.id==="db-race") F.race=t.value; else if(t.id==="db-arch") F.arch=t.value.trim(); else if(t.id==="db-ht") F.ht=t.checked; else if(t.id==="db-tx") F.text=t.checked;
+      changed();});
+    el.addEventListener("change",function(e){if(e.target.id==="db-race"||e.target.type==="checkbox") el.dispatchEvent(new Event("input"));});
+    [].forEach.call(el.querySelectorAll('.db-chips[data-k="kind"] button'),function(x){x.setAttribute("aria-pressed",String(x.dataset.v===""));});
+  }
+  function resetFilters(){F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},arch:"",ht:false,text:false};
+    var el=$("db-filters"); [].forEach.call(el.querySelectorAll(".db-chips button"),function(x){x.setAttribute("aria-pressed",String(x.parentNode.dataset.k==="kind"&&x.dataset.v===""));});
+    [].forEach.call(el.querySelectorAll("input,select"),function(x){if(x.type==="checkbox") x.checked=false; else x.value="";}); changed();}
+  var sT=null;
+  function changed(){var n=nActive(); $("db-fcount").textContent=n?String(n):""; clearTimeout(sT); sT=setTimeout(search,80);}
+  function num(v){return v===""?null:+v;}
+  function pass(r,i){
+    var z=r[3], mon=z===0||z===3;
+    if(F.kind==="m"&&!mon||F.kind==="s"&&z!==1||F.kind==="t"&&z!==2) return false;
+    var fk=on(F.frames);
+    if(fk.length){ if(!mon) return false; var fr=frameOf(r), t=DB.types[r[2]]||"";
+      var base=fk.filter(function(k){return k!=="tuner"&&k!=="pendulum";});
+      if(base.length&&!base.some(function(k){return k==="normal"?/^normal/.test(fr):k==="effect"?/^effect/.test(fr):fr.indexOf(k)===0;})) return false;
+      if(F.frames.tuner&&!/Tuner/.test(t)) return false; if(F.frames.pendulum&&fr.indexOf("pendulum")<0) return false; }
+    if(on(F.attrs).length&&(!mon||!F.attrs[r[10]])) return false;
+    if(F.race!==""&&(!mon||r[8]!==+F.race)) return false;
+    var L=[["lmin","lmax",11],["amin","amax",12],["dmin","dmax",13]];
+    for(var k=0;k<3;k++){var lo=num(F[L[k][0]]), hi=num(F[L[k][1]]); if(lo===null&&hi===null) continue; if(!mon) return false; var v=r[L[k][2]]; if(v==null||v<0) return false; if(lo!==null&&v<lo||hi!==null&&v>hi) return false;}
+    if(on(F.st).length&&(mon||!F.st[DB.races[r[8]]])) return false;
+    if(on(F.ban).length&&!F.ban[r[5]]) return false;
+    if(F.arch){var a=norm(F.arch); if((r[9]<0||norm(DB.archs[r[9]]).indexOf(a)<0)&&NORM[i].indexOf(a)<0) return false;}
+    if(F.ht&&!r[4]) return false;
+    return true;
+  }
+  function search(){
+    if(!DB) return;
+    var v=norm(q.value.trim()), toks=v?v.split(/\s+/):[], useText=F.text&&toks.length>0;
+    if(useText&&!TEXTN){$("db-rcount").textContent="Loading card texts…"; loadAllText(search);}
+    var out=[];
+    for(var i=0;i<ROWS.length;i++){var r=ROWS[i]; if(!pass(r,i)) continue; var sc=0;
+      if(toks.length){var n=NORM[i], ok=true; for(var t=0;t<toks.length;t++) if(n.indexOf(toks[t])<0){ok=false;break;}
+        if(ok) sc=n===v?0:n.indexOf(v)===0?1:(n.indexOf(" "+toks[0])>=0||n.indexOf(toks[0])===0?2:3);
+        else if(useText&&TEXTN){var tx=TEXTN[r[0]]||""; ok=true; for(t=0;t<toks.length;t++) if(tx.indexOf(toks[t])<0){ok=false;break;} if(!ok) continue; sc=5;}
+        else continue;}
+      out.push([sc,r]);}
+    var sb=$("db-sortby").value;
+    function pop(r){return r[6]>=0?r[6]:1e6+(r[1]<"m"?0:1);}
+    out.sort(function(a,b){
+      if(sb==="pop") return a[0]-b[0]||pop(a[1])-pop(b[1]);
+      if(sb==="name") return a[1][1]<b[1][1]?-1:a[1][1]>b[1][1]?1:0;
+      var k=sb==="lvl"?11:sb==="atk"?12:13, A=isMon(a[1])&&a[1][k]>=0?a[1][k]:-9, B=isMon(b[1])&&b[1][k]>=0?b[1][k]:-9; return B-A||(a[1][1]<b[1][1]?-1:1);});
+    HITS=out.map(function(x){return x[1];}); shown=0; res.innerHTML=""; res.scrollTop=0; more();
+    $("db-rcount").textContent=HITS.length?HITS.length.toLocaleString()+" card"+(HITS.length===1?"":"s")+(toks.length||nActive()?"":" · most played this week first"):"No card matches.";
+  }
+  function resultLi(r){
+    var nm=r[1], inf=info(nm), n=allCounts(cur())[nm]||0, st=statLine(r);
+    return '<li><div class="db-r" tabindex="0" data-name="'+esc(nm)+'">'+tile(nm)+'<span class="db-rt"><b>'+esc(nm)+'</b><small>'+esc(typeLine(r))+'</small>'
+      +(st||inf.ban?'<small>'+esc(st)+(inf.ban?(st?" · ":"")+'<span class="ban">'+BANS[inf.ban]+'</span>':'')+'</small>':'')+'</span>'
+      +'<span class="db-radd"><i data-c>'+(n?"×"+n:"")+'</i><button type="button" class="db-plus" aria-label="Add '+esc(nm)+'">+</button></span></div></li>';
+  }
+  var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) more();});},{root:res,rootMargin:"200px"}):null;
+  function more(){
+    var old=res.querySelector(".db-more"); if(old){if(io) io.unobserve(old); old.remove();}
+    var h=""; for(var k=shown;k<Math.min(HITS.length,shown+PAGE);k++) h+=resultLi(HITS[k]); shown=Math.min(HITS.length,shown+PAGE);
+    res.insertAdjacentHTML("beforeend",h);
+    if(shown<HITS.length){var li=document.createElement("li"); li.className="db-more"; li.innerHTML='<button type="button" class="btn">Show more</button>'; res.appendChild(li); if(io) io.observe(li);}
+  }
+  res.addEventListener("click",function(e){if(e.target.closest(".db-more button")) more();});
+  q.addEventListener("input",function(){clearTimeout(sT); sT=setTimeout(search,110);});
+  q.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault(); clearTimeout(sT); search(); if(HITS[0]) addCard(HITS[0][1],e.shiftKey?"side":"main");}
+    else if(e.key==="ArrowDown"){var f=res.querySelector(".db-r"); if(f){e.preventDefault(); f.focus();}}});
+  $("db-sortby").addEventListener("change",search);
+  $("db-ftog").addEventListener("click",function(){var f=$("db-filters"); f.hidden=!f.hidden; this.setAttribute("aria-expanded",String(!f.hidden));});
+
+  // ---- pointer: click, right-click, hover, keyboard ----
+  var suppress=0, lastTouch=0, hovT=null;
+  function nameOfEl(el){return el.classList.contains("cdb")?cur()[el.dataset.z][+el.dataset.i]:el.dataset.name;}
+  function markSel(){[].forEach.call(root.querySelectorAll(".cdb.sel, .db-r.sel"),function(x){x.classList.remove("sel");});}
+  root.addEventListener("click",function(e){
+    if(Date.now()-suppress<400){e.preventDefault(); e.stopPropagation(); return;}
+    var plus=e.target.closest(".db-plus"); if(plus){addCard(plus.closest(".db-r").dataset.name,"main"); return;}
+    var row=e.target.closest(".db-r");
+    if(row){ if(fine()) addCard(row.dataset.name,"main"); else {markSel(); row.classList.add("sel"); showPrev(row.dataset.name,true,null);} return; }
+    var t=e.target.closest(".cdb");
+    if(t){markSel(); selKey=t.dataset.z+":"+t.dataset.i; t.classList.add("sel"); showPrev(nameOfEl(t),true,t.dataset.z); return;}
+    if(db.classList.contains("prev-open")&&!e.target.closest(".db-prev")&&!e.target.closest(".db-pane")) db.classList.remove("prev-open");
+  });
+  root.addEventListener("contextmenu",function(e){
+    var s=e.target.closest(".cdb, .db-r"); if(!s) return; e.preventDefault(); if(Date.now()-lastTouch<1500) return;
+    if(s.classList.contains("cdb")) removeAt(s.dataset.z,+s.dataset.i); else addCard(s.dataset.name,"side");
+  });
+  root.addEventListener("mouseover",function(e){
+    if(drag||!fine()) return; var s=e.target.closest(".cdb, .db-r"); if(!s) return;
+    clearTimeout(hovT); hovT=setTimeout(function(){if(!s.isConnected) return; var nm=nameOfEl(s); if(nm&&nm!==prevName) showPrev(nm,false,s.classList.contains("cdb")?s.dataset.z:null);},90);
+  });
+  root.addEventListener("focusin",function(e){var s=e.target.closest&&e.target.closest(".db-r"); if(s&&fine()) showPrev(s.dataset.name,false,null);});
+  root.addEventListener("keydown",function(e){
+    var t=e.target; if(!t.classList) return;
+    if(t.classList.contains("cdb")&&(e.key==="Delete"||e.key==="Backspace")){e.preventDefault(); var z=t.dataset.z, i=+t.dataset.i; removeAt(z,i); var nx=root.querySelector('.cdb[data-z="'+z+'"][data-i="'+Math.min(i,cur()[z].length-1)+'"]'); if(nx) nx.focus();}
+    if(t.classList.contains("db-r")){
+      if(e.key==="Enter"){e.preventDefault(); addCard(t.dataset.name,e.shiftKey?"side":"main");}
+      else if(e.key===" "){e.preventDefault(); showPrev(t.dataset.name,true,null);}
+      else if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault(); var li=t.parentNode[e.key==="ArrowDown"?"nextElementSibling":"previousElementSibling"]; var n=li&&li.querySelector(".db-r"); if(n) n.focus(); else if(e.key==="ArrowUp") q.focus();}
+    }
+  });
+  document.addEventListener("keydown",function(e){
+    if(document.body.getAttribute("data-page")!=="sim") return;
+    var a=document.activeElement, typing=a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName);
+    if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&e.key.toLowerCase()==="z"&&!typing){e.preventDefault(); undo();}
+    if(e.key==="Escape"){ if(drag){cancelDrag(); return;} if(db.classList.contains("prev-open")) db.classList.remove("prev-open"); else if(db.classList.contains("pane-open")) closePane(); }
+  });
+
+  // ---- drag and drop (mouse: drag; touch: press and hold, then drag) ----
+  var pend=null, drag=null, holdT=null, scrollT=null;
+  function srcOf(target){
+    if(!target.closest||target.closest(".db-plus")) return null;
+    var e=target.closest(".cdb, .db-r"); if(!e||!root.contains(e)) return null;
+    return e.classList.contains("cdb")?{el:e,name:nameOfEl(e),z:e.dataset.z,i:+e.dataset.i}:{el:e,name:e.dataset.name,z:"pool"};
+  }
+  function valid(s,tz){ // can this card land in zone tz? (an Extra Deck monster dropped on the Main Deck goes to the Extra Deck)
+    if(!tz) return s.z!=="pool"; var ex=info(s.name).zone===3;
+    if(tz==="extra"&&!ex) return false;
+    if(s.z!=="pool"&&tz!==s.z&&fit(s.name,tz)===s.z) return false;
+    return true;}
+  function clearMarks(){[].forEach.call(root.querySelectorAll(".db-zone.over,.db-zone.nogo,.cdb.ins"),function(x){x.classList.remove("over","nogo","ins");});}
+  function startDrag(s,x,y){
+    drag={s:s,x:x,y:y}; pend=null; clearTimeout(holdT);
+    var g=$("db-ghost"); g.innerHTML=tile(s.name); g.hidden=false; document.body.classList.add("db-dragging"); s.el.classList.add("lift");
+    if(s.z==="pool"&&db.classList.contains("pane-open")) db.classList.add("drag-out");
+    clearInterval(scrollT); scrollT=setInterval(function(){if(!drag) return; var h=window.innerHeight, dy=drag.y<70?-14:drag.y>h-90?14:0; if(dy){window.scrollBy(0,dy); moveDrag(drag.x,drag.y);}},16);
+    moveDrag(x,y);
+  }
+  function moveDrag(x,y){
+    drag.x=x; drag.y=y; $("db-ghost").style.transform="translate("+(x-31)+"px,"+(y-62)+"px)";
+    clearMarks(); var el=document.elementFromPoint(x,y), zn=el&&el.closest(".db-zone"), tz=zn&&db.contains(zn)?zn.dataset.z:null, t=el&&el.closest(".cdb");
+    drag.tz=tz; drag.at=null;
+    if(tz){var ok=valid(drag.s,tz); zn.classList.add(ok?"over":"nogo"); drag.ok=ok;
+      if(ok&&t&&t.dataset.z===tz){drag.at=+t.dataset.i; if(!(drag.s.z===tz&&(drag.at===drag.s.i||drag.at===drag.s.i+1))) t.classList.add("ins");}
+      else if(el.closest(".db-slot")) drag.at=cur()[tz].length;}
+  }
+  function cleanup(){clearInterval(scrollT); clearMarks(); var g=$("db-ghost"); g.hidden=true; g.innerHTML=""; document.body.classList.remove("db-dragging"); db.classList.remove("drag-out");
+    if(drag&&drag.s.el) drag.s.el.classList.remove("lift"); drag=null;}
+  function cancelDrag(){cleanup(); pend=null;}
+  function endDrag(x,y){
+    moveDrag(x,y); var s=drag.s, tz=drag.tz, at=drag.at, ok=drag.ok; cleanup(); suppress=Date.now();
+    if(s.z==="pool"){ if(tz&&ok) addCard(s.name,tz,at); else if(tz) toast(s.name+" belongs in the Main Deck.",false); return; }
+    if(!tz){removeAt(s.z,s.i); return;}
+    if(!ok){toast(s.name+(info(s.name).zone===3?" belongs in the Extra Deck.":" belongs in the Main Deck."),false); return;}
+    moveCard(s.z,s.i,tz,at);
+  }
+  root.addEventListener("mousedown",function(e){
+    if(e.button!==0||Date.now()-lastTouch<800) return; var s=srcOf(e.target); if(!s) return;
+    pend={s:s,x:e.clientX,y:e.clientY,mouse:true}; e.preventDefault();
+    if(s.el.focus) try{s.el.focus({preventScroll:true});}catch(_){}
+  });
+  document.addEventListener("mousemove",function(e){
+    if(pend&&pend.mouse&&!drag&&Math.abs(e.clientX-pend.x)+Math.abs(e.clientY-pend.y)>6) startDrag(pend.s,e.clientX,e.clientY);
+    if(drag&&!drag.touch) moveDrag(e.clientX,e.clientY);
+  });
+  document.addEventListener("mouseup",function(e){if(drag&&!drag.touch) endDrag(e.clientX,e.clientY); pend=null;});
+  root.addEventListener("touchstart",function(e){
+    lastTouch=Date.now(); clearTimeout(holdT); if(e.touches.length!==1){pend=null; return;}
+    var s=srcOf(e.target); if(!s) return; var t=e.touches[0]; pend={s:s,x:t.clientX,y:t.clientY};
+    holdT=setTimeout(function(){if(pend&&!drag){startDrag(pend.s,pend.x,pend.y); drag.touch=true; try{navigator.vibrate&&navigator.vibrate(12);}catch(_){}}},330);
+  },{passive:true});
+  document.addEventListener("touchmove",function(e){
+    if(drag&&drag.touch){e.preventDefault(); var t=e.touches[0]; moveDrag(t.clientX,t.clientY); return;}
+    if(pend&&!pend.mouse){var t2=e.touches[0]; pend.x2=t2.clientX; if(Math.abs(t2.clientX-pend.x)+Math.abs(t2.clientY-pend.y)>10){clearTimeout(holdT); pend=null;}}
+  },{passive:false});
+  document.addEventListener("touchend",function(e){clearTimeout(holdT); if(drag&&drag.touch){e.preventDefault(); var t=e.changedTouches[0]; endDrag(t.clientX,t.clientY);} pend=null;},{passive:false});
+  document.addEventListener("touchcancel",function(){clearTimeout(holdT); if(drag) cancelDrag(); pend=null;});
+
+  // ---- phone: search as a full-screen sheet ----
+  function openPane(){db.classList.add("pane-open"); document.documentElement.style.overflow="hidden"; try{$("db-deck").scrollIntoView({block:"start"});}catch(_){} setTimeout(function(){try{q.focus({preventScroll:true});}catch(_){}},50);}
+  function closePane(){db.classList.remove("pane-open","prev-open"); document.documentElement.style.overflow="";}
+  $("db-open").addEventListener("click",openPane);
+  $("db-done").addEventListener("click",closePane);
+  window.addEventListener("hashchange",function(){if(location.hash.slice(1)!=="sim"){closePane(); cancelDrag();}});
+
+  // ---- deck controls ----
   function opt(v,t){var o=document.createElement("option"); o.value=v; o.textContent=t; return o;}
   var preset=$("ds-preset");
-  preset.appendChild(opt("","Choose…")); preset.appendChild(opt("all","Your Angelechy list (main, Extra, side)"));
-  ["1st","2nd"].forEach(function(g){var og=document.createElement("optgroup"); og.label="Your list after siding, going "+g;
-    PL.forEach(function(p,i){if(p.g===g) og.appendChild(opt("p"+i,p.name));}); preset.appendChild(og);});
-  function pct(x){return (Math.round(x*1000)/10).toFixed(1)+"%";}
-  function delta(x,b,inv){if(b==null||x==null) return ""; var dd=Math.round((x-b)*1000)/10; if(Math.abs(dd)<0.5) return '<em>same</em>'; var good=inv?dd<0:dd>0; return '<em class="'+(good?"up":"dn")+'">'+(dd>0?"+":"−")+Math.abs(dd).toFixed(1)+'</em>';}
-  function stat(lbl,v,b,inv){return v==null?"":'<div class="ds-stat"><span>'+lbl+'</span><b>'+pct(v)+'</b>'+delta(v,b,inv)+'</div>';}
+  preset.appendChild(opt("","Choose…")); preset.appendChild(opt("all","Your Angelechy list (Main, Extra, Side)"));
+  ["1st","2nd"].forEach(function(g){var og=document.createElement("optgroup"); og.label="Your list after siding, going "+g; PL.forEach(function(p,i){if(p.g===g) og.appendChild(opt("p"+i,p.name));}); preset.appendChild(og);});
   function deckSelect(){
     var w=$("ds-which"); w.innerHTML=""; Object.keys(S.decks).forEach(function(id){w.appendChild(opt(id,S.decks[id].name||"Untitled deck"));}); w.value=S.cur;
     $("ds-name").value=cur().name||"";
@@ -4222,111 +4694,47 @@ table.pieces td:first-child{white-space:nowrap}
     Object.keys(S.decks).forEach(function(id){if(id!==S.cur) c.appendChild(opt(id,S.decks[id].name||"Untitled deck"));});
     c.value=d.cmp!==undefined?d.cmp:"";
   }
-  var timer=null;
-  function render(){
-    var d=cur(), z={main:d.main||(d.main={}),extra:d.extra||(d.extra={}),side:d.side||(d.side={})}, warn=[];
-    var nM=total(z.main), nE=total(z.extra), nS=total(z.side);
-    var cnt=$("ds-count"); cnt.textContent=nM+" · "+nE+" · "+nS; cnt.title="Main · Extra · Side"; cnt.classList.toggle("bad",nM<40||nM>60||nE>15||nS>15);
-    if(nM<40) warn.push("Main: "+(40-nM)+" more to reach 40."); if(nM>60) warn.push("Main: at most 60."); if(nE>15) warn.push("Extra: at most 15."); if(nS>15) warn.push("Side: at most 15.");
-    var all={}; ["main","extra","side"].forEach(function(k){for(var n in z[k]) all[n]=(all[n]||0)+z[k][n];});
-    for(var n in all){var inf=info(n); if(inf.max===0) warn.push(n+" is Forbidden."); else if(all[n]>inf.max) warn.push(n+": at most "+inf.max+" across main, Extra and side."); if(inf.zone===3&&z.main[n]) warn.push(n+" belongs in the Extra Deck.");}
-    var html="";
-    function rows(zone,names){return names.map(function(nm){var inf=info(nm), q=z[zone][nm], j=jobOf(d,nm);
-      var jobSel=zone==="main"?'<select class="ds-role" data-r="'+j+'" aria-label="Job of '+esc(nm)+'">'+JOBS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===j?" selected":"")+'>'+x[1]+'</option>';}).join("")+'</select>':"";
-      var mv=zone==="main"?'<button type="button" class="mv" data-mv="side">to side</button>':zone==="side"&&inf.zone!==3?'<button type="button" class="mv" data-mv="main">to main</button>':zone==="side"?'<button type="button" class="mv" data-mv="extra">to Extra</button>':"";
-      var ban=inf.ban?'<span class="ban">'+["","Semi-Limited","Limited","Forbidden"][inf.ban]+'</span>':"";
-      return '<div class="ds-row'+(all[nm]>inf.max?" over":"")+'" data-n="'+esc(nm)+'" data-z="'+zone+'"><span class="nm">'+esc(nm)+'<small>'+esc(inf.type)+'</small></span><span class="rl">'+jobSel+mv+ban+'</span><span class="q"><button type="button" data-d="-1" aria-label="One fewer '+esc(nm)+'">−</button><b>'+q+'</b><button type="button" data-d="1" aria-label="One more '+esc(nm)+'">+</button></span></div>';}).join("");}
-    function sorted(o){return Object.keys(o).sort(function(a,b){var A=info(a),B=info(b); return A.zone-B.zone||(PINFO[a]?0:1)-(PINFO[b]?0:1)||a.localeCompare(b);});}
-    var mainN=sorted(z.main);
-    html+='<div class="ds-zone"><h4>Main deck <span class="ds-count'+(nM<40||nM>60?" bad":"")+'">'+nM+'</span></h4>';
-    [[0,"Monsters"],[1,"Spells"],[2,"Traps"],[3,"Extra Deck cards (move them)"]].forEach(function(g){var arr=mainN.filter(function(n){return info(n).zone===g[0];}); if(arr.length) html+='<div class="ds-grp"><h5>'+g[1]+' · '+arr.reduce(function(s,x){return s+z.main[x];},0)+'</h5><div class="ds-rows">'+rows("main",arr)+'</div></div>';});
-    if(!mainN.length) html+='<p class="note">Empty. Search for cards above, load your Angelechy list, or import a deck.</p>';
-    html+='</div><div class="ds-zone"><h4>Extra Deck <span class="ds-count'+(nE>15?" bad":"")+'">'+nE+'</span></h4><div class="ds-rows">'+rows("extra",sorted(z.extra))+'</div></div>';
-    html+='<div class="ds-zone"><h4>Side deck <span class="ds-count'+(nS>15?" bad":"")+'">'+nS+'</span></h4><div class="ds-rows">'+rows("side",sorted(z.side))+'</div></div>';
-    $("ds-list").innerHTML=html;
-    var w=$("ds-warn"); w.hidden=!warn.length; w.textContent=warn.join(" ");
-    clearTimeout(timer); timer=setTimeout(stats,60);
-  }
-  var baseCache={};
-  function baseFor(key){if(!key) return null; var deckObj=key==="main"?{main:MAIN,roles:{}}:S.decks[key]; if(!deckObj) return null;
-    var sig=key+JSON.stringify(deckObj.main)+JSON.stringify(deckObj.roles||{}); if(!baseCache[sig]) baseCache[sig]=analyze(deckObj); return baseCache[sig];}
-  function stats(){
-    var d=cur(), N=total(d.main||{}), g1=$("ds-g1"), g2=$("ds-g2"), sum=$("ds-sum"), hist=$("ds-hist");
-    if(N<6){g1.innerHTML=g2.innerHTML='<p class="note">Add at least 6 main-deck cards.</p>'; sum.innerHTML=""; hist.innerHTML=""; return;}
-    var a=analyze(d), B=baseFor(d.cmp)||{};
-    sum.innerHTML='<div><b>'+pct(a.play)+'</b><span>a play going 1st '+delta(a.play,B.play)+'</span></div><div><b>'+pct(a.res)+'</b><span>survives a hand trap '+delta(a.res,B.res)+'</span></div><div><b>'+pct(a.i3)+'</b><span>3+ interruptions going 2nd '+delta(a.i3,B.i3)+'</span></div>';
-    g1.innerHTML=stat("A play",a.play,B.play)+stat("A play that survives one hand trap",a.res,B.res)+stat("No play (brick)",a.brick,B.brick,true)+(a.B?stat("2+ bricks in hand",a.b2,B.b2,true):"")+stat("Inspector Boarder in hand",a.boarder,B.boarder);
-    g2.innerHTML=stat("2+ interruptions",a.i2,B.i2)+stat("3+ interruptions",a.i3,B.i3)+stat("4+ interruptions",a.i4,B.i4)+stat("Opening to e4",a.e4,B.e4)+stat("A play"+(a.E?" or e4":""),a.turn,B.turn)+stat("3+ interruptions and a play"+(a.E?" or e4":""),a.both,B.both)
-      +'<p class="note">'+a.K+' interruptions in '+N+' cards'+(B.K!=null?' (comparison: '+B.K+' in '+B.N+')':'')+'.</p>';
-    var mx=Math.max.apply(null,a.hist)||1;
-    hist.innerHTML=a.hist.map(function(p,k){return '<div class="'+(k>=3?"ok":"")+'"><b>'+Math.round(p*100)+'%</b><i style="height:'+Math.max(2,Math.round(80*p/mx))+'px"></i><small>'+(k===6?"6+":k)+'</small></div>';}).join("");
-  }
-  function setMsg(t){$("ds-msg").textContent=t;}
-  function addCard(name,zone){var d=cur(); var inf=info(name); if(inf.zone===3) zone="extra"; else if(zone==="extra") zone="main"; d[zone]=d[zone]||{}; d[zone][name]=(d[zone][name]||0)+1; save(); render(); setMsg("Added "+name+(zone!=="main"?" to the "+(zone==="extra"?"Extra Deck":"side"):"")+".");}
-  // list events
-  $("ds-list").addEventListener("click",function(e){
-    var row=e.target.closest(".ds-row"); if(!row) return; var nm=row.getAttribute("data-n"), zone=row.getAttribute("data-z"), d=cur();
-    var b=e.target.closest("button[data-d]");
-    if(b){d[zone][nm]=(d[zone][nm]||0)+(+b.dataset.d); if(d[zone][nm]<=0) delete d[zone][nm]; save(); render(); preset.value=""; return;}
-    var mv=e.target.closest("button[data-mv]");
-    if(mv){var to=mv.dataset.mv; d[zone][nm]--; if(d[zone][nm]<=0) delete d[zone][nm]; d[to]=d[to]||{}; d[to][nm]=(d[to][nm]||0)+1; save(); render(); setMsg("Moved one "+nm+" to the "+(to==="main"?"main deck":to==="extra"?"Extra Deck":"side")+".");}
-  });
-  $("ds-list").addEventListener("change",function(e){var s=e.target.closest("select.ds-role"); if(!s) return; var nm=s.closest(".ds-row").getAttribute("data-n"), d=cur(); d.roles=d.roles||{}; d.roles[nm]=s.value; s.setAttribute("data-r",s.value); save(); clearTimeout(timer); timer=setTimeout(stats,60);});
-  // search
-  var q=$("ds-q"), res=$("ds-results"), addTo="main";
-  [].forEach.call($("ds-to").querySelectorAll("button"),function(b){b.addEventListener("click",function(){addTo=b.dataset.v; [].forEach.call($("ds-to").querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",String(x===b));});});});
-  function norm(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
-  function search(){
-    var v=norm(q.value.trim()); res.innerHTML=""; if(v.length<2) return;
-    var toks=v.split(/\s+/), hits=[];
-    for(var i=0;i<NAMES.length&&hits.length<400;i++){var n=norm(NAMES[i]); var okk=true; for(var t=0;t<toks.length;t++) if(n.indexOf(toks[t])<0){okk=false;break;} if(okk) hits.push([n.indexOf(v)===0?0:(n.indexOf(" "+toks[0])>=0?1:2),NAMES[i]]);}
-    hits.sort(function(a,b){return a[0]-b[0]||a[1].length-b[1].length;});
-    res.innerHTML=hits.slice(0,25).map(function(h){var inf=info(h[1]); return '<li><button type="button" data-name="'+esc(h[1])+'"><span>'+esc(h[1])+'</span><small>'+esc(inf.type)+(inf.ban?' · <span class="ban">'+["","Semi-Limited","Limited","Forbidden"][inf.ban]+'</span>':'')+'</small></button></li>';}).join("")||'<li class="note">No card found.</li>';
-  }
-  var st2=null;
-  q.addEventListener("input",function(){clearTimeout(st2); st2=setTimeout(search,90);});
-  q.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault(); var f=res.querySelector("button[data-name]"); if(f) f.click();}});
-  res.addEventListener("click",function(e){var b=e.target.closest("button[data-name]"); if(!b) return; addCard(b.getAttribute("data-name"),addTo);});
-  // decks
-  $("ds-which").addEventListener("change",function(){S.cur=this.value; save(); deckSelect(); render(); setMsg("");});
+  var menu=root.querySelector(".db-menu");
+  menu.addEventListener("toggle",function(){var m=menu.querySelector(".db-menu-in"); m.style.left="0px"; if(!menu.open) return; var r=m.getBoundingClientRect(); var over=r.right-(document.documentElement.clientWidth-12); if(over>0) m.style.left=(-over)+"px";});
+  document.addEventListener("click",function(e){if(menu.open&&!e.target.closest(".db-menu")) menu.open=false;});
+  function closeMenu(){menu.open=false;}
+  $("ds-which").addEventListener("change",function(){S.cur=this.value; selKey=null; save(); deckSelect(); render(); toast("Opened "+(cur().name||"deck")+".",false);});
   $("ds-name").addEventListener("input",function(){cur().name=this.value.slice(0,60); save(); var o=$("ds-which").querySelector('option[value="'+S.cur+'"]'); if(o) o.textContent=cur().name||"Untitled deck";});
-  $("ds-new").addEventListener("click",function(){var id=newId(); S.decks[id]={name:"New deck "+(Object.keys(S.decks).length+1),main:{},extra:{},side:{},roles:{},cmp:""}; S.cur=id; save(); deckSelect(); render(); setMsg("New empty deck."); q.focus();});
-  $("ds-dup").addEventListener("click",function(){var id=newId(), c=clone(cur()); c.name=(c.name||"Deck")+" (copy)"; S.decks[id]=c; S.cur=id; save(); deckSelect(); render(); setMsg("Duplicated.");});
-  var delB=$("ds-del"), dt=null;
-  delB.addEventListener("click",function(){
-    if(!delB.classList.contains("armed")){delB.classList.add("armed"); delB.textContent="Tap again to delete"; clearTimeout(dt); dt=setTimeout(function(){delB.classList.remove("armed"); delB.textContent="Delete";},3000); return;}
-    clearTimeout(dt); delB.classList.remove("armed"); delB.textContent="Delete";
-    var ids=Object.keys(S.decks);
-    if(ids.length<=1){S.decks[S.cur]={name:"New deck",main:{},extra:{},side:{},roles:{},cmp:""}; setMsg("Deck cleared (it was your only one).");}
-    else {delete S.decks[S.cur]; S.cur=Object.keys(S.decks)[0]; setMsg("Deleted.");}
-    save(); deckSelect(); render();
-  });
+  $("ds-new").addEventListener("click",function(){snap(); var id=newId(); S.decks[id]=blank("New deck "+Object.keys(S.decks).length); S.cur=id; save(); deckSelect(); render(); toast("New empty deck.",true); if(!fine()) openPane(); else q.focus();});
+  $("ds-dup").addEventListener("click",function(){snap(); var id=newId(), c=clone(cur()); c.name=(c.name||"Deck")+" (copy)"; S.decks[id]=c; S.cur=id; save(); deckSelect(); render(); toast("Copied the deck.",true);});
+  $("db-undo").addEventListener("click",undo);
+  $("db-sort").addEventListener("click",function(){snap(); var d=cur(); d.main=sortList(d.main); d.extra=sortList(d.extra); d.side=sortList(d.side); selKey=null; save(); render(); toast("Sorted: monsters, spells, traps; Fusion, Synchro, Xyz, Link.",true);});
+  function arm(btn,label,armed,fn){btn.addEventListener("click",function(e){e.stopPropagation(); if(!btn.classList.contains("armed")){btn.classList.add("armed"); btn.textContent=armed; setTimeout(function(){btn.classList.remove("armed"); btn.textContent=label;},3000); return;} btn.classList.remove("armed"); btn.textContent=label; fn(); closeMenu();});}
+  arm($("ds-del"),"Delete deck","Tap again to delete",function(){
+    snap(); var ids=Object.keys(S.decks), nm=cur().name;
+    if(ids.length<=1){S.decks[S.cur]=blank("New deck"); toast("Deck cleared (it was your only one).",true);}
+    else {delete S.decks[S.cur]; S.cur=Object.keys(S.decks)[0]; toast("Deleted "+(nm||"the deck")+".",true);}
+    selKey=null; save(); deckSelect(); render();});
+  arm($("ds-clear"),"Clear deck","Tap again to clear",function(){snap(); var d=cur(); d.main=[]; d.extra=[]; d.side=[]; d.roles={}; selKey=null; save(); render(); toast("Cleared.",true);});
   $("ds-cmp").addEventListener("change",function(){cur().cmp=this.value; save(); stats();});
-  preset.addEventListener("change",function(){var v=preset.value, d=cur(); if(!v) return;
-    if(v==="all"){d.main=clone(MAIN); d.extra=clone(EXTRA); d.side=clone(SIDE); d.roles={}; if(!d.cmp) d.cmp="main"; setMsg("Loaded your Angelechy list.");}
-    else {var p=PL[+v.slice(1)]; d.main=clone(p.main); d.side=clone(p.side); d.extra=clone(EXTRA); d.roles={}; if(!d.cmp) d.cmp="main"; setMsg("Loaded your list after siding going "+p.g+" vs "+p.name+" (sided-out cards are now in the side).");}
-    save(); deckSelect(); render();});
-  var clr=$("ds-clear"), ct=null;
-  clr.addEventListener("click",function(){
-    if(!clr.classList.contains("armed")){clr.classList.add("armed"); clr.textContent="Tap again to clear"; clearTimeout(ct); ct=setTimeout(function(){clr.classList.remove("armed"); clr.textContent="Clear deck";},3000); return;}
-    clearTimeout(ct); clr.classList.remove("armed"); clr.textContent="Clear deck"; var d=cur(); d.main={}; d.extra={}; d.side={}; d.roles={}; save(); render(); setMsg("Cleared.");});
+  preset.addEventListener("change",function(){var v=preset.value, d=cur(); if(!v) return; snap();
+    if(v==="all"){d.main=expand(MAIN); d.extra=expand(EXTRA); d.side=expand(SIDE); d.roles={}; if(!d.cmp) d.cmp="main"; toast("Loaded your Angelechy list.",true);}
+    else {var p=PL[+v.slice(1)]; d.main=sortList(expand(p.main)); d.side=sortList(expand(p.side)); d.extra=expand(EXTRA); d.roles={}; if(!d.cmp) d.cmp="main"; toast("Loaded your list after siding going "+p.g+" vs "+p.name+".",true);}
+    preset.value=""; selKey=null; save(); deckSelect(); render(); closeMenu();});
   // export
-  function copy(txt,okMsg){try{navigator.clipboard.writeText(txt).then(function(){setMsg(okMsg);},function(){showText(txt);});}catch(e){showText(txt);}}
-  function showText(txt){$("ds-imp").hidden=false; $("ds-impbtn").setAttribute("aria-expanded","true"); var t=$("ds-imptext"); t.value=txt; t.focus(); t.select(); setMsg("Copy didn't work here; the text is selected in the box below.");}
-  $("ds-copy").addEventListener("click",function(){var d=cur();
-    var txt=[["main","Main deck"],["extra","Extra Deck"],["side","Side deck"]].map(function(z){var o=d[z[0]]||{}, ks=Object.keys(o); return ks.length?z[1]+" ("+total(o)+")\n"+ks.map(function(n){return o[n]+" "+n;}).join("\n"):"";}).filter(Boolean).join("\n\n");
-    copy((d.name?d.name+"\n\n":"")+txt,"List copied.");});
-  $("ds-ydk").addEventListener("click",function(){loadDB(function(){var d=cur(), miss=[];
-    function ids(o){var out=[]; for(var n in o){var r=BYNAME[n]; if(!r){miss.push(n); continue;} for(var i=0;i<o[n];i++) out.push(r[0]);} return out.join("\n");}
-    var txt="#created by Angelechy Guide\n#main\n"+ids(d.main||{})+"\n#extra\n"+ids(d.extra||{})+"\n!side\n"+ids(d.side||{})+"\n";
-    copy(txt,".ydk copied"+(miss.length?" ("+miss.length+" card"+(miss.length>1?"s":"")+" not in the card list were left out)":"")+". Paste it into a .ydk file or a simulator that accepts YDK text.");});});
+  function deckText(){var d=cur(); return (d.name?d.name+"\n\n":"")+[["main","Main deck"],["extra","Extra Deck"],["side","Side deck"]].map(function(z){var o=counts(d[z[0]]), ks=Object.keys(o); return ks.length?z[1]+" ("+d[z[0]].length+")\n"+ks.map(function(n){return o[n]+" "+n;}).join("\n"):"";}).filter(Boolean).join("\n\n");}
+  function ydk(miss){var d=cur(); function ids(a){return a.map(function(n){var r=BYNAME[n]; if(!r||!r[0]){miss.push(n); return null;} return r[0];}).filter(function(x){return x!=null;}).join("\n");}
+    return "#created by Angelechy Guide\n#main\n"+ids(d.main)+"\n#extra\n"+ids(d.extra)+"\n!side\n"+ids(d.side)+"\n";}
+  function copy(txt,okMsg){try{navigator.clipboard.writeText(txt).then(function(){toast(okMsg,false);},function(){showText(txt);});}catch(e){showText(txt);}}
+  function showText(txt){$("ds-imp").hidden=false; var t=$("ds-imptext"); t.value=txt; t.focus(); t.select(); toast("Copy didn't work here; the text is selected in the box.",false);}
+  $("ds-copy").addEventListener("click",function(){copy(deckText(),"List copied."); closeMenu();});
+  $("ds-ydk").addEventListener("click",function(){loadDB(function(){var miss=[], t=ydk(miss); copy(t,".ydk copied"+(miss.length?" ("+miss.length+" unknown card"+(miss.length>1?"s":"")+" left out)":"")+".");}); closeMenu();});
+  var inFrame=true; try{inFrame=window.self!==window.top;}catch(e){}
+  if(inFrame) $("db-dl").hidden=true;
+  $("db-dl").addEventListener("click",function(){loadDB(function(){var miss=[], t=ydk(miss), a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([t],{type:"text/plain"})); a.download=((cur().name||"deck").replace(/[^\w\- ]+/g,"").trim()||"deck")+".ydk"; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove();},500); toast("Saved "+a.download+".",false);}); closeMenu();});
   // import
-  $("ds-impbtn").addEventListener("click",function(){var box=$("ds-imp"); box.hidden=!box.hidden; this.setAttribute("aria-expanded",String(!box.hidden)); if(!box.hidden) $("ds-imptext").focus();});
+  $("ds-impbtn").addEventListener("click",function(){var box=$("ds-imp"); box.hidden=!box.hidden; this.setAttribute("aria-expanded",String(!box.hidden)); closeMenu(); if(!box.hidden) $("ds-imptext").focus();});
   function lookup(name){var r=BYNAME[name]||BYLOW[name.toLowerCase()]; if(r) return r[1]; if(PINFO[name]) return name;
-    var low=name.toLowerCase(); for(var i=0;i<NAMES.length;i++) if(NAMES[i].toLowerCase().indexOf(low)===0) return NAMES[i]; return null;}
-  $("ds-impgo").addEventListener("click",function(){loadDB(function(){
-    var txt=$("ds-imptext").value, z={main:{},extra:{},side:{}}, miss=[], zone="main";
-    function put(name,n,zn){var inf=info(name); if(inf.zone===3&&zn==="main") zn="extra"; z[zn][name]=(z[zn][name]||0)+n;}
+    var low=norm(name); for(var i=0;i<NORM.length;i++) if(NORM[i].indexOf(low)===0) return ROWS[i][1]; return null;}
+  function importText(txt){loadDB(function(){
+    var z={main:[],extra:[],side:[]}, miss=[], zone="main";
+    function put(name,n,zn){if(info(name).zone===3&&zn==="main") zn="extra"; for(var i=0;i<n;i++) z[zn].push(name);}
     if(/#main/i.test(txt)){
       txt.split(/\r?\n/).forEach(function(line){line=line.trim(); if(/^#main/i.test(line)) zone="main"; else if(/^#extra/i.test(line)) zone="extra"; else if(/^!side/i.test(line)) zone="side";
         else if(/^\d+$/.test(line)){var r=BYID[+line]; if(r) put(r[1],1,zone); else miss.push(line);}});
@@ -4335,27 +4743,64 @@ table.pieces td:first-child{white-space:nowrap}
         var h=line.match(/^(main|extra|side)(\s*deck)?\s*(\(\d+\))?:?$/i); if(h){zone=h[1].toLowerCase(); return;}
         var m=line.match(/^(\d+)\s*[x×]?\s+(.+)$/i)||line.match(/^(.+?)\s+[x×]\s*(\d+)$/i), n=1, name=line;
         if(m){if(/^\d+$/.test(m[1])){n=+m[1]; name=m[2];} else {name=m[1]; n=+m[2];}}
-        var found=lookup(name.trim()); if(found) put(found,n,zone); else miss.push(name.trim());});
+        var found=lookup(name.trim()); if(found) put(found,Math.min(n,3),zone); else miss.push(name.trim());});
     }
-    if(!total(z.main)&&!total(z.extra)&&!total(z.side)){$("ds-impmsg").textContent="Nothing recognised. Paste a .ydk file or lines like “3 Card Name”."; return;}
-    var d=cur(); d.main=z.main; d.extra=z.extra; d.side=z.side; d.roles={}; save(); render();
-    $("ds-impmsg").textContent="Imported "+total(z.main)+" · "+total(z.extra)+" · "+total(z.side)+(miss.length?". Not found: "+miss.slice(0,6).join(", ")+(miss.length>6?"…":""):"")+".";
-  });});
-  // sample hand
+    if(!z.main.length&&!z.extra.length&&!z.side.length){$("ds-impmsg").textContent="Nothing recognised. Paste a .ydk file or lines like “3 Card Name”."; return;}
+    snap(); var d=cur(); d.main=z.main; d.extra=z.extra; d.side=z.side; d.roles={}; selKey=null; save(); render();
+    $("ds-impmsg").textContent="Imported "+z.main.length+" · "+z.extra.length+" · "+z.side.length+(miss.length?". Not found: "+miss.slice(0,6).join(", ")+(miss.length>6?"…":""):"")+".";
+  });}
+  $("ds-impgo").addEventListener("click",function(){importText($("ds-imptext").value);});
+  $("db-file").addEventListener("change",function(){var f=this.files&&this.files[0]; if(!f) return; var rd=new FileReader(); rd.onload=function(){$("ds-imptext").value=String(rd.result); importText(String(rd.result));}; rd.readAsText(f); this.value="";});
+
+  // ---- odds panels, jobs, sample hand ----
+  function pct(x){return (Math.round(x*1000)/10).toFixed(1)+"%";}
+  function delta(x,b,inv){if(b==null||x==null) return ""; var dd=Math.round((x-b)*1000)/10; if(Math.abs(dd)<0.5) return '<em>same</em>'; var good=inv?dd<0:dd>0; return '<em class="'+(good?"up":"dn")+'">'+(dd>0?"+":"−")+Math.abs(dd).toFixed(1)+'</em>';}
+  function stat(lbl,v,b,inv){return v==null?"":'<div class="ds-stat"><span>'+lbl+'</span><b>'+pct(v)+'</b>'+delta(v,b,inv)+'</div>';}
+  var baseCache={};
+  function baseFor(key){if(!key) return null; var o=key==="main"?{main:MAIN,roles:{}}:S.decks[key]; if(!o) return null;
+    var sig=key+JSON.stringify(mainMap(o))+JSON.stringify(o.roles||{}); if(!baseCache[sig]) baseCache[sig]=analyze(o); return baseCache[sig];}
+  function stats(){
+    var d=cur(), N=d.main.length, g1=$("ds-g1"), g2=$("ds-g2"), sum=$("ds-sum"), hist=$("ds-hist");
+    if(N<6){g1.innerHTML=g2.innerHTML='<p class="note">Add at least 6 Main Deck cards.</p>'; sum.innerHTML=""; hist.innerHTML=""; return;}
+    var a=analyze(d), B=baseFor(d.cmp)||{};
+    sum.innerHTML='<div><b>'+pct(a.play)+'</b><span>a play going 1st '+delta(a.play,B.play)+'</span></div><div><b>'+pct(a.res)+'</b><span>survives a hand trap '+delta(a.res,B.res)+'</span></div><div><b>'+pct(a.i3)+'</b><span>3+ interruptions going 2nd '+delta(a.i3,B.i3)+'</span></div>';
+    g1.innerHTML=stat("A play",a.play,B.play)+stat("A play that survives one hand trap",a.res,B.res)+stat("No play (brick)",a.brick,B.brick,true)+(a.B?stat("2+ bricks in hand",a.b2,B.b2,true):"")+stat("Inspector Boarder in hand",a.boarder,B.boarder);
+    g2.innerHTML=stat("2+ interruptions",a.i2,B.i2)+stat("3+ interruptions",a.i3,B.i3)+stat("4+ interruptions",a.i4,B.i4)+stat("Opening to e4",a.e4,B.e4)+stat("A play"+(a.E?" or e4":""),a.turn,B.turn)+stat("3+ interruptions and a play"+(a.E?" or e4":""),a.both,B.both)
+      +'<p class="note">'+a.K+' interruptions in '+N+' cards'+(B.K!=null?' (comparison: '+B.K+' in '+B.N+')':'')+'.</p>';
+    var mx=Math.max.apply(null,a.hist)||1;
+    hist.innerHTML=a.hist.map(function(p,k){return '<div class="'+(k>=3?"ok":"")+'"><b>'+Math.round(p*100)+'%</b><i style="height:'+Math.max(2,Math.round(80*p/mx))+'px"></i><small>'+(k===6?"6+":k)+'</small></div>';}).join("");
+  }
+  function renderJobs(){
+    var d=cur(), seen={}, h="";
+    d.main.forEach(function(nm){if(seen[nm]) return; seen[nm]=1; var j=jobOf(d,nm);
+      h+='<div class="db-job">'+tile(nm)+'<span>'+esc(nm)+' ×'+counts(d.main)[nm]+'</span><select class="ds-role" data-n="'+esc(nm)+'" data-r="'+j+'" aria-label="Job of '+esc(nm)+'">'+JOBS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===j?" selected":"")+'>'+x[1]+'</option>';}).join("")+'</select></div>';});
+    $("db-jobs").innerHTML=h||'<p class="note">The Main Deck is empty.</p>';
+  }
+  $("db-jobs").addEventListener("change",function(e){var s=e.target.closest("select.ds-role"); if(!s) return; s.setAttribute("data-r",s.value); setJob(s.getAttribute("data-n"),s.value);});
   root.querySelector(".ds-draw").addEventListener("click",function(e){
-    var b=e.target.closest("button[data-n]"); if(!b) return; var n=+b.dataset.n, d=cur(), names=[];
-    for(var nm in d.main||{}) for(var i=0;i<d.main[nm];i++) names.push(nm);
+    var b=e.target.closest("button[data-n]"); if(!b) return; var n=+b.dataset.n, d=cur(), names=d.main.slice();
     if(names.length<n){$("ds-verdict").textContent="Not enough cards."; return;}
     for(var j=0;j<n;j++){var r=j+Math.floor(Math.random()*(names.length-j)); var t=names[j]; names[j]=names[r]; names[r]=t;}
-    var hand=names.slice(0,n), fbgOK=((d.main["Angelechy Disturbance"]||0)+(d.main["Angelechy Verdict"]||0))>0;
+    var hand=names.slice(0,n), m=mainMap(d), fbgOK=((m["Angelechy Disturbance"]||0)+(m["Angelechy Verdict"]||0))>0;
     var ev=evalHand(hand.map(function(x){return flags(d,x);}),fbgOK);
-    $("ds-hand").innerHTML=hand.map(function(nm){var j=jobOf(d,nm); var c=j==="st"?"st":j==="sp"?"sp":j==="int"?"int":""; return '<span class="'+c+'">'+esc(nm)+'</span>';}).join("");
+    $("ds-hand").innerHTML=hand.map(function(nm){var j=jobOf(d,nm); return '<figure class="'+(j==="st"||j==="sp"||j==="int"?j:"")+'">'+tile(nm)+'<figcaption>'+esc(nm)+'</figcaption></figure>';}).join("");
     $("ds-verdict").textContent=n===5?(ev.st>=1?("A play"+(ev.res?", and it survives one hand trap.":", but one hand trap on its key step stops it.")):"No play: this hand bricks going first.")
       :(ev.int+" interruption"+(ev.int===1?"":"s")+(ev.e4?", including e4":"")+" · "+(ev.st>=1||ev.e4?"you have a play on your turn.":"no play on your turn."));
   });
+
+  // read-only hook for tests
+  window.__agSim={analyze:function(d){return analyze(d.main?d:{main:d,roles:{}});},MAIN:MAIN,plans:PL,
+    api:{add:addCard,move:moveCard,remove:removeAt,cur:cur,undo:undo,render:render,search:function(v){q.value=v; search(); return HITS;},F:function(){return F;},changed:changed,
+      drop:function(s,x,y){startDrag(s,x,y); endDrag(x,y);},src:srcOf,showPrev:showPrev,stats:stats}};
+
   // start only when the page is opened
   var started=false;
-  function start(){if(started||location.hash.slice(1)!=="sim") return; started=true; deckSelect(); render(); loadDB(function(){render(); if(!$("ds-dbmsg").textContent&&DB) $("ds-dbmsg").textContent=DB.c.length.toLocaleString()+" TCG cards, Forbidden & Limited status as of "+DB.v+" (YGOPRODeck).";});}
+  function start(){
+    if(started||location.hash.slice(1)!=="sim") return; started=true;
+    $("db-hint").textContent=fine()?"Drag cards from the search into Main, Extra or Side, between zones, or out of the deck to remove them. Click a search result to add it, right-click to add it to the Side; right-click a card in your deck to remove it. Ctrl+Z undoes.":"Tap + Add cards to search. Tap a card for its text and buttons; press and hold a card, then drag it to move it between zones or off the deck to remove it.";
+    deckSelect(); render();
+    loadDB(function(){buildFilters(); render(); search();});
+  }
   window.addEventListener("hashchange",start); start();
 })();
 </script>

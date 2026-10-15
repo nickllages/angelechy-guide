@@ -91,3 +91,7 @@ Raw lists: `raw/decks/Blitzclique_recent_oct14.md`. The user says their locals p
 - **Branded ROLAD:** Ghost Ogre, Lava Golem, Mistaken Arrest, Evenly Matched, Heat Wave, Nibiru.
 - **Blitzclique (Burnaby Top 8):** 3 Purulia, Crackle, 2 Rai-Oh, 3 Sloth, 2 Overvolt, 3 Solemn Accusation, Return Stroke.
 - **General:** DB Grinder says 3 Ash, 3 Ghost Ogre and 3 Typhoon are "mandatory" against Angelechy.
+
+| Oct 10 | Monterrey WCQ Regional | ≈300 | L&D Ritual 1st (Rodrigo Manuel Lopez Gonzalez), Elfnote 2nd; Top 4 Despia Branded, Elfnote; Top 8 Artmage, 2 Mermail (2 not posted). No Angelechy. | posted Oct 14 |
+
+**Oct 14:** Emergency Forbidden & Limited list announced — 34 Forbidden, 8 Limited, revealed Oct 16–18 during YCS Houston.

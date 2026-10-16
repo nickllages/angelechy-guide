@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<!-- v3-theme-early -->
+<script>try{var t=localStorage.getItem("ag-theme-v1");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-ag-theme",t);}catch(e){}</script>
+<!-- /v3-theme-early -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -858,12 +861,41 @@ ul.tips{gap:8px}
 .sd h3{margin:0 0 4px;font-size:17px}
 .sd h3 small{font:700 13px var(--mono);color:var(--accent);margin-left:4px}
 .sd p{margin:0;font-size:14.5px;max-width:72ch}
+
+/* theme switch: Auto follows Claude / your device; Light or Dark is chosen in the guide and remembered on this device */
+html:root[data-ag-theme="light"]{
+  color-scheme:light;
+  --bg:#F4F5F7; --surface:#FFFFFF; --ink:#1A1D26; --muted:#596074; --line:#DCE0E8;
+  --accent:#2F4F9A; --accent-soft:#E7ECF7; --gold:#8C6A1C; --gold-soft:#F5EEDC;
+  --good:#2B7653; --good-soft:#E3F2EA; --bad:#A3354A; --bad-soft:#F7E6EA; --warn:#9A620F; --warn-soft:#F8EEDC;
+  --sq-light:#E9ECF2; --sq-dark:#C9D0DE;
+}
+html:root[data-ag-theme="dark"]{
+  color-scheme:dark;
+  --bg:#11131A; --surface:#181B24; --ink:#E7E9EF; --muted:#A1A7B6; --line:#2B303C;
+  --accent:#93AAE8; --accent-soft:#1E2741; --gold:#D9B865; --gold-soft:#2A2516;
+  --good:#6FC79C; --good-soft:#15291F; --bad:#EA8396; --bad-soft:#2C171C; --warn:#E3A853; --warn-soft:#2A2113;
+  --sq-light:#2A2F3B; --sq-dark:#1E222C;
+}
+.sidenav,.subnav,.db-pane,.tbl{scrollbar-color:var(--line) transparent}
+.theme-btn{display:inline-grid;place-items:center;width:36px;height:36px;margin-left:auto;padding:0;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);cursor:pointer;flex:none}
+.theme-btn:hover{border-color:var(--accent);color:var(--ink)}
+.theme-btn svg{width:18px;height:18px}
+.theme-tip{position:fixed;top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + 8px);right:16px;z-index:60;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--bg);font:600 13px var(--body);pointer-events:none;opacity:0;transition:opacity .2s}
+.theme-tip.on{opacity:1}
+.theme-seg{display:flex;align-items:center;gap:8px;margin:0 10px 12px}
+.theme-seg>span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.theme-seg>div{display:flex;flex:1;padding:2px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.theme-seg button{flex:1;padding:4px 0;border:0;border-radius:999px;background:none;font:600 12.5px var(--body);color:var(--muted);cursor:pointer}
+.theme-seg button:hover{color:var(--ink)}
+.theme-seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.theme-seg button:focus-visible,.theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* v3-css-end */
 </style>
 
 <div class="wrap">
 <!-- v3-appbar -->
-<div class="appbar" id="appbar"><a class="brand" href="#home"><span class="pc" aria-hidden="true">♔&#xFE0E;</span>Angelechy Guide</a><button type="button" class="search-btn" data-open-search aria-label="Search the guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>/</kbd></button></div>
+<div class="appbar" id="appbar"><a class="brand" href="#home"><span class="pc" aria-hidden="true">♔&#xFE0E;</span>Angelechy Guide</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Theme"></button><button type="button" class="search-btn" data-open-search aria-label="Search the guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>/</kbd></button></div>
 <!-- /v3-appbar -->
 <header class="top">
   <div>
@@ -4509,7 +4541,8 @@ ul.tips{gap:8px}
   var side=document.getElementById("sidenav");
   if(side){
     var h='<a class="brand" href="#home"><span class="eyebrow">Living guide</span><b>Angelechy Guide</b></a>'+
-      '<button type="button" class="search-btn" data-open-search><span>Search</span><kbd>/</kbd></button>';
+      '<button type="button" class="search-btn" data-open-search><span>Search</span><kbd>/</kbd></button>'+
+      '<div class="theme-seg"><span>Theme</span><div role="group" aria-label="Theme"><button type="button" data-theme-set="auto" title="Follow Claude or your device">Auto</button><button type="button" data-theme-set="light">Light</button><button type="button" data-theme-set="dark">Dark</button></div></div>';
     // every group collapses; which ones you left open is remembered on this device
     var NAVKEY="ag-sidenav-v1", NAV={}; try{NAV=JSON.parse(localStorage.getItem(NAVKEY)||"{}")||{};}catch(e){NAV={};}
     AREAS.forEach(function(a){
@@ -4519,6 +4552,25 @@ ul.tips{gap:8px}
     side.innerHTML=h;
     [].forEach.call(side.querySelectorAll("details.grp"),function(d){d.addEventListener("toggle",function(){NAV[d.dataset.area]=d.open; try{localStorage.setItem(NAVKEY,JSON.stringify(NAV));}catch(e){}});});
   }
+  // theme: Auto follows Claude / your device; Light or Dark is remembered on this device (the early script at the top applies it before paint)
+  var THEMEKEY="ag-theme-v1", THEMES=["auto","light","dark"], TLABEL={auto:"Auto (follows Claude or your device)",light:"Light",dark:"Dark"};
+  var TICON={auto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>',
+    light:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    dark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>'};
+  function themeNow(){var t="auto"; try{t=localStorage.getItem(THEMEKEY)||"auto";}catch(e){} return THEMES.indexOf(t)>=0?t:"auto";}
+  function setTheme(t,tip){
+    var r=document.documentElement; if(t==="auto") r.removeAttribute("data-ag-theme"); else r.setAttribute("data-ag-theme",t);
+    try{ if(t==="auto") localStorage.removeItem(THEMEKEY); else localStorage.setItem(THEMEKEY,t); }catch(e){}
+    [].forEach.call(document.querySelectorAll("[data-theme-set]"),function(b){b.setAttribute("aria-pressed",String(b.dataset.themeSet===t));});
+    var tb=document.getElementById("theme-btn"); if(tb){tb.innerHTML=TICON[t]; tb.setAttribute("aria-label","Theme: "+TLABEL[t]+". Tap to change."); tb.title="Theme: "+TLABEL[t];}
+    if(tip){var el=document.getElementById("theme-tip"); if(!el){el=document.createElement("div"); el.id="theme-tip"; el.className="theme-tip"; el.setAttribute("role","status"); document.body.appendChild(el);}
+      el.textContent="Theme: "+TLABEL[t]; el.classList.add("on"); clearTimeout(setTheme.t); setTheme.t=setTimeout(function(){el.classList.remove("on");},1600);}
+  }
+  setTheme(themeNow(),false);
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-theme-set]"); if(b){setTheme(b.dataset.themeSet,false); return;}
+    if(e.target.closest("#theme-btn")){var t=themeNow(); setTheme(THEMES[(THEMES.indexOf(t)+1)%3],true);}
+  });
   // page chips
   var sub=document.getElementById("subnav"), subArea=null;
   function renderSub(area,pid){

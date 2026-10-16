@@ -5,7 +5,7 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 ## Waiting on the user
 
 1. **Ryzeal Blitzclique siding (proposed Oct 14).** The user's locals play Ryzeal Blitzclique, where Fuwalos draws (Ice Ryzeal's Deck summon, Rank 4 Xyz). Proposal: vs Ryzeal Blitzclique going 2nd keep Fuwalos and play −2 FBG −1 Terraforming → +2 Purulia +1 Droll (27). Pure Blitzclique keeps the current plan. Undecided: make it the default Blitz row, or add a second row?
-2. **The 3rd Thrust slot (Oct 13).** Lava Golem recommended; alternatives a 3rd Veiler, a 3rd Nibiru, Pot of Sloth. Not adopted.
+2. ~~**The 3rd Thrust slot (Oct 13).**~~ Closed Oct 16: the user put Angelechy Brilliant Move there (situational, going 2nd vs battle-only boards).
 3. **Logins (Oct 13).** The user chose their own backend (Supabase or Firebase) later. Needed from them: a project URL and its public (anon) key. Then: sign-in, private decklists per viewer, the user's public list and change feed, a tracker only they can read. Until then, the tracker and life points are device-only (localStorage).
 
 ## Research to do

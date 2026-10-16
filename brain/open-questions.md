@@ -13,7 +13,7 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 0. **Emergency Forbidden & Limited list (announced Oct 14):** 34 Forbidden + 8 Limited, revealed Oct 16–18 at YCS Houston. When it's out: check every card in the 70 and the Builds section, the top-10 decks, and the hand-trap matrix; propose deck changes in the run summary. Then rebuild the Deckbuilder's card list (`python3 tools/build_carddb.py`) and republish.
 
 4. **Trif's "number one hand trap against Angelechy"** (kept for his paid Metafy masterclass with Lucas Sacco, launched Oct 14). Never bypass the paywall; watch free sources. Card-text guesses: **D.D. Crow** (banishes Verdict in the GY before its effect; works at their own Standby against your e4 loop) and **Artifact Lancea** (on your turn nothing can be banished, which shuts off Verdict/Disturbance/Opposition/Strategy Score GY costs and Enlisted/Castellan/Endgame banishes). Ruled out: Dimension Shifter (Forbidden in the TCG), Retaliating "C" (only triggers on Spells that Special Summon).
-5. **Unposted lists:** the Belén winner (Kevin Sanchez Espinoza), Joshua Artavia (Belén Top 4), Prabhdeep Atwal (Burnaby 2nd). (Monterrey top cut posted Oct 14: no Angelechy.)
+5. **Unposted lists:** ~~the Belén winner~~ (posted Oct 15, see meta.md), Joshua Artavia (Belén Top 4), Prabhdeep Atwal (Burnaby 2nd). (Monterrey top cut posted Oct 14: no Angelechy.)
 6. **Hand-trap matrix gaps ("—" in the guide's #handtraps):**
    - Ghost Ogre vs Branded ROLAD.
    - Fuwalos and Nibiru vs Mitsurugi.
@@ -35,6 +35,8 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 14. Boarder: Pendulum Scales are Spell Cards, so only monsters in Monster Zones count as types (assumed).
 
 ## Closed
+
+- **Oct 16 — Belén winner's list?** Posted Oct 15: 2 Droll/0 Nibiru main, Brilliant Move main, 3 Lava Golem + 3 Nibiru side (meta.md).
 
 - **Oct 14 — Is the coin random?** Yes. Over 4,000 flips, 50.5–51.2% Heads; die χ² normal over 180,000 rolls. The motion looked scripted and was rebuilt with physics.
 - **Oct 14 — Elfnote going 2nd: cut Spark?** No; cut engine (user agreed).

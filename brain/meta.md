@@ -6,7 +6,7 @@ Format: TCG, Beyond the Brave (BETB) legal Oct 8, 2026. Add new results at the t
 
 | Date | Event | Players | Result | Notes |
 |---|---|---|---|---|
-| Oct 11 | Belén WCQ Regional (Costa Rica) | ≈200 | **Angelechy 1st** (Kevin Sanchez Espinoza), **Angelechy Top 4** (Joshua Artavia); Elfnote 2nd; Maliss Top 4; Top 8: 2 Elfnote, Shaddoll, Light and Darkness Ritual | Lists not posted (as of Oct 13) |
+| Oct 11 | Belén WCQ Regional (Costa Rica) | ≈200 | **Angelechy 1st** (Kevin Sanchez Espinoza), **Angelechy Top 4** (Joshua Artavia); Elfnote 2nd; Maliss Top 4; Top 8: 2 Elfnote, Shaddoll, Light and Darkness Ritual | Winner's list posted Oct 15 (ygoprodeck.com/deck/angelechy-738506; data/decks/Angelechy_Belen_1st_Sanchez.txt); Top 4 not posted |
 | Oct 11 | Burnaby WCQ Regional | 60 | Mermail 1st; **Angelechy 2nd** (Prabhdeep Atwal, list not posted); **Angelechy Top 4** (Cash Crites, ygoprodeck.com/deck/angelechy-737973); Elfnote Top 4; Top 8: 2 L&D Ritual, Elfnote, Blitzclique (ygoprodeck.com/deck/blitzclique-737969, pure) | The user's main is based on Crites' list |
 | Oct 11 | Guatemala City WCQ Regional | 120 | Elfnote Synchron 1st | Rest unposted |
 | Oct 11 | Curitiba WCQ Regional | 53 | Yummy 1st, Elfnote 2nd, Artmage + Fairy Tail Top 4; Top 8: D/D/D, Lunalight, Adamancipator | No Angelechy |
@@ -95,3 +95,6 @@ Raw lists: `raw/decks/Blitzclique_recent_oct14.md`. The user says their locals p
 | Oct 10 | Monterrey WCQ Regional | ≈300 | L&D Ritual 1st (Rodrigo Manuel Lopez Gonzalez), Elfnote 2nd; Top 4 Despia Branded, Elfnote; Top 8 Artmage, 2 Mermail (2 not posted). No Angelechy. | posted Oct 14 |
 
 **Oct 14:** Emergency Forbidden & Limited list announced — 34 Forbidden, 8 Limited, revealed Oct 16–18 during YCS Houston.
+
+**Oct 16 — Belén winner list (Kevin Sanchez Espinoza, posted Oct 15):** 3 Fuwalos, 3 Ash, 2 Ogre, 2 Droll (0 Nibiru main); 3 SS, 3 Opposition, 3 Problem, 3 FBG, 1 Terraforming, 1 Endgame, 1 Brilliant Move; 3 e4, 2 Verdict, 1 Disturbance, 3 Impulse, 3 Purge, 3 Spark. Extra: 2 Shatranga, 2 Enlisted, 2 Seneschal, 2 Bastion, 2 Destrier, Castellan, Kusanagi, Centur-Ion Legatia, Crimson Dragon, Majestic Star Dragon. Side: 3 Boarder, 3 Lava Golem, 3 Nibiru, 3 Typhoon, Thrust, Talent, Called by.
+**Oct 15 — case tournament Top 16 (SonnyP's team, Witness + Songs build; list not posted):** https://youtu.be/iE7dzm9Mt70

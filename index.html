@@ -399,7 +399,10 @@ body{padding-bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px))}
   .sidenav ul a{display:block;padding:5px 10px;border-radius:6px;font:500 13.5px var(--body);color:var(--muted);text-decoration:none}
   .sidenav a:hover{background:var(--accent-soft);color:var(--accent)}
   .sidenav ul a.active{background:var(--accent-soft);color:var(--accent);font-weight:650}
-  .sidenav details.grp summary::after{content:"";margin-left:auto;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+  .sidenav details.grp summary::after{content:"";margin-left:auto;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .15s ease}
+  .sidenav details.grp>summary:hover{background:var(--accent-soft);color:var(--accent)}
+  .sidenav details.grp:not([open])>summary{color:var(--muted)}
+  .sidenav details.grp>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
   .sidenav details.grp[open] summary::after{transform:rotate(225deg)}
 }
 /* sticky offsets for anchors and matchup tabs */
@@ -4311,12 +4314,14 @@ ul.tips{gap:8px}
   if(side){
     var h='<a class="brand" href="#home"><span class="eyebrow">Living guide</span><b>Angelechy Guide</b></a>'+
       '<button type="button" class="search-btn" data-open-search><span>Search</span><kbd>/</kbd></button>';
+    // every group collapses; which ones you left open is remembered on this device
+    var NAVKEY="ag-sidenav-v1", NAV={}; try{NAV=JSON.parse(localStorage.getItem(NAVKEY)||"{}")||{};}catch(e){NAV={};}
     AREAS.forEach(function(a){
       var list='<ul>'+a.pages.map(function(p){return '<li><a href="#'+p[0]+'" data-page="'+p[0]+'">'+esc(p[1])+'</a></li>';}).join("")+'</ul>';
-      if(a.k==="matchups") h+='<details class="grp" data-area="'+a.k+'"><summary><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</summary>'+list+'</details>';
-      else h+='<div class="grp" data-area="'+a.k+'"><a href="#'+a.pages[0][0]+'"><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</a>'+list+'</div>';
+      h+='<details class="grp" data-area="'+a.k+'"'+(NAV[a.k]?" open":"")+'><summary><span class="pc" aria-hidden="true">'+a.icon+T+'</span>'+esc(a.label)+'</summary>'+list+'</details>';
     });
     side.innerHTML=h;
+    [].forEach.call(side.querySelectorAll("details.grp"),function(d){d.addEventListener("toggle",function(){NAV[d.dataset.area]=d.open; try{localStorage.setItem(NAVKEY,JSON.stringify(NAV));}catch(e){}});});
   }
   // page chips
   var sub=document.getElementById("subnav"), subArea=null;
@@ -4343,7 +4348,7 @@ ul.tips{gap:8px}
   });
 
   // router: one page at a time
-  var lastPid=null;
+  var lastPid=null, lastArea=null;
   function show(){
     var id=decodeURIComponent(location.hash.slice(1))||"home";
     var el=document.getElementById(id);
@@ -4355,10 +4360,10 @@ ul.tips{gap:8px}
     if(tab) [].forEach.call(tab.querySelectorAll("a"),function(a){var on=a.dataset.area===area; a.classList.toggle("active",on); if(on) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");});
     if(side){
       [].forEach.call(side.querySelectorAll("ul a"),function(a){a.classList.toggle("active",a.dataset.page===pid);});
-      var mg=side.querySelector('details.grp[data-area="matchups"]'); if(mg&&area==="matchups") mg.open=true;
+      if(area!==lastArea){var g=side.querySelector('details.grp[data-area="'+area+'"]'); if(g) g.open=true;} // open the group you're reading
       var al=side.querySelector('ul a.active'); if(al&&al.scrollIntoView&&side.scrollHeight>side.clientHeight){var r=al.getBoundingClientRect(), s=side.getBoundingClientRect(); if(r.top<s.top||r.bottom>s.bottom) side.scrollTop+=r.top-s.top-s.height/2;}
     }
-    renderSub(area,pid);
+    renderSub(area,pid); lastArea=area;
     var samePage=lastPid===pid; lastPid=pid;
     if(el&&el!==blk){
       var d=el.closest("details"); while(d){d.open=true; d=d.parentElement&&d.parentElement.closest("details");}

@@ -890,6 +890,27 @@ html:root[data-ag-theme="dark"]{
 .theme-seg button:hover{color:var(--ink)}
 .theme-seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
 .theme-seg button:focus-visible,.theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* deckbuilder: Genesys format */
+.db-fmt{display:flex;align-items:center;gap:8px;flex:1 1 100%}
+.db-fmt>span{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.db-fmt .seg{display:inline-grid}
+.db-fmt .seg button{min-height:34px;padding:0 16px;font-size:13.5px}
+.db-gen{display:grid;gap:6px;padding:10px 12px;border-radius:var(--r);background:var(--gold-soft);border:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
+.db-gen-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.db-gen-top b{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.db-gen-n{margin-left:auto;display:flex;align-items:center;gap:6px;font:700 15px var(--mono);color:var(--muted)}
+.db-gen-n output{font:700 22px var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.db-gen-n input{width:64px;font:700 15px var(--mono);padding:4px 6px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.db-gen-bar{height:8px;border-radius:999px;background:var(--surface);overflow:hidden}
+.db-gen-bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--gold);transition:width .2s ease}
+.db-gen.over{background:var(--bad-soft);border-color:color-mix(in srgb,var(--bad) 40%,transparent)}
+.db-gen.over .db-gen-bar i{background:var(--bad)}
+.db-gen.over .db-gen-n output,.db-gen.over .db-gen-top b{color:var(--bad)}
+.db-gen-sub{margin:0;font-size:12.5px;color:var(--muted)}
+.cd>small.gp{position:absolute;right:2px;bottom:2px;min-width:15px;height:15px;padding:0 3px;border-radius:999px;background:var(--gold);color:var(--surface);font:700 10px/15px var(--mono);text-align:center;box-shadow:0 0 0 1.5px var(--surface)}
+.db-rt .gpt{color:var(--gold);font-weight:700}
+.dp-gp{font:700 12px var(--mono);color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.db-gen-bar i{transition:none}}
 /* v3-css-end */
 </style>
 
@@ -4237,6 +4258,7 @@ html:root[data-ag-theme="dark"]{
       <label class="db-lbl db-which">Deck<select id="ds-which"></select></label>
       <label class="db-lbl db-name">Name<input id="ds-name" maxlength="60" autocomplete="off"></label>
       <p class="db-saved" id="db-saved" aria-live="polite">Saves automatically on this device</p>
+      <div class="db-fmt"><span id="db-fmt-l">Format</span><div class="seg" role="group" aria-labelledby="db-fmt-l"><button type="button" data-fmt="" aria-pressed="true">TCG</button><button type="button" data-fmt="genesys" aria-pressed="false">Genesys</button></div></div>
       <div class="db-btns">
         <button type="button" class="btn primary db-addbtn" id="db-open">+ Add cards</button>
         <button type="button" class="btn db-savebtn" id="db-save">Save</button>
@@ -4264,6 +4286,7 @@ html:root[data-ag-theme="dark"]{
     </div>
     <div class="db-main">
       <div class="db-deck" id="db-deck">
+        <div class="db-gen" id="db-gen" hidden><div class="db-gen-top"><b>Genesys points</b><span class="db-gen-n"><output id="db-gen-n" aria-live="polite">0</output> / <label class="sr" for="db-gen-cap">Point cap</label><input id="db-gen-cap" type="number" min="0" max="999" inputmode="numeric" value="100"></span></div><div class="db-gen-bar" aria-hidden="true"><i id="db-gen-fill"></i></div><p class="db-gen-sub" id="db-gen-sub"></p></div>
         <div class="db-zone" data-z="main"><div class="db-zh"><b>Main deck</b><span class="db-n" id="db-n-main"></span><span class="db-split" id="db-s-main"></span></div><div class="db-grid" id="db-g-main"></div></div>
         <div class="db-zone" data-z="extra"><div class="db-zh"><b>Extra Deck</b><span class="db-n" id="db-n-extra"></span><span class="db-split" id="db-s-extra"></span></div><div class="db-grid" id="db-g-extra"></div></div>
         <div class="db-zone" data-z="side"><div class="db-zh"><b>Side deck</b><span class="db-n" id="db-n-side"></span><span class="db-split" id="db-s-side"></span></div><div class="db-grid" id="db-g-side"></div></div>
@@ -4278,7 +4301,7 @@ html:root[data-ag-theme="dark"]{
           <div class="db-find">
             <input id="ds-q" type="search" placeholder="Search cards…" autocomplete="off" enterkeyhint="search" aria-controls="ds-results">
             <button type="button" class="btn" id="db-ftog" aria-expanded="false" aria-controls="db-filters">Filters<span id="db-fcount"></span></button>
-            <select id="db-sortby" aria-label="Sort results"><option value="pop">Popular</option><option value="name">Name</option><option value="lvl">Level / Rank</option><option value="atk">ATK</option><option value="def">DEF</option></select>
+            <select id="db-sortby" aria-label="Sort results"><option value="pop">Popular</option><option value="name">Name</option><option value="lvl">Level / Rank</option><option value="atk">ATK</option><option value="def">DEF</option><option value="gp" hidden>Genesys points</option></select>
           </div>
           <div class="db-filters" id="db-filters" hidden></div>
           <p class="db-rcount" id="db-rcount"></p>
@@ -4305,6 +4328,7 @@ html:root[data-ag-theme="dark"]{
             <li><b>Jobs.</b> Each main-deck card has a job you can change: <b>Starter</b> (makes a play by itself), <b>Starter + a spare</b> (needs another Spell or Trap to discard, like Angelechy Problem), <b>Extender</b> (continues a play), <b>Interruption</b>, <b>Going-1st back-up</b> (a second route with a starter, like Thrust or Boarder) and <b>Brick</b>. Known Angelechy cards start with the guide's roles, and cards whose text works from the hand on the opponent's turn start as interruptions.</li>
             <li><b>A play:</b> at least one starter, or a “starter + a spare” with another Spell or Trap.</li>
             <li><b>Survives one hand trap:</b> two plays, or a play plus an extender or a going-1st back-up. For Angelechy the guide's rules also count Problem with Verdict or Disturbance, and Foolish Burial Goods with Opposition, Strategy Score or Problem. Foolish Burial Goods only starts if the deck has a Disturbance or Verdict.</li>
+            <li><b>Genesys:</b> switch a deck to Genesys and each card shows its points (Konami's list); Main, Extra and Side together must stay within the cap (100 unless your event sets another). Link and Pendulum Monsters aren't allowed, any card can be played at 3, and the Forbidden &amp; Limited list doesn't apply.</li>
             <li><b>How exact:</b> interruption odds are exact. Play odds come from 40,000 simulated hands, so they can move by about half a point.</li>
           </ul>
         </details>
@@ -5051,12 +5075,29 @@ html:root[data-ag-theme="dark"]{
     var type=r&&DB&&DB.types[r[2]]?DB.types[r[2]]:(p?({M:"Monster",S:"Spell",T:"Trap",X:"Extra Deck monster"})[p.t]:"Card not in the card list");
     return {r:r,zone:zone,spell:zone===1||zone===2,ht:r?r[4]:(p&&p.r==="int"?1:0),ban:ban,max:max,id:r?r[0]:0,type:type};
   }
+  // ---- Genesys (genesys.json: Konami's point list via YGOPRODeck, built by tools/build_genesys.py; loaded when a deck uses Genesys) ----
+  // Main + Extra + Side together must stay within the point cap (100 by default); no Link or Pendulum Monsters; 3 of any card; no F&L list.
+  var GP=null, GPV="", gpLoading=null;
+  function loadGP(cb){
+    if(GP){if(cb) cb(); return;}
+    if(window.__agGenesys){GP=window.__agGenesys.p||{}; GPV=window.__agGenesys.v||""; if(cb) cb(); return;}
+    if(!gpLoading) gpLoading=fetch("genesys.json").then(function(r){if(!r.ok) throw new Error(r.status); return r.json();})
+      .then(function(j){GP=j.p||{}; GPV=j.v||"";}).catch(function(){gpLoading=null; toast("The Genesys point list didn't load here.",false);});
+    gpLoading.then(function(){if(cb) cb();});
+  }
+  function gen(d){d=d||cur(); return !!d&&d.fmt==="genesys";}
+  function capOf(d){d=d||cur(); var c=parseInt(d.cap,10); return isNaN(c)?100:c;}
+  function pts(name){var r=BYNAME[name]; return r&&GP?(GP[r[0]]||0):0;}
+  function notGen(name){var r=BYNAME[name]; if(!r||!isMon(r)) return ""; var fr=frameOf(r); return fr==="link"?"Link":fr.indexOf("pendulum")>=0?"Pendulum":"";}
+  function maxFor(name,d){return gen(d)?(notGen(name)?0:3):info(name).max;}
+  function genTotal(d){d=d||cur(); var t={main:0,extra:0,side:0,all:0}; ["main","extra","side"].forEach(function(z){d[z].forEach(function(n){var p=pts(n); t[z]+=p; t.all+=p;});}); return t;}
   var KIND=["m","s","t","x"];
   function tile(name){
-    var r=BYNAME[name], inf=info(name), im="", ban="";
+    var r=BYNAME[name], inf=info(name), im="", ban="", g=gen();
     if(r&&r[6]>=0){var n=r[6], c=n%PER, x=c%COLS, y=Math.floor(c/COLS);
       im='<i style="background-image:url(img/s'+Math.floor(n/PER)+'.jpg);background-position:'+(x*100/(COLS-1)).toFixed(3)+'% '+(y*100/(RPS-1)).toFixed(3)+'%"></i>';}
-    if(inf.ban) ban='<em title="'+BANS[inf.ban]+'">'+(inf.ban===3?"✕":inf.max)+'</em>';
+    if(g){var ng=notGen(name), p=pts(name); if(ng) ban='<em title="'+ng+' Monsters aren\'t allowed in Genesys">✕</em>'; else if(p) ban='<small class="gp" title="'+p+' Genesys point'+(p===1?'':'s')+'">'+p+'</small>';}
+    else if(inf.ban) ban='<em title="'+BANS[inf.ban]+'">'+(inf.ban===3?"✕":inf.max)+'</em>';
     return '<span class="cd k-'+(KIND[inf.zone]||"m")+'"><b>'+esc(name)+'</b>'+im+ban+'</span>';
   }
   function isMon(r){return r[3]===0||r[3]===3;}
@@ -5181,8 +5222,10 @@ html:root[data-ag-theme="dark"]{
     var e=full(d,z)||(((allCounts(d)[name]||0)>=3)?"3 copies is the most a deck can run.":""); if(e){toast(e,false); return false;}
     snap(); var arr=d[z]; if(at==null||at>arr.length){var li=arr.lastIndexOf(name); at=li>=0?li+1:arr.length;} arr.splice(at,0,name);
     save(); render();
-    var n=allCounts(d)[name], inf=info(name);
-    toast("Added "+name+(z!=="main"?" to the "+ZN[z]:"")+(n>1?" ("+n+")":"")+(n>inf.max?" · over the "+BANS[inf.ban]+" limit":""),true);
+    var n=allCounts(d)[name], inf=info(name), note="";
+    if(gen(d)){var ng=notGen(name), p=pts(name); note=ng?" · "+ng+" Monsters aren't allowed in Genesys":p?" · "+p+" pt"+(p===1?"":"s")+" ("+genTotal(d).all+"/"+capOf(d)+")":"";}
+    else if(n>inf.max) note=" · over the "+BANS[inf.ban]+" limit";
+    toast("Added "+name+(z!=="main"?" to the "+ZN[z]:"")+(n>1?" ("+n+")":"")+note,true);
     return true;
   }
   function moveCard(fz,i,tz,at){
@@ -5214,7 +5257,7 @@ html:root[data-ag-theme="dark"]{
     var d=cur(), all=allCounts(d), warn=[];
     ["main","extra","side"].forEach(function(z){
       var arr=d[z], html="";
-      arr.forEach(function(nm,i){var inf=info(nm), bad=inf.max===0||all[nm]>inf.max||(z==="main"&&inf.zone===3)||(z==="extra"&&inf.zone!==3);
+      arr.forEach(function(nm,i){var inf=info(nm), mx=maxFor(nm,d), bad=mx===0||all[nm]>mx||(z==="main"&&inf.zone===3)||(z==="extra"&&inf.zone!==3);
         html+='<button type="button" class="cdb'+(bad?" bad":"")+(selKey===z+":"+i?" sel":"")+'" data-z="'+z+'" data-i="'+i+'" aria-label="'+esc(nm)+(bad?" (not allowed)":"")+'">'+tile(nm)+'</button>';});
       var show=z==="main"?Math.min(60,Math.max(40,Math.ceil(arr.length/10)*10)):15;
       for(var k=arr.length;k<show;k++) html+='<span class="db-slot" aria-hidden="true"></span>';
@@ -5224,13 +5267,31 @@ html:root[data-ag-theme="dark"]{
     });
     var nM=d.main.length;
     if(nM<40) warn.push("Main Deck: "+(40-nM)+" more to reach 40.");
-    for(var n in all){var inf=info(n); if(inf.max===0) warn.push(n+" is Forbidden."); else if(all[n]>inf.max) warn.push(n+": "+all[n]+" copies, but it's "+(inf.ban?BANS[inf.ban]+" ("+inf.max+")":"3 at most")+".");}
+    if(gen(d)){
+      for(var gn in all){var ng=notGen(gn); if(ng) warn.push(gn+": "+ng+" Monsters aren't allowed in Genesys."); else if(all[gn]>3) warn.push(gn+": "+all[gn]+" copies, 3 at most.");}
+      if(GP){var gt=genTotal(d).all, gc=capOf(d); if(gt>gc) warn.push("Genesys: "+gt+" points, "+(gt-gc)+" over the "+gc+"-point cap.");}
+    } else for(var n in all){var inf=info(n); if(inf.max===0) warn.push(n+" is Forbidden."); else if(all[n]>inf.max) warn.push(n+": "+all[n]+" copies, but it's "+(inf.ban?BANS[inf.ban]+" ("+inf.max+")":"3 at most")+".");}
     var w=$("ds-warn"); w.hidden=!warn.length; w.textContent=warn.join(" ");
+    renderGen(d);
     $("db-pcount").textContent=d.main.length+" · "+d.extra.length+" · "+d.side.length;
     [].forEach.call($("ds-results").querySelectorAll(".db-r"),function(r){var c=r.querySelector("[data-c]"); if(c) c.textContent=all[r.dataset.name]?"×"+all[r.dataset.name]:"";});
     if(prevName) showPrev(prevName,false,prevZone);
     renderJobs();
     clearTimeout(timer); timer=setTimeout(stats,90);
+  }
+  function renderGen(d){
+    var g=gen(d), box=$("db-gen"); box.hidden=!g;
+    [].forEach.call(root.querySelectorAll("[data-fmt]"),function(b){b.setAttribute("aria-pressed",String((b.dataset.fmt==="genesys")===g));});
+    var so=$("db-sortby").querySelector('option[value="gp"]'); if(so) so.hidden=!g;
+    var fg=root.querySelector(".db-fg-gp"); if(fg) fg.hidden=!g;
+    if(!g) return;
+    var cap=capOf(d), ci=$("db-gen-cap"); if(document.activeElement!==ci) ci.value=cap;
+    if(!GP){$("db-gen-n").textContent="…"; $("db-gen-sub").textContent="Loading the Genesys point list…"; return;}
+    var t=genTotal(d), over=t.all>cap;
+    $("db-gen-n").textContent=t.all; box.classList.toggle("over",over);
+    $("db-gen-fill").style.width=(cap>0?Math.min(100,100*t.all/cap):(t.all?100:0))+"%";
+    $("db-gen-sub").textContent=(over?(t.all-cap)+" over the cap · ":(cap-t.all)+" left · ")+"Main "+t.main+" · Extra "+t.extra+" · Side "+t.side
+      +" · No Link or Pendulum Monsters; the Forbidden & Limited list doesn't apply · points as of "+GPV;
   }
   var tT=null;
   function toast(msg,canUndo){
@@ -5250,7 +5311,8 @@ html:root[data-ag-theme="dark"]{
     var meta=esc(inf.type); if(r&&isMon(r)&&!DB.fallback) meta+='<br>'+esc(typeLine(r))+'<br>'+esc(statLine(r)); if(r&&DB.archs&&r[9]>=0) meta+='<br>Archetype: '+esc(DB.archs[r[9]]);
     var job=c.main?'<label class="sr" for="dp-job">Job in the odds</label><select id="dp-job" class="ds-role" data-r="'+jobOf(d,name)+'">'+JOBS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===jobOf(d,name)?" selected":"")+'>Job: '+x[1]+'</option>';}).join("")+'</select>':"";
     var h='<button type="button" class="dp-x" aria-label="Close">×</button><div class="dp-top">'+tile(name)+'<div class="dp-info"><h3 class="dp-name">'+esc(name)+'</h3><div class="dp-meta">'+meta+'</div>'
-      +(inf.ban?'<div class="dp-ban">'+BANS[inf.ban]+(inf.max?" ("+inf.max+")":"")+' in the TCG</div>':'')
+      +(gen()?(notGen(name)?'<div class="dp-ban">'+notGen(name)+' Monsters aren\'t allowed in Genesys</div>':'<div class="dp-gp">Genesys: '+pts(name)+' point'+(pts(name)===1?'':'s')+'</div>')
+        :(inf.ban?'<div class="dp-ban">'+BANS[inf.ban]+(inf.max?" ("+inf.max+")":"")+' in the TCG</div>':''))
       +'<div class="dp-have">'+(tot?"In this deck: "+have.join(" · "):"Not in this deck")+'</div></div></div>'
       +'<div class="dp-act"><button type="button" class="btn primary" data-a="add">+ '+(inf.zone===3?"Extra Deck":"Main Deck")+'</button><button type="button" class="btn" data-a="side">+ Side</button>'
       +(tot?'<button type="button" class="btn" data-a="minus">− Remove one</button>':'')+job+'</div>'
@@ -5270,9 +5332,9 @@ html:root[data-ag-theme="dark"]{
 
   // ---- search and filters ----
   var q=$("ds-q"), res=$("ds-results"), HITS=[], shown=0, PAGE=40;
-  var F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},arch:"",ht:false,text:false};
+  var F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},gp:{},arch:"",ht:false,text:false};
   function on(o){return Object.keys(o).filter(function(k){return o[k];});}
-  function nActive(){return (F.kind?1:0)+on(F.frames).length+on(F.attrs).length+(F.race!==""?1:0)+["lmin","lmax","amin","amax","dmin","dmax"].filter(function(k){return F[k]!=="";}).length+on(F.st).length+on(F.ban).length+(F.arch?1:0)+(F.ht?1:0)+(F.text?1:0);}
+  function nActive(){return (F.kind?1:0)+on(F.frames).length+on(F.attrs).length+(F.race!==""?1:0)+["lmin","lmax","amin","amax","dmin","dmax"].filter(function(k){return F[k]!=="";}).length+on(F.st).length+on(F.ban).length+(gen()?on(F.gp).length:0)+(F.arch?1:0)+(F.ht?1:0)+(F.text?1:0);}
   function buildFilters(){
     if(!DB||DB.fallback){$("db-ftog").hidden=true; return;}
     function chips(key,items){return '<div class="db-chips" data-k="'+key+'">'+items.map(function(x){return '<button type="button" data-v="'+esc(x[0])+'" aria-pressed="false">'+esc(x[1])+'</button>';}).join("")+'</div>';}
@@ -5286,6 +5348,7 @@ html:root[data-ag-theme="dark"]{
       +grp("Level / Rank / Link, ATK, DEF",'<div class="db-rng">'+[["lmin","lmax","Level"],["amin","amax","ATK"],["dmin","dmax","DEF"]].map(function(x){return '<label>'+x[2]+' <input type="number" inputmode="numeric" min="0" data-r="'+x[0]+'" placeholder="min" aria-label="'+x[2]+' at least"> – <input type="number" inputmode="numeric" min="0" data-r="'+x[1]+'" placeholder="max" aria-label="'+x[2]+' at most"></label>';}).join("")+'</div>')
       +grp("Spell / Trap",chips("st",[["Normal","Normal"],["Quick-Play","Quick-Play"],["Continuous","Continuous"],["Field","Field"],["Equip","Equip"],["Ritual","Ritual"],["Counter","Counter"]]))
       +grp("Forbidden & Limited",chips("ban",[["3","Forbidden"],["2","Limited"],["1","Semi-Limited"],["0","Unlimited"]]))
+      +'<div class="db-fg db-fg-gp"'+(gen()?'':' hidden')+'><span>Genesys points</span>'+chips("gp",[["0","0 points"],["1","1–9"],["10","10–29"],["30","30+"]])+'</div>'
       +grp("Archetype",'<input class="db-fsel" id="db-arch" list="db-archs" placeholder="e.g. Angelechy, Elfnote, Dominus" autocomplete="off"><datalist id="db-archs">'+DB.archs.slice().sort().map(function(a){return '<option value="'+esc(a)+'">';}).join("")+'</datalist>')
       +'<div class="db-fbtm"><label><input type="checkbox" id="db-ht"> Hand traps only</label><label><input type="checkbox" id="db-tx"> Search card text too</label><button type="button" class="btn" id="db-freset">Reset filters</button></div>';
     var el=$("db-filters"); el.innerHTML=h;
@@ -5303,7 +5366,7 @@ html:root[data-ag-theme="dark"]{
     el.addEventListener("change",function(e){if(e.target.id==="db-race"||e.target.type==="checkbox") el.dispatchEvent(new Event("input"));});
     [].forEach.call(el.querySelectorAll('.db-chips[data-k="kind"] button'),function(x){x.setAttribute("aria-pressed",String(x.dataset.v===""));});
   }
-  function resetFilters(){F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},arch:"",ht:false,text:false};
+  function resetFilters(){F={kind:"",frames:{},attrs:{},race:"",lmin:"",lmax:"",amin:"",amax:"",dmin:"",dmax:"",st:{},ban:{},gp:{},arch:"",ht:false,text:false};
     var el=$("db-filters"); [].forEach.call(el.querySelectorAll(".db-chips button"),function(x){x.setAttribute("aria-pressed",String(x.parentNode.dataset.k==="kind"&&x.dataset.v===""));});
     [].forEach.call(el.querySelectorAll("input,select"),function(x){if(x.type==="checkbox") x.checked=false; else x.value="";}); changed();}
   var sT=null;
@@ -5322,7 +5385,9 @@ html:root[data-ag-theme="dark"]{
     var L=[["lmin","lmax",11],["amin","amax",12],["dmin","dmax",13]];
     for(var k=0;k<3;k++){var lo=num(F[L[k][0]]), hi=num(F[L[k][1]]); if(lo===null&&hi===null) continue; if(!mon) return false; var v=r[L[k][2]]; if(v==null||v<0) return false; if(lo!==null&&v<lo||hi!==null&&v>hi) return false;}
     if(on(F.st).length&&(mon||!F.st[DB.races[r[8]]])) return false;
-    if(on(F.ban).length&&!F.ban[r[5]]) return false;
+    if(gen()){ if(mon){var gfr=frameOf(r); if(gfr==="link"||gfr.indexOf("pendulum")>=0) return false;} // not allowed in Genesys
+      if(on(F.gp).length){var gp=GP?(GP[r[0]]||0):0; if(!F.gp[gp===0?"0":gp<10?"1":gp<30?"10":"30"]) return false;} }
+    else if(on(F.ban).length&&!F.ban[r[5]]) return false;
     if(F.arch){var a=norm(F.arch); if((r[9]<0||norm(DB.archs[r[9]]).indexOf(a)<0)&&NORM[i].indexOf(a)<0) return false;}
     if(F.ht&&!r[4]) return false;
     return true;
@@ -5343,14 +5408,16 @@ html:root[data-ag-theme="dark"]{
     out.sort(function(a,b){
       if(sb==="pop") return a[0]-b[0]||pop(a[1])-pop(b[1]);
       if(sb==="name") return a[1][1]<b[1][1]?-1:a[1][1]>b[1][1]?1:0;
+      if(sb==="gp"){var pa=GP?(GP[a[1][0]]||0):0, pb=GP?(GP[b[1][0]]||0):0; return pb-pa||a[0]-b[0]||pop(a[1])-pop(b[1]);}
       var k=sb==="lvl"?11:sb==="atk"?12:13, A=isMon(a[1])&&a[1][k]>=0?a[1][k]:-9, B=isMon(b[1])&&b[1][k]>=0?b[1][k]:-9; return B-A||(a[1][1]<b[1][1]?-1:1);});
     HITS=out.map(function(x){return x[1];}); shown=0; res.innerHTML=""; res.scrollTop=0; more();
-    $("db-rcount").textContent=HITS.length?HITS.length.toLocaleString()+" card"+(HITS.length===1?"":"s")+(toks.length||nActive()?"":" · most played this week first"):"No card matches.";
+    $("db-rcount").textContent=(HITS.length?HITS.length.toLocaleString()+" card"+(HITS.length===1?"":"s")+(toks.length||nActive()||sb!=="pop"?"":" · most played this week first"):"No card matches.")+(gen()?" · Genesys: no Link or Pendulum Monsters":"");
   }
   function resultLi(r){
-    var nm=r[1], inf=info(nm), n=allCounts(cur())[nm]||0, st=statLine(r);
+    var nm=r[1], inf=info(nm), n=allCounts(cur())[nm]||0, st=statLine(r), p=gen()?pts(nm):0;
+    var tag=gen()?(p?'<span class="gpt">'+p+' pt'+(p===1?'':'s')+'</span>':''):(inf.ban?'<span class="ban">'+BANS[inf.ban]+'</span>':'');
     return '<li><div class="db-r" tabindex="0" data-name="'+esc(nm)+'">'+tile(nm)+'<span class="db-rt"><b>'+esc(nm)+'</b><small>'+esc(typeLine(r))+'</small>'
-      +(st||inf.ban?'<small>'+esc(st)+(inf.ban?(st?" · ":"")+'<span class="ban">'+BANS[inf.ban]+'</span>':'')+'</small>':'')+'</span>'
+      +(st||tag?'<small>'+esc(st)+(tag?(st?" · ":"")+tag:'')+'</small>':'')+'</span>'
       +'<span class="db-radd"><i data-c>'+(n?"×"+n:"")+'</i><button type="button" class="db-plus" aria-label="Add '+esc(nm)+'">+</button></span></div></li>';
   }
   var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) more();});},{root:res,rootMargin:"200px"}):null;
@@ -5477,8 +5544,9 @@ html:root[data-ag-theme="dark"]{
   var preset=$("ds-preset");
   preset.appendChild(opt("","Choose…")); preset.appendChild(opt("all","Your Angelechy list (Main, Extra, Side)"));
   ["1st","2nd"].forEach(function(g){var og=document.createElement("optgroup"); og.label="Your list after siding, going "+g; PL.forEach(function(p,i){if(p.g===g) og.appendChild(opt("p"+i,p.name));}); preset.appendChild(og);});
+  function deckLabel(d){return (d.name||"Untitled deck")+(gen(d)?" · Genesys":"");}
   function deckSelect(){
-    var w=$("ds-which"); w.innerHTML=""; Object.keys(S.decks).forEach(function(id){w.appendChild(opt(id,S.decks[id].name||"Untitled deck"));}); w.value=S.cur;
+    var w=$("ds-which"); w.innerHTML=""; Object.keys(S.decks).forEach(function(id){w.appendChild(opt(id,deckLabel(S.decks[id])));}); w.value=S.cur;
     $("ds-name").value=cur().name||"";
     var c=$("ds-cmp"), d=cur(); c.innerHTML=""; c.appendChild(opt("","Nothing")); c.appendChild(opt("main","Your Angelechy main"));
     Object.keys(S.decks).forEach(function(id){if(id!==S.cur) c.appendChild(opt(id,S.decks[id].name||"Untitled deck"));});
@@ -5488,9 +5556,15 @@ html:root[data-ag-theme="dark"]{
   menu.addEventListener("toggle",function(){var m=menu.querySelector(".db-menu-in"); m.style.left="0px"; if(!menu.open) return; var r=m.getBoundingClientRect(); var over=r.right-(document.documentElement.clientWidth-12); if(over>0) m.style.left=(-over)+"px";});
   document.addEventListener("click",function(e){if(menu.open&&!e.target.closest(".db-menu")) menu.open=false;});
   function closeMenu(){menu.open=false;}
-  $("ds-which").addEventListener("change",function(){S.cur=this.value; selKey=null; save(); deckSelect(); render(); toast("Opened "+(cur().name||"deck")+".",false);});
-  $("ds-name").addEventListener("input",function(){cur().name=this.value.slice(0,60); save(); var o=$("ds-which").querySelector('option[value="'+S.cur+'"]'); if(o) o.textContent=cur().name||"Untitled deck";});
-  $("ds-new").addEventListener("click",function(){snap(); var id=newId(); S.decks[id]=blank("New deck "+Object.keys(S.decks).length); S.cur=id; save(); deckSelect(); render(); toast("New empty deck.",true); if(!fine()) openPane(); else q.focus();});
+  $("ds-which").addEventListener("change",function(){S.cur=this.value; selKey=null; save(); deckSelect(); render(); fmtChanged(); toast("Opened "+(cur().name||"deck")+".",false);});
+  $("ds-name").addEventListener("input",function(){cur().name=this.value.slice(0,60); save(); var o=$("ds-which").querySelector('option[value="'+S.cur+'"]'); if(o) o.textContent=deckLabel(cur());});
+  // format: TCG (Forbidden & Limited list) or Genesys (points)
+  function fmtChanged(){ if(gen()&&!GP) loadGP(function(){render(); if(DB) search();}); if(DB) search(); }
+  root.querySelector(".db-fmt").addEventListener("click",function(e){var b=e.target.closest("[data-fmt]"); if(!b) return; var d=cur(), v=b.dataset.fmt;
+    if((d.fmt||"")===v) return; snap(); d.fmt=v; if(v==="genesys"&&d.cap==null) d.cap=100; save(); deckSelect(); render(); fmtChanged();
+    toast(v==="genesys"?"Genesys: points on, cap "+capOf(d)+". Link and Pendulum Monsters aren't allowed.":"TCG: the Forbidden & Limited list applies.",true);});
+  $("db-gen-cap").addEventListener("input",function(){var v=parseInt(this.value,10); if(isNaN(v)||v<0) return; cur().cap=Math.min(999,v); save(); render();});
+  $("ds-new").addEventListener("click",function(){snap(); var id=newId(), was=cur(); S.decks[id]=blank("New deck "+Object.keys(S.decks).length); if(gen(was)){S.decks[id].fmt="genesys"; S.decks[id].cap=capOf(was);} S.cur=id; save(); deckSelect(); render(); toast("New empty deck.",true); if(!fine()) openPane(); else q.focus();});
   $("ds-dup").addEventListener("click",function(){snap(); var id=newId(), c=clone(cur()); c.name=(c.name||"Deck")+" (copy)"; S.decks[id]=c; S.cur=id; save(); deckSelect(); render(); toast("Copied the deck.",true);});
   $("db-undo").addEventListener("click",undo);
   $("db-save").addEventListener("click",function(){ // changes already save as you go; this saves now and confirms
@@ -5511,7 +5585,7 @@ html:root[data-ag-theme="dark"]{
     else {var p=PL[+v.slice(1)]; d.main=sortList(expand(p.main)); d.side=sortList(expand(p.side)); d.extra=expand(EXTRA); d.roles={}; if(!d.cmp) d.cmp="main"; toast("Loaded your list after siding going "+p.g+" vs "+p.name+".",true);}
     preset.value=""; selKey=null; save(); deckSelect(); render(); closeMenu();});
   // export
-  function deckText(){var d=cur(); return (d.name?d.name+"\n\n":"")+[["main","Main deck"],["extra","Extra Deck"],["side","Side deck"]].map(function(z){var o=counts(d[z[0]]), ks=Object.keys(o); return ks.length?z[1]+" ("+d[z[0]].length+")\n"+ks.map(function(n){return o[n]+" "+n;}).join("\n"):"";}).filter(Boolean).join("\n\n");}
+  function deckText(){var d=cur(); return (d.name?d.name+"\n\n":"")+(gen(d)&&GP?"Genesys: "+genTotal(d).all+" / "+capOf(d)+" points\n\n":"")+[["main","Main deck"],["extra","Extra Deck"],["side","Side deck"]].map(function(z){var o=counts(d[z[0]]), ks=Object.keys(o); return ks.length?z[1]+" ("+d[z[0]].length+")\n"+ks.map(function(n){return o[n]+" "+n;}).join("\n"):"";}).filter(Boolean).join("\n\n");}
   function ydk(miss){var d=cur(); function ids(a){return a.map(function(n){var r=BYNAME[n]; if(!r||!r[0]){miss.push(n); return null;} return r[0];}).filter(function(x){return x!=null;}).join("\n");}
     return "#created by Angelechy Guide\n#main\n"+ids(d.main)+"\n#extra\n"+ids(d.extra)+"\n!side\n"+ids(d.side)+"\n";}
   function copy(txt,okMsg){try{navigator.clipboard.writeText(txt).then(function(){toast(okMsg,false);},function(){showText(txt);});}catch(e){showText(txt);}}
@@ -5584,7 +5658,7 @@ html:root[data-ag-theme="dark"]{
 
   // read-only hook for tests
   window.__agSim={analyze:function(d){return analyze(d.main?d:{main:d,roles:{}});},MAIN:MAIN,plans:PL,
-    api:{add:addCard,move:moveCard,remove:removeAt,cur:cur,undo:undo,render:render,search:function(v){q.value=v; search(); return HITS;},F:function(){return F;},changed:changed,
+    api:{add:addCard,move:moveCard,remove:removeAt,cur:cur,undo:undo,render:render,genTotal:genTotal,pts:pts,loadGP:loadGP,search:function(v){q.value=v; search(); return HITS;},F:function(){return F;},changed:changed,
       drop:function(s,x,y){startDrag(s,x,y); endDrag(x,y);},src:srcOf,showPrev:showPrev,stats:stats}};
 
   // start only when the page is opened
@@ -5593,7 +5667,7 @@ html:root[data-ag-theme="dark"]{
     if(started||location.hash.slice(1)!=="sim") return; started=true;
     $("db-hint").textContent=fine()?"Drag cards from the search into Main, Extra or Side, between zones, or out of the deck to remove them. Click a search result to add it, right-click to add it to the Side; right-click a card in your deck to remove it. Ctrl+Z undoes.":"Tap + Add cards to search. Tap a card for its text and buttons; press and hold a card, then drag it to move it between zones or off the deck to remove it.";
     deckSelect(); render();
-    loadDB(function(){buildFilters(); render(); search();});
+    loadDB(function(){buildFilters(); render(); search(); if(gen()) loadGP(function(){render(); search();});});
   }
   window.addEventListener("hashchange",start); start();
 })();

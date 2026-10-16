@@ -521,7 +521,7 @@ table.pieces td:first-child{white-space:nowrap}
 .lp-go .gain{background:var(--good);border-color:var(--good);color:var(--surface)}
 .lp-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .lp-quick button{font-size:15px;min-height:44px}
-.lp-quick .burn{grid-column:span 2;font-size:14px;color:var(--bad)}
+.lp-pad{display:contents}
 .lp-tools{display:flex;flex-wrap:wrap;gap:8px}
 .lp-tools button{flex:1 1 auto;font-size:14px;min-height:42px;padding-inline:12px}
 .lp-tools button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -911,6 +911,49 @@ html:root[data-ag-theme="dark"]{
 .db-rt .gpt{color:var(--gold);font-weight:700}
 .dp-gp{font:700 12px var(--mono);color:var(--gold)}
 @media (prefers-reduced-motion:reduce){.db-gen-bar i{transition:none}}
+/* life points: phone held sideways — a full-screen duel view like Neuron's calculator: the two duelists' LP face each other,
+   the keypad sits between them, the timer is on top and the quick buttons and tools run along the bottom */
+@media (orientation:landscape) and (max-height:540px) and (max-width:1179px){
+  body[data-page="lp"]{padding-bottom:0}
+  body[data-page="lp"] .appbar,body[data-page="lp"] .subnav,body[data-page="lp"] .tabbar,body[data-page="lp"] #lp>.sec-head,body[data-page="lp"] #lp>.pager,
+  body[data-page="lp"] .lp>.note,body[data-page="lp"] .lp-hist{display:none!important}
+  body[data-page="lp"] .wrap{padding:0;max-width:none}
+  body[data-page="lp"] #lp{padding:0;display:block}
+  .lp{max-width:none;height:100vh;height:100dvh;box-sizing:border-box;gap:8px 14px;
+    padding:max(8px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(8px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+    grid-template-columns:minmax(0,1fr) minmax(240px,1.05fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;
+    grid-template-areas:"timer timer timer" "p0 pad p1" "quick tools tools"}
+  .lp-players{display:contents}
+  .lp-p{min-height:0;align-content:center;gap:4px;border:0;border-radius:0;padding:10px 34px 10px 14px;color:var(--ink);
+    background:linear-gradient(90deg,var(--surface),color-mix(in srgb,var(--accent) 14%,var(--surface)));
+    clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%)}
+  .lp-p[data-p="0"]{grid-area:p0}
+  .lp-p[data-p="1"]{grid-area:p1;padding:10px 14px 10px 34px;background:linear-gradient(270deg,var(--surface),color-mix(in srgb,var(--accent) 14%,var(--surface)));
+    clip-path:polygon(26px 0,100% 0,100% 100%,26px 100%,0 50%)}
+  .lp-p[aria-pressed="true"]{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 12%,var(--surface)),color-mix(in srgb,var(--accent) 34%,var(--surface)))}
+  .lp-p[data-p="1"][aria-pressed="true"]{background:linear-gradient(270deg,color-mix(in srgb,var(--accent) 12%,var(--surface)),color-mix(in srgb,var(--accent) 34%,var(--surface)))}
+  .lp-p[aria-pressed="true"] .lp-name{color:var(--accent)}
+  .lp-p[data-p="0"] .lp-name::after{content:" »";color:var(--accent)}
+  .lp-p[data-p="1"] .lp-name::before{content:"« ";color:var(--accent)}
+  .lp-name{font-size:13px}
+  .lp-val{font-size:min(19vh,9vw)}
+  .lp-last{font-size:15px}
+  .lp-pad{grid-area:pad;display:flex;flex-direction:column;gap:6px;min-height:0}
+  .lp-entry{padding:4px 12px;border-radius:10px}
+  .lp-entry output{font-size:22px}
+  .lp-keys{flex:1;min-height:0;grid-auto-rows:1fr;gap:6px}
+  .lp-keys button{min-height:0;font-size:18px;border-radius:10px}
+  .lp-go{gap:6px}
+  .lp-go button{min-height:40px;font-size:16px;border-radius:10px}
+  .lp-timer{grid-area:timer;justify-self:center;flex-wrap:nowrap;gap:6px;padding:4px 8px 4px 14px;border-radius:999px}
+  .lp-timer output{font-size:20px;margin-right:6px}
+  .lp-timer button,.lp-timer select{min-height:32px;font-size:13px;border-radius:999px}
+  .lp-quick{grid-area:quick;gap:6px}
+  .lp-quick button{min-height:40px;font-size:14px;border-radius:10px}
+  .lp-tools{grid-area:tools;flex-wrap:nowrap;gap:6px}
+  .lp-tools button{min-height:40px;font-size:13px;padding-inline:8px;border-radius:10px;white-space:nowrap}
+  .lp-roll{position:fixed;z-index:5;top:max(10px,env(safe-area-inset-top,0px));left:max(14px,env(safe-area-inset-left,0px));max-width:28vw;min-height:0;margin:0;text-align:left;font-size:12.5px;color:var(--muted);pointer-events:none}
+}
 /* v3-css-end */
 </style>
 
@@ -4158,6 +4201,7 @@ html:root[data-ag-theme="dark"]{
       <button type="button" class="lp-p" data-p="0" aria-pressed="true"><span class="lp-name">You</span><b class="lp-val" id="lp-v0">8000</b><span class="lp-last" id="lp-l0"></span></button>
       <button type="button" class="lp-p" data-p="1" aria-pressed="false"><span class="lp-name">Opponent</span><b class="lp-val" id="lp-v1">8000</b><span class="lp-last" id="lp-l1"></span></button>
     </div>
+    <div class="lp-pad">
     <div class="lp-entry"><span id="lp-who">Amount for You</span><output id="lp-amt" aria-live="polite">0</output></div>
     <div class="lp-keys" id="lp-keys">
       <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
@@ -4169,9 +4213,9 @@ html:root[data-ag-theme="dark"]{
       <button type="button" class="dmg" data-act="dmg">− Damage</button>
       <button type="button" class="gain" data-act="gain">+ Gain</button>
     </div>
+    </div>
     <div class="lp-quick" aria-label="Quick changes">
       <button type="button" data-q="-500">−500</button><button type="button" data-q="-1000">−1000</button><button type="button" data-q="-2000">−2000</button><button type="button" data-q="half">Halve</button>
-      <button type="button" class="burn" data-burn="500">Destrier burn −500 <small>(opp)</small></button><button type="button" class="burn" data-burn="700">Assault Dragon −700 <small>(opp)</small></button>
     </div>
     <div class="lp-tools">
       <button type="button" id="lp-undo">Undo</button>
@@ -4182,8 +4226,8 @@ html:root[data-ag-theme="dark"]{
     </div>
     <p class="lp-roll" id="lp-roll" aria-live="polite"></p>
     <div class="lp-timer" aria-label="Round timer">
-      <output id="tm-out">40:00</output>
-      <select id="tm-len" aria-label="Round length"><option value="40">40 min</option><option value="45">45 min</option><option value="50">50 min</option></select>
+      <output id="tm-out">50:00</output>
+      <select id="tm-len" aria-label="Round length"><option value="40">40 min</option><option value="45">45 min</option><option value="50" selected>50 min</option></select>
       <button type="button" id="tm-go">Start</button>
       <button type="button" id="tm-reset">Reset</button>
     </div>
@@ -4200,7 +4244,7 @@ html:root[data-ag-theme="dark"]{
       <p class="lp-res" id="lp-res" aria-live="polite"></p>
       <p class="lp-hint" id="lp-hint">Tap anywhere to close</p>
     </div>
-    <p class="note">Tap a player, type an amount, then Damage or Gain. Burn buttons always hit your opponent. Everything stays on this device, even if you close the page.</p>
+    <p class="note">Tap a player, type an amount, then Damage or Gain. Turn your phone sideways for a full-screen duel view. A match round is 50 minutes. Everything stays on this device, even if you close the page.</p>
   </div>
 </section>
 
@@ -4747,7 +4791,6 @@ html:root[data-ag-theme="dark"]{
   });
   app.querySelector(".lp-quick").addEventListener("click",function(e){
     var b=e.target.closest("button"); if(!b) return;
-    if(b.dataset.burn){apply(1,-parseInt(b.dataset.burn,10),b.dataset.burn==="500"?"Destrier":"Assault Dragon"); return;}
     if(b.dataset.q==="half"){var v=st.lp[st.sel]; apply(st.sel,Math.ceil(v/2)-v,"halved"); return;}
     apply(st.sel,parseInt(b.dataset.q,10));
   });
@@ -4859,7 +4902,8 @@ html:root[data-ag-theme="dark"]{
     else if(e.key==="-"||e.key==="+"||e.key==="Enter"){var n=parseInt(amt||"0",10); if(n){apply(st.sel,e.key==="+"?n:-n); amt=""; render();} e.preventDefault();}
   });
   // round timer
-  var tm=load(TKEY)||{len:40,rem:2400000,end:null}, to=$("tm-out"), tg=$("tm-go"), tl=$("tm-len"), iv=null;
+  var tm=load(TKEY)||{len:50,rem:3000000,end:null,v:2}, to=$("tm-out"), tg=$("tm-go"), tl=$("tm-len"), iv=null;
+  if(tm.v!==2){ if(tm.len===40&&!tm.end&&tm.rem===2400000){tm.len=50; tm.rem=3000000;} tm.v=2; store(TKEY,tm); } // a match round is 50 minutes: untouched 40-minute timers move to 50
   tl.value=String(tm.len);
   function left(){return tm.end?Math.max(0,tm.end-Date.now()):tm.rem;}
   function tdraw(){

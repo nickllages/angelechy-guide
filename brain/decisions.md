@@ -38,24 +38,24 @@ Counts: 13 starters (Strategy Score, Problem, Terraforming, Opposition, Foolish 
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct16.py` (2026-10-16).*
+*From `build/side_oct16b.py` (2026-10-16).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|
-| Elfnote Ars Magna | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Droll → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Effect Veiler, +1 Droll |
+| Elfnote Ars Magna | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Droll → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Effect Veiler, +1 Ghost Ogre |
 | ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Droll |
-| Angelechy mirror | −3 Fuwalos, −1 Droll, −2 Nibiru → +1 Verdict, +2 Typhoon, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −1 Droll, −2 Nibiru, −3 Spark → +1 Verdict, +2 Typhoon, +2 Triple Tactics Thrust, +1 Triple Tactics Talent |
+| Angelechy mirror | −3 Fuwalos, −1 Droll, −2 Nibiru → +1 Ghost Ogre, +2 Typhoon, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −1 Droll, −2 Nibiru, −3 Spark → +1 Ghost Ogre, +2 Typhoon, +2 Triple Tactics Thrust, +1 Triple Tactics Talent |
 | Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Droll |
 | Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +2 Effect Veiler |
 | Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Effect Veiler |
-| Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −3 Ghost Ogre, −1 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +2 Effect Veiler, +1 Droll |
+| Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −2 Ghost Ogre, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −2 Ghost Ogre, −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +2 Effect Veiler, +1 Droll |
 | Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Effect Veiler |
 | Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −3 Fuwalos, −1 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +2 Typhoon, +1 Droll |
 | Branded | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Droll → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −1 Droll, −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +2 Effect Veiler |
-| Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −3 Ghost Ogre → +2 Purulia, +1 Droll |
+| Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −2 Ghost Ogre, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −2 Ghost Ogre, −1 Terraforming → +2 Purulia, +1 Droll |
 | Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −3 Spark → +2 Effect Veiler, +1 Droll |
 | Sky Striker | −3 Fuwalos, −1 Endgame Problem, −2 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −3 Spark, −2 Nibiru → +2 Effect Veiler, +1 Droll, +2 Typhoon |
-| Invoked | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −3 Ghost Ogre, −1 Terraforming → +2 Purulia, +1 Droll, +1 Typhoon |
+| Invoked | −3 Fuwalos, −1 Endgame Problem, −2 Ghost Ogre, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent, +1 Droll | −2 Ghost Ogre, −1 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Droll, +1 Typhoon |
 | Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Effect Veiler |
 | Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Typhoon, +1 Droll |
 | Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Nibiru → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Triple Tactics Talent | −2 Foolish Burial Goods, −1 Terraforming → +2 Purulia, +1 Effect Veiler |

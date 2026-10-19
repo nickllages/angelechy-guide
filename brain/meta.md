@@ -98,3 +98,11 @@ Raw lists: `raw/decks/Blitzclique_recent_oct14.md`. The user says their locals p
 
 **Oct 16 — Belén winner list (Kevin Sanchez Espinoza, posted Oct 15):** 3 Fuwalos, 3 Ash, 2 Ogre, 2 Droll (0 Nibiru main); 3 SS, 3 Opposition, 3 Problem, 3 FBG, 1 Terraforming, 1 Endgame, 1 Brilliant Move; 3 e4, 2 Verdict, 1 Disturbance, 3 Impulse, 3 Purge, 3 Spark. Extra: 2 Shatranga, 2 Enlisted, 2 Seneschal, 2 Bastion, 2 Destrier, Castellan, Kusanagi, Centur-Ion Legatia, Crimson Dragon, Majestic Star Dragon. Side: 3 Boarder, 3 Lava Golem, 3 Nibiru, 3 Typhoon, Thrust, Talent, Called by.
 **Oct 15 — case tournament Top 16 (SonnyP's team, Witness + Songs build; list not posted):** https://youtu.be/iE7dzm9Mt70
+
+## Oct 19 — after the October 19 list
+**Tier 1:** Angelechy (lost nothing it mains; the Spell floodgates sided against it — Anti-Spell Fragrance, Spell Canceller, Naturia Beast, Secret Village — are Forbidden), Elfnote / Medius Ars Magna (lost Tinia, Crystal Wing, Dawn Dragster, Gottoms: Synchro finish and both hand rips; ~3 negates instead of 5; Trif: still best, Medius builds the winners), Artmage / Power Patron (lost only Varudras; GGYGO's pick beside Angelechy).
+**Tier 2:** Sky Striker (Engage! to 2 but its bad matchups lost more; GGYGO/TheCaliEffect dark horse), Maliss, Destiny HERO, Mermail Atlantean (Burnaby winner), Invoked / Fairy Tail — all untouched.
+**Tier 3:** L&D Ritual / ROLAD (won Houston the weekend before, then lost Dragoon, Souls, Silvia, Habakiri, Zenna, Cross-Sheep, Charmer Quartet; Griffoh 1), Kewl Tune / Ryzeal (support Nov 11), Branded / Dracotail (Albion; Opening and High Spirits 1), Sacred Beast, Dark Magician (TheCaliEffect: unplayable).
+**Rogue:** Yummy (Cupsy Way), Blitzclique (Bagooska), Lunalight, Unchained, DTW/K9, Tenpai, Train FTK (Gustav Max 1). **Gone:** pure Mitsurugi (Habakiri).
+Expect the mirror most, then Elfnote/Medius and Patron, then Sky Striker, Maliss, D-HERO.
+Creators: Jesse Kotton & Jeff (best deck: Angelechy), Roberto Hernandez (best deck if e4 survives — it did), Trif (Elfnote still best), GGYGO (Angelechy + Ars Magna/Patron pile; Mistaken Arrest and Lancea still legal), TheCaliEffect, DB Grinder (e4 left alone), Yacine ("Magnus Carlsen deck").

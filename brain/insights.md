@@ -118,3 +118,10 @@
 - **Draws also count for Droll & Lock Bird.** A draw outside the Draw Phase triggers Droll, and Droll's lock stops further draws that turn. Your Droll shuts off their Mulcharmy after its first draw (and stops your own searches, so search first). Their Droll during your Standby e4 loop also blocks Endgame Problem's draw.
 - Also Ash-able for the same reason: Endgame Problem's Standby draw, Pot of Sloth, Triple Tactics Talent's draw-2 mode.
 - (I first told the user Ash couldn't touch a Mulcharmy; that was wrong and was reverted the same day.)
+
+## Oct 21 — from the YCS Houston profiles
+- **Mirror threat: Maple Maiden + Shiina.** Shiina (WIND L9) needs its controller to control a WIND monster; Maple Maiden (WIND L7 Synchro) can be summoned off the Seneschal your Opposition gives them. Shiina's S/T mode returns every Spell/Trap on the field to the hand (placed Synchros go to the Extra Deck). Before giving Seneschal in the mirror, consider that they may have it. Crystron Phoenix (Dallmeyer) is the same idea: banishes all S/T on field and in GYs.
+- **Elfnote vs Seneschal:** Trif's Pluto (L5 Fairy Synchro Tuner) → Psychic End Punisher line; Hunter's counter is Legatia destroying Pluto first (Brilliant Move reaches Legatia + Hyperion).
+- **2nd Castellan split:** Hernandez "the second always comes up"; Hunter "the second never came up". Colin H. and 3/8 Houston lists ran 2. User has 1 (declined 2nd Oct 19).
+- **Endgame:** Hunter "really bad to draw"; Dallmeyer may go to 2. Keeps Trif/Sacco's 1.
+- Consistency spells (Bifrost, Pot of Desires) appeared in 3 of 8 pure Houston lists — another way to fight bricking, alongside Brilliant Move.

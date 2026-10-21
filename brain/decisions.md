@@ -30,7 +30,7 @@ Earlier on Oct 19 the user said they ran 2 Disturbance; the screenshot (their fi
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct19.py` (2026-10-19).*
+*From `build/side_oct19.py` (2026-10-21).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|

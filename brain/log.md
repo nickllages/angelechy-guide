@@ -121,3 +121,8 @@
 - Merged: Meta table YCS Houston row (links to the 3 top-cut lists); mirror deep dive "What they do to you" (Maple Maiden + Shiina, Crystron Phoenix, Cosmic Cyclone) + 2 replay entries (Hunter, Hernandez); Elfnote deep dive (Trif's Pluto → Psychic End Punisher off your Seneschal, 3 Skull Meister; Hunter's Legatia answer); "What opponents side against you" callout: Skull Meister lead for Trif's secret hand trap; header date Oct 21. Tests 26 PASS, no JS errors.
 - Proposed (summary only): Maple Maiden in the Extra (for Chaos Angel or the 3rd Enlisted) + Shiina in the side for the mirror; 2nd Castellan (Hernandez) — both previously listed as "worth testing".
 - Publish note: the artifact refused the plain guide file twice (needs the live wrapper line); built the merged file from the live source + local body in the scratchpad and published that.
+
+## 2026-10-22 (session) — user's list change (v74)
+- User: "moving the third Ogre to the main and putting Veilers over Nib in the main", then "moving Droll to the side deck". Main: 3 Ash, 3 Ogre, 2 Veiler, 3 Fuwalos (+ same engine and 9 Dominus); side: 3 Golem, 3 Boarder, 3 Thrust, 2 Nibiru, 2 Typhoon, 1 Droll, 1 Brilliant Move (both Nibiru to the side = my assumption, fills 15).
+- Siding rebuilt: build/side_oct22.py (plans + every row's "Why"). Text: build/list_oct22.py (home, 3.7, 1.2, siding templates, odds tables); build/v3/{cards,handtraps,side,guide2,postban,decktheory}.html; deep dives mu_v2_a/b/c; cardpics.py mode grids; deckbuilder.js MAIN/SIDE; dbtest.js jobs count 17→16.
+- Odds unchanged (87.5/55.2/80.3; post-side 88/77); going-2nd plans 22–26. Tests: db 37 PASS, regression 26 PASS, no JS errors.

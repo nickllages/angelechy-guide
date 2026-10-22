@@ -111,3 +111,24 @@ Creators: Jesse Kotton & Jeff (best deck: Angelechy), Roberto Hernandez (best de
 Winner Trevor Lee Parker (Light and Darkness Ritual); 2nd Blake Funderburke (Elfnote); Top 4 Steven Trifunoski (Elfnote), **Jamie Hunter (Angelechy)**; Top 8 Brian Mejia (L&D), Julien Kehon (Elfnote), **Dylan Dallmeyer (Angelechy)**, **Roberto Hernandez Bonilla (Angelechy)**; Top 16 **Shunping Xu (ROLAD Angelechy, 60 cards)**, 4 more L&D, Branded (Chance Larson), 2 Elfnote; Top 32 **Lucas Sacco, Jesse Flores, Logan Johnson, Aidan Walker, Brandon Hagen (Angelechy)**, L&D ×2, Elfnote ×5, DTW, Sky Striker, Yummy, D/D/D.
 Full card-by-card lists: `data/decks/Angelechy_YCS_Houston_Top32.txt`. Highlights not in the Oct 19 summary: Hunter/Walker main 2 Rainbow Bridge Bifrost (+1 Pot of Desires for Hunter); Dallmeyer 3 Pot of Desires, 2 Ghost Belle, only 2 Purge and no Spark, Crystron Phoenix in the Extra, side 3 Great Gallant Bandit / 3 Purulia / Thrust package (Sloth, Trunade, Illusion Gate); Sacco/Flores main 3 Ghost Mourner + 3 Veiler + 3 Ogre (Flores also 3 Nibiru, no Spark), side 3 Shiina + Maple Maiden in Extra; Hagen side 3 Chaospawn Bishop + Witness + 3 Amano-Iwato; Walker side 2 Denko Sekka.
 Same weekend (pre-list, Angelechy placements only from posted lists): Italian Open Bussolengo Top 8 Leonardo Sacchetti (Angelechy; a "1st place Italian Open 9-0 Angelechy" video exists: -UUZKXEJpt0, not checked — focus mode). Bogotá, Tacna, Chaguanas, Beograd, Ramsgate: no Angelechy list posted.
+
+## Oct 22 — first creator rankings after the list (no post-list regional yet; first ones Oct 24–26)
+| Deck | Lucas Sacco (Oct 20) | GGYGO (Oct 20) | CultofOtaku (Oct 20) | TheCaliEffect (Oct 21) |
+|---|---|---|---|---|
+| Angelechy | "probably the best deck" | best, with Artmage | 2nd behind Elfnote | best "for now" |
+| Artmage / Power Patron | top 3, "best combo deck" | best, with Angelechy (favorite) | tier 1 | strong, may pass Elfnote |
+| Elfnote / Medius | solid, "not a top deck" | viable (Trif's build) | best deck | good, not best |
+| Fairy Tail / Invoked | top 3 (Fairy Tail) | tier 1.5 | — | best decks |
+| Sky Striker | good | bottom of 1.5 | rogue | 3rd best |
+| Radiant Typhoon | okay, counters Angelechy | top of tier 2, best matchup into Angelechy (3 MST) | — | — |
+| L&D Ritual | "the deck sucks" | tier 2 | top 3 | best as Ars Magna Chaos Ritual |
+| Sacred Beast | solid | tier 2 | high tier 2 | "crazy good" |
+| Maliss | "super slept on" (Ars Magna) | tier 2 | — | fell off |
+| Destiny HERO | awkward, good into Angelechy | tier 2 | top rogue | — |
+| Blitzclique | good into Angelechy | tier 2 | — | helped |
+| Branded | bad | rogue | dead | 7th best |
+| Lunalight | retire (Gallant Bandit) | tier 2 | — | experimental |
+Also: Trif (Oct 20) — Elfnote "the absolute best deck still", ~12 interruptions off one card, Crystal Clear Wing for Crystal Wing, 12 main hand traps vs Angelechy + 10 side, Pluto → Psychic End Punisher off Seneschal. TheCaliEffect: Dark Time Wizard better than expected; Clown Crew / Ashtra experimental. Dead: Mitsurugi, Yummy, Trains, Dark Magician.
+Pre-list Oct 17–18 regionals (yugiohmeta, posted lists): Santiago 128 — DM Chaos Ritual 1st, Elfnote 2nd, Angelechy Top 8 (Hernan Bravo); Italian Open Bussolengo 350 — Angelechy Top 8 (Leonardo Sacchetti), Elfnote, Azamina Chaos Ritual Top 8; Bogotá 200 — Elfnote Top 4; Karlsruhe 255 — Sacred Beast Top 8; Ramsgate 60 — Elfnote Top 4, DM Chaos Ritual, Invoked Dracotail Top 8; Chaguanas 100 — Mermail Top 8.
+Post-list locals: Branded Despia 1st undefeated (galzo), Branded ROLAD 1st (PAPA GOAT YGO).
+Tech vs Angelechy now: Pot of Sloth → Magical Spring, Hey Space Trunade!, Great Gallant Bandit, Lava Golem, 3 MST (Radiant Typhoon), Maple Maiden → Shiina, Pluto → Psychic End Punisher, Skull Meister, Ghost Belle on Shatranga, Fairy Tail - Snow vs Kusanagi, Transaction Rollback + Majestic Star Dragon in the mirror; two Mulcharmies resolve (no Crossout/Called by).

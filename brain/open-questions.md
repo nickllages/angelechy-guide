@@ -42,3 +42,6 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 - **Oct 14 — Elfnote going 2nd: cut Spark?** No; cut engine (user agreed).
 - **Oct 14 — Engine cut order going 2nd?** Terraforming → FBG → FBG → Strategy Score (user's point about Opposition recycling).
 - **Oct 13 — Thrust/Talent going 2nd in the mirror?** Yes; Opposition's Seneschal turns them on (user's point).
+
+- (Oct 22) Radiant Typhoon has no deep dive or siding row; GGYGO calls it the best matchup into Angelechy (3 MST on placed pieces). Write one once post-list lists exist (Oct 24–26 regionals).
+- (Oct 22) Lucas Sacco rates Fairy Tail, Destiny HERO and Blitzclique as good matchups INTO Angelechy; the guide's reads are Fairy Tail Favored, Destiny HERO Even, Blitzclique Favored — proposed to the user, not changed.

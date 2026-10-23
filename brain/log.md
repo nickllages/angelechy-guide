@@ -171,3 +171,4 @@
 - Oct 23 (v95): Siding planner paragraph + table 'Why' column removed (user: deep dives explain); deep-dive 'Why these swaps' links removed. Link check clean; regression, favtest, presets 34/34 PASS.
 - Oct 23 (v96): Brilliant Move callout removed from Siding (user); 2.1 link to it removed; v3_apply no longer inserts situational.html. Link check clean; regression PASS.
 - Oct 23 (v97): 'What the siding research says' callout removed from Siding (user). Regression PASS.
+- Oct 23 (v98): Siding shows only the planner (user: planner and table were the same). Table kept hidden as data (#side-data); #plan-<deck> opens the planner on that deck. favtest, presets 34/34, dbtest, regression PASS.

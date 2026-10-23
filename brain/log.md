@@ -173,3 +173,4 @@
 - Oct 23 (v97): 'What the siding research says' callout removed from Siding (user). Regression PASS.
 - Oct 23 (v98): Siding shows only the planner (user: planner and table were the same). Table kept hidden as data (#side-data); #plan-<deck> opens the planner on that deck. favtest, presets 34/34, dbtest, regression PASS.
 - Oct 23 (v99): Siding — the 'Side deck (15)… Main deck (41)…' summary paragraph removed (user). Regression + presets 34/34 PASS.
+- Oct 23 (v100): going 2nd, every Golem plan brings both Lava Golem for −1 Verdict −1 Spark (user); 14 plans rebuilt; text updated. Presets 34/34, dbtest, favtest, regression PASS.

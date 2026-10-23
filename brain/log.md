@@ -162,3 +162,4 @@
 - Oct 23 (v86): Siding page — rules panel removed; 'Your templates' simplified to 4 bullets. Regression + favtest PASS.
 - Oct 23 (v87): Siding → Odds simplified (2 tables + 1 note, title 'Odds'); old 'best line by starters' table removed (it duplicated 3.1 and used old Bastion-first lines). Phone-fit CSS .tbl.odds. Regression PASS.
 - Oct 23 (v88): coin flip no longer snaps back to centre when it stops — the resting transform is the animation's last frame and the next flip starts from where the coin lies (v3.js coinPlan/flip; die resets the shared shadow). New test build/v3/frames/cointest.js PASS; regression PASS.
+- Oct 23 (v89): Tools nav 'Odds calculator' → 'Hypergeometric calculator' (+ home Tools card). Regression PASS.

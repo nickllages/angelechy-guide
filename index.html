@@ -1019,6 +1019,10 @@ details.fold[open]{padding-bottom:8px}
 .netop-m a:first-child{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));color:var(--accent);background:var(--accent-soft)}
 .netop-m span{color:var(--muted);border-style:dashed}
 @media (max-width:560px){.netop-r{grid-template-columns:1fr}}
+/* Siding → Odds: short numeric tables that fit a phone without scrolling */
+.tbl.odds th{white-space:normal;line-height:1.25;vertical-align:bottom}
+.tbl.odds td.num,.tbl.odds th.num{text-align:right}
+@media (max-width:560px){.tbl.odds th,.tbl.odds td{padding:8px 9px;font-size:13.5px}.tbl.odds th{font-size:10.5px;letter-spacing:.04em}}
 /* v3-css-end */
 </style>
 
@@ -4557,7 +4561,7 @@ details.fold[open]{padding-bottom:8px}
       <li><b>Their going-1st floodgates hit your Spells and searches:</b> Mistaken Arrest (Yummy, Branded) and Thunder King Rai-Oh (Blitzclique); Anti-Spell Fragrance is Forbidden since October 19. Verdict's 1–4 negate answers Rai-Oh; Shatranga's GY add and Verdict's GY placement still work under Arrest.</li>
     </ul>
   </div>
-  <p class="prose note">How often each plan opens 3+ interruptions is in the table below; the full odds are on <a href="#plays">Plays and odds</a>.</p>
+  <p class="prose note">How often each plan opens 3+ interruptions is in the table below; the full odds are on <a href="#plays">Odds</a>.</p>
   
   <p class="prose note">What opponents side against you, and how to play around it: <a href="#techs">5 · Playing around the new tech</a>.</p>
 
@@ -4590,43 +4594,25 @@ details.fold[open]{padding-bottom:8px}
 <!-- PLAYS -->
 <section id="plays">
   <div class="sec-head">
-    <div class="eyebrow">What to do with the hand you open</div>
-    <h2>Plays and odds</h2>
+    <div class="eyebrow">Siding</div>
+    <h2>Odds</h2>
   </div>
-  <div class="tbl"><table>
-    <thead><tr><th>Simulation (200,000 hands each)</th><th class="num">Has a play</th><th class="num">Play survives 1 hand trap</th></tr></thead>
+  <p class="prose note">From 200,000 simulated hands of your 41. Which line to play with what you open: <a href="#lines">3.1</a>.</p>
+  <div class="tbl odds"><table>
+    <thead><tr><th>Going 1st</th><th class="num">Has a play</th><th class="num">Survives a hand trap</th></tr></thead>
     <tbody>
-      <tr><td>Going 1st, game 1 (main as is, 41 cards)</td><td class="num">87%</td><td class="num">54%</td></tr>
-      <tr><td>Going 1st, after siding (3 Boarder, 3 Thrust for 3 Fuwalos, Endgame, Brilliant Move and an Opening to e4)</td><td class="num">87%</td><td class="num">75%</td></tr>
+      <tr><td>Game 1</td><td class="num">87%</td><td class="num">54%</td></tr>
+      <tr><td>After siding</td><td class="num">87%</td><td class="num">75%</td></tr>
     </tbody>
   </table></div>
-  <p class="prose note">“Survives 1 hand trap” means the hand has a second route after Ash, Impulse or Droll stops its key step: two starters; a starter plus Triple Tactics Thrust (sided in going 1st; their hand trap turns it on); Problem with a Verdict or Disturbance to discard; Foolish Burial Goods plus another starter; or Boarder with a starter after siding.</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Going 2nd: interruptions after siding</th><th class="num">3+ hand traps</th><th class="num">≥1 starter</th><th class="num">Both</th></tr></thead>
+  <div class="tbl odds"><table>
+    <thead><tr><th>Going 2nd</th><th class="num">3+ interruptions</th><th class="num">A starter</th><th class="num">Both</th></tr></thead>
     <tbody>
-      <tr><td>None (main as is: 23 interruptions)</td><td class="num">78%</td><td class="num">92%</td><td class="num">74%</td></tr>
-      <tr><td>26 (most plans)</td><td class="num">88%</td><td class="num">83%</td><td class="num">80%</td></tr>
+      <tr><td>Game 1 (23 interruptions)</td><td class="num">78%</td><td class="num">92%</td><td class="num">74%</td></tr>
+      <tr><td>After siding (26 in most plans)</td><td class="num">88%</td><td class="num">83%</td><td class="num">80%</td></tr>
     </tbody>
   </table></div>
-
-  <h3>Going 1st: best line by starters</h3>
-  <p class="prose note">“Spare” = any Spell/Trap you can discard to Problem (best: Verdict or Disturbance, for their GY effects; otherwise Endgame Problem, a sided-in Thrust or a Dominus you won't Set). Count = Angelechy monster cards on the field for Verdict. “Draws” = what their Fuwalos gives them.</p>
-  <div class="tbl"><table>
-    <thead><tr><th>You open</th><th>Line</th><th class="num">Count</th><th class="num">Draws</th></tr></thead>
-    <tbody>
-      <tr><td><b>Problem</b> (or Terraforming) + spare</td><td>Problem: discard → Enlisted + place Destrier → add Strategy Score → add Opposition → Seneschal to their field + place Bastion → Shatranga → add Verdict. Set Verdict.</td><td class="num">5</td><td class="num">2</td></tr>
-      <tr><td><b>Strategy Score</b> + spare</td><td>Strategy Score → add Problem → same line, but Destrier adds Opposition directly.</td><td class="num">5</td><td class="num">2</td></tr>
-      <tr><td><b>Foolish Burial Goods</b> + spare</td><td>Send Disturbance → banish it → add Problem → same line as Problem.</td><td class="num">5</td><td class="num">2</td></tr>
-      <tr><td><b>Opposition</b> alone</td><td>Seneschal + Bastion → Shatranga → add Verdict. Take Destrier from Seneschal's effect for count 4. With Thrust and a spare: Thrust (now live) adds Strategy Score → Problem → discard the spare → Enlisted + Destrier → count 6.</td><td class="num">4 (6)</td><td class="num">2 (3)</td></tr>
-      <tr><td>Opening to e4 only</td><td>Set it with your Dominus. On their turn: Problem from Deck + Enlisted + place Bastion → Shatranga.</td><td class="num">—</td><td class="num">0</td></tr>
-      <tr><td><b>Two starters</b></td><td>Run the Problem line with one; the second becomes your backup. If nothing was stopped, Destrier adds Problem #2 for Enlisted #2 + Castellan, or a discarded Verdict's GY effect places Castellan.</td><td class="num">6–7</td><td class="num">2–3</td></tr>
-      <tr><td><b>Three starters</b></td><td>Same board as two (the Spell/Trap Zone is full at Bastion, Shatranga, Destrier, Castellan + Verdict). Keep the rest in hand to rebuild through removal.</td><td class="num">6–7</td><td class="num">2–3</td></tr>
-      <tr><td>Boarder + any starter (after siding)</td><td>Boarder + Opposition (<a href="#line-boarder">3.1</a>): Seneschal's trigger uses their one allowed effect and turns on Thrust.</td><td class="num">4–5</td><td class="num">0*</td></tr>
-    </tbody>
-  </table></div>
-  <p class="prose note">*Normal Summon Boarder first: with 0 types on the field they can't activate Fuwalos at all.</p>
-
-  <p class="prose note">When they hit you with Ash, Impulse, Droll, Ghost Ogre or Typhoon: <a href="#beat-ash">3.2–3.5</a>. Playing under Fuwalos: <a href="#beat-mulch">3.4</a>.</p>
+  <p class="prose note">“Survives a hand trap” means the hand still has a play after Ash, Impulse or Droll stops the first one.</p>
 </section>
 
 <!-- SIDE -->

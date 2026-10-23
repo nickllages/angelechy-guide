@@ -75,3 +75,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Scrub DONE in all sources + guide-direct; scan.py (scratchpad) shows only tracker event dropdown + home meta-card line (allowed). Unattributed quotes reworded.
 
 - Oct 23 v79 PUBLISHED (artifact v79). Site push next.
+- Oct 23: user — remove section 3.7 (Odds & Boarder, #deck). DONE (v80): section, nav entry and the 2.3 'Full breakdown' link removed.

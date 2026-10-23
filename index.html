@@ -4569,6 +4569,43 @@ details.fold[open]{padding-bottom:8px}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- BUILDS -->
 <section id="builds">
   <div class="sec-head">
@@ -4708,7 +4745,7 @@ details.fold[open]{padding-bottom:8px}
     <h2>Siding</h2>
   </div>
       <div class="planner" id="planner">
-    <div class="pl-head"><h3>Siding planner</h3><p class="note">Pick a deck and who goes first. The swaps come straight from the table below.</p></div>
+    <div class="pl-head"><h3>Siding planner</h3><p class="note">Pick a deck and who goes first.</p></div>
     <div class="pl-controls">
       <label>Opponent<select id="pl-deck"></select></label>
       <div class="mu-filter" role="group" aria-label="Turn order" id="pl-order">
@@ -4727,14 +4764,14 @@ details.fold[open]{padding-bottom:8px}
       <li><b>Bad in the matchup, out first:</b> Ghost Ogre (Mitsurugi, Destiny HERO, Invoked), Veiler (mirror, Blitzclique), Fuwalos (Blitzclique), Spark (Dark Time Wizard, Sky Striker, mirror).</li>
       <li><b>Order on their turn:</b> Fuwalos, then Ash and Droll, then Spark or Purge, then Ogre, Veiler and Nibiru, and Impulse last.</li>
     </ul>
-    <p class="note">The exact swaps for every matchup are in the table below.</p>
+    <p class="note">The exact swaps for each matchup are in the planner above.</p>
   </div>
-<p class="prose note">How often each plan opens 3+ interruptions is in the table below; the full odds are on <a href="#plays">Odds</a>.</p>
+<p class="prose note">Going second, the planner also shows your interruptions and the odds to open 3+; the full odds are on <a href="#plays">Odds</a>.</p>
   
   <p class="prose note">What opponents side against you, and how to play around it: <a href="#techs">5 · Playing around the new tech</a>.</p>
 
-  <h3>Every matchup</h3>
-  <div class="tbl"><table>
+  <!-- siding data: hidden; the planner, the deep dives and the deckbuilder presets read their swaps from these rows -->
+  <div class="tbl" id="side-data" hidden><table>
     <thead><tr><th class="num">#</th><th>Deck</th><th>Going 1st</th><th>Going 2nd</th><th class="num">Interruptions 2nd · 3+</th></tr></thead>
     <tbody>
       <tr data-mu="mirror"><td class="num">1</td><td><b>Angelechy mirror</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></td><td><span class="chip out">−2 Effect Veiler</span><span class="chip out">−3 Spark</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></td><td class="num">18 · 54%</td></tr>
@@ -5395,12 +5432,16 @@ details.fold[open]{padding-bottom:8px}
     sec.appendChild(n);
   });
 
-  // router: one page at a time (deep dives belong to Home → Matchups; #plan-<deck> opens that deck's siding row)
+  // router: one page at a time (deep dives belong to Home → Matchups; #plan-<deck> opens that deck in the siding planner)
   var lastPid=null, lastArea=null;
   function show(keepScroll){
     var id=decodeURIComponent(location.hash.slice(1))||"home";
     var el=document.getElementById(id);
-    if(!el&&/^plan-/.test(id)) el=vg.querySelector('tr[data-mu="'+id.slice(5).replace(/[^\w-]/g,"")+'"]');
+    if(/^plan-/.test(id)){ // the siding rows are hidden data: open that deck in the siding planner instead
+      var mu=id.slice(5).replace(/[^\w-]/g,""), row=vg.querySelector('tr[data-mu="'+mu+'"]'), sel=document.getElementById("pl-deck");
+      if(row&&sel){sel.value=String([].slice.call(vg.querySelectorAll("tr[data-mu]")).indexOf(row)); sel.dispatchEvent(new Event("change")); el=document.getElementById("planner");}
+      else if(!el) el=row;
+    }
     var blk=el?el.closest("#view-guide > section, #view-guide > footer"):null;
     if(!blk){blk=document.getElementById("home"); el=blk; id="home";}
     var isMatch=blk.classList.contains("match"), pid=blk.id, area=isMatch?"home":(pageArea[pid]||"home"), navPid=isMatch?"matchups":pid;

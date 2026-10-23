@@ -132,3 +132,10 @@ Also: Trif (Oct 20) — Elfnote "the absolute best deck still", ~12 interruption
 Pre-list Oct 17–18 regionals (yugiohmeta, posted lists): Santiago 128 — DM Chaos Ritual 1st, Elfnote 2nd, Angelechy Top 8 (Hernan Bravo); Italian Open Bussolengo 350 — Angelechy Top 8 (Leonardo Sacchetti), Elfnote, Azamina Chaos Ritual Top 8; Bogotá 200 — Elfnote Top 4; Karlsruhe 255 — Sacred Beast Top 8; Ramsgate 60 — Elfnote Top 4, DM Chaos Ritual, Invoked Dracotail Top 8; Chaguanas 100 — Mermail Top 8.
 Post-list locals: Branded Despia 1st undefeated (galzo), Branded ROLAD 1st (PAPA GOAT YGO).
 Tech vs Angelechy now: Pot of Sloth → Magical Spring, Hey Space Trunade!, Great Gallant Bandit, Lava Golem, 3 MST (Radiant Typhoon), Maple Maiden → Shiina, Pluto → Psychic End Punisher, Skull Meister, Ghost Belle on Shatranga, Fairy Tail - Snow vs Kusanagi, Transaction Rollback + Majestic Star Dragon in the mirror; two Mulcharmies resolve (no Crossout/Called by).
+
+## Angelechy top-cut decklists on YGOPRODeck (checked Oct 23)
+- YCS Houston: Top 4 /deck/angelechy-739270; Top 8 /deck/angelechy-739277, /deck/angelechy-739279; Top 16 L&D hybrid /deck/angelechy-light-and-darkness-ritual-739363; Top 32 739368, 739379, 739397, 739407, 739418; event /tournament/ycs-houston-5185
+- Italian Open Bussolengo Top 8 /deck/angelechy-739712 · Santiago Top 8 /deck/angelechy-739732
+- Belén 1st /deck/angelechy-738506 (Top 4 not posted) · Burnaby Top 4 /deck/angelechy-737973 (2nd not posted)
+- Saint Peters Top 4 /deck/angelechy-tenpai-dragon-737958, Top 8 /deck/angelechy-738293 · Louisville Top 4 /deck/angelechy-737740 · Dubuque Top 8 not posted
+- Method: getDecks.php?name=Angelechy&format=Tournament%20Meta%20Decks (Referer header) gives tournamentName/tournamentPlacement/pretty_url; event pages /tournament/<slug> show which placings have no list.

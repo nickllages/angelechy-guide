@@ -165,3 +165,4 @@
 - Oct 23 (v89): Tools nav 'Odds calculator' → 'Hypergeometric calculator' (+ home Tools card). Regression PASS.
 - Oct 23 (v90): Matchups page — tier-list-style archetype art behind every matchup card (img/art/<id>.jpg from data/assets/art; key card per deck = chapters.py KEY_CARD; cropped art from YGOPRODeck, stored locally). push_assets.py now also pushes img/art/*. Checked dark/light, desktop/phone.
 - Oct 23 (v91): Meta report intro is now only "Position within a tier doesn't matter." (user).
+- Oct 23 (v92): Meta report — each Angelechy placing links to its YGOPRODeck decklist (10 of 13; Belén Top 4, Burnaby 2nd, Dubuque Top 8 have no posted list). Links recorded in brain/meta.md.

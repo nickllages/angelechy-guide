@@ -1023,6 +1023,13 @@ details.fold[open]{padding-bottom:8px}
 .tbl.odds th{white-space:normal;line-height:1.25;vertical-align:bottom}
 .tbl.odds td.num,.tbl.odds th.num{text-align:right}
 @media (max-width:560px){.tbl.odds th,.tbl.odds td{padding:8px 9px;font-size:13.5px}.tbl.odds th{font-size:10.5px;letter-spacing:.04em}}
+/* Matchups: archetype art behind each card, tier-list style (img/art/<matchup id>.jpg) */
+.mu-card{position:relative;overflow:hidden;isolation:isolate}
+.mu-card::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--art,none) 70% 35%/cover no-repeat;transition:transform .3s ease}
+.mu-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,color-mix(in srgb,var(--surface) 96%,transparent) 0%,color-mix(in srgb,var(--surface) 82%,transparent) 42%,color-mix(in srgb,var(--surface) 25%,transparent) 100%)}
+.mu-card:hover::before{transform:scale(1.06)}
+.mu-card h4{text-shadow:0 1px 6px var(--surface)}
+@media (prefers-reduced-motion:reduce){.mu-card::before{transition:none}.mu-card:hover::before{transform:none}}
 /* v3-css-end */
 </style>
 
@@ -5023,7 +5030,7 @@ details.fold[open]{padding-bottom:8px}
     var g=document.createElement("div"); g.className="mu-group"; g.dataset.tier=t;
     g.innerHTML='<h3>'+LABEL[t]+'</h3><div class="mu-cards"></div>';
     ms.forEach(function(m){
-      var a=document.createElement("a"); a.className="mu-card"; a.href="#"+m.id; a.dataset.tier=t; a.dataset.diff=m.dataset.diff||"";
+      var a=document.createElement("a"); a.className="mu-card"; a.href="#"+m.id; a.dataset.tier=t; a.dataset.diff=m.dataset.diff||""; a.style.setProperty("--art",'url("img/art/'+m.id+'.jpg")');
       a.innerHTML='<h4></h4><span class="diff '+(DC[m.dataset.diff]||"")+'"></span>';
       a.querySelector(".diff").textContent=m.dataset.diff||""; a.querySelector("h4").textContent=nameOf(m);
       a.dataset.search=(nameOf(m)+" "+(m.dataset.short||"")+" "+m.textContent).toLowerCase();

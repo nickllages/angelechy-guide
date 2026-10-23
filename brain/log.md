@@ -159,3 +159,4 @@
 - Oct 23 (v83): 'Your list now' (old 5.2 / 4.2, #postban-list) removed (user: rest of the guide already matches the post-list changes). Chapter 4 = 4.1 What the list changed. Link check clean; regression + favtest PASS.
 - Oct 23 (v84): mirror — Brilliant Move stays even going first (user). Siding plan already kept it; wording now says so explicitly everywhere (2.1, 2.2, situational, deck theory, 1.2, siding row + rules, mirror deep dive). Regression + presets 34/34 PASS.
 - Oct 23 (v85): going-1st default now cuts 1 Opening to e4 instead of a Veiler (user); vs Elfnote Endgame stays and 2 e4 go. Texts: siding templates/rules/odds row, 2.1 e4 + Endgame cards, Elfnote deep dive g1 + siding note, Order-on-their-turn uses the Fuwalos rule. Odds unchanged (86.6/75.0). Regression, dbtest, presets 34/34 PASS.
+- Oct 23 (v86): Siding page — rules panel removed; 'Your templates' simplified to 4 bullets. Regression + favtest PASS.

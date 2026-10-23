@@ -4745,7 +4745,7 @@ details.fold[open]{padding-bottom:8px}
   <p class="prose note">Switching to another build, and the swaps from your list: <a href="#builds">2.4</a>.</p>
 
   <h3>Main deck flex options</h3>
-  <div class="tbl"><table>
+  <div class="tbl"><table class="noclip">
     <thead><tr><th>Card</th><th>Why</th><th>What it would replace</th></tr></thead>
     <tbody>
       <tr><td><b>Angelechy Disturbance</b> (2nd copy)</td><td>The best card for Foolish Burial Goods and Castellan to send: its GY effect searches any Angelechy Spell/Trap. Opposition recycles a spent copy, which is why 1 works: you go through Disturbance and Verdict on turn 1 and shuffle them back.</td><td>The 3rd Foolish Burial Goods. It costs about 3% of going-1st hands with a play: a drawn Disturbance isn't a starter.</td></tr>
@@ -4759,7 +4759,7 @@ details.fold[open]{padding-bottom:8px}
   <p class="prose note">Main-deck cards with the weakest case today: <b>Terraforming</b> (the first engine card out going 2nd) and <b>Spark</b> against decks that rarely activate monster effects in the hand or GY (it comes out against Sky Striker). <b>Droll and Nibiru:</b> both in the side now: they do little in the mirror, your most common matchup. Nibiru comes in going 2nd against decks that summon 5+ times (with Castellan placed, a Nibiru you activate in a Chain they started can't be answered), Droll against search engines. <b>Brilliant Move</b> is in the main; it's win-more going first, so it's the first card out for Boarder, unless in the mirror: there it stays even going first, because it helps build a better board. <b>Out of the 41:</b> a 2nd Endgame, which is a brick (<a href="#c-endgame">2.1</a>).</p>
 
   <h3>Extra deck flex options</h3>
-  <div class="tbl"><table>
+  <div class="tbl"><table class="noclip">
     <thead><tr><th>Card</th><th>Why</th><th>What it would replace</th></tr></thead>
     <tbody>
       <tr><td><b>Masterflare Hyperion</b></td><td>Enlisted + Bastion, like Black-Winged Assault Dragon. When they activate a card or effect, banish a Fairy from your hand or GY to banish a card on the field. It also works in the mirror, where they barely activate monster effects.</td><td>The 2nd Castellan</td></tr>
@@ -5232,7 +5232,7 @@ details.fold[open]{padding-bottom:8px}
 (function(){
   // expandable explanation cells
   var RX=/^(why|notes?|role|what it costs you|watch for|what it would replace|post-set evidence)$/i;
-  document.querySelectorAll("table").forEach(function(tb){
+  document.querySelectorAll("table:not(.noclip)").forEach(function(tb){
     var ths=[].slice.call(tb.querySelectorAll("thead th")); var cols={};
     ths.forEach(function(th,i){if(RX.test(th.textContent.trim())) cols[i]=1;});
     tb.querySelectorAll("tbody tr").forEach(function(tr){

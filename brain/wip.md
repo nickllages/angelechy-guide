@@ -28,3 +28,50 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Oct 23 (later): user — Brilliant Move stays in going 1st in the MIRROR ("helps build a better board"); mirror 1st plan swaps it for Endgame. DONE (sources, side_oct23, guide, brain, SKILL); published v78.
 - Oct 23: user — remove the 2nd Endgame Problem from 1.2 flex options ("it is just bad"). DONE; published v78.
 - Oct 23: user — Thrust flex row: "back in the main" → "in the main". DONE; published v78.
+- Oct 23: user — Extra Deck now 2 Enlisted + 2 Castellan (3rd Enlisted out, answered via question); flex: Hyperion would replace the 2nd Castellan; remove the 2nd-Castellan flex row; Odin row → Maple Maiden (WIND Fairy Synchro). DONE (v79).
+- Oct 23: user — remove the line about banned cards in 1.2 side-deck flex options. DONE (built, not published).
+- Oct 23: user — move the Angelechy intro paragraph from 1.3 into 1.1 (incorporate better). DONE (built, not published).
+- Oct 23: user — going 1st end board: one body only (normally Black-Winged Assault Dragon; Chaos Angel or Legatia only if bodies would help the opponent so you remove them, or you really need Legatia's draw), backrow always includes Castellan, never end on 2 bodies; main line ends on BWAD. Update all end-board text. DONE (v79).
+- Oct 23: user — end-board example (1.3 fieldmap): show only your side, no Seneschal on theirs (Problem's Enlisted removes it). DONE (v79).
+- Oct 23: user — fieldmap: remove 'count 6' label and the count explanation from the image. DONE (v79).
+- Oct 23: user — watch more combo videos; find the main uninterrupted lines people play; update 3.1 lines and 1.3 'How a game goes'. DONE (v79).
+- Oct 23: user — "most of the time you go for Destrier first, not Bastion" (Opposition places Destrier first; line A's Bastion-first is not the main line). Fold into the lines rewrite. DONE (v79).
+- Oct 23 DONE (not yet rebuilt/published): Extra 2 Enlisted/2 Castellan edits (cards, learn, deckbuilder, postban, guide home/1.2/flex/2.4); 1.2 side-flex Forbidden sentence removed; 1.3 intro moved into 1.1 (guide2.html) and 1.3 now opens with the 41 paragraph; Seneschal "1 copy" fix; 1.1 "About 13%".
+- NEXT: research combo videos (main uninterrupted going-1st lines) → rewrite 3.1 lines + 1.3 "How a game goes" + 1.3 fieldmap (your side only, no count, one body BWAD, Castellan in backrow).
+- Oct 23: user — Verdict is often used just as a negate; remove points 3 and 4 from 1.3 'How a game goes' going first. DONE (built, not published).
+- Oct 23: user — Fuwalos timing: if you know their deck and have e4 → Fuwalos in their Draw Phase (then e4 at Standby). Without e4 → only once they've committed to the Extra Deck (an effect, or a monster on board that will surely become an Extra Deck monster). Sky Striker exception: always Draw Phase. Update 1.3 going 2nd, 2.2 Fuwalos, mistakes, matchup notes where Fuwalos timing is stated. DONE (v79).
+- Oct 23: user — 1.3 "How a game goes" going 2nd: keep only point 1 (as a paragraph, not a list item), using the new Fuwalos rule. DONE (built, not published).
+- Research note: DB Grinder spreadsheet (docs.google.com/spreadsheets/d/190Z4IuiBvy-zm2_VXXTs2RDEU-Mnf5Sj-YD_QsLlP9E) Combosss tab = DuelingBook replay links (Oppo+1 blank, Problem+1 blank, E4 #1/#2, Oppo+Prob, Prob+Distur, Prob+Verdict). DuelingBook replay pages show a Cloudflare "Verify you are human" check → not bypassed; would need the user to click it.
+- ygocombo.com/combo/163 (Problem+any, Oct 19) → Opp places Castellan, Seneschal gives Bastion, Verdict GY → Bastion→Shatranga→e4, Enlisted on Seneschal, Hyperion; e4 at their Draw Phase w/ Endgame. /combo/178 (Opposition+any, Oct 21) → Opp places Destrier → Strategy Score; Seneschal gives Shatranga body; Problem → Enlisted + Bastion → Shatranga → Verdict (ends 2 bodies).
+- Oct 23: user — move the 'Your learning path' callout from 1.3 to 1.1. DONE (built, not published).
+- Oct 23: user — remove outside references (creator/player names like "(DB Grinder)", quotes) from EVERYWHERE in the guide: "the things written on this guide are my own insights". Plan: strip names; turn verbatim quotes into plain statements in the guide's voice (no unattributed verbatim quotes). DONE (v79). Asked about the Sources page / replay links / event stats.
+- Oct 23 answers: KEEP the Sources page (it's our research); remove references inside the guide itself (parenthetical or otherwise). REMOVE tournament stats from explanations too (keep only in the Meta report). Keep what creators said, as the guide's own advice.
+- Oct 23: user — remove the "Not in this list, and why" section. DONE (built, not published).
+- Oct 23: user — remove the '3 rules' section (#ht-rules) from 2.2. DONE (built, not published).
+- Oct 23: user — 2.2 'Which hand trap, which matchup' (#ht-matrix): keep only the top 5 matchups per hand trap; make it smaller to fit mobile and desktop. DONE (built, not published).
+- Oct 23: user — remove Forbidden hand traps and board breakers from the 2.2 lists. DONE (built, not published).
+- Oct 23: user — retitle 2.2 'Which hand trap, which matchup' → 'Which non-engine, which matchup'. DONE (built, not published).
+- Oct 23: user — make each 2.2 section that lists multiple hand traps collapsible (too long). DONE (built, not published).
+- Oct 23: user — remove the intro explanation at the start of 2.2 Board breakers, and the 'After the list' (#ht-sacco tiers) portion of 2.2. DONE (built, not published).
+- Oct 23: user — 2.2 Board breakers: make each card a collapsible entry like the hand-trap entries (cx details). DONE (built, not published).
+- Oct 23: user — make 2.2 card blocks smaller so more fit on screen. DONE (built, not published).
+- Oct 23: user — remove the FTK version from 2.4 (can't be played anymore). DONE (built, not published).
+- 2.2 top-5 lists are hand-curated from scratchpad rank.py (matrix ratings + deep-dive chokes + side_oct23 plans + Boarder strength); data lives in build/v3/handtraps.html .netop.
+- Oct 23: user — 2.4: ONE example list per build, explained briefly; no comments from other players; don't say where a list is from. No references to other people anywhere in the guide. DONE (v79).
+- Oct 23: user — remove the "Not in guides I reviewed" tags from the guide (line cards). DONE (v79).
+- Name-scrub scope: all build/v3/*.html, mu_v2_a/b/c.py, v2.py, side_oct23.py, guide-direct text; NOT the Sources page; Meta report keeps event results. Remove event stats elsewhere.
+- Oct 23: user — REWRITE 3.1 lines: fix lines that show Extra Deck monsters as if in hand; NO card images; explain each line from the opening cards; show only the common ONE-card starters (Opposition, Problem, Strategy Score, Terraforming, Opening to e4) and how to play each going 1st AND going 2nd, plus the most common TWO-card starters, no repeats. Tags "Not in guides I reviewed" and all name tags go. Main going-1st line = Destrier first → BWAD, Castellan placed, one body. IN PROGRESS (needs video research: PhantomsYGO E5L8aAgMUpI, Kaiba Core mIKZX6iDORM, ruingear 1VrPmN0nRR8, DB sheet combos list: Oppo+1, Prob+1, E4 #1/#2, Oppo+Prob, Prob+Distur, Prob+Verdict).
+- 2.4 DONE (built later): rewritten — summary table, Full Dominus / Bishop+Witness one example list each (derived from the user's list via swaps), e4 splash brief, watch table. Old named lists removed.
+- Oct 23: user — Endgame lines: keep only the first e4 combo (EG1), remove EG2–EG4; call it an 'e4 play', not an Endgame Problem line. (Merge with line C: no repeats.) Also: remove where each line is from. DONE (v79).
+- Oct 23: user — remove the 'Playing Endgame well' portion of 3.1. DONE (v79).
+- Oct 23: user — 3.6 quiz: remove the parenthesis parts of hand titles; remove setup lines like "you expect one Ash" (just give the hand); answers = the correct play around ALL common hand traps; fix plays to the new lines (hand 1: bait Ghost Ogre by activating Problem first). DONE (v79).
+- Research done: PhantomsYGO intro (E5L8aAgMUpI) transcript read: e4 going 2nd (Endgame → Enlisted EMZ + Castellan → Verdict; Verdict GY sends Enlisted → Bastion → Shatranga → e4 #2; Endgame draw; e4 #2 → Problem + Lv7 EMZ + Destrier → Strategy Score); Opposition going 1st (Destrier first; Seneschal → Shatranga body; Legatia option); Problem going 1st (Problem → Enlisted + Destrier → Opposition → Castellan → Verdict; Seneschal → Bastion for BWAD or Shatranga for Legatia). "True starters are Problem and Opposition."
+- 3.1 REWRITTEN (guide-direct): ids line-opposition, line-problem, line-access, line-e4 (the e4 play), line-opp-problem, line-problem-gy, line-boarder; "What stops what" table at the end; no images, no tags, no sources. Old line A–G/EG refs repointed in learn/cards/guide2/techs/side + guide-direct. "Playing Endgame well" + EG2–EG4 removed.
+- v3_apply.py: removed the old 'Set e4 (or your 2nd Verdict)' auto-correction (conflicted with the new line).
+- 3.6 quiz rewritten (guide2.html): titles 'Hand N · Going first/second', answers on the new lines (Problem first to bait Ogre in hand 1). DONE (not published).
+- Scrub progress: cards, handtraps, learn, guide2, postban, situational, decktheory, techs DONE. Deep dives: evidence/tags rewritten (no events/names), v2.py no Replays tab (rep_pane=""), empty evidence skipped. 4.3 Replays chapter REMOVED (guide2.html, v3.js AREAS, chapters.py conditional); its 17 replay links moved to the Sources footer under "Replays". Eyebrow "4 · Rulings and tips".
+- NEXT: names in mu_v2 keys/chokes/plan/hurts/g1/g2, v2.py index text, side_oct23.py notes, guide-direct (home, meta?, 1.2, 3.7, siding, plays, 2.3?), v3_apply.py re-inserting names; then final grep of the built guide (excluding #sources and #meta results).
+- Scrub DONE in all sources + guide-direct; scan.py (scratchpad) shows only tracker event dropdown + home meta-card line (allowed). Unattributed quotes reworded.
+- Scrub DONE in all sources + guide-direct; scan.py (scratchpad) shows only tracker event dropdown + home meta-card line (allowed). Unattributed quotes reworded.
+
+- Oct 23 v79 PUBLISHED (artifact v79). Site push next.

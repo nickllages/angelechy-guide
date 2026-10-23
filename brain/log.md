@@ -176,3 +176,4 @@
 - Oct 23 (v100): going 2nd, every Golem plan brings both Lava Golem for −1 Verdict −1 Spark (user); 14 plans rebuilt; text updated. Presets 34/34, dbtest, favtest, regression PASS.
 - Oct 23: siding review for the user — all side cards get sided in somewhere; least used: Cosmic Cyclone #3 (mirror only) and the side Veiler (Mitsurugi, Invoked). No plan changes made; awaiting the user's call.
 - Oct 23 (v101): 1.2 flex tables no longer clip long cells behind a 'more' button (table.noclip); full text shows. Regression PASS.
+- Oct 23 (v102): siding review fixes (ROLAD piles +Nibiru; Patron keeps Spark; Blitzclique +2 Golem for Verdict+Terraforming; Invoked keeps 1 Ogre); 'more' shows only on truncated cells (global); 4.1 What the list changed removed and chapter 5 → 4; after-siding numbers refreshed (24–25, 82–85%). Regression, favtest, presets 34/34, dbtest PASS.

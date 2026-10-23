@@ -156,3 +156,4 @@
 - Oct 23 (v80): 3.7 Odds & Boarder removed (user). Nav entry + 2.3 Boarder 'Full breakdown' link removed; link check clean; regression + favtest PASS.
 - Oct 23 (v81): 4.1 Rulings to know removed (user); Tips → 4.1; eyebrow '4 · Tips'; links fixed; regression + favtest PASS.
 - Oct 23 (v82): Tips removed (user: 'remove 4.2'); chapters renumbered 5→4, 6→5 (headings, eyebrows, nav, every '6' link to #techs/#tech-*); home guide card no longer mentions rulings and tips. Link check clean; regression + favtest PASS.
+- Oct 23 (v83): 'Your list now' (old 5.2 / 4.2, #postban-list) removed (user: rest of the guide already matches the post-list changes). Chapter 4 = 4.1 What the list changed. Link check clean; regression + favtest PASS.

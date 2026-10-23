@@ -164,3 +164,4 @@
 - Oct 23 (v88): coin flip no longer snaps back to centre when it stops — the resting transform is the animation's last frame and the next flip starts from where the coin lies (v3.js coinPlan/flip; die resets the shared shadow). New test build/v3/frames/cointest.js PASS; regression PASS.
 - Oct 23 (v89): Tools nav 'Odds calculator' → 'Hypergeometric calculator' (+ home Tools card). Regression PASS.
 - Oct 23 (v90): Matchups page — tier-list-style archetype art behind every matchup card (img/art/<id>.jpg from data/assets/art; key card per deck = chapters.py KEY_CARD; cropped art from YGOPRODeck, stored locally). push_assets.py now also pushes img/art/*. Checked dark/light, desktop/phone.
+- Oct 23 (v91): Meta report intro is now only "Position within a tier doesn't matter." (user).

@@ -30,31 +30,32 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct22.py` (2026-10-22).*
+*From `build/side_oct23.py` (2026-10-23).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|
-| Elfnote Ars Magna | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +2 Nibiru |
-| ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
-| Angelechy mirror | −3 Fuwalos, −2 Effect Veiler → +2 Typhoon, +3 Triple Tactics Thrust | −2 Effect Veiler, −3 Spark → +2 Typhoon, +3 Triple Tactics Thrust |
-| Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
-| Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
-| Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Ghost Ogre → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru |
-| Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler → +2 Typhoon, +2 Nibiru, +1 Droll |
-| Branded | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Lava Golem |
-| Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Ghost Ogre, −1 Terraforming → +1 Droll, +2 Nibiru, +1 Lava Golem |
-| Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Sky Striker | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Spark → +2 Typhoon, +1 Droll |
-| Invoked | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Ghost Ogre → +1 Droll, +1 Typhoon, +1 Lava Golem |
-| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
-| Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Typhoon, +1 Droll |
-| Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Elfnote Ars Magna | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Effect Veiler |
+| ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
+| Angelechy mirror | −3 Fuwalos, −2 Effect Veiler, −1 Brilliant Move → +3 Cosmic Cyclone, +3 Triple Tactics Thrust | −2 Effect Veiler, −3 Spark, −1 Terraforming → +3 Cosmic Cyclone, +3 Triple Tactics Thrust |
+| Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
+| Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru |
+| Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler → +2 Cosmic Cyclone, +2 Nibiru, +1 Droll |
+| Branded | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Lava Golem |
+| Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Terraforming → +1 Droll, +2 Nibiru, +1 Lava Golem |
+| Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Sky Striker | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Spark → +2 Cosmic Cyclone, +1 Droll |
+| Invoked | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Effect Veiler, +1 Lava Golem |
+| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
 <!-- plans:end -->
 
 ## Card decisions and the reasons (newest first)
 
+- **Oct 23 — the user's list (pasted from the deckbuilder):** main 41 = Oct 22 main + Brilliant Move (user: the 41st card is the 2nd Verdict, "there are lines that you can do with just one so that is just my choice its probably better to run just one" — the guide says so). Side: 3 Boarder, 3 Thrust, 3 Cosmic Cyclone, 2 Lava Golem, 2 Nibiru, 1 Droll, 1 Effect Veiler (Typhoon out, 3rd Golem out). Siding rebuilt in build/side_oct23.py (Claude's calls, reported to the user): going 1st Brilliant Move is cut instead of an e4 (win-more on turn 1); Cosmic Cyclone ×3 both turns in the mirror, ×2 going 2nd vs Sky Striker and Blitzclique, ×1 going 1st vs Destiny HERO (Set, chain to Dark City's activation: banished, no summon); the 3rd Veiler going 2nd vs Elfnote and Invoked, going 1st vs Mitsurugi and Invoked; Sacred Beast going 2nd Nibiru + Golem (Fallen Paradise's Sacred Beasts ignore your activated S/T effects). Corrected from card texts: Impulse negates the effect, so Magical Meltdown doesn't stop it (Typhoon/Cyclone on Meltdown isn't needed for Impulse).
 - **Oct 22 — the user's list for the mirror-heavy field:** 3rd Ghost Ogre and 2 Effect Veiler moved to the main for both Nibiru and Droll, which moved to the side (after the YCS Houston Top 32: all 8 pure lists mained 3 Ogre, 4 mained 3 Veiler). Siding rebuilt in build/side_oct22.py: going 1st −1 Veiler instead of the Nibiru; Droll comes in vs search engines; Nibiru going 2nd vs 5+-summon decks.
 
 - **Oct 19 — the October 19 list (user: research the list, rank decks, pick non-engine, modify the deck, side first).** Talent Forbidden → 3rd Thrust; Droll Limited (illegal 2nd copy). Main: 3rd Ghost Ogre (all 8 pure Houston Top 32 lists ran 3), 2 Veiler main (Elfnote, Patron, Sky Striker, Maliss, D-HERO), Spark 3 → 2 (weak in the mirror and vs Sky Striker), Nibiru to the side (does nothing in the mirror, now the most common matchup).
@@ -75,7 +76,7 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 
 ## Rejected for this build
 
-Infinite Impermanence, Cosmic Cyclone, Anti-Spell Fragrance (Forbidden since Oct 19), Songs of the Dominators, Solemn Judgment/Warning, Chaospawn Bishop + Witness lines. (A 3rd Typhoon was rejected before Oct 19; re-added Oct 19 with new evidence, see above.) Explained as "not in your list" on the guide's #cards and #handtraps pages; Songs and Bishop are still tracked as other builds in #builds.
+(Cosmic Cyclone was on this list until Oct 23; the user now sides 3.) Infinite Impermanence, Anti-Spell Fragrance (Forbidden since Oct 19), Songs of the Dominators, Solemn Judgment/Warning, Chaospawn Bishop + Witness lines. (A 3rd Typhoon was rejected before Oct 19; re-added Oct 19 with new evidence, see above.) Explained as "not in your list" on the guide's #cards and #handtraps pages; Songs and Bishop are still tracked as other builds in #builds.
 
 Also: the 2nd Endgame (brick), 2 Lancea (it turns off your own banishes), Pot of Sloth and a 3rd Typhoon for the open slot (Lava Golem ranked higher).
 

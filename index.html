@@ -5386,21 +5386,21 @@ details.fold[open]{padding-bottom:8px}
   document.addEventListener("keydown",function(e){if(!stage.hidden&&/^(Escape|Enter| )$/.test(e.key)){e.preventDefault(); closeStage();}});
   var recent=[];
   function remember(x){recent.unshift(x); if(recent.length>12) recent.pop(); hint.textContent="Recent: "+recent.join(" ")+" · tap anywhere to close";}
-  var coinUp=rnd(2)===0, coinZ=rr(-20,20); // the face showing and its resting angle; the next flip starts from them, like a real coin
+  var coinUp=rnd(2)===0, coinZ=rr(-20,20), coinX=0; // the face showing, its resting angle and where it lies; the next flip starts from them, like a real coin
   // Physically sampled coin toss: quick thumb-flick crouch, a gravity parabola with constant spin, one small bounce,
   // then the rattle of a coin settling (tilt decays while its wobble speeds up). Every frame comes from the same formulas.
   function coinPlan(heads){
-    var A=70, Tf=rr(1000,1200), H=Math.min(rr(150,210),Math.max(80,Math.round((window.innerHeight||700)/2-110))), dx=rr(-22,22), z0=coinZ, z1=rr(-22,22), dir=rnd(2)?1:-1;
+    var A=70, Tf=rr(1000,1200), H=Math.min(rr(150,210),Math.max(80,Math.round((window.innerHeight||700)/2-110))), x0=coinX, x1=Math.max(-44,Math.min(44,x0+rr(-22,22))), z0=coinZ, z1=rr(-22,22), dir=rnd(2)?1:-1;
     var half=Math.round(rr(40,52)/10*Tf/1000*2), start=coinUp?0:180;
     if((half%2===0)!==(heads===coinUp)) half+=1;            // even half-turns keep the same face up
     var th1=start+dir*half*180, Tb=Math.round(Tf*.24), hb=Math.max(7,Math.round(H*.055)), R=rr(430,560), a0=rr(12,19), psi0=rnd(360), cyc=rr(22,30)/10;
     var D=A+Tf+Tb+R, T=[], C=[], S=[], L=[];
     function at(t){
-      var x=0,y=0,sc=1,th=start,z=z0,al=0,ps=psi0,u;
+      var x=x0,y=0,sc=1,th=start,z=z0,al=0,ps=psi0,u;
       if(t<=A){u=t/A; y=3*u; sc=1-.04*u;}
-      else if(t<=A+Tf){u=(t-A)/Tf; y=3*(1-u)-4*H*u*(1-u); sc=.96+.04*u+.08*4*u*(1-u); th=start+dir*half*180*u; z=z0+(z1-z0)*u; x=dx*u;}
-      else if(t<=A+Tf+Tb){u=(t-A-Tf)/Tb; y=-4*hb*u*(1-u); th=th1; z=z1; x=dx; al=a0*u;}
-      else {u=Math.min(1,(t-A-Tf-Tb)/R); th=th1; z=z1; x=dx; al=a0*Math.pow(1-u,1.7); ps=psi0+360*cyc*(.6*u+.4*u*u);}
+      else if(t<=A+Tf){u=(t-A)/Tf; y=3*(1-u)-4*H*u*(1-u); sc=.96+.04*u+.08*4*u*(1-u); th=start+dir*half*180*u; z=z0+(z1-z0)*u; x=x0+(x1-x0)*u;}
+      else if(t<=A+Tf+Tb){u=(t-A-Tf)/Tb; y=-4*hb*u*(1-u); th=th1; z=z1; x=x1; al=a0*u;}
+      else {u=Math.min(1,(t-A-Tf-Tb)/R); th=th1; z=z1; x=x1; al=a0*Math.pow(1-u,1.7); ps=psi0+360*cyc*(.6*u+.4*u*u);}
       var r=ps*Math.PI/180, ax=al*Math.cos(r), ay=al*Math.sin(r), h=Math.max(0,-y), fr=Math.min(1,h/H);
       var face=Math.abs(Math.cos((th+ax)*Math.PI/180)*Math.cos(ay*Math.PI/180));
       return {o:t/D, toss:"translate("+x.toFixed(1)+"px,"+y.toFixed(1)+"px) scale("+sc.toFixed(3)+")",
@@ -5409,12 +5409,13 @@ details.fold[open]{padding-bottom:8px}
     }
     for(var t=0;t<D;t+=16){var k=at(t); T.push({transform:k.toss,offset:k.o}); C.push({transform:k.coin,offset:k.o}); S.push({transform:k.sh,opacity:k.so,offset:k.o}); L.push({opacity:k.shade,offset:k.o});}
     var e=at(D); T.push({transform:e.toss,offset:1}); C.push({transform:e.coin,offset:1}); S.push({transform:e.sh,opacity:e.so,offset:1}); L.push({opacity:e.shade,offset:1});
-    return {D:D,T:T,C:C,S:S,L:L,end:"rotateZ("+z1+"deg) rotateX("+th1+"deg) rotateY(0deg)",z1:z1};
+    return {D:D,T:T,C:C,S:S,L:L,end:"rotateZ("+z1+"deg) rotateX("+th1+"deg) rotateY(0deg)",z1:z1,x1:x1,endToss:e.toss,endSh:e.sh,endSo:e.so};
   }
   function flip(){
     var heads=rnd(2)===0, txt=heads?"Heads":"Tails", pl=coinPlan(heads);
-    coinUp=heads; coinZ=pl.z1; openStage("coin");
-    coin.style.transform=pl.end; toss.style.transform="";
+    coinUp=heads; coinZ=pl.z1; coinX=pl.x1; openStage("coin");
+    // the resting state is the last frame, so the coin stays exactly where it lands
+    coin.style.transform=pl.end; toss.style.transform=pl.endToss; shadow.style.transform=pl.endSh; shadow.style.opacity=pl.endSo;
     var shades=[].slice.call(coin.querySelectorAll(".sh")); shades.forEach(function(x){x.style.opacity="0";});
     if(reduce||!coin.animate){land(txt,"Coin: "+txt); remember(txt[0]); return;}
     anim(toss,pl.T,{duration:pl.D}); anim(shadow,pl.S,{duration:pl.D});
@@ -5427,7 +5428,7 @@ details.fold[open]{padding-bottom:8px}
     var zEnd=90*rnd(4)+(rnd(2)?1:-1)*360*rr(1,2), xEnd=f[0]+(rnd(2)?1:-1)*360*rr(1,3), yEnd=f[1]+(rnd(2)?1:-1)*360*rr(1,3);
     var end="rotateZ("+zEnd+"deg) rotateX("+xEnd+"deg) rotateY("+yEnd+"deg)";
     var th=rnd(360)*Math.PI/180, R=rr(170,215), ux=Math.cos(th), uy=Math.sin(th)*.7, bounces=rr(2,3);
-    openStage("die"); die.style.transform=end; tumble.style.transform="";
+    openStage("die"); die.style.transform=end; tumble.style.transform=""; shadow.style.transform=""; shadow.style.opacity="";
     if(reduce||!die.animate){land(String(n),"Die: "+n); remember(n); return;}
     var pts=bounces===3?[1,.5,.24,.09,0]:[1,.45,.15,0], offs=bounces===3?[0,.24,.42,.58,.8]:[0,.28,.5,.8], kf=[], sk=[];
     pts.forEach(function(q,i){

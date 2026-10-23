@@ -1030,6 +1030,8 @@ details.fold[open]{padding-bottom:8px}
 .mu-card:hover::before{transform:scale(1.06)}
 .mu-card h4{text-shadow:0 1px 6px var(--surface)}
 @media (prefers-reduced-motion:reduce){.mu-card::before{transition:none}.mu-card:hover::before{transform:none}}
+/* hide "more" when the clipped cell already shows all its text */
+td.fits .more{display:none}
 /* v3-css-end */
 </style>
 
@@ -1068,7 +1070,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="stat"><b id="stat-mu">18</b><span>matchups broken down</span></div>
     <div class="stat"><b>87%</b><span>going 1st with a play</span></div>
     <div class="stat"><b>75%</b><span>post-side play that survives 1 hand trap</span></div>
-    <div class="stat"><b>23</b><span>interruptions in your main (78% to open 3+); 25–26 after siding</span></div>
+    <div class="stat"><b>23</b><span>interruptions in your main (78% to open 3+); 24–25 after most siding plans</span></div>
   </div>
   <div class="panel"><h4>New to Angelechy? Follow this path</h4>
     <ol class="path">
@@ -1085,8 +1087,7 @@ details.fold[open]{padding-bottom:8px}
     <a class="area" href="#siding"><span class="eyebrow">03 · Siding</span><h3>What to side, and why</h3><p>Per-matchup plans going 1st and 2nd, and how often each plan opens what it needs.</p></a>
     <a class="area" href="#lp"><span class="eyebrow">04 · Tools</span><h3>At the table</h3><p>Life points, a match tracker, a deckbuilder simulator and a hypergeometric calculator.</p></a>
     <a class="area" href="#meta"><span class="eyebrow">05 · Meta</span><h3>Meta report</h3><p>The tier list and Angelechy's results at regionals and above.</p></a>
-    <a class="area" href="#postban"><span class="eyebrow">06 · New list</span><h3>After the October 19 list</h3><p>What the list changed, the new deck ranking and the non-engine to play.</p></a>
-    <a class="area" href="#techs"><span class="eyebrow">07 · New tech</span><h3>Playing around it</h3><p>Shiina, Transaction Rollback, Psychic End Punisher and the rest of the cards built for Angelechy, and how to beat each.</p></a>
+    <a class="area" href="#techs"><span class="eyebrow">06 · New tech</span><h3>Playing around it</h3><p>Shiina, Transaction Rollback, Psychic End Punisher and the rest of the cards built for Angelechy, and how to beat each.</p></a>
   </div>
   <div class="panel"><h4>Your list at a glance</h4>
       <p><b>Engine</b> 3 Strategy Score · 3 Opposition · 3 Problem · 3 Opening to e4 · 3 Foolish Burial Goods · 1 Terraforming · 1 Endgame Problem · 1 Brilliant Move · 2 Verdict · 1 Disturbance</p>
@@ -1414,7 +1415,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="eyebrow">2 · Card by card analysis</div>
     <h2>2.2 Hand traps and board breakers</h2>
   </div>
-  <p class="prose">A hand trap is a card you use from your hand during your opponent's turn. Your 41 has <b>23 interruptions</b>: 11 monster hand traps, 9 Dominus Traps and 3 Opening to e4. With 23 you open 3+ going second 78% of the time; most siding plans take you to 25–26 (85–88%). This page covers when to use each one, why you run that many and what would change the count. After that come hand traps outside your list, and the cards that break a board you couldn't stop.</p>
+  <p class="prose">A hand trap is a card you use from your hand during your opponent's turn. Your 41 has <b>23 interruptions</b>: 11 monster hand traps, 9 Dominus Traps and 3 Opening to e4. With 23 you open 3+ going second 78% of the time; most siding plans take you to 24–25 (82–85%). This page covers when to use each one, why you run that many and what would change the count. After that come hand traps outside your list, and the cards that break a board you couldn't stop.</p>
   <nav class="jump" aria-label="On this page">
     <a href="#ht-matrix">By matchup</a><a href="#ht-yours">Your hand traps</a><a href="#ht-out">Not in your list</a><a href="#ht-breakers">Board breakers</a><a href="#ht-change">What would change them</a>
   </nav>
@@ -1458,7 +1459,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Ghost Ogre &amp; Snow Rabbit" role="img" aria-label="Ghost Ogre &amp; Snow Rabbit"><i style="background-image:url(img/s0.jpg);background-position:26.667% 0.000%"></i></span></div><p class="cx-t">Tuner · LIGHT · once per turn</p><dl>
       <dt>Stops</dt><dd>When a monster on the field activates its effect, or a Spell/Trap already face-up on the field does, send Ogre to destroy that card. The effect still resolves; you take away the card.</dd>
       <dt>Best against</dt><dd>Elfnote: Lucina or Welcome Home. The mirror: your best card, so hit the first piece they place. Yummy: Snatchy. ROLAD: Mind Shuffle.</dd>
-      <dt>Weak against</dt><dd>Mitsurugi (Saji gets Tributed instead and searches), Destiny HERO (destroying Dark City at Midnight is their combo) and Invoked. All 3 come out in those matchups.</dd>
+      <dt>Weak against</dt><dd>Mitsurugi (Saji gets Tributed instead and searches), Destiny HERO (destroying Dark City at Midnight is their combo) and Invoked. All 3 come out in those matchups, except Invoked going 2nd: one stays for Aleister on the field.</dd>
       <dt>Why 3</dt><dd>It's LIGHT, so Spark and Purge from the hand don't lock it, and it's your best card in the mirror (your most common matchup) and against Elfnote; it also hits Yummy, Fairy Tail, Maliss and face-up Field Spells.</dd>
       <dt>What would change it</dt><dd>Lots of Mitsurugi, Destiny HERO or Invoked (all 3 come out there): a Veiler or a Nibiru back in for one.</dd>
     </dl></div>
@@ -1526,7 +1527,7 @@ details.fold[open]{padding-bottom:8px}
       <dt>Best against</dt><dd>Blitzclique (live all game), Destiny HERO (Dark Law, Doom Overlord), Patron (Junoldo's negate-all Synchro). Against Elfnote it's live almost every game (Regina from the hand, Medius from the GY), and their monster negates can't stop it: it's a Trap.</dd>
       <dt>Weak against</dt><dd>The mirror going 2nd (their first turn rarely activates a monster effect in the hand or GY), Sky Striker, Dark Time Wizard (Jinzo). It comes out in those plans. Black Chaos is unaffected while a Ritual Spell is in their GY.</dd>
       <dt>The cost</dt><dd>From hand it locks EARTH, WATER, FIRE and WIND: Ash, Fuwalos, Droll, Purulia. It locks nothing LIGHT, so Ogre, Nibiru, Veiler and every Angelechy stay usable. It's the friendliest Dominus to use from the hand.</dd>
-      <dt>Why 3</dt><dd>It's live against Elfnote, Destiny HERO, Blitzclique and Power Patron, and as a Trap it's a discard for Problem. It's weak in the mirror going 2nd and against Sky Striker and Dark Time Wizard, where all 3 come out, and going 2nd one comes out with a Verdict whenever both Lava Golems come in. It's your weakest Dominus.</dd>
+      <dt>Why 3</dt><dd>It's live against Elfnote, Destiny HERO, Blitzclique and Power Patron, and as a Trap it's a discard for Problem. It's weak in the mirror going 2nd and against Sky Striker and Dark Time Wizard, where all 3 come out, and going 2nd one comes out with a Verdict when both Lava Golems come in (not against Power Patron or Blitzclique). It's your weakest Dominus.</dd>
     </dl></div>
   </details>
 
@@ -1567,7 +1568,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Ghost Belle &amp; Haunted Mansion" role="img" aria-label="Ghost Belle &amp; Haunted Mansion"><i style="background-image:url(img/s0.jpg);background-position:53.333% 14.286%"></i></span></div><dl>
       <dt>What it does</dt><dd>Negates an effect that adds a card from the GY to the hand, Deck or Extra Deck, Special Summons from the GY, or banishes from the GY. EARTH Tuner, once per turn.</dd>
       <dt>Where it helps</dt><dd>Elfnote and Patron (Medius's GY summon, Theorealize, Past Lull, Vidolium banishing the GYs), Mitsurugi (Great Purification), the mirror (Opposition's GY shuffle).</dd>
-      <dt>The cost</dt><dd>EARTH: Impulse and Spark from hand lock it. It doesn't stop their main-line searches. Used against you: <a href="#tech-gy">5</a>.</dd>
+      <dt>The cost</dt><dd>EARTH: Impulse and Spark from hand lock it. It doesn't stop their main-line searches. Used against you: <a href="#tech-gy">4</a>.</dd>
     </dl></div>
   </details>
   <details class="cx" id="ht-lancea" data-idx="Artifact Lancea">
@@ -1575,7 +1576,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Artifact Lancea" role="img" aria-label="Artifact Lancea"><i style="background-image:url(img/s2.jpg);background-position:26.667% 42.857%"></i></span></div><dl>
       <dt>What it does</dt><dd>On the opponent's turn, Tribute it from your hand: neither player can banish cards for the rest of the turn. LIGHT.</dd>
       <dt>Where it helps</dt><dd>Maliss (their engine banishes itself), ROLAD's banish removal on your board going 1st (Black Chaos, Black Luster Soldier), the mirror (Verdict's GY placement pays a banish; Enlisted's and Castellan's banishes).</dd>
-      <dt>The cost</dt><dd>It also turns off your own Spark, Endgame's 4+ banish, Castellan's banish and Verdict's GY placement that turn. Used against you: <a href="#tech-gy">5</a>.</dd>
+      <dt>The cost</dt><dd>It also turns off your own Spark, Endgame's 4+ banish, Castellan's banish and Verdict's GY placement that turn. Used against you: <a href="#tech-gy">4</a>.</dd>
     </dl></div>
   </details>
   <details class="cx" id="ht-crow" data-idx="D.D. Crow">
@@ -1583,7 +1584,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="D.D. Crow" role="img" aria-label="D.D. Crow"><i style="background-image:url(img/s0.jpg);background-position:73.333% 57.143%"></i></span></div><dl>
       <dt>What it does</dt><dd>Discard it to banish a card in the opponent's GY. DARK.</dd>
       <dt>Where it helps</dt><dd>ROLAD: banishing their Ritual Spell turns off Black Chaos's immunity. Also Light and Darkness Ritual, Skull Archfiend, Medius, and the mirror's Verdict waiting in the GY. 7 of 29 pre-set Angelechy side decks ran it.</dd>
-      <dt>The cost</dt><dd>Purge from hand locks it. Used against you: <a href="#tech-gy">5</a>.</dd>
+      <dt>The cost</dt><dd>Purge from hand locks it. Used against you: <a href="#tech-gy">4</a>.</dd>
     </dl></div>
   </details>
   <details class="cx" id="ht-meowls" data-idx="Mulcharmy Meowls">
@@ -1592,11 +1593,11 @@ details.fold[open]{padding-bottom:8px}
   </details>
   <details class="cx" id="ht-meister" data-idx="Skull Meister">
     <summary><span class="cp cx-p" data-card="Skull Meister" role="img" aria-label="Skull Meister"><i style="background-image:url(img/s0.jpg);background-position:20.000% 42.857%"></i></span><span class="cx-n">Skull Meister</span><span class="cx-c out">0</span><span class="cx-r">Negates an effect activated in their GY</span></summary>
-    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Skull Meister" role="img" aria-label="Skull Meister"><i style="background-image:url(img/s0.jpg);background-position:20.000% 42.857%"></i></span></div><p>Discard it when a card effect activates in the opponent's GY to negate it. It hits Medius, Past Lull and Theorealize. DARK: Purge from hand locks it. Used against you: <a href="#tech-gy">5</a>.</p></div>
+    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Skull Meister" role="img" aria-label="Skull Meister"><i style="background-image:url(img/s0.jpg);background-position:20.000% 42.857%"></i></span></div><p>Discard it when a card effect activates in the opponent's GY to negate it. It hits Medius, Past Lull and Theorealize. DARK: Purge from hand locks it. Used against you: <a href="#tech-gy">4</a>.</p></div>
   </details>
   <details class="cx" id="ht-shiina" data-idx="Shiina, Twin Tempests of Celestial Thunder">
     <summary><span class="cp cx-p" data-card="Shiina, Twin Tempests of Celestial Thunder" role="img" aria-label="Shiina, Twin Tempests of Celestial Thunder"><i style="background-image:url(img/s7.jpg);background-position:33.333% 71.429%"></i></span><span class="cx-n">Shiina, Twin Tempests of Celestial Thunder</span><span class="cx-c out">0</span><span class="cx-r">Returns every Spell/Trap, or every monster, on the field</span></summary>
-    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Shiina, Twin Tempests of Celestial Thunder" role="img" aria-label="Shiina, Twin Tempests of Celestial Thunder"><i style="background-image:url(img/s7.jpg);background-position:33.333% 71.429%"></i></span></div><p>WIND Level 9. From the hand when your opponent activates a card or effect while you control a WIND monster; it then returns every Spell and Trap on the field to the hand (if they activated one) or every face-up monster. For you it's mirror tech: take Maple Maiden (a WIND Fairy Synchro) off the Seneschal they give you. It returns your own Spells and Traps too, so it works best before you've built. Used against you: <a href="#tech-shiina">5</a>.</p></div>
+    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Shiina, Twin Tempests of Celestial Thunder" role="img" aria-label="Shiina, Twin Tempests of Celestial Thunder"><i style="background-image:url(img/s7.jpg);background-position:33.333% 71.429%"></i></span></div><p>WIND Level 9. From the hand when your opponent activates a card or effect while you control a WIND monster; it then returns every Spell and Trap on the field to the hand (if they activated one) or every face-up monster. For you it's mirror tech: take Maple Maiden (a WIND Fairy Synchro) off the Seneschal they give you. It returns your own Spells and Traps too, so it works best before you've built. Used against you: <a href="#tech-shiina">4</a>.</p></div>
   </details>
   <details class="cx" id="ht-retaliating" data-idx="Retaliating &quot;C&quot;">
     <summary><span class="cp cx-p" data-card="Retaliating &quot;C&quot;" role="img" aria-label="Retaliating &quot;C&quot;"><i style="background-image:url(img/s12.jpg);background-position:46.667% 0.000%"></i></span><span class="cx-n">Retaliating “C”</span><span class="cx-c out">0</span><span class="cx-r">Punishes Spells that summon, but hurts you more</span></summary>
@@ -1684,9 +1685,9 @@ details.fold[open]{padding-bottom:8px}
   <div class="grid2">
     <div class="panel"><h4>More Elfnote</h4><p>Ghost Ogre, Fuwalos, Nibiru and Veiler matter most; Droll is better after the list and Purulia is bad. Both Nibiru come in going 2nd; if Elfnote is most of your field, move them to the main.</p></div>
     <div class="panel"><h4>More ROLAD or Branded ROLAD</h4><p>Droll and your 2 Lava Golem go up (Golem Tributes Black Chaos), and Nibiru is better now that Dragoon is Forbidden. D.D. Crow if Black Chaos keeps landing.</p></div>
-    <div class="panel"><h4>More mirrors</h4><p>Ghost Ogre, Cosmic Cyclone and Verdict: your main already has 3 Ogre and no Nibiru or Droll. Going 1st Fuwalos, both Veilers and Endgame come out for 3 Thrust and 3 Cyclone (Brilliant Move stays even going first: it helps build a better board); going 2nd both Veilers, all 3 Spark and Terraforming. If it's most of your field: Pot of Sloth or Hey, Space Trunade! for a Lava Golem. The cards built for the mirror are in <a href="#techs">5</a>.</p></div>
+    <div class="panel"><h4>More mirrors</h4><p>Ghost Ogre, Cosmic Cyclone and Verdict: your main already has 3 Ogre and no Nibiru or Droll. Going 1st Fuwalos, both Veilers and Endgame come out for 3 Thrust and 3 Cyclone (Brilliant Move stays even going first: it helps build a better board); going 2nd both Veilers, all 3 Spark and Terraforming. If it's most of your field: Pot of Sloth or Hey, Space Trunade! for a Lava Golem. The cards built for the mirror are in <a href="#techs">4</a>.</p></div>
     <div class="panel"><h4>More Mitsurugi, Destiny HERO or Invoked</h4><p>All 3 Ghost Ogre come out; Droll, Nibiru and Lava Golem come in.</p></div>
-    <div class="panel"><h4>Opponents siding against you</h4><p>Lancea, Crow, Skull Meister and the rest, and how to play around them: <a href="#techs">5</a>.</p></div>
+    <div class="panel"><h4>Opponents siding against you</h4><p>Lancea, Crow, Skull Meister and the rest, and how to play around them: <a href="#techs">4</a>.</p></div>
     <div class="panel"><h4>Fewer search decks overall</h4><p>Droll and Purge lose value; Veiler, Ogre and Nibiru gain it, and Nibiru and Ogre become worth more than Impulse and Spark.</p></div>
   </div>
   </details>
@@ -1704,7 +1705,7 @@ details.fold[open]{padding-bottom:8px}
   <h3>What makes it unfair</h3>
   <div class="grid2">
     <div class="panel"><h4>1 · The engine dodges hand traps</h4><p>Your starters are Extra Deck summons and <b>placements</b>, not searches or monsters on the field. Veiler, Imperm and Nibiru have nothing to hit. Ash and Droll only hit the searches. Ghost Ogre destroys a placed piece, but its effect still resolves. Only <b>Dominus Impulse</b> stops Opposition, Problem and e4. <a href="#lines">The full table</a>.</p></div>
-    <div class="panel"><h4>2 · 23 interruptions and a board</h4><p>3 Ash, 3 Ghost Ogre, 2 Effect Veiler, 3 Fuwalos, 9 Dominus Traps and 3 Opening to e4: 78% to open 3+ going second, 85–88% after most siding plans. Most decks choose between hand traps and engine. Your Dominus are Set going first and used from the hand going second, and e4 is a hand trap that also builds your board during their Standby Phase.</p></div>
+    <div class="panel"><h4>2 · 23 interruptions and a board</h4><p>3 Ash, 3 Ghost Ogre, 2 Effect Veiler, 3 Fuwalos, 9 Dominus Traps and 3 Opening to e4: 78% to open 3+ going second, 82–85% after most siding plans. Most decks choose between hand traps and engine. Your Dominus are Set going first and used from the hand going second, and e4 is a hand trap that also builds your board during their Standby Phase.</p></div>
     <div class="panel"><h4>3 · Floodgates that sit in your backrow</h4><p><b>Shatranga</b>: they can attempt only 5 monster effects a turn. <b>Castellan</b>: one card or effect per Chain. <b>Destrier</b>: 500 damage every time they activate anything. <b>Bastion</b>: your other Angelechy cards can't be destroyed. <b>Endgame</b>: you choose where they summon, and you banish their summon at 4 placed.</p></div>
     <div class="panel"><h4>4 · Two ways to break a board</h4><p><b>Verdict</b> at 5+ Angelechy Monster Cards banishes everything they control, without targeting, on their turn. On yours, <b>Kusanagi</b> attacks every monster with 7,000 ATK and pierces, and <b>Black-Winged Assault Dragon</b> burns 700 per monster effect.</p></div>
   </div>
@@ -1902,7 +1903,7 @@ details.fold[open]{padding-bottom:8px}
     <li><b>Bounce and banish</b> (Hey, Space Trunade!, Black Chaos, Mirrorjade, Cosmic Cyclone) ignore Bastion. Opposition's GY effect shuffles banished pieces back so you can place them again.</li>
     <li><b>Typhoon from their hand</b> needs them to control no Spells/Traps and you to control 2+. Against you that's always true, so expect it.</li>
     <li><b>Your Cosmic Cyclone</b> is a Quick-Play Spell: from the hand it only works on your own turn, so Set it going 1st. It banishes, so it gets past their Bastion, and it hits Set cards like their Verdict.</li>
-    <li><b>The cards built against you</b> (Lancea, D.D. Crow, Skull Meister, Ghost Belle, Shiina off your Seneschal, Transaction Rollback…) and how to play around them: <a href="#techs">5 · Playing around the new tech</a>.</li>
+    <li><b>The cards built against you</b> (Lancea, D.D. Crow, Skull Meister, Ghost Belle, Shiina off your Seneschal, Transaction Rollback…) and how to play around them: <a href="#techs">4 · Playing around the new tech</a>.</li>
   </ul>
 
 </section>
@@ -1974,40 +1975,10 @@ details.fold[open]{padding-bottom:8px}
   </div>
 </section>
 
-<section id="postban">
-  <div class="sec-head">
-    <div class="eyebrow">4 · After the October 19 list</div>
-    <h2>4.1 What the list changed</h2>
-  </div>
-  <p class="prose">An emergency Forbidden &amp; Limited list took effect on <b>October 19, 2026</b>: <b>34 cards Forbidden, 8 Limited and 1 Semi-Limited</b>. This chapter is what the list did to each deck, the field it leaves and the non-engine that fits that field. The rest of the guide, your list in <a href="#decklist">1.2</a> included, already reflects it.</p>
-  <div class="grid2">
-    <div class="panel"><h4>What Angelechy lost</h4>
-      <p>Nothing from the 40 it mains. Opening to e4 wasn't touched. The side lost <b>Triple Tactics Talent</b>, <b>Called by the Grave</b> and <b>Crossout Designator</b> (all Forbidden), and <b>Droll &amp; Lock Bird</b> is Limited to one.</p></div>
-    <div class="panel"><h4>What it lost against it</h4>
-      <p>The Spell floodgates people sided against you are Forbidden: <b>Anti-Spell Fragrance</b>, <b>Spell Canceller</b>, <b>Naturia Beast</b> and <b>Secret Village of the Spellcasters</b>. So are both Elfnote hand rips (Tinia, Gottoms) that took your e4, and the Dragoon that negated it. Mistaken Arrest and Lancea are still legal.</p></div>
-  </div>
-  <h3>The list, by the deck it hit</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Deck</th><th>Forbidden</th><th>Limited / Semi-Limited</th></tr></thead>
-    <tbody>
-      <tr><td><b>Elfnote / Medius</b></td><td>Elfnote Tinia, Crystal Wing Synchro Dragon, F.A. Dawn Dragster, XX-Saber Gottoms</td><td>—</td></tr>
-      <tr><td><b>ROLAD pile</b> (Dark Magician, Azamina, Mitsurugi)</td><td>Red-Eyes Dark Dragoon, Magicians' Souls, Azamina Ilia Silvia, Ame no Habakiri no Mitsurugi, Zenna's Deceiving Doll Maidens, Cross-Sheep, Charmer Quartet in Bloom</td><td>Griffoh (1)</td></tr>
-      <tr><td><b>Branded</b></td><td>Albion the Branded Dragon</td><td>Branded Opening, Branded in High Spirits (1)</td></tr>
-      <tr><td><b>Power Patron</b></td><td>Varudras, the Final Bringer of the End Times</td><td>—</td></tr>
-      <tr><td><b>Yummy</b></td><td>Cupsy★Yummy Way</td><td>—</td></tr>
-      <tr><td><b>Sky Striker</b></td><td>—</td><td>Sky Striker Mobilize - Engage! (2)</td></tr>
-      <tr><td><b>Rank 4 / Link toolbox</b></td><td>Number 41: Bagooska the Terribly Tired Tapir, Number 60: Dugares the Timeless, Saryuja Skull Dread, Beelze of the Diabolic Dragons, Trishula, Dragon of the Ice Barrier, D/D/D Wave High King Caesar, Aerial Eater</td><td>Superdreadnought Rail Cannon Gustav Max, Perfectron Hydradrive Dragon (1)</td></tr>
-      <tr><td><b>Floodgates</b></td><td>Anti-Spell Fragrance, Spell Canceller, Naturia Beast, Secret Village of the Spellcasters, Gozen Match, Rivalry of Warlords, There Can Be Only One, Amorphage Goliath, Amorphage Sloth, Pharaonic Advent</td><td>—</td></tr>
-      <tr><td><b>Generic</b></td><td>Called by the Grave, Crossout Designator, Triple Tactics Talent</td><td>Droll &amp; Lock Bird (1)</td></tr>
-      <tr><td><b>Toons</b></td><td>—</td><td>Toon Bookmark, Toon Table of Contents (1)</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
 <section id="techs">
   <div class="sec-head">
-    <div class="eyebrow">5 · Playing around the new tech</div>
-    <h2>5.1 The cards people found for Angelechy, and how to beat them</h2>
+    <div class="eyebrow">4 · Playing around the new tech</div>
+    <h2>4.1 The cards people found for Angelechy, and how to beat them</h2>
   </div>
   <p class="prose">Since the October 19 list, players have built tech around Angelechy's habits: the Seneschal you hand over, the board you keep in your Spell &amp; Trap Zone, the Verdict sitting in your GY and Kusanagi as your finisher. This chapter takes each card, what it does to you and how to play around it.</p>
   <nav class="jump" aria-label="On this page">
@@ -2259,7 +2230,7 @@ details.fold[open]{padding-bottom:8px}
 <p>The list took Tinia, Crystal Wing, Dawn Dragster and Gottoms: no hand rip any more. Post-list builds still end on about 12 interruptions from one card: Number 90, Junoldo, June Pride, Regina, Strelitzia, the Elfnote trap and Theorealized Medius, with <b>Crystal Clear Wing Synchro Dragon</b> in Crystal Wing's old slot. Other builds add Adamancipator Dragon Rite. They play the Power Patron engine harder and avoid lines that walk into Nibiru.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Lucina's search (their first action)</td><td>Ash, Purge, Ghost Ogre</td><td>Droll after their first search stops the rest.</td></tr><tr><td>Power Patron / Purification / Theorealized Medius / Medius / Ars Magna searches</td><td>Ash, Purge; Droll only paired with Veiler</td><td>Let them search once, then Droll.</td></tr><tr><td>Past Lull summoning Medius from the Deck</td><td>Ash or Impulse on the activation</td><td>The summon itself can't be responded to.</td></tr><tr><td>Regina / Welcome Home summoning from the Deck</td><td>Ash, Impulse; Ghost Ogre on Welcome Home</td><td></td></tr><tr><td>Every Extra Deck summon</td><td>Fuwalos</td><td>Your best card in this matchup.</td></tr><tr><td>The 5th summon (Ars Magna / Lucina routes)</td><td>Nibiru</td><td>Nibiru and Ghost Ogre are your MVPs here.</td></tr></tbody></table></div>
-    <div class="panel"><h4>What they do to you</h4><p>Their answers to your board are <b>negation and banishing</b> (Number 90, Mediclius, Theorealized Medius, the Elfnote trap). Their hand rips (Gottoms, Tinia) are Forbidden now, so holding e4 for your own turn is safer than it was. Seneschal on their field clogs a zone they can't Link or Xyz off. <b>They side:</b> Ghost Ogre, Typhoon, Hey, Space Trunade! (bounces placed cards), Feather Duster, Lightning Storm, Evenly Matched. <b>Seneschal tech:</b> they turn the Seneschal you give them into Pluto and Psychic End Punisher, and sides 3 Skull Meister against you; how to play around both: <a href="#techs">5</a>.</p></div>
+    <div class="panel"><h4>What they do to you</h4><p>Their answers to your board are <b>negation and banishing</b> (Number 90, Mediclius, Theorealized Medius, the Elfnote trap). Their hand rips (Gottoms, Tinia) are Forbidden now, so holding e4 for your own turn is safer than it was. Seneschal on their field clogs a zone they can't Link or Xyz off. <b>They side:</b> Ghost Ogre, Typhoon, Hey, Space Trunade! (bounces placed cards), Feather Duster, Lightning Storm, Evenly Matched. <b>Seneschal tech:</b> they turn the Seneschal you give them into Pluto and Psychic End Punisher, and sides 3 Skull Meister against you; how to play around both: <a href="#techs">4</a>.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder is at its best: their line is roughly 25 monster effects, and their only ways around it without spending an effect are summon procedures (a normal Synchro or Link). Set Impulse stops Past Lull and Welcome Home; Purge stops Terminus and the Ars Magna searches; Verdict negates what's left. Castellan placed stops them chaining Regina responses. Attack over Boarder isn't a worry: with Boarder out you've normally already won. Opposition: put Seneschal in their <b>center</b> Main Monster Zone — Regina only summons from the Deck from the center, so that blanks her for most of the turn. <b>Keep Endgame Problem in</b> going first: with 2+ pieces placed you choose where they Special Summon (put Regina outside the center), and at 4+ it banishes their key summon.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−2 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></div></div></div>
   <div class="mu-pane" data-tab="Going 2nd"><p>Stop the combo first. Fuwalos in their Draw Phase when you hold e4 (before your own e4 at their Standby), Ghost Ogre on Lucina or Welcome Home, Nibiru when the 5th summon comes, Ash/Veiler on the key searches, and Dominus from hand last. Droll is better after the list: use it once they've searched once. If the board resolves, your outs are Verdict at 5+, which banishes without targeting, and <b>Lava Golem</b>: their post-list board is weaker, and Golem Tributes two of what's left (Junoldo's Synchro, Number 90) without targeting. With Endgame at 2+ placed you choose their summon zones: put Regina outside the center and her Deck summon can't activate. With Castellan placed, a Nibiru you activate in a Chain they started can't be answered. Spark is live: Elfnote activates monster effects in the hand and GY all the time. Use it after Ash and Fuwalos and once a Trap is in your GY. Going 2nd, every Impulse comes from your hand and locks Ogre, Nibiru, Veiler and Fuwalos: use it last.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
@@ -2284,7 +2255,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="panel"><h4>What they do to you</h4><p><b>Black Chaos</b> banishes 2 of your cards a turn and ignores your activated effects while a Ritual Spell is in their GY, which can make it impossible to interact with. <b>Spell Shattering Sword</b> (via Griffoh) destroys your face-up Spells — only Bastion dies if Bastion is placed. They main <b>Impulse</b> (for your Opposition) and Droll, and Dark Charmer can crash into your attack-position Synchros. <b>They side:</b> Ghost Ogre ×3, Nibiru, Kuriboh - Multiply!, Lava Golem, Imperm, Pot of Sloth, Super Starslayer TY-PHON.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder is weakest here: Spells get them to a Ritual or Fusion card type and their first effect can remove Boarder, so pair it with a Set Impulse for the Ritual Spell, Curtain or Gaze. Droll shines here: their Ritual Spells give them a card type early, so it works under Boarder, and Black Chaos ignores Veiler. Keep a Set Impulse for the Ritual Spell or Curtain. Summon Destrier in Defense Position against Dark Charmer.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></div></div></div>
-  <div class="mu-pane" data-tab="Going 2nd"><p>Interrupt early: Fuwalos at Standby, then Ash/Droll on Griffoh, Ragged Records or Curtain, Ghost Ogre on Mind Shuffle, Impulse on the Ritual Spell. If Black Chaos still lands, Lava Golem Tributes it (it doesn't target and isn't an activated effect, so Black Chaos can't stop it). Or plan a Kusanagi turn: <b>Brilliant Move</b> (in your main) is the other way through: after your Standby e4 it turns the placed Destrier back into a monster for Kusanagi.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
+  <div class="mu-pane" data-tab="Going 2nd"><p>Interrupt early: Fuwalos at Standby, then Ash/Droll on Griffoh, Ragged Records or Curtain, Ghost Ogre on Mind Shuffle, Impulse on the Ritual Spell. If Black Chaos still lands, Lava Golem Tributes it (it doesn't target and isn't an activated effect, so Black Chaos can't stop it). Or plan a Kusanagi turn: <b>Brilliant Move</b> (in your main) is the other way through: after your Standby e4 it turns the placed Destrier back into a monster for Kusanagi.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
 
@@ -2304,7 +2275,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="panel"><h4>What they do to you</h4><p>Banish-based removal (Black Chaos ×2 a turn, Magician of Dark Chaos, BLS, Mirrorjade) ignores Bastion; Opposition's GY effect brings banished Angelechys back. <b>Harmonia</b> answers your on-field monster effects (Enlisted, Shatranga, Castellan). <b>They side:</b> Ghost Ogre, Lava Golem, Mistaken Arrest, Evenly Matched, Heat Wave, Nibiru.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder: their Ritual Monster and first Fusion each add a card type → 1–2 effects. Keep Verdict for the Fusion or Ritual piece (not Black Chaos, which ignores it). Keep Bastion placed for Fallen &amp; Virtuous.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></div></div></div>
-  <div class="mu-pane" data-tab="Going 2nd"><p>Hit Ragged Records or the White Dragon line first. Lava Golem is your answer to Black Chaos or Mirrorjade: it Tributes two of their monsters without targeting. If Black Chaos lands, its 3,000 ATK loses to Kusanagi. <b>Brilliant Move</b> (in your main) is the other way through: after your Standby e4 it turns the placed Destrier back into a monster for Kusanagi.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
+  <div class="mu-pane" data-tab="Going 2nd"><p>Hit Ragged Records or the White Dragon line first. Lava Golem is your answer to Black Chaos or Mirrorjade: it Tributes two of their monsters without targeting. If Black Chaos lands, its 3,000 ATK loses to Kusanagi. <b>Brilliant Move</b> (in your main) is the other way through: after your Standby e4 it turns the placed Destrier back into a monster for Kusanagi.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
 
@@ -2321,10 +2292,10 @@ details.fold[open]{padding-bottom:8px}
   <div class="mu-pane" data-tab="Their plan"><p>Pendulum Power Patrons (Nervedo, Jupredo, Junoldo, Vidolium) are added face-up to the Extra Deck by Pendulum Treasure, Shade and Terminus and trigger there. Medius searches or summons; they climb to Jupiter and Nerva (board wipe); Varudras is Forbidden. Artmage adds Non-Finito, Diactorus and Recapture; the Ars Magna package runs through Theorealized Medius.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Medius's search/summon, Jupredo's add, Terminus, Ars Magna searches</td><td>Ash, Droll, Purge</td><td></td></tr><tr><td>Nervedo summoning from the Deck</td><td>Ash, Impulse</td><td></td></tr><tr><td>Past Lull, Vidolium's Pendulum summon, Theorealized Medius, Ars Magna returning from banishment</td><td>Impulse</td><td>Impulse also destroys Theorealized Medius when a Trap is in your GY.</td></tr><tr><td>Junoldo → negate-all Synchro</td><td>Verdict (negate Junoldo), Spark, Ghost Ogre</td><td>Their main out to your board.</td></tr><tr><td>Pendulum Treasure</td><td>No common hand trap</td><td>Hit the next step.</td></tr><tr><td>Whole turn</td><td>Fuwalos, Nibiru</td><td></td></tr></tbody></table></div>
-    <div class="panel"><h4>What they do to you</h4><p>Their outs are <b>negation and banishing</b> (Junoldo's Synchro, Theorealized Medius, Mediclius, Corruption), not destruction, so Bastion helps less. They play a negate Trap and Gallant Bandit against Problem. <b>They side:</b> Protector of the Sanctuary going 1st, Ghost Ogre, Typhoon. <b>Post-list:</b> Artmage builds play board breakers into you (Pot of Sloth into Magical Spring, Hey, Space Trunade!) and 3 Kuriboh – Multiply!; how to play around them: <a href="#techs">5</a>.</p></div>
+    <div class="panel"><h4>What they do to you</h4><p>Their outs are <b>negation and banishing</b> (Junoldo's Synchro, Theorealized Medius, Mediclius, Corruption), not destruction, so Bastion helps less. They play a negate Trap and Gallant Bandit against Problem. <b>They side:</b> Protector of the Sanctuary going 1st, Ghost Ogre, Typhoon. <b>Post-list:</b> Artmage builds play board breakers into you (Pot of Sloth into Magical Spring, Hey, Space Trunade!) and 3 Kuriboh – Multiply!; how to play around them: <a href="#techs">4</a>.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder: their opening is mostly monster effects; their routes around it are summon procedures (Non-Finito, a Link-2, a Rank 10). Opposition → Destrier placement (search a Spell), not Bastion first. Centur-Ion Legatia (Enlisted + a Level 10) draws and pops, and stops your ≤2,000-ATK monsters dying in battle.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></div></div></div>
-  <div class="mu-pane" data-tab="Going 2nd"><p>The Standby e4 loop (see Lines) beat them twice. Purge their Medius, Impulse Theorealized Medius, and keep Verdict for Junoldo. Fuwalos and Droll are your best hand traps here.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
+  <div class="mu-pane" data-tab="Going 2nd"><p>The Standby e4 loop (see Lines) beat them twice. Purge their Medius, Impulse Theorealized Medius, and keep Verdict for Junoldo. Fuwalos and Droll are your best hand traps here.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
 
@@ -2341,7 +2312,7 @@ details.fold[open]{padding-bottom:8px}
   <div class="mu-pane" data-tab="Their plan"><p>They do what you do: e4 at your Standby (Castellan → Verdict → Bastion → Shatranga → e4 → Destrier), or Opposition and Problem with Verdict Set on turn 1. About a third of players run Songs of the Dominators; some run Chaospawn Bishop / Witness, which loses to hand traps.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Strategy Score · Destrier · Shatranga · Disturbance searches</td><td>Ash, Purge</td><td>Droll is weak: Shatranga adds Traps from the GY, Opposition recycles.</td></tr><tr><td>Opening to e4 · Opposition · Problem · Brilliant Move</td><td>Impulse</td><td></td></tr><tr><td>Castellan's Deck send</td><td>Ash, Ghost Ogre</td><td>Stops the whole double-e4 loop.</td></tr><tr><td>Bastion, then everything else</td><td>Cosmic Cyclone (it banishes) or Ghost Ogre on Bastion first</td><td>Cyclone also takes a Set Verdict or Transaction Rollback.</td></tr><tr><td>Bishop / Enlisted / Castellan monster effects</td><td>Songs, Spiral, Veiler</td><td>Their monster effects do happen on the field in the mirror.</td></tr></tbody></table></div>
-    <div class="panel"><h4>What they do to you</h4><p>Everyone sides <b>Typhoon</b>. If you give them Seneschal it raises their Verdict count too. If they used Impulse from hand, the Enlisted you pass them can't activate its return effect, so it stays on their field. <b>Mirror tech:</b> Maple Maiden + Shiina off the Seneschal you give them, Crystron Phoenix, Cosmic Cyclone, Transaction Rollback copying the Verdict in your GY, and Majestic Star Dragon through Crimson Dragon. What each does and how to play around it: <a href="#techs">5</a>.</p></div>
+    <div class="panel"><h4>What they do to you</h4><p>Everyone sides <b>Typhoon</b>. If you give them Seneschal it raises their Verdict count too. If they used Impulse from hand, the Enlisted you pass them can't activate its return effect, so it stays on their field. <b>Mirror tech:</b> Maple Maiden + Shiina off the Seneschal you give them, Crystron Phoenix, Cosmic Cyclone, Transaction Rollback copying the Verdict in your GY, and Majestic Star Dragon through Crimson Dragon. What each does and how to play around it: <a href="#techs">4</a>.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>No Boarder: their engine barely uses monster effects and their e4 puts a Synchro on the field before you could summon Boarder. Ghost Ogre is your best card: hit the first thing they place. Set your Cosmic Cyclones: from the hand they only work on your own turn. Brilliant Move stays in, even going first: it helps build a better board.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></div></div></div>
   <div class="mu-pane" data-tab="Going 2nd"><p>Ghost Ogre Castellan, Problem or Bastion when it activates, and keep Impulse for Opposition. Veiler is mostly dead (their engine is Spells and Traps). On your first turn, Cosmic Cyclone their Set Verdict or their Bastion before you commit. Spark from your hand only works on a turn they've activated a monster effect in the hand or GY, and their first turn runs on Spells, Traps and placed cards, so it's usually live only after they've hand-trapped your Standby e4. Thrust is live instead: when your Opposition gives them Seneschal, its mandatory trigger is a monster effect <em>they</em> activate, so Thrust turns on without needing their hand trap and adds Opposition or Strategy Score (Seneschal is a monster they control). Moving your Enlisted to their field turns it on the same way. It stays off if they used Purge from hand (no DARK effects, so Seneschal can't activate) or Impulse from hand (no LIGHT effects, so Enlisted can't).</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−2 Effect Veiler</span><span class="chip out">−3 Spark</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></div></div></div>
@@ -2401,7 +2372,7 @@ details.fold[open]{padding-bottom:8px}
   <div class="mu-pane" data-tab="Their plan"><p>Fairy Tail - Luna searches on Normal Summon; Matchgiru summons itself, searches and pays 500 to rename your monster “Prince of Fairies”; Fairy Tail Ball searches and negates/renames when you Special Summon. <b>Teller of Fairy Tails</b> (Fusion using a Prince of Fairies) destroys all your cards and burns; Tails of the Fairy Tails uses your renamed monster as material. The Invoked splash adds Mechaba and Hyperinvoked Aeon.</p></div>
   <div class="mu-pane" data-tab="Chokepoints">
     <div class="tbl"><table><thead><tr><th>Their step</th><th>Stopped by</th><th>Notes</th></tr></thead><tbody><tr><td>Luna, Matchgiru, Regulus, Spenta, Fairy Tail Ball searches</td><td>Ash, Droll, Purge</td><td></td></tr><tr><td>Luna / Matchgiru / Aleister on the field</td><td>Veiler, Ghost Ogre, Imperm</td><td></td></tr><tr><td>Fairy Tail Ball's negate trigger</td><td>Ghost Ogre</td><td></td></tr><tr><td>Lacrima SS, Once Upon a Fairy Tail, Weaver, Invocation</td><td>Impulse</td><td></td></tr><tr><td>Fusions/Links from the Extra Deck; Spellcasters from hand</td><td>Fuwalos; Purulia</td><td></td></tr></tbody></table></div>
-    <div class="panel"><h4>What they do to you</h4><p>Hyperinvoked Aeon banishes from the field/GY and up to 3 cards from your Extra Deck, so the 2nd copies of key Synchros matter. Luna's bounce can be stopped by sending a same-name card from your Deck/Extra Deck. <b>Fairy Tail - Snow</b> flips your Kusanagi face-down and comes back from the GY; how to play around it: <a href="#tech-finish">5</a>. They can also search Droll.</p></div>
+    <div class="panel"><h4>What they do to you</h4><p>Hyperinvoked Aeon banishes from the field/GY and up to 3 cards from your Extra Deck, so the 2nd copies of key Synchros matter. Luna's bounce can be stopped by sending a same-name card from your Deck/Extra Deck. <b>Fairy Tail - Snow</b> flips your Kusanagi face-down and comes back from the GY; how to play around it: <a href="#tech-finish">4</a>. They can also search Droll.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder: Instant Fusion, Invocation and Tails are Spells, so they reach 1–2 effects. Verdict answers Mechaba or Teller.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></div></div></div>
   <div class="mu-pane" data-tab="Going 2nd"><p>Cut the searchers early; Ogre and Veiler are both live here, and <b>Lava Golem</b> Tributes two of their monsters if a board resolves. Have Bastion placed before you commit if Teller is possible.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
@@ -2424,7 +2395,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="panel"><h4>What they do to you</h4><p>Exposed to their destruction: Bastion itself, Boarder and every Set card (face-down cards have no name, so Bastion doesn't cover a Set Verdict either). <b>Thunder Dragon Colossus</b> stops Strategy Score, Destrier/Shatranga adds and Disturbance's search. Whisker and Crackle punish on-field monster effects.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder is close to a lock: every Thunder is a main-deck Effect Monster, so at 0 card types they can't reveal. Their outs are Breakaway and Fallen &amp; Virtuous (Quick-Play Spells) destroying Boarder.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></div></div></div>
-  <div class="mu-pane" data-tab="Going 2nd"><p>Against pure Blitzclique, Fuwalos is dead: every reveal effect summons from the hand and then stops them summoning Effect Monsters any other way that turn, and their full Extra Deck is Pot of Extravagance fodder. Veiler can't reach effects in the hand either. <b>Ryzeal Blitzclique</b> is different: Ice Ryzeal summons from the Deck and they Xyz Summon Rank 4s (Ryzeal Detonator, Exciton Knight; Bagooska is Forbidden), so Fuwalos draws there; check their Extra Deck after game 1. Impulse is your best card; Spark is live all game, Ogre hits Hideout/Alternator on their turn, and on your turn Cosmic Cyclone banishes Hideout or a Set Breakaway before you build.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Cosmic Cyclone</span></div></div></div>
+  <div class="mu-pane" data-tab="Going 2nd"><p>Against pure Blitzclique, Fuwalos is dead: every reveal effect summons from the hand and then stops them summoning Effect Monsters any other way that turn, and their full Extra Deck is Pot of Extravagance fodder. Veiler can't reach effects in the hand either. <b>Ryzeal Blitzclique</b> is different: Ice Ryzeal summons from the Deck and they Xyz Summon Rank 4s (Ryzeal Detonator, Exciton Knight; Bagooska is Forbidden), so Fuwalos draws there; check their Extra Deck after game 1. Impulse is your best card; Spark is live all game, Ogre hits Hideout/Alternator on their turn, and on your turn Cosmic Cyclone banishes Hideout or a Set Breakaway before you build. Both <b>Lava Golem</b> come in too: they Tribute Thunder Dragon Colossus or Psychic End Punisher without targeting.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Cosmic Cyclone</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
 
@@ -2564,7 +2535,7 @@ details.fold[open]{padding-bottom:8px}
     <div class="panel"><h4>What they do to you</h4><p>Aeon and Sacred Spirit Sword hit your Extra Deck (play the 2nd copies of key Synchros). Their removal is banish and flipping face-down. Mechaba can't negate a Trap unless they discard a Trap.</p></div>
   </div>
   <div class="mu-pane" data-tab="Going 1st"><p>Boarder only slows them: each Fusion (from a Spell) adds a card type. Expect 1–2 effects and a Mechaba; Verdict answers it.</p><div class="side-card"><div class="lbl">Siding going 1st</div><div><span class="chip out">−3 Fuwalos</span><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span></div></div></div>
-  <div class="mu-pane" data-tab="Going 2nd"><p>Droll and Ash on the searches are cleanest; Veiler on Aleister; Lava Golem for a Mechaba board.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
+  <div class="mu-pane" data-tab="Going 2nd"><p>Droll and Ash on the searches are cleanest; Veiler on Aleister; Lava Golem for a Mechaba board.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−2 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
 
@@ -2607,6 +2578,80 @@ details.fold[open]{padding-bottom:8px}
   <div class="mu-pane" data-tab="Going 2nd"><p>Impulse Gold Leo's line or the first Fusion; Droll, Veiler and Ogre are live, and Lava Golem Tributes Liger Dancer. If Liger Dancer keeps landing, <b>Brilliant Move</b> (in your main) turns the placed Destrier back into a monster after your Standby e4, for Kusanagi.</p><div class="side-card"><div class="lbl">Siding going 2nd</div><div><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></div></div></div>
   
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4718,7 +4763,7 @@ details.fold[open]{padding-bottom:8px}
   <strong>The theory behind this 41</strong>
   <ul class="tight">
     <li><b>13 starters</b>: 3 Strategy Score, 3 Opposition, 3 Problem, 3 Foolish Burial Goods and Terraforming. 86.9% to see one in 5 cards; by the guide's rules the hand has a play 86.7% of the time and a play that survives one hand trap 53.7% (<a href="#sim">Deckbuilder</a>).</li>
-    <li><b>23 interruptions</b>: 78% to open 3+ going second; much more and the main starts to brick. Most siding plans take you to 25–26 (85–88%). The monster hand traps are built for the mirror: 3 Ash, 3 Ghost Ogre, 2 Veiler and 3 Fuwalos, with Nibiru, Droll and a 3rd Veiler in the side.</li>
+    <li><b>23 interruptions</b>: 78% to open 3+ going second; much more and the main starts to brick. Most siding plans take you to 24–25 (82–85%). The monster hand traps are built for the mirror: 3 Ash, 3 Ghost Ogre, 2 Veiler and 3 Fuwalos, with Nibiru, Droll and a 3rd Veiler in the side.</li>
     <li><b>Low counts the engine fetches</b>: 2 Verdict, 1 Disturbance and 1 Endgame. Shatranga, Castellan, Foolish Burial Goods and e4 find them, and Opposition shuffles spent copies back.</li>
     <li><b>Why 41 cards:</b> the 2nd Verdict. There are lines that work with just one, so running 2 is your choice; 40 cards with one Verdict is probably better (each extra card costs about 1% of going-1st hands with a starter).</li>
     <li><b>Brilliant Move</b> is the one engine card that isn't a starter: going 2nd it turns a placed Destrier into Kusanagi after a Standby e4, and going 1st it's the first card out, unless in the mirror: there it stays even going first, because it helps build a better board.</li>
@@ -4797,7 +4842,7 @@ details.fold[open]{padding-bottom:8px}
     <h4>Your templates</h4>
     <ul class="tight">
       <li><b>Going 1st:</b> −3 Fuwalos, −1 Endgame, −1 Brilliant Move, −1 Opening to e4 → +3 Boarder, +3 Thrust. Against Elfnote, Endgame stays and a 2nd e4 goes. In the mirror there's no Boarder and Brilliant Move stays.</li>
-      <li><b>Going 2nd:</b> bring in only the side cards that matter in the matchup. Lava Golems come in as a pair, for a Verdict and a Spark; make room for the rest with Terraforming first, then Foolish Burial Goods. Never cut Opposition, Disturbance, Endgame, e4, Brilliant Move or your last Verdict.</li>
+      <li><b>Going 2nd:</b> bring in only the side cards that matter in the matchup. Lava Golems come in as a pair, for a Verdict and a Spark (an engine card instead of the Spark against Power Patron and Blitzclique, where Spark is one of your best cards); make room for the rest with Terraforming first, then Foolish Burial Goods. Never cut Opposition, Disturbance, Endgame, e4, Brilliant Move or your last Verdict.</li>
       <li><b>Bad in the matchup, out first:</b> Ghost Ogre (Mitsurugi, Destiny HERO, Invoked), Veiler (mirror, Blitzclique), Fuwalos (Blitzclique), Spark (Dark Time Wizard, Sky Striker, mirror).</li>
       <li><b>Order on their turn:</b> Fuwalos, then Ash and Droll, then Spark or Purge, then Ogre, Veiler and Nibiru, and Impulse last.</li>
     </ul>
@@ -4805,7 +4850,7 @@ details.fold[open]{padding-bottom:8px}
   </div>
 <p class="prose note">Going second, the planner also shows your interruptions and the odds to open 3+; the full odds are on <a href="#plays">Odds</a>.</p>
   
-  <p class="prose note">What opponents side against you, and how to play around it: <a href="#techs">5 · Playing around the new tech</a>.</p>
+  <p class="prose note">What opponents side against you, and how to play around it: <a href="#techs">4 · Playing around the new tech</a>.</p>
 
   <!-- siding data: hidden; the planner, the deep dives and the deckbuilder presets read their swaps from these rows -->
   <div class="tbl" id="side-data" hidden><table>
@@ -4813,18 +4858,18 @@ details.fold[open]{padding-bottom:8px}
     <tbody>
       <tr data-mu="mirror"><td class="num">1</td><td><b>Angelechy mirror</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></td><td><span class="chip out">−2 Effect Veiler</span><span class="chip out">−3 Spark</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+3 Cosmic Cyclone</span></td><td class="num">18 · 54%</td></tr>
       <tr data-mu="elfnote"><td class="num">2</td><td><b>Elfnote Ars Magna</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−2 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">25 · 85%</td></tr>
-      <tr data-mu="patron"><td class="num">3</td><td><b>Ars Magna Power Patron / Artmage</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
+      <tr data-mu="patron"><td class="num">3</td><td><b>Ars Magna Power Patron / Artmage</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">25 · 85%</td></tr>
       <tr data-mu="skystriker"><td class="num">4</td><td><b>Sky Striker</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−3 Spark</span><br><span class="chip in">+1 Droll</span><span class="chip in">+2 Cosmic Cyclone</span></td><td class="num">21 · 69%</td></tr>
       <tr data-mu="maliss"><td class="num">5</td><td><b>Maliss</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">25 · 85%</td></tr>
       <tr data-mu="dhero"><td class="num">6</td><td><b>Destiny HERO (Beyond the Brave)</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span><span class="chip in">+1 Cosmic Cyclone</span></td><td><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">22 · 74%</td></tr>
-      <tr data-mu="invoked"><td class="num">7</td><td><b>Invoked</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">22 · 74%</td></tr>
+      <tr data-mu="invoked"><td class="num">7</td><td><b>Invoked</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−2 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">22 · 74%</td></tr>
       <tr data-mu="fairytail"><td class="num">8</td><td><b>Fairy Tail (Verre)</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
-      <tr data-mu="rolad"><td class="num">9</td><td><b>ROLAD pile</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">23 · 78%</td></tr>
-      <tr data-mu="branded-rolad"><td class="num">10</td><td><b>Branded ROLAD</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">23 · 78%</td></tr>
+      <tr data-mu="rolad"><td class="num">9</td><td><b>ROLAD pile</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
+      <tr data-mu="branded-rolad"><td class="num">10</td><td><b>Branded ROLAD</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
       <tr data-mu="branded"><td class="num">11</td><td><b>Branded (Dracotail / pure)</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">25 · 85%</td></tr>
       <tr data-mu="sacredbeast"><td class="num">12</td><td><b>Sacred Beast</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
       <tr data-mu="yummy"><td class="num">13</td><td><b>Yummy ROLAD</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−2 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">25 · 85%</td></tr>
-      <tr data-mu="blitz"><td class="num">14</td><td><b>Blitzclique</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Cosmic Cyclone</span></td><td class="num">21 · 69%</td></tr>
+      <tr data-mu="blitz"><td class="num">14</td><td><b>Blitzclique</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−2 Effect Veiler</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+2 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Cosmic Cyclone</span><span class="chip in">+2 Lava Golem</span></td><td class="num">21 · 69%</td></tr>
       <tr data-mu="lunalight"><td class="num">15</td><td><b>Lunalight</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><span class="chip out">−1 Foolish Burial Goods</span><span class="chip out">−1 Terraforming</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">24 · 82%</td></tr>
       <tr data-mu="dtw"><td class="num">16</td><td><b>Dark Time Wizard (Joey)</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><span class="chip out">−1 Opening to e4</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span></td><td><span class="chip out">−3 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">22 · 74%</td></tr>
       <tr data-mu="mitsurugi"><td class="num">17</td><td><b>Mitsurugi</b></td><td><span class="chip out">−3 Fuwalos</span><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Endgame Problem</span><span class="chip out">−1 Brilliant Move</span><br><span class="chip in">+3 Inspector Boarder</span><span class="chip in">+3 Triple Tactics Thrust</span><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Droll</span></td><td><span class="chip out">−3 Ghost Ogre</span><span class="chip out">−1 Spark</span><span class="chip out">−1 Verdict</span><br><span class="chip in">+1 Effect Veiler</span><span class="chip in">+1 Nibiru</span><span class="chip in">+1 Droll</span><span class="chip in">+2 Lava Golem</span></td><td class="num">22 · 74%</td></tr>
@@ -4850,7 +4895,7 @@ details.fold[open]{padding-bottom:8px}
     <thead><tr><th>Going 2nd</th><th class="num">3+ interruptions</th><th class="num">A starter</th><th class="num">Both</th></tr></thead>
     <tbody>
       <tr><td>Game 1 (23 interruptions)</td><td class="num">78%</td><td class="num">92%</td><td class="num">74%</td></tr>
-      <tr><td>After siding (26 in most plans)</td><td class="num">88%</td><td class="num">83%</td><td class="num">80%</td></tr>
+      <tr><td>After siding (24–25 in most plans)</td><td class="num">82–85%</td><td class="num">83–86%</td><td class="num">75–77%</td></tr>
     </tbody>
   </table></div>
   <p class="prose note">“Survives a hand trap” means the hand still has a play after Ash, Impulse or Droll stops the first one.</p>
@@ -4898,7 +4943,7 @@ details.fold[open]{padding-bottom:8px}
 
   <details class="cx" id="c-golem" data-idx="Lava Golem">
     <summary><span class="cp cx-p" data-card="Lava Golem" role="img" aria-label="Lava Golem"><i style="background-image:url(img/s0.jpg);background-position:60.000% 42.857%"></i></span><span class="cx-n">Lava Golem</span><span class="cx-c">×2</span><span class="cx-r">Going 2nd: Tributes 2 of their monsters</span></summary>
-    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Lava Golem" role="img" aria-label="Lava Golem"><i style="background-image:url(img/s0.jpg);background-position:60.000% 42.857%"></i></span></div><p>Special Summoned from your hand to their field by Tributing 2 of their monsters. It's a summon, not an activated effect, and it doesn't target, so Black Chaos, Mirrorjade and Liger Dancer can't stop it, your Dominus locks don't apply, and their monster negates have nothing to negate. They take 1,000 at each of their Standby Phases, on top of Destrier's burn. It also gets past Psychic End Punisher and the Sacred Beasts Fallen Paradise summons (both ignore your activated effects; Golem isn't one). You can't Normal Summon that turn. Both come in going 2nd, for a Verdict and a Spark, against the ROLAD piles, Elfnote, Power Patron, Yummy, Mitsurugi, Fairy Tail, Branded, Destiny HERO, Dark Time Wizard, Maliss, Invoked, Sacred Beast and Lunalight. <a href="#br-golem">More</a></p></div>
+    <div class="cx-b"><div class="cx-pics"><span class="cp cp-l" data-card="Lava Golem" role="img" aria-label="Lava Golem"><i style="background-image:url(img/s0.jpg);background-position:60.000% 42.857%"></i></span></div><p>Special Summoned from your hand to their field by Tributing 2 of their monsters. It's a summon, not an activated effect, and it doesn't target, so Black Chaos, Mirrorjade and Liger Dancer can't stop it, your Dominus locks don't apply, and their monster negates have nothing to negate. They take 1,000 at each of their Standby Phases, on top of Destrier's burn. It also gets past Psychic End Punisher and the Sacred Beasts Fallen Paradise summons (both ignore your activated effects; Golem isn't one). You can't Normal Summon that turn. Both come in going 2nd against every deck except the mirror and Sky Striker, usually for a Verdict and a Spark (against Power Patron and Blitzclique Spark stays and an engine card goes instead). <a href="#br-golem">More</a></p></div>
   </details>
   </div>
   <p class="prose">Also in the side: 2 Nibiru, the Droll and a 3rd Effect Veiler. They're hand traps, so they're covered in 2.2: <a href="#ht-nibiru">Nibiru</a>, <a href="#ht-droll">Droll</a>, <a href="#ht-veiler">Effect Veiler</a>.</p>
@@ -5246,6 +5291,10 @@ details.fold[open]{padding-bottom:8px}
       });
     });
   });
+  // only offer "more" where the text is actually cut off (checked whenever a page shows, a fold opens or the window resizes)
+  function fit(){[].forEach.call(document.querySelectorAll("td > .clip"),function(c){var td=c.parentNode; if(td.classList.contains("open")||!c.offsetParent) return; td.classList.toggle("fits",c.scrollHeight<=c.clientHeight+1);});}
+  var ft; function later(){clearTimeout(ft); ft=setTimeout(fit,60);}
+  window.addEventListener("hashchange",later); window.addEventListener("resize",later); window.addEventListener("load",later); document.addEventListener("toggle",later,true); later();
 })();
 </script>
 
@@ -5355,7 +5404,7 @@ details.fold[open]{padding-bottom:8px}
       ["cards","2.1 Every card"],["handtraps","2.2 Hand traps & breakers"],["side","2.3 Side deck"],["builds","2.4 Other builds"],
       ["lines","3.1 Lines & combos"],["beat-ash","3.2 Beating Ash & Purge"],["beat-droll","3.3 Beating Droll"],["beat-mulch","3.4 Under Fuwalos"],["beat-break","3.5 Impulse, Ogre & removal"],["quiz","3.6 What would you play?"],
       
-      ["postban","4.1 What the list changed"],["techs","5 Playing around new tech"]]},
+      ["techs","4 Playing around new tech"]]},
     {k:"siding",label:"Siding",icon:"♖",pages:[["siding","Plans"],["plays","Odds"]]},
     {k:"tools",label:"Tools",icon:"♗",pages:[["lp","Life points"],["tracker","Match tracker"],["sim","Deckbuilder"],["calc","Hypergeometric calculator"]]}
   ];

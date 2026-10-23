@@ -94,3 +94,5 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Oct 23: user — remove the Brilliant Move paragraph (the #situational callout on Siding). DONE (v96): callout + markers removed from the guide, v3_apply no longer inserts build/v3/situational.html (file kept, unused), 2.1 'When it stays and when it goes' link removed.
 - Oct 23: user — remove the 'What the siding research says' callout on Siding. DONE (v97).
 - Oct 23: user — Siding: keep either the planner or the table. DONE (v98): kept the planner; the table stays in the DOM as hidden data (div#side-data[hidden]) because the planner, deep-dive chips (render_matchups SID), deckbuilder presets and side_oct23.py read the rows; '#plan-<deck>' now opens the planner on that deck (v3.js router); favtest updated.
+- Oct 23: user — 'simplify the Why portion of Every matchup if you keep it' → not needed: I kept the planner (v98); the table is hidden data and its Why column was already removed (v95). No change.
+- Oct 23: user — remove the 'Side deck (15): … Main deck (41): …' summary paragraph at the end of Siding. DONE (v99).

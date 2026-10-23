@@ -169,3 +169,4 @@
 - Oct 23 (v93): Lava Golem now comes in going 2nd vs Elfnote, Yummy, Maliss and Fairy Tail too (user; next FBG makes room). Siding rows, deep dives, 2.3 + 2.2 Golem text updated. Presets 34/34, dbtest, regression PASS.
 - Oct 23 (v94): Droll going 2nd now in every plan except the mirror (user: decks weaker to it after the list): Elfnote (+Droll, −1 Strategy Score) and Branded/Dracotail (+Droll, −3rd FBG). Text: Elfnote deep dive, 2.2 Droll + More Elfnote, siding notes/templates. Presets 34/34, dbtest, regression PASS.
 - Oct 23 (v95): Siding planner paragraph + table 'Why' column removed (user: deep dives explain); deep-dive 'Why these swaps' links removed. Link check clean; regression, favtest, presets 34/34 PASS.
+- Oct 23 (v96): Brilliant Move callout removed from Siding (user); 2.1 link to it removed; v3_apply no longer inserts situational.html. Link check clean; regression PASS.

@@ -25,3 +25,6 @@ Backups before the restructure: build/.bak23b/ (sources + guide as of v76).
 After all: update tests (build/v3test.sh inline reg test: tabbar 5→4, sidenav groups 5→4; add a favorites test), rebuild (side_oct23 not needed; run render_matchups.py then v3_apply.py), run reg/db/presets/gen tests, publish artifact (url https://claude.ai/artifact/9EaHDydVbJ9GjcgHrFi5F5) + bash tools/publish_site.sh, update brain/log.md, brain/decisions.md (structure rules), SKILL.md (meta report format, no creator ratings, results rule), memory; report.
 
 Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updated (4 tabs/4 groups) and passing, favtest passing. NEXT: screenshots (meta, matchups, deep dive on phone), db/presets/gen tests, publish artifact + site, brain/log + decisions + SKILL + memory, report.
+- Oct 23 (later): user — Brilliant Move stays in going 1st in the MIRROR ("helps build a better board"); mirror 1st plan swaps it for Endgame. DONE (sources, side_oct23, guide, brain, SKILL); published v78.
+- Oct 23: user — remove the 2nd Endgame Problem from 1.2 flex options ("it is just bad"). DONE; published v78.
+- Oct 23: user — Thrust flex row: "back in the main" → "in the main". DONE; published v78.

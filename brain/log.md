@@ -147,3 +147,7 @@
 - User requests (in order): 1.2 without example side decks; remove content repeated across chapters and point to its home instead; remove "Seen in" columns; remove the last line of Sources; Meta report = tier list (position within a tier doesn't matter) + Angelechy results at regionals and above; remove creator ratings; sidebar groups auto-close + favorites tab; smaller All-matchups blocks, no deck items in the sidebar, Matchups under Home; block text into the deep dives; no Home item in the sidebar; odds only for what will happen; keep the brain updated (brain/wip.md).
 - Scripts: build/restructure_oct23.py (sources + deep dives + renderers), build/restructure_oct23_guide.py (guide-direct), nav rewrite in build/v3/v3.js (favorites, auto-close, AREAS), v3.css (favorites, small matchup cards, tiers). 1.4 and the 5.2 ranking removed; 5.3 → 5.2. Rules recorded in decisions.md "Guide structure rules".
 - Tests: reg (4 tabs / 4 groups), new build/v3/frames/favtest.js, dbtest, presets, gentest all pass; link check clean. Backup of v76 sources: build/.bak23b/.
+
+## 2026-10-23 (session, later) — v78
+- Brilliant Move stays in going 1st in the mirror (user: "it helps build a better board"); mirror going-1st plan now −3 Fuwalos −2 Veiler −1 Endgame → +3 Thrust +3 Cosmic Cyclone. Wording updated in 2.1, 1.2 theory and flex note, 2.2 "More mirrors", 5.2, Brilliant Move callout, siding templates/note.
+- 2nd Endgame removed from 1.2 flex options (user: "just bad"); Thrust flex row renamed "in the main".

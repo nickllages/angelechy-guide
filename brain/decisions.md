@@ -34,21 +34,21 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|
-| Elfnote Ars Magna | −3 Fuwalos, −1 Brilliant Move, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Effect Veiler |
+| Elfnote Ars Magna | −3 Fuwalos, −1 Brilliant Move, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Effect Veiler, +1 Lava Golem |
 | ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
 | Angelechy mirror | −3 Fuwalos, −2 Effect Veiler, −1 Endgame Problem → +3 Cosmic Cyclone, +3 Triple Tactics Thrust | −2 Effect Veiler, −3 Spark, −1 Terraforming → +3 Cosmic Cyclone, +3 Triple Tactics Thrust |
 | Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
 | Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll, +1 Lava Golem |
 | Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru |
+| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
 | Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler → +2 Cosmic Cyclone, +2 Nibiru, +1 Droll |
 | Branded | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Lava Golem |
 | Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Terraforming → +1 Droll, +2 Nibiru, +1 Lava Golem |
 | Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark → +1 Droll, +1 Nibiru, +1 Lava Golem |
 | Sky Striker | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Spark → +2 Cosmic Cyclone, +1 Droll |
 | Invoked | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Effect Veiler, +1 Lava Golem |
-| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll, +1 Lava Golem |
 | Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
 | Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
 <!-- plans:end -->
@@ -66,6 +66,7 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 - **Going-1st end board (user, Oct 23):** ONE monster, normally Black-Winged Assault Dragon (main line, Destrier placed first by Opposition); Castellan always in the backrow; never end on two bodies. Chaos Angel only when bodies left on the field would help the opponent (its summon banishes), Legatia only when you really need the draw. Verdict is often just a negate (1–4). 1.3 example board: your side only, no count.
 - **Fuwalos timing (user, Oct 23):** know their deck + hold e4 → Fuwalos in their Draw Phase, then e4 at Standby. No e4 → only once they've committed to the Extra Deck (an effect, or a monster that will surely become Extra Deck material). Sky Striker → always Draw Phase.
 - **2.2 (user, Oct 23):** no "Three rules" section, no "After the list" tiers, no Forbidden cards in the lists; "Which non-engine, which matchup" = each card's top 5 matchups as compact chips; every section is a collapsible fold; board breakers are collapsible cx cards like the hand traps; compact cards (several per row on desktop).
+- **Lava Golem going 2nd (user, Oct 23):** also vs Elfnote (their post-list board is weaker), Yummy, Fairy Tail and Maliss — the next Foolish Burial Goods makes room, so every hand trap stays. Now in 14 of 17 going-2nd plans (not the mirror, Blitzclique or Sky Striker).
 - **Siding → Odds (user, Oct 23):** only two small tables (going 1st: has a play / survives a hand trap; going 2nd: 3+ interruptions / a starter / both, game 1 vs after siding) and one note; no line table (lines live in 3.1).
 - **Siding page (user, Oct 23):** no siding-rules panel; "Your templates" is 4 short bullets (going 1st, going 2nd, out first, order on their turn); details live in the per-matchup table.
 - **2.1:** no "Not in this list, and why" section. **2.4:** one brief example list per build (made from the user's list via the swaps), no player comments, no sources; FTK removed (unplayable after the list). **3.6:** titles "Hand N · Going first/second" only; answers = the correct play around all common hand traps, on the 3.1 lines.

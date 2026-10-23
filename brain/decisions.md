@@ -22,7 +22,7 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 - Side in **only** cards that matter in the matchup; side out main cards that are bad there (Oct 12).
 - **Never side out Opposition** ("my best card", Oct 13).
 - **Going second, never side out** Verdict, Disturbance, Endgame or Opening to e4.
-- **Going first (default):** −3 Fuwalos −1 Endgame −1 e4 −1 Veiler → +3 Boarder +3 Thrust. ROLAD piles: both Veilers out, +Droll. Mitsurugi, Destiny HERO, Invoked: −3 Ogre instead of the e4 and Veiler, +Droll. Sky Striker: −2 Ogre, +Droll. Mirror: no Boarder (−3 Fuwalos −2 Veiler → +2 Typhoon +3 Thrust).
+- **Going first (default, user Oct 23):** −3 Fuwalos −1 Endgame −1 Brilliant Move −1 Opening to e4 (an e4 goes, not a Veiler: e4 can't be activated from the hand going 1st and the end board fills the S/T Zone; Elfnote: Endgame stays, 2 e4 go) → +3 Boarder +3 Thrust. ROLAD piles: both Veilers out, +Droll. Mitsurugi, Destiny HERO, Invoked: −3 Ogre instead of the e4 and Veiler, +Droll. Sky Striker: −2 Ogre, +Droll. Mirror: no Boarder (−3 Fuwalos −2 Veiler → +2 Typhoon +3 Thrust).
 - **Going second:** engine out in order Terraforming, FBG, FBG, then Strategy Score. Nibiru vs decks that summon 5+ times; Droll vs search engines; Lava Golem vs Black Chaos, Mirrorjade, Liger Dancer and big boards; Typhoon vs face-up S/T; mirror −2 Veiler −3 Spark → +2 Typhoon +3 Thrust.
 - **Card-specific cuts:** Ghost Ogre out vs Mitsurugi, Destiny HERO and Invoked (all 3). Veiler out vs the mirror and Blitzclique (and going 1st vs ROLAD). Fuwalos out vs (pure) Blitzclique. Spark out vs the mirror (going 2nd), Sky Striker and DTW. Droll stays out vs the mirror, Elfnote and pure Branded; Nibiru stays out vs the mirror and Sky Striker.
 - Brilliant Move: situational side card (no standard plan).
@@ -34,23 +34,23 @@ The user said "Veilers over Nib in the main" and "Droll to the side"; both Nibir
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|
-| Elfnote Ars Magna | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Effect Veiler |
+| Elfnote Ars Magna | −3 Fuwalos, −1 Brilliant Move, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Effect Veiler |
 | ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
 | Angelechy mirror | −3 Fuwalos, −2 Effect Veiler, −1 Endgame Problem → +3 Cosmic Cyclone, +3 Triple Tactics Thrust | −2 Effect Veiler, −3 Spark, −1 Terraforming → +3 Cosmic Cyclone, +3 Triple Tactics Thrust |
 | Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming → +2 Lava Golem, +1 Droll |
-| Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Yummy | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
 | Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru |
-| Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler → +2 Cosmic Cyclone, +2 Nibiru, +1 Droll |
-| Branded | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Lava Golem |
+| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru |
+| Blitzclique | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler → +2 Cosmic Cyclone, +2 Nibiru, +1 Droll |
+| Branded | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Lava Golem |
 | Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Terraforming → +1 Droll, +2 Nibiru, +1 Lava Golem |
-| Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark → +1 Droll, +1 Nibiru, +1 Lava Golem |
 | Sky Striker | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −2 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Spark → +2 Cosmic Cyclone, +1 Droll |
 | Invoked | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Effect Veiler | −3 Ghost Ogre → +1 Droll, +1 Effect Veiler, +1 Lava Golem |
-| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
-| Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
-| Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Maliss | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +2 Nibiru, +1 Droll |
+| Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
+| Lunalight | −3 Fuwalos, −1 Endgame Problem, −1 Brilliant Move, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming → +1 Droll, +1 Nibiru, +1 Lava Golem |
 <!-- plans:end -->
 
 ## Guide structure rules (user, Oct 23 — follow on every update)

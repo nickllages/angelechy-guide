@@ -76,3 +76,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 
 - Oct 23 v79 PUBLISHED (artifact v79). Site push next.
 - Oct 23: user — remove section 3.7 (Odds & Boarder, #deck). DONE (v80): section, nav entry and the 2.3 'Full breakdown' link removed.
+- Oct 23: user — remove section 4.1 (Rulings to know, #rulings). DONE (v81): section + nav removed, Tips renumbered 4.1, learning path and 5.2 links point to #tips.

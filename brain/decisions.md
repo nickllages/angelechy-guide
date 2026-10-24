@@ -28,7 +28,7 @@ Counts: 13 starters (16 going second counting e4); 23 interruptions → 80% to o
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct23.py` (2026-10-23).*
+*From `build/side_oct23.py` (2026-10-24).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|

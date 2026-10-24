@@ -1030,6 +1030,23 @@ details.fold[open]{padding-bottom:8px}
 @media (prefers-reduced-motion:reduce){.mu-card::before{transition:none}.mu-card:hover::before{transform:none}}
 /* hide "more" when the clipped cell already shows all its text */
 td.fits .more{display:none}
+
+/* Home (user, Oct 24): the six learning-path steps and the six area cards sit in one row when there's room;
+   narrower screens get 3 + 3 or 2 + 2 + 2, so no block is ever left alone on a row */
+#home{container-type:inline-size}
+#home .path,#home .areas{grid-template-columns:repeat(2,minmax(0,1fr))}
+#home .path a{align-content:start}
+@container (min-width:540px){#home .path,#home .areas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@container (min-width:840px){
+  #home .path,#home .areas{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+  #home .path a{padding:10px}
+  #home .path a b{font-size:14px}
+  #home .path a span{font-size:12.5px}
+  #home .area{padding:12px;gap:5px}
+  #home .area h3{font-size:16px}
+  #home .area p{font-size:13px}
+  #home .area .eyebrow{font-size:10.5px;letter-spacing:.06em}
+}
 /* v3-css-end */
 </style>
 

@@ -182,3 +182,4 @@
 - Oct 24 (v105): Home 'Start learning' now opens 1.1 (#why) instead of 1.3.
 - Oct 24 (v106): paragraphs use the full content width everywhere (no ch max-widths).
 - Oct 24 (v107): 1.2 and 1.3 swapped — 1.2 How it works, 1.3 Decklist and theory.
+- Oct 24 (v108): Home learning path and area cards: all six in one row on desktop (3 + 3 tablet, 2 + 2 + 2 phone).

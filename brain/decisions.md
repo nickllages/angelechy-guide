@@ -103,6 +103,7 @@ Counts: 13 starters (16 going second counting e4); 23 interruptions → 80% to o
 Also: the 2nd Endgame (brick; user Oct 23: "just bad", not even a flex option), 2 Lancea (it turns off your own banishes), Pot of Sloth and a 3rd Typhoon for the open slot (Lava Golem ranked higher).
 
 ## Workflow preferences
+- **Text width (user, Oct 24):** paragraphs, lists and card texts fill the content column — no max-width:NNch reading-width limits.
 
 - Deck, side, Extra and siding changes are **proposed in chat**; the guide changes only after the user says yes. Research that doesn't change the deck goes straight into the guide.
 - Updates are reported in chat; the guide has no Updates section (Oct 12).

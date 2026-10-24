@@ -180,3 +180,4 @@
 - Oct 23 (v103): Brilliant Move back to the side, side (3rd) Effect Veiler cut → main 40, side 15 (3 Boarder, 3 Thrust, 3 Cosmic Cyclone, 2 Lava Golem, 2 Nibiru, 1 Droll, 1 Brilliant Move). Siding plans rebuilt (going 1st −2 e4; Elfnote −2 e4 −1 Veiler; BM in going 2nd vs ROLAD piles, Lunalight, DTW, mirror); all 41 text/odds → 40 (80% 3+ hand traps; 87.5/55.2); BM card 2.1 → 2.3.
 - Oct 23 (v104): 2.4 example lists made from the 40 (Full Dominus swaps now show +1 Brilliant Move; Bishop list 40, no Brilliant Move).
 - Oct 24 (v105): Home 'Start learning' now opens 1.1 (#why) instead of 1.3.
+- Oct 24 (v106): paragraphs use the full content width everywhere (no ch max-widths).

@@ -139,3 +139,22 @@ Tech vs Angelechy now: Pot of Sloth → Magical Spring, Hey Space Trunade!, Grea
 - Belén 1st /deck/angelechy-738506 (Top 4 not posted) · Burnaby Top 4 /deck/angelechy-737973 (2nd not posted)
 - Saint Peters Top 4 /deck/angelechy-tenpai-dragon-737958, Top 8 /deck/angelechy-738293 · Louisville Top 4 /deck/angelechy-737740 · Dubuque Top 8 not posted
 - Method: getDecks.php?name=Angelechy&format=Tournament%20Meta%20Decks (Referer header) gives tournamentName/tournamentPlacement/pretty_url; event pages /tournament/<slug> show which placings have no list.
+
+## Oct 24 — hand trap tier lists + post-list Angelechy lists vs the user's Oct 24 list (main 2 Nibiru + 1 Droll, 2 Veiler + 2 Purulia + 1 Nibiru side, no Lava Golem)
+No post-list tournament lists yet (YGOPRODeck and yugiohmeta: newest Angelechy tops are Oct 17–18, pre-list; first post-list regionals Oct 24–26).
+**Post-list hand trap tier lists**
+| Card | Lucas Sacco (Oct 21, Angelechy player) | Yacine (Oct 23, generic) | GGYGO (Oct 23, for YCS Orlando) |
+|---|---|---|---|
+| Droll (Limited) | okay — "counterproductive" in Angelechy, sided | must main ("no terrible matchups") | always main |
+| Nibiru | okay — "fine, not enough" | top side-deck staple; list made it better (Crystal Wing, Varudras gone); "3 somewhere" | side while Angelechy is popular (bad in the mirror) |
+| Effect Veiler | good | niche, not a must | could main ("usually main") |
+| Purulia | good ("worst good") | side staple, insane vs Artmage, better vs Elfnote now | side |
+| Ghost Ogre / Fuwalos / Ash / Impulse / Purge | best | best / must main | best |
+| Spark | best | staple but useless into Angelechy | niche |
+**Post-list Angelechy lists (videos)**
+- Kaiba Core (mIKZX6iDORM, Oct 20): main Fuwalos, Ash, Ogre, 1 Droll, no Veiler/Nibiru (1 FBG, Prosperity, BM, Endgame, 1 Verdict); side Purulia, 3 Nibiru, 3 Veiler (Veiler over Nibiru vs Sky Striker), Typhoon, Cosmic Cyclone (mirror); no Solemns.
+- Team Gladiator (ge1WHuDHTAM, Oct 21, casual): main 3 Ash, 3 Ogre, 3 Veiler, 1 Droll (2 Endgame, BM, 3 Disturbance); side 3 Bandit, 3 Nibiru, 3 Sloth, 3 Typhoon, 3 Gravity Collapse.
+- Yu-Gi-Phil "Undefeated with Angelechy" (AYvNKTKNR7M, Oct 22) is NOT post-list: it mains Called by the Grave + Talent (Forbidden). 3 Nibiru, 3 Fuwalos, 3 Veiler, 3 Imperm main; side 2 Droll, 3 Lava Golem.
+- Lucas Sacco SlowRun #7 (XGcMddGrMg8, Oct 22): his opponent's mirror hand "Droll, Nib, Endgame — nothing they can do"; Sacco mains Ghost Mourner; Typhoon "take it out of your Angelechy decks" (conflicts with e4), Shiina better.
+**YCS Houston Top 32 (8 pure lists, pre-list):** Droll in all 8 (4 main ×2, 4 side ×2); Veiler 4 main ×3 + 1 side ×2; Nibiru main in 2 (Flores 3, Walker 1), side in 4 (×2–3); Purulia 1 (Dallmeyer side 3); Lava Golem 0. Two camps: Fuwalos + Droll main (Hunter, Dallmeyer, Hagen, Walker) vs Veiler main with Fuwalos + Droll side (Hernandez, Sacco, Flores, Johnson).
+**Verdict for the user's list:** Droll main ✓ (2 of 3 tier lists, both post-list lists). Purulia side ✓ (all three tier lists). Golem cut ✓ (no Angelechy list plays it). Veiler to the side: split (GGYGO/Team Gladiator main it; Kaiba Core sides 3; Yacine niche). Nibiru ×2 main is the outlier: every source sides it (or mains at most 1), because it's dead in the mirror — the most common matchup; 3 total (2+1) matches Yacine's "3 somewhere".

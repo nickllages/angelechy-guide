@@ -183,3 +183,4 @@
 - Oct 24 (v106): paragraphs use the full content width everywhere (no ch max-widths).
 - Oct 24 (v107): 1.2 and 1.3 swapped — 1.2 How it works, 1.3 Decklist and theory.
 - Oct 24 (v108): Home learning path and area cards: all six in one row on desktop (3 + 3 tablet, 2 + 2 + 2 phone).
+- Oct 24 (v109): user's new 41 — 2 Nibiru + Droll main (Veilers to the side), side +1 Nibiru, 2 Lava Golem → 2 Purulia. Siding rebuilt (build/side_oct24.py), all text/odds/tests updated. Research: post-list hand trap tier lists + lists (brain/meta.md Oct 24).

@@ -181,3 +181,4 @@
 - Oct 23 (v104): 2.4 example lists made from the 40 (Full Dominus swaps now show +1 Brilliant Move; Bishop list 40, no Brilliant Move).
 - Oct 24 (v105): Home 'Start learning' now opens 1.1 (#why) instead of 1.3.
 - Oct 24 (v106): paragraphs use the full content width everywhere (no ch max-widths).
+- Oct 24 (v107): 1.2 and 1.3 swapped — 1.2 How it works, 1.3 Decklist and theory.

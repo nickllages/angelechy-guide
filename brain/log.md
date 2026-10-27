@@ -186,3 +186,4 @@
 - Oct 24 (v109): user's new 41 — 2 Nibiru + Droll main (Veilers to the side), side +1 Nibiru, 2 Lava Golem → 2 Purulia. Siding rebuilt (build/side_oct24.py), all text/odds/tests updated. Research: post-list hand trap tier lists + lists (brain/meta.md Oct 24).
 - Oct 27 (v110): user's list = Sacco's Angelechy 101 main + side (minus Bifrost, Shiina; +3 Cosmic Cyclone +2 Thrust). Siding plans reworked (build/side_oct27.py). All text/odds/tests updated.
 - Oct 27 (v111): new Replays page (Home group): 35 high-level games grouped by matchup (no locals, per the user).
+- Oct 27 (v112): Replays is now Guide chapter 5 (last chapter).

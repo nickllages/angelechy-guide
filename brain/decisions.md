@@ -2,55 +2,55 @@
 
 The user plays Angelechy in the TCG, at locals and regionals. These are their decisions. Don't re-propose what they rejected unless new evidence is strong, and say so when you do. The user changes lists quickly, so confirm the full 40 + side before rebuilding siding.
 
-## Current 70 (user, Oct 24: "I am at 41 with the veilers swapping spots with the nibs, and adding the droll to the main, in the side I added a nib and cut the golems for purulias")
+## Current 70 (user, Oct 27: "check the new lucas sacco decklist, that is now my main deck and side except for the bridges and the wind guy that bounces things"; the 5 open side slots = 3 Cosmic Cyclone + 2 Thrust, the user's pick)
 
-**Main 41**
-- Monsters (12): 3 Ash Blossom & Joyous Spring, 3 Ghost Ogre & Snow Rabbit, 2 Nibiru, the Primal Being, 1 Droll & Lock Bird, 3 Mulcharmy Fuwalos
-- Spells (14): 3 Angelechy Strategy Score, 3 Angelechy Opposition, 3 Angelechy Problem, 3 Foolish Burial Goods, 1 Terraforming, 1 Angelechy Endgame Problem
-- Traps (15): 3 Angelechy Opening to e4, 2 Angelechy Verdict, 1 Angelechy Disturbance, 3 Dominus Impulse, 3 Dominus Purge, 3 Dominus Spark
+**Main 40** (= the list in Lucas Sacco's "Angelechy 101", Oct 27)
+- Monsters (11): 3 Ash Blossom & Joyous Spring, 3 Ghost Ogre & Snow Rabbit, 2 Effect Veiler, 2 Ghost Mourner & Moonlit Chill, 1 Droll & Lock Bird
+- Spells (15): 3 Angelechy Strategy Score, 3 Angelechy Opposition, 3 Angelechy Problem, 3 Foolish Burial Goods, 1 Terraforming, 1 Pot of Prosperity, 1 Angelechy Endgame Problem
+- Traps (14): 3 Angelechy Opening to e4, 1 Angelechy Verdict, 1 Angelechy Disturbance, 3 Dominus Impulse, 3 Dominus Purge, 3 Dominus Spark
 
-**Extra 15:** 2 Angelechy Enlisted, 2 Angelechy Castellan, 2 Angelechy Bastion, 2 Angelechy Destrier, 2 Angelechy Shatranga, 1 Angelechy Seneschal, 1 Chaos Angel, 1 Black-Winged Assault Dragon, 1 Assault Blackwing – Kusanagi the Gathering Storm, 1 Centur-Ion Legatia
+**Extra 15:** unchanged — 2 Angelechy Enlisted, 2 Angelechy Castellan, 2 Angelechy Bastion, 2 Angelechy Destrier, 2 Angelechy Shatranga, 1 Angelechy Seneschal, 1 Chaos Angel, 1 Black-Winged Assault Dragon, 1 Assault Blackwing – Kusanagi the Gathering Storm, 1 Centur-Ion Legatia
 
-**Side 15:** 3 Inspector Boarder, 3 Triple Tactics Thrust, 3 Cosmic Cyclone, 2 Effect Veiler, 2 Mulcharmy Purulia, 1 Nibiru, the Primal Being, 1 Angelechy Brilliant Move
+**Side 15:** 3 Inspector Boarder, 2 Triple Tactics Thrust, 3 Cosmic Cyclone, 3 Mulcharmy Fuwalos, 3 Skull Meister, 1 Angelechy Verdict (Sacco's side minus 2 Rainbow Bridge Bifrost and 3 Shiina)
 
-Counts: 13 starters (16 going second counting e4); 24 interruptions → 82% to open 3+; going-2nd plans 18–27 (most 26–27: 88–91%). Deckbuilder odds: 86.6% a play going 1st, 53.5% survives a hand trap; after siding 87% / 75%. Genesys: 493 points (299/58/136). The guide says Droll is the 41st card.
-Research check (Oct 24, brain/meta.md): Droll main, Purulia side and no Lava Golem match the post-list tier lists and lists; Veiler to the side is split; 2 Nibiru main is the outlier (every source sides it while the mirror is the top matchup). Reported to the user; list unchanged.
+Counts: 14 starters (Prosperity counted as a starter, as in the deckbuilder); 23 interruptions → 80% to open 3+; going-2nd plans 21–26 (most 24–26: 84–90%). Deckbuilder odds: 89.9% a play going 1st, 58.9% survives a hand trap; after siding 90% / 77%. Genesys 478 (308/58/112).
+Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict once the 2nd copy is sided in); Opposition's GY effect can shuffle Verdict back for a later Strategy Score. 1.2 field map shows "e4 (Set)".
 
 ## Siding rules (user)
 
 - Side in **only** cards that matter in the matchup; side out main cards that are bad there (Oct 12).
 - **Never side out Opposition** ("my best card", Oct 13).
 - **Going second, never side out** Verdict, Disturbance, Endgame or Opening to e4.
-- **Going first (default, user Oct 23):** −3 Fuwalos −1 Endgame −2 Opening to e4 (e4 goes before a hand trap: it can't be activated from the hand going 1st and the end board fills the S/T Zone) → +3 Boarder +3 Thrust. Oct 24 list (Claude's calls, reported): where Nibiru/Droll/Ogre are weak they make room for Veilers — Elfnote (Endgame stays, 1 e4 stays): −3 Fuw −2 e4 −1 Droll −1 Nibiru → +3B +3T +1 Veiler; Branded: Droll → Veiler; Mitsurugi −3 Ogre −1 e4, Invoked −3 Ogre −1 Nibiru, D-HERO −3 Ogre −1 e4 (+1 Cyclone), each +Veilers; Sky Striker −2 Nibiru −2 Ogre → +2 Veiler. Mirror: no Boarder; −3 Fuwalos −2 Nibiru −1 Droll −1 Endgame → +3 Thrust +3 Cosmic Cyclone +1 Brilliant Move.
+- **Going first (default, user Oct 23; Oct 27 list):** −2 Opening to e4 −1 Endgame (user rules) −2 Ghost Mourner → +3 Boarder +2 Thrust (Claude's call: Boarder limits your monster effects too, so the small hand traps go first). Elfnote: Endgame stays + 1 e4, Droll goes instead of Endgame. Mitsurugi/Invoked: −3 Ogre (not Mourner) +1 Skull Meister; D-HERO: −3 Ogre +1 Set Cosmic Cyclone; Sky Striker: −2 Ogre; ROLAD piles + Blitzclique: −2 Veiler; Branded: −1 Droll −1 Mourner. Mirror: no Boarder; −2 Veiler −2 Mourner −1 Droll −1 Endgame −2 e4 → +1 Verdict +2 Skull Meister +3 Cosmic Cyclone +2 Thrust.
 - **Going second:** engine out in order Terraforming, FBG, FBG, then Strategy Score. Nibiru vs decks that summon 5+ times; Droll vs search engines; Lava Golem vs Black Chaos, Mirrorjade, Liger Dancer and big boards; Typhoon vs face-up S/T; mirror −2 Veiler −3 Spark → +2 Typhoon +3 Thrust.
 - **Card-specific cuts:** Ghost Ogre out vs Mitsurugi, Destiny HERO and Invoked (all 3). Veiler out vs the mirror and Blitzclique (and going 1st vs ROLAD). Fuwalos out vs (pure) Blitzclique. Spark out vs the mirror (going 2nd), Sky Striker and DTW. Droll stays out vs the mirror, Elfnote and pure Branded; Nibiru stays out vs the mirror and Sky Striker.
-- **Brilliant Move (side):** going 2nd vs the ROLAD pile, Branded ROLAD, Lunalight and Dark Time Wizard (Kusanagi through Black Chaos / Liger Dancer / Red-Eyes Black Dragon Exceed) for a FBG or Terraforming, and in the mirror both turns.
-- **Going 2nd (Oct 24 list):** engine cuts max Terraforming + 2 FBG; Veiler where live (not mirror, Blitz, ROLAD piles); Purulia vs hand-summon decks (ROLAD piles, Mitsurugi, Invoked, Blitz ×2; Maliss, Yummy, Fairy Tail, D-HERO, Lunalight, Sky Striker ×1); side Nibiru vs Elfnote, Patron, Blitz; Nibiru out vs mirror, Sky Striker, Invoked; Droll out only in the mirror; Verdict never cut again (no Golems).
+- **Brilliant Move:** not in the list (Oct 27).
+- **Going 2nd (Oct 27 list):** all 3 Fuwalos in (not Blitzclique) for Terraforming + Pot of Prosperity + 1 FBG (max 3 engine cuts) or for bad main cards (Ogre vs Mitsurugi/D-HERO/Invoked, Spark vs Sky Striker/DTW/mirror, Veiler vs ROLAD piles/Blitz, Droll vs Elfnote/Branded/mirror). Skull Meister vs mirror (3), Elfnote, D-HERO, Mitsurugi, Blitzclique; Cosmic Cyclone vs mirror (2), Sky Striker, Blitzclique; Thrust 2 + 2nd Verdict in the mirror. Never Opposition/Verdict/Disturbance/Endgame/e4.
 
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct23.py` (2026-10-24).*
+*From `build/side_oct27.py` (2026-10-27).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|
-| Elfnote Ars Magna | −3 Fuwalos, −2 Opening to e4, −1 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +2 Nibiru, +1 Droll |
-| ROLAD pile | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +1 Nibiru, +1 Brilliant Move |
-| Angelechy mirror | −3 Fuwalos, −2 Effect Veiler, −1 Endgame Problem, −1 Opening to e4 → +3 Cosmic Cyclone, +3 Triple Tactics Thrust, +1 Brilliant Move | −2 Effect Veiler, −3 Spark, −1 Terraforming, −1 Foolish Burial Goods → +3 Cosmic Cyclone, +3 Triple Tactics Thrust, +1 Brilliant Move |
-| Branded ROLAD | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Effect Veiler → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +1 Nibiru, +1 Brilliant Move |
-| Power Patron / Artmage | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict → +2 Lava Golem, +1 Droll, +1 Nibiru |
-| Yummy | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +2 Nibiru, +1 Droll |
-| Mitsurugi | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Ghost Ogre, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +2 Nibiru |
-| Fairy Tail | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +1 Nibiru |
-| Blitzclique | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Fuwalos, −2 Effect Veiler, −1 Verdict, −1 Terraforming → +2 Cosmic Cyclone, +2 Nibiru, +1 Droll, +2 Lava Golem |
-| Branded | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +2 Nibiru, +1 Droll |
-| Destiny HERO | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre, −1 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +2 Nibiru |
-| Dark Time Wizard | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −3 Spark, −1 Verdict, −1 Terraforming → +2 Lava Golem, +1 Droll, +1 Nibiru, +1 Brilliant Move |
-| Sky Striker | −3 Fuwalos, −1 Endgame Problem, −1 Opening to e4, −2 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −3 Spark → +2 Cosmic Cyclone, +1 Droll |
-| Invoked | −3 Fuwalos, −1 Endgame Problem, −3 Ghost Ogre → +3 Inspector Boarder, +3 Triple Tactics Thrust, +1 Droll | −1 Ghost Ogre, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll |
-| Maliss | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +2 Nibiru, +1 Droll |
-| Sacred Beast | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −1 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +1 Nibiru |
-| Lunalight | −3 Fuwalos, −1 Endgame Problem, −2 Opening to e4 → +3 Inspector Boarder, +3 Triple Tactics Thrust | −2 Foolish Burial Goods, −1 Terraforming, −1 Verdict, −1 Spark → +2 Lava Golem, +1 Droll, +1 Nibiru, +1 Brilliant Move |
+| Elfnote Ars Magna | −2 Opening to e4, −2 Ghost Mourner, −1 Droll → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods, −1 Droll → +3 Fuwalos, +1 Skull Meister |
+| ROLAD pile | −2 Effect Veiler, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust | −2 Effect Veiler, −1 Terraforming → +3 Fuwalos |
+| Angelechy mirror | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −1 Endgame Problem, −2 Opening to e4 → +1 Verdict, +2 Skull Meister, +3 Cosmic Cyclone, +2 Triple Tactics Thrust | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −3 Spark, −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos, +1 Verdict, +3 Skull Meister, +2 Cosmic Cyclone, +2 Triple Tactics Thrust |
+| Branded ROLAD | −2 Effect Veiler, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust | −2 Effect Veiler, −1 Terraforming → +3 Fuwalos |
+| Power Patron / Artmage | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
+| Yummy | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
+| Mitsurugi | −3 Ghost Ogre, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Skull Meister | −3 Ghost Ogre, −1 Terraforming → +3 Fuwalos, +1 Skull Meister |
+| Fairy Tail | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
+| Blitzclique | −2 Effect Veiler, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust | −2 Effect Veiler, −1 Terraforming → +2 Cosmic Cyclone, +1 Skull Meister |
+| Branded | −2 Opening to e4, −1 Endgame Problem, −1 Droll, −1 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Droll, −1 Terraforming, −1 Pot of Prosperity → +3 Fuwalos |
+| Destiny HERO | −3 Ghost Ogre, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Terraforming → +3 Fuwalos, +1 Skull Meister |
+| Dark Time Wizard | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −3 Spark → +3 Fuwalos |
+| Sky Striker | −2 Ghost Ogre, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust | −3 Spark, −1 Terraforming, −1 Pot of Prosperity → +3 Fuwalos, +2 Cosmic Cyclone |
+| Invoked | −3 Ghost Ogre, −2 Opening to e4, −1 Endgame Problem → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Skull Meister | −2 Ghost Ogre, −1 Terraforming → +3 Fuwalos |
+| Maliss | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
+| Sacred Beast | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
+| Lunalight | −2 Opening to e4, −1 Endgame Problem, −2 Ghost Mourner → +3 Inspector Boarder, +2 Triple Tactics Thrust | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
 <!-- plans:end -->
 
 ## Guide structure rules (user, Oct 23 — follow on every update)
@@ -61,7 +61,7 @@ Research check (Oct 24, brain/meta.md): Droll main, Purulia side and no Lava Gol
 - **Nav:** Home group = Meta report, Matchups, Sources (Home itself isn't listed in the sidebar; the title links home). Deep dives aren't listed in the sidebar/subnav (only via Matchups). Sidebar groups you're not in auto-close unless they hold a favorite; ☆ Favorite on every page; a Favorites tab/group (and #favs page) appears only once something is starred (localStorage ag-favs-v1). All-matchups blocks show name + read only; the description is in the deep dive.
 - Chapter numbers now: 1.1–1.3 (1.4 removed), 2.1–2.4, 3.1–3.6 (3.7 "Odds & Boarder" removed by the user Oct 23; odds live on Siding → Odds, Boarder in 2.3 and 3.1), 4 Playing around new tech (user, Oct 23: 4.1 What the list changed removed too; 3.7 Odds & Boarder, 4.1 Rulings, Tips, 4.3 Replays and 'Your list now' (the post-list card-by-card changes) removed; old chapters 5 and 6 renumbered 4 and 5; replay links live in the Sources footer under "Replays").
 - **No outside references anywhere in the guide (user, Oct 23):** no creator/player names, no "(DB Grinder)"-style attributions, no "who played it" rows, no "where a line/list is from", no tags like "Not in guides I reviewed". Keep what they said, written as the guide's own advice (no verbatim unattributed quotes). Tournament/event stats ("6 of the 8 Houston lists…", "Louisville Top 4…") only in the Meta report. The Sources footer is the one place references live (user: "it was the research that we made"). Deep dives have no Replays tab.
-- **1.1 holds the "what Angelechy is" intro and the learning path (user, Oct 23).** 1.2 (How it works) starts with the 41 paragraph.
+- **1.1 holds the "what Angelechy is" intro and the learning path (user, Oct 23).** 1.2 (How it works) starts with the 40 paragraph.
 - **3.1 = starters only (user, Oct 23):** text-only line cards (no card images, no Extra Deck cards shown as hand cards): one-card starters (Opposition, Problem, Strategy Score/FBG/Terraforming, Opening to e4 "the e4 play") each going 1st and 2nd; two-card starters (Opposition + Problem, Problem + Verdict/Disturbance, Boarder + Opposition after siding), no repeats; "What stops what" table last. ids: line-opposition, line-problem, line-access, line-e4, line-opp-problem, line-problem-gy, line-boarder.
 - **Going-1st end board (user, Oct 23):** ONE monster, normally Black-Winged Assault Dragon (main line, Destrier placed first by Opposition); Castellan always in the backrow; never end on two bodies. Chaos Angel only when bodies left on the field would help the opponent (its summon banishes), Legatia only when you really need the draw. Verdict is often just a negate (1–4). 1.2 example board: your side only, no count.
 - **Fuwalos timing (user, Oct 23):** know their deck + hold e4 → Fuwalos in their Draw Phase, then e4 at Standby. No e4 → only once they've committed to the Extra Deck (an effect, or a monster that will surely become Extra Deck material). Sky Striker → always Draw Phase.
@@ -77,6 +77,7 @@ Research check (Oct 24, brain/meta.md): Droll main, Purulia side and no Lava Gol
 
 ## Card decisions and the reasons (newest first)
 
+- **Oct 27 — the user's list = Lucas Sacco's Angelechy 101 main + side minus Bifrost and Shiina (+3 Cosmic Cyclone +2 Thrust):** Nibiru, Purulia and Brilliant Move out of the 70; Ghost Mourner ×2, Pot of Prosperity, Skull Meister ×3 in; Fuwalos to the side; 1 Verdict main + 1 side; Thrust 3→2. Siding rebuilt in build/side_oct27.py (side_oct24.py retired). Sacco's reasons are in wip.md (Oct 27) / meta.md.
 - **Oct 24 — the user's list:** 2 Effect Veiler ↔ 2 Nibiru (Nibiru main, Veiler side), Droll to the main (41), +1 Nibiru in the side, 2 Lava Golem → 2 Mulcharmy Purulia (the user had declined Purulia on Oct 19; now their own choice). Siding rebuilt in build/side_oct24.py (side_oct23.py retired).
 - **Oct 23 (later) — Brilliant Move back to the side, side (3rd) Effect Veiler cut (user: "ill move the briliant move back to the side and cut the trid veiler"; the siding review had flagged the side Veiler as only coming in vs Mitsurugi and Invoked).** Main 40 = the Oct 22 main. Siding rebuilt (side_oct23.py): going 1st the BM slot becomes a 2nd e4; Mitsurugi/Invoked lose the side Veiler (NOOG 7-for-7, Mitsurugi g2 +2 Nibiru, Invoked g2 keeps 2 Ogre); BM comes in going 2nd vs ROLAD piles, Lunalight, DTW and the mirror. BM card moved from 2.1 to 2.3.
 - **Oct 23 — Extra Deck (user):** 2 Enlisted + 2 Castellan (3rd Enlisted out). Flex: Masterflare Hyperion would replace the 2nd Castellan; no '2nd Castellan' flex row; Maple Maiden (WIND Fairy Synchro, for Shiina in the mirror) replaces the Odin row; the 2nd Endgame is never a flex option.

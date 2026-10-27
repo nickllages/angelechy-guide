@@ -1047,6 +1047,21 @@ td.fits .more{display:none}
   #home .area p{font-size:13px}
   #home .area .eyebrow{font-size:10.5px;letter-spacing:.06em}
 }
+
+
+/* Replays page (user, Oct 27): high-level games grouped by matchup */
+.rp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:12px;align-items:start}
+.rp h3{font-size:17px;margin:0 0 10px;display:flex;gap:8px;align-items:baseline}
+.rp h3 a{color:inherit;text-decoration:none}
+.rp h3 a:hover{text-decoration:underline}
+.rp h3 small{font:600 12px var(--mono);color:var(--muted)}
+.rp-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rp-list li{display:grid;gap:2px;padding-top:10px;border-top:1px solid var(--line)}
+.rp-list li:first-child{padding-top:0;border-top:0}
+.rp-list li > a{font-weight:600}
+.rp-d{font:500 12px var(--mono);color:var(--muted)}
+.rp-pre{margin-left:6px;padding:1px 6px;border-radius:999px;border:1px solid var(--line);font:600 11px var(--body);color:var(--muted)}
+.rp-list .note{margin:2px 0 0}
 /* v3-css-end */
 </style>
 
@@ -2120,6 +2135,31 @@ td.fits .more{display:none}
   </ul>
   <p class="prose note">Matchup-by-matchup notes are in each deep dive, and the siding plans are on <a href="#siding">Siding</a>.</p>
 </section>
+
+<section id="replays">
+  <div class="sec-head">
+    <div class="eyebrow">Matchups · watch them played</div>
+    <h2>Replays</h2>
+  </div>
+  <p class="prose">35 high-level games, sorted by the deck Angelechy faces: regional, YCS and major-event feature matches and high-rated DuelingBook, newest first. Games from before the October 19 list are marked: some of their cards are Forbidden or Limited now. The plan for each matchup is in its deep dive (the title links there).</p>
+  <nav class="jump" aria-label="Matchups"><a href="#rp-mirror">Angelechy mirror</a><a href="#rp-elfnote">Elfnote Ars Magna</a><a href="#rp-patron">Ars Magna Power Patron / Artmage</a><a href="#rp-skystriker">Sky Striker</a><a href="#rp-blitz">Blitzclique</a><a href="#rp-invoked">Invoked</a><a href="#rp-branded">Branded</a><a href="#rp-dhero">Destiny HERO</a><a href="#rp-rolad">ROLAD pile</a><a href="#rp-branded-rolad">Branded ROLAD</a><a href="#rp-maliss">Maliss</a><a href="#rp-mitsurugi">Mitsurugi</a><a href="#rp-other">Other decks</a></nav>
+  <div class="rp-grid">
+    <div class="panel rp" id="rp-mirror"><h3><a href="#mirror">Angelechy mirror</a> <small>3</small></h3><ul class="rp-list"><li><a href="https://youtu.be/XGcMddGrMg8" target="_blank" rel="noopener">High-rated DuelingBook · several mirror games</a><span class="rp-d">Oct 22, 2026</span><p class="note">Hand-trapping them first and passing lets them Set Impulse for your turn. An opening of Droll, Nibiru and Endgame did nothing.</p></li><li><a href="https://youtu.be/crrBRq1cKcE" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 22, 2026</span><p class="note">Both players reached Verdict; the one with Verdict up played slowly so the other couldn't turn a 5th piece into a full banish. Skull Meister stopped Transaction Rollback copying Verdict.</p></li><li><a href="https://youtu.be/MykuareT-bk" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 6, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Ghost Ogre on Castellan stopped an e4 loop, and Typhoon on a placed Destrier left their field draw dead.</p></li></ul></div>
+    <div class="panel rp" id="rp-elfnote"><h3><a href="#elfnote">Elfnote Ars Magna</a> <small>6</small></h3><ul class="rp-list"><li><a href="https://youtu.be/i6ZpYLwwTqI" target="_blank" rel="noopener">Regional feature match · Santo Domingo</a><span class="rp-d">Oct 26, 2026</span></li><li><a href="https://youtu.be/5I2hv4vXGDM" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 22, 2026</span></li><li><a href="https://youtu.be/L03oM7KVglg" target="_blank" rel="noopener">Italian Open · round 2</a><span class="rp-d">Oct 19, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/Owx2iDsuU9E" target="_blank" rel="noopener">YCS Houston · round 14</a><span class="rp-d">Oct 18, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/sl775c3dHG8" target="_blank" rel="noopener">High-rated DuelingBook · 2–0 going 2nd</a><span class="rp-d">Oct 14, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Game 1: Ghost Ogre on their first effect and Impulse on Welcome Home, then Verdict banished their board. Game 2, under Fuwalos: Standby e4 into Castellan with Problem placed too, so an Ogre on Castellan still left a follow-up. Seneschal on their field turns on the Elfnote Trap's negate: count it first.</p></li><li><a href="https://youtu.be/hVd1Viy6qY4" target="_blank" rel="noopener">DuelingBook tournament · 2–1</a><span class="rp-d">Sep 26, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Game 2: Seneschal on their field, Destrier burn and Shatranga's cap, then Droll on Terminus won it. Game 3: Impulse from the hand locked the Droll drawn later.</p></li></ul></div>
+    <div class="panel rp" id="rp-patron"><h3><a href="#patron">Ars Magna Power Patron / Artmage</a> <small>4</small></h3><ul class="rp-list"><li><a href="https://youtu.be/aGUEA-Y9OOc" target="_blank" rel="noopener">High-rated DuelingBook · Artmage</a><span class="rp-d">Oct 16, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/y-InndBt10s" target="_blank" rel="noopener">High-rated DuelingBook · Artmage</a><span class="rp-d">Oct 13, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/Qkrd0nPDj4o" target="_blank" rel="noopener">High-rated DuelingBook · Power Patron</a><span class="rp-d">Oct 5, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Opposition should place Destrier, not Bastion. Verdict negated Junoldo, and Legatia's battle protection blanked their attack.</p></li><li><a href="https://youtu.be/LGpqZoiXpPc" target="_blank" rel="noopener">High-rated DuelingBook · Power Patron, 2–0</a><span class="rp-d">Sep 24, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Going 2nd, the e4 loop at their Standby Phase; Castellan stopped them chaining both banish effects. Junoldo's negate-all Synchro was their out.</p></li></ul></div>
+    <div class="panel rp" id="rp-skystriker"><h3><a href="#skystriker">Sky Striker</a> <small>4</small></h3><ul class="rp-list"><li><a href="https://youtu.be/Xx7PKZIriEw" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 21, 2026</span></li><li><a href="https://youtu.be/kWMFwvh6PDI" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 20, 2026</span></li><li><a href="https://youtu.be/mYeqUarNrvE" target="_blank" rel="noopener">Italian Open · round 6</a><span class="rp-d">Oct 19, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/1NMX27RNNGg" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 10, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Foolish Burial Goods → Disturbance → Opposition → Castellan: they couldn't respond.</p></li></ul></div>
+    <div class="panel rp" id="rp-blitz"><h3><a href="#blitz">Blitzclique</a> <small>2</small></h3><ul class="rp-list"><li><a href="https://youtu.be/NipmQ57f_kI" target="_blank" rel="noopener">German Open · round 7</a><span class="rp-d">Oct 24, 2026</span></li><li><a href="https://youtu.be/Z3OMYT2dqPA" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 23, 2026</span></li></ul></div>
+    <div class="panel rp" id="rp-invoked"><h3><a href="#invoked">Invoked</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/PcpT48GkVhA" target="_blank" rel="noopener">Regional feature match · Seattle, round 6</a><span class="rp-d">Oct 26, 2026</span></li></ul></div>
+    <div class="panel rp" id="rp-branded"><h3><a href="#branded">Branded</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/U3ov5NlXC2U" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 19, 2026</span></li></ul></div>
+    <div class="panel rp" id="rp-dhero"><h3><a href="#dhero">Destiny HERO</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/67RjwLuRxko" target="_blank" rel="noopener">YCS Houston · round 4</a><span class="rp-d">Oct 17, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li></ul></div>
+    <div class="panel rp" id="rp-rolad"><h3><a href="#rolad">ROLAD pile</a> <small>4</small></h3><ul class="rp-list"><li><a href="https://youtu.be/w-LqsPH2qGA" target="_blank" rel="noopener">YCS Houston · bonus feature match (Dark Magician L&amp;D Ritual)</a><span class="rp-d">Oct 21, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/gp5kWULcX-A" target="_blank" rel="noopener">High-rated DuelingBook · Dark Magician ROLAD</a><span class="rp-d">Oct 11, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Game 1: double e4 at their Standby into Black-Winged Assault Dragon. Game 3: Thrust Set Purge instead of e4, and Griffoh → Mind Shuffle → Black Chaos won it.</p></li><li><a href="https://youtu.be/xmeoc7cHam8" target="_blank" rel="noopener">High-rated DuelingBook · Dark Magician ROLAD</a><span class="rp-d">Oct 9, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Game 1: Standby e4 and Droll in the same Chain beat them. Game 2: they Impulsed Opposition and Black Chaos with Mind Shuffle took over: hand-trap them as early as you can.</p></li><li><a href="https://youtu.be/7MTitQf8hOA" target="_blank" rel="noopener">High-rated DuelingBook · Ars Magna ROLAD</a><span class="rp-d">Oct 2, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li></ul></div>
+    <div class="panel rp" id="rp-branded-rolad"><h3><a href="#branded-rolad">Branded ROLAD</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/lq_pzZ5psIc" target="_blank" rel="noopener">High-rated DuelingBook · L&amp;D Branded</a><span class="rp-d">Oct 3, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li></ul></div>
+    <div class="panel rp" id="rp-maliss"><h3><a href="#maliss">Maliss</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/1x5hfiyDty4" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 1, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li></ul></div>
+    <div class="panel rp" id="rp-mitsurugi"><h3><a href="#mitsurugi">Mitsurugi</a> <small>1</small></h3><ul class="rp-list"><li><a href="https://youtu.be/lQnsAuTaWnc" target="_blank" rel="noopener">High-rated DuelingBook</a><span class="rp-d">Oct 3, 2026 <span class="rp-pre">before the Oct 19 list</span></span><p class="note">Standby double e4 forced them to use every card; Verdict's GY effect answered their Trap on Problem, and Kusanagi finished.</p></li></ul></div>
+    <div class="panel rp" id="rp-other"><h3>Other decks <small>6</small></h3><ul class="rp-list"><li><a href="https://youtu.be/cNnFvisLOEU" target="_blank" rel="noopener">Radiant Typhoon · High-rated DuelingBook</a><span class="rp-d">Oct 27, 2026</span></li><li><a href="https://youtu.be/L_mLfv2ZzSE" target="_blank" rel="noopener">Blue-Eyes · Regional feature match · Seattle, round 7</a><span class="rp-d">Oct 26, 2026</span></li><li><a href="https://youtu.be/lXb-9noAXDk" target="_blank" rel="noopener">Radiant Typhoon · High-rated DuelingBook</a><span class="rp-d">Oct 24, 2026</span></li><li><a href="https://youtu.be/ft9yWMy58mU" target="_blank" rel="noopener">Tenpai Dragon e4 splash · High-rated DuelingBook</a><span class="rp-d">Oct 19, 2026</span></li><li><a href="https://youtu.be/09okafIdJ3Q" target="_blank" rel="noopener">Clown Crew · High-rated DuelingBook</a><span class="rp-d">Oct 17, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li><li><a href="https://youtu.be/rvxKkX14Aqw" target="_blank" rel="noopener">Mermail Atlantean · High-rated DuelingBook</a><span class="rp-d">Oct 12, 2026 <span class="rp-pre">before the Oct 19 list</span></span></li></ul></div>
+  </div>
+  <p class="prose note">No high-level games yet against Yummy, Fairy Tail, Dracotail, Sacred Beast, Lunalight or Dark Time Wizard.</p>
+</section>
 <!-- /v3-learn -->
 
 <!-- LINES -->
@@ -2218,7 +2258,7 @@ td.fits .more{display:none}
     <div class="eyebrow">Matchups</div>
     <h2>Every deck you'll face</h2>
   </div>
-  <p class="prose">Pick a deck to open its deep dive. Tiers follow the <a href="#meta">Meta report</a>. “Read” is how the matchup plays from Angelechy's side.</p>
+  <p class="prose">Pick a deck to open its deep dive. Tiers follow the <a href="#meta">Meta report</a>. “Read” is how the matchup plays from Angelechy's side. High-level games for each matchup: <a href="#replays">Replays</a>.</p>
   <div class="mu-controls">
     <label class="mu-search"><span class="sr">Search decks</span><input id="mu-q" type="search" placeholder="Search a deck or card…" autocomplete="off"></label>
     <div class="mu-filter" role="group" aria-label="Filter by tier">
@@ -5349,25 +5389,7 @@ td.fits .more{display:none}
     <li><a href="https://db.ygoprodeck.com/api/v7/cardinfo.php">YGOPRODeck card database</a> (card texts)</li>
   </ul>
   <div class="eyebrow">Replays</div>
-  <ul>
-    <li><a href="https://youtu.be/sl775c3dHG8">Angelechy vs Elfnote Ars Magna, High Rated DB (Oct 14, 2–0 for Angelechy going 2nd)</a> <small>(Elfnote)</small></li>
-    <li><a href="https://youtu.be/hVd1Viy6qY4">Angelechy vs Elfnote, Post-BETB DB match (2–1 for Angelechy)</a> <small>(Elfnote)</small></li>
-    <li><a href="https://youtu.be/1PEWkEhznVI">DB Grinder: the optimal Elfnote line</a> <small>(Elfnote)</small></li>
-    <li><a href="https://www.facebook.com/groups/1604151060854597/">Tyler Holland (Louisville Top 4) on the Chessman Duelists group</a> <small>(Elfnote)</small></li>
-    <li><a href="https://youtu.be/xmeoc7cHam8">Angelechy vs ROLAD DM, High Rated DB (Oct 10)</a> <small>(ROLAD pile)</small></li>
-    <li><a href="https://youtu.be/gp5kWULcX-A">Angelechy vs DM ROLAD, High Rated DB (Oct 11)</a> <small>(ROLAD pile)</small></li>
-    <li><a href="https://youtu.be/LGpqZoiXpPc">Angelechy vs Ars Magna Power Patron, Post-BETB (2–0)</a> <small>(Power Patron)</small></li>
-    <li><a href="https://youtu.be/Qkrd0nPDj4o">Angelechy vs Power Patron, Post-BETB</a> <small>(Power Patron)</small></li>
-    <li><a href="https://youtu.be/MykuareT-bk">Angelechy vs Angelechy, Post-BETB (Oct 7)</a> <small>(Mirror)</small></li>
-    <li><a href="https://youtu.be/4AOwT0HRhfA">Jamie Hunter, YCS Houston Top 4 (deck profile, Oct 19)</a> <small>(Mirror)</small></li>
-    <li><a href="https://youtu.be/lo2yhFSUjfs">Roberto Hernandez, YCS Houston Top 8 (deck profile, Oct 19)</a> <small>(Mirror)</small></li>
-    <li><a href="https://youtu.be/crrBRq1cKcE">Angelechy vs Angelechy, High Rated DB (Oct 22)</a> <small>(Mirror)</small></li>
-    <li><a href="https://www.facebook.com/groups/1604151060854597/">Tyler Holland (Louisville Top 4)</a> <small>(Mirror)</small></li>
-    <li><a href="https://youtu.be/lQnsAuTaWnc">Angelechy vs Mitsurugi, Post-BETB DB match</a> <small>(Mitsurugi)</small></li>
-    <li><a href="https://youtu.be/1NMX27RNNGg">Angelechy vs Sky Striker, High Rated DB (Oct 11)</a> <small>(Sky Striker)</small></li>
-    <li><a href="https://youtu.be/U_qcLuZPl1Y">Destiny HERO vs Artmage, Post-BETB DB match</a> <small>(Destiny HERO)</small></li>
-    <li><a href="https://youtu.be/kHVCWAReUuA">ROLAD pile vs Maliss, new-format DB match</a> <small>(Maliss)</small></li>
-  </ul>
+  <p class="note">High-level games, grouped by matchup: <a href="#replays">Replays</a>.</p>
 </footer>
 </div>
 
@@ -5536,7 +5558,7 @@ td.fits .more{display:none}
   var vg=document.getElementById("view-guide"); if(!vg) return;
   var T="︎";
   var AREAS=[
-    {k:"home",label:"Home",icon:"♔",pages:[["home","Home"],["meta","Meta report"],["matchups","Matchups"],["sources","Sources"]]},
+    {k:"home",label:"Home",icon:"♔",pages:[["home","Home"],["meta","Meta report"],["matchups","Matchups"],["replays","Replays"],["sources","Sources"]]},
     {k:"learn",label:"Guide",icon:"♕",pages:[["why","1.1 Why Angelechy"],["learn","1.2 How it works"],["decklist","1.3 Decklist & theory"],
       ["cards","2.1 Every card"],["handtraps","2.2 Hand traps & breakers"],["side","2.3 Side deck"],["builds","2.4 Other builds"],
       ["lines","3.1 Lines & combos"],["beat-ash","3.2 Beating Ash & Purge"],["beat-droll","3.3 Beating Droll"],["beat-mulch","3.4 Under Fuwalos"],["beat-break","3.5 Impulse, Ogre & removal"],["quiz","3.6 What would you play?"],

@@ -187,3 +187,4 @@
 - Oct 27 (v110): user's list = Sacco's Angelechy 101 main + side (minus Bifrost, Shiina; +3 Cosmic Cyclone +2 Thrust). Siding plans reworked (build/side_oct27.py). All text/odds/tests updated.
 - Oct 27 (v111): new Replays page (Home group): 35 high-level games grouped by matchup (no locals, per the user).
 - Oct 27 (v112): Replays is now Guide chapter 5 (last chapter).
+- Oct 27 (v113): Replays page 35 → 78 high-level games after a deep YouTube search.

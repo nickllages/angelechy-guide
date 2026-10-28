@@ -188,3 +188,4 @@
 - Oct 27 (v111): new Replays page (Home group): 35 high-level games grouped by matchup (no locals, per the user).
 - Oct 27 (v112): Replays is now Guide chapter 5 (last chapter).
 - Oct 27 (v113): Replays page 35 → 78 high-level games after a deep YouTube search.
+- Oct 27 (v114): Replays page is a compact accordion (one collapsed row per matchup).

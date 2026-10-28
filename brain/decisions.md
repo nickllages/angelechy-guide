@@ -107,7 +107,7 @@ Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict o
 Also: the 2nd Endgame (brick; user Oct 23: "just bad", not even a flex option), 2 Lancea (it turns off your own banishes), Pot of Sloth and a 3rd Typhoon for the open slot (Lava Golem ranked higher).
 
 ## Workflow preferences
-- **Replays page = Guide chapter 5, the last chapter (user, Oct 27):** high-level games only — regional/YCS/major-event feature matches and high-rated DuelingBook; never locals, unrated DB uploads or commentary/analysis channels; pure Angelechy only. Grouped by matchup (deep-dive ids), newest first, games before the Oct 19 list marked; no player/creator names; notes paraphrased. Data: build/replays_page.py → build/v3/replays.html (v3_apply inserts it).
+- **Replays page = Guide chapter 5, the last chapter (user, Oct 27):** high-level games only — regional/YCS/major-event feature matches and high-rated DuelingBook; never locals, unrated DB uploads or commentary/analysis channels; pure Angelechy only. Grouped by matchup (deep-dive ids) as ONE accordion of collapsed rows attached to each other (user, Oct 27: 'too long'), newest first, games before the Oct 19 list marked; no player/creator names; notes paraphrased. Data: build/replays_page.py → build/v3/replays.html (v3_apply inserts it).
 - **Text width (user, Oct 24):** paragraphs, lists and card texts fill the content column — no max-width:NNch reading-width limits.
 
 - Deck, side, Extra and siding changes are **proposed in chat**; the guide changes only after the user says yes. Research that doesn't change the deck goes straight into the guide.

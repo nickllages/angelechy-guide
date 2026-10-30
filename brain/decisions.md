@@ -78,6 +78,7 @@ Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict o
 
 ## Card decisions and the reasons (newest first)
 
+- **Oct 30 — Radiant Typhoon siding row (user: "I think ogre can be sided out").** Going 1st −3 Ghost Ogre −2 Effect Veiler −1 Endgame → +3 Boarder +2 Thrust +1 Verdict (Ogre is dead under Boarder until they make a Link/Xyz; Mourner and Droll stay for Krosea/Eldam/Swen). Going 2nd (Claude's call, open to change): −Terraforming −Prosperity −1 FBG → +3 Skull Meister (stops Fonix/Varuroon summoning from the GY off each MST); no Fuwalos (they summon from the Deck once or twice); Ogre stays (Mandate, Totem Bird, Varuroon). Row in build/side_oct27.py.
 - **Oct 30 — Radiant Typhoon read stays Even (user).** Going 1st vs Radiant Typhoon: user keeps the Opening to e4s; −Endgame and −Veiler accepted in principle; row not added yet (Thrust/Ogre question open).
 
 - **Oct 27 — the user's list = Lucas Sacco's Angelechy 101 main + side minus Bifrost and Shiina (+3 Cosmic Cyclone +2 Thrust):** Nibiru, Purulia and Brilliant Move out of the 70; Ghost Mourner ×2, Pot of Prosperity, Skull Meister ×3 in; Fuwalos to the side; 1 Verdict main + 1 side; Thrust 3→2. Siding rebuilt in build/side_oct27.py (side_oct24.py retired). Sacco's reasons are in wip.md (Oct 27) / meta.md.

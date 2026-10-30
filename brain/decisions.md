@@ -77,6 +77,8 @@ Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict o
 
 ## Card decisions and the reasons (newest first)
 
+- **Oct 30 — Radiant Typhoon read stays Even (user).** Going 1st vs Radiant Typhoon: user keeps the Opening to e4s; −Endgame and −Veiler accepted in principle; row not added yet (Thrust/Ogre question open).
+
 - **Oct 27 — the user's list = Lucas Sacco's Angelechy 101 main + side minus Bifrost and Shiina (+3 Cosmic Cyclone +2 Thrust):** Nibiru, Purulia and Brilliant Move out of the 70; Ghost Mourner ×2, Pot of Prosperity, Skull Meister ×3 in; Fuwalos to the side; 1 Verdict main + 1 side; Thrust 3→2. Siding rebuilt in build/side_oct27.py (side_oct24.py retired). Sacco's reasons are in wip.md (Oct 27) / meta.md.
 - **Oct 24 — the user's list:** 2 Effect Veiler ↔ 2 Nibiru (Nibiru main, Veiler side), Droll to the main (41), +1 Nibiru in the side, 2 Lava Golem → 2 Mulcharmy Purulia (the user had declined Purulia on Oct 19; now their own choice). Siding rebuilt in build/side_oct24.py (side_oct23.py retired).
 - **Oct 23 (later) — Brilliant Move back to the side, side (3rd) Effect Veiler cut (user: "ill move the briliant move back to the side and cut the trid veiler"; the siding review had flagged the side Veiler as only coming in vs Mitsurugi and Invoked).** Main 40 = the Oct 22 main. Siding rebuilt (side_oct23.py): going 1st the BM slot becomes a 2nd e4; Mitsurugi/Invoked lose the side Veiler (NOOG 7-for-7, Mitsurugi g2 +2 Nibiru, Invoked g2 keeps 2 Ogre); BM comes in going 2nd vs ROLAD piles, Lunalight, DTW and the mirror. BM card moved from 2.1 to 2.3.

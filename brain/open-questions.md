@@ -45,3 +45,7 @@ Close an item by moving it to the bottom section with the answer and date. Don't
 
 - (Oct 22) Radiant Typhoon has no deep dive or siding row; GGYGO calls it the best matchup into Angelechy (3 MST on placed pieces). Write one once post-list lists exist (Oct 24–26 regionals).
 - (Oct 22) Lucas Sacco rates Fairy Tail, Destiny HERO and Blitzclique as good matchups INTO Angelechy; the guide's reads are Fairy Tail Favored, Destiny HERO Even, Blitzclique Favored — proposed to the user, not changed.
+
+- **Oct 30:** Trif's 'number one hand trap vs Angelechy' still not named in free sources (his Oct 29 'How To ACTUALLY Play Angelechy' only says the masterclass covers 'the Ogre defense, the Ash defense'). Artifact Lancea showed up ×3 in a Radiant Typhoon side (Klein Rönnau, Oct 25) and ×2 in one Angelechy side — still a guess.
+- **Oct 30 (new):** ⚖ Radiant Typhoon Varuroon, the Marine Eidolon places one of your face-up monsters in your Spell & Trap Zone as a Continuous Spell — if it's an Angelechy, do its 'while placed' effects apply? Not yet checked with a ruling.
+- **Oct 30 (for the user):** Radiant Typhoon has no siding plan yet; the deep dive's read is set to Even pending the user's call.

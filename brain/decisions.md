@@ -30,7 +30,7 @@ Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict o
 ## Siding plans (generated from the newest `build/side_*.py`; do not edit by hand)
 
 <!-- plans:start -->
-*From `build/side_oct27.py` (2026-10-27).*
+*From `build/side_oct27.py` (2026-10-30).*
 
 | Matchup | Going 1st | Going 2nd |
 |---|---|---|

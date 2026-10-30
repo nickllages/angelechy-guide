@@ -190,3 +190,11 @@
 - Oct 27 (v113): Replays page 35 → 78 high-level games after a deep YouTube search.
 - Oct 27 (v114): Replays page is a compact accordion (one collapsed row per matchup).
 - Oct 27 (v115): Replays title without the 5.
+
+## 2026-10-30 (daily run; focus mode over) — post-list regionals + Radiant Typhoon deep dive (v116)
+- Checked: YGOPRODeck getDecks (Angelechy) + event pages for all Oct 24–25 regionals (Seattle, Fort Worth, Richmond, Matamoros, Georgetown, Mönchengladbach, Linz, Stockholm, Almería, German Open Kaiserslautern, South Park, Side Deck Remote, Klein Rönnau, Medellín, San Pedro Sula, Santo Domingo; Wasilla/Cape Town/Modbury unposted) + Belgrade (Oct 18). Pulled 17 Angelechy lists + the Ashtra 2nd (data/decks/Angelechy_postlist_Oct24-25.txt) and 5 Radiant Typhoon winning lists; card texts → data/decks/Radiant_Typhoon_texts.txt.
+- User (mid-run): "check the videos Lucas Sacco and Trif have on the matchup" (Radiant Typhoon). Channel searches: no post-list RT-vs-Angelechy video from either. Read: Sacco "How to beat Radiant Typhoon post BPRO" (Feb, engine unchanged), Trif "MOST ACCURATE META TIERLIST" (Oct 28), Trif "How To ACTUALLY Play Angelechy" (Oct 29). Notes in sources.md. Transcript method: curl captions still fail; the transcript panel works but after an in-page navigate read `ytd-engagement-panel-section-list-renderer[target-id=engagement-panel-searchable-transcript]` innerText (segment elements were empty).
+- Found: Angelechy top cut at all 16 posted post-list events, 0 wins, 4 second places; Radiant Typhoon won 4 (incl. the 311-player German Open, Seattle 1st+2nd). Full tallies in meta.md.
+- Merged: Meta report — Radiant Typhoon → Tier 1 (linked), DoomZ added to Tier 2, 17 new results rows (Oct 24–25 + Belgrade) and a line "made every posted top cut but won none". New deep dive #radiant (build/mu_v2_c.py; read Even = provisional, user to confirm; no siding row yet → v2.py section() now shows "No siding plan yet" when a matchup has no row); art data/assets/art/radiant.jpg; chapters.py KEY_CARD. Regression PASS, no JS errors; desktop + phone + index checked.
+- Proposed (summary): a Radiant Typhoon siding row (no Fuwalos going 2nd); read Even vs Unfavored.
+- Publish: artifact v116 (needed a full Read of the live file first; publish file = live wrapper line + local guide).

@@ -209,3 +209,8 @@
 - Publish: artifact v117 (needed a full Read of the live file + a fresh read before the publish was accepted).
 - Oct 30 (v116): 2nd Verdict always sided in going 1st.
 - Oct 30: v116 — Trif-based going-1st siding (all e4 kept, +Verdict always); stale count texts fixed (e4, Meister, Cyclone, Boarder, Verdict flex, Elfnote/Mitsurugi panels); odds 78%; Replays +SlowRun #8 (Blitzclique); Sources +Trif/Sacco Oct 29.
+
+## 2026-10-30 (third run, 15:10) — quiet
+- Checked: YGOPRODeck Tournament Meta Decks (nothing newer than Oct 25); DB Grinder search 'angelechy' (no new games since the 01:27 run); YouTube 'angelechy' by upload date.
+- New: Tenpai Angelechy San Pedro Sula Top 8 deck profile (mLf-1Scqi1g, read; notes in sources.md). Already in the Meta results; nothing for the pure build. OTS-store 1st and a $2k store event 2nd skipped (locals).
+- Merged: nothing (guide not republished). Proposed: none. Radiant Typhoon siding row still waiting on the user (Thrust/Ogre question).

@@ -207,3 +207,5 @@
 - Merged: Replays page + ROLAD deep dive replay (WVUBDq2ErNo); Sacred Beast deep dive hurts text (Code Breaker package, Martyr reset, mains Ogre/Fuwalos) + replay (Ashtra, labelled); chapter 4 #tech-backrow: Solemn Accusation (new anti-Angelechy tech) with play-around. Not on Replays page: Sacred Beast game (Ashtra variant).
 - Proposed: none. Radiant Typhoon siding row still waiting on the user.
 - Publish: artifact v117 (needed a full Read of the live file + a fresh read before the publish was accepted).
+- Oct 30 (v116): 2nd Verdict always sided in going 1st.
+- Oct 30: v116 — Trif-based going-1st siding (all e4 kept, +Verdict always); stale count texts fixed (e4, Meister, Cyclone, Boarder, Verdict flex, Elfnote/Mitsurugi panels); odds 78%; Replays +SlowRun #8 (Blitzclique); Sources +Trif/Sacco Oct 29.

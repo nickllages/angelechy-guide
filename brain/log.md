@@ -198,3 +198,12 @@
 - Merged: Meta report — Radiant Typhoon → Tier 1 (linked), DoomZ added to Tier 2, 17 new results rows (Oct 24–25 + Belgrade) and a line "made every posted top cut but won none". New deep dive #radiant (build/mu_v2_c.py; read Even = provisional, user to confirm; no siding row yet → v2.py section() now shows "No siding plan yet" when a matchup has no row); art data/assets/art/radiant.jpg; chapters.py KEY_CARD. Regression PASS, no JS errors; desktop + phone + index checked.
 - Proposed (summary): a Radiant Typhoon siding row (no Fuwalos going 2nd); read Even vs Unfavored.
 - Publish: artifact v116 (needed a full Read of the live file first; publish file = live wrapper line + local guide).
+
+## 2026-10-30 (second run, 01:27) — two new DB Grinder games (v117)
+- Checked: YGOPRODeck Tournament Meta Decks (nothing newer than the Oct 24–25 lists already in meta.md); DB Grinder channel search 'angelechy'.
+- New games: WVUBDq2ErNo "Resonator ROLAD Vs Angelechy High Rated DB" (Oct 29; Angelechy won 2–1) and rKLDXxyaglA "Sacred Beast Vs Angelechy High Rated DB" (Oct 28; the Angelechy side is Ashtra Angelechy, lost 0–2). Transcripts via timedtext hook (skip the ad first: the first capture is the ad's captions).
+  - ROLAD: G1 Fuwalos+Ash on Opposition; DBG: better to Opposition-shuffle Disturbance back then Shatranga adds it (+1 interruption). Castellan banished ROLAD's Set cards 2 columns away 3 times (ROLAD misplaced). ROLAD sided Solemn Accusation (3000 LP: banish Opposition + all copies in hand/Deck), Solemn Judgment, Spell Shattering Sword, Pot of Sloth (+ Typhoon, Impulse, Crimson Gaia, Resonator package).
+  - Sacred Beast: mains Ghost Ogre, Fuwalos, Infinite Impermanence; Code Breaker Link package (Zero Day, Virus Berserker, Firewall Dragon, Allied Code Talker) ending Eradicator + 2 Thunder Dragon Colossus + Set Trap; Martyr resets Set Traps. DBG: pure builds would side Boarder; Sacred Beast "more real than people give it credit".
+- Merged: Replays page + ROLAD deep dive replay (WVUBDq2ErNo); Sacred Beast deep dive hurts text (Code Breaker package, Martyr reset, mains Ogre/Fuwalos) + replay (Ashtra, labelled); chapter 4 #tech-backrow: Solemn Accusation (new anti-Angelechy tech) with play-around. Not on Replays page: Sacred Beast game (Ashtra variant).
+- Proposed: none. Radiant Typhoon siding row still waiting on the user.
+- Publish: artifact v117 (needed a full Read of the live file + a fresh read before the publish was accepted).

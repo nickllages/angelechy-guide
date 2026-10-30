@@ -36,17 +36,17 @@ Lines with 1 Verdict: Shatranga adds Opening to e4 (Set e4 at the end; Verdict o
 |---|---|---|
 | Elfnote Ars Magna | −2 Ghost Mourner, −2 Effect Veiler, −1 Droll, −1 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods, −1 Droll → +3 Fuwalos, +1 Skull Meister |
 | ROLAD pile | −2 Effect Veiler, −1 Endgame Problem, −2 Ghost Mourner, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −2 Effect Veiler, −1 Terraforming → +3 Fuwalos |
-| Angelechy mirror | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −1 Endgame Problem, −2 Spark → +1 Verdict, +3 Skull Meister, +2 Cosmic Cyclone, +2 Triple Tactics Thrust | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −3 Spark, −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos, +1 Verdict, +3 Skull Meister, +2 Cosmic Cyclone, +2 Triple Tactics Thrust |
+| Angelechy mirror | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −1 Endgame Problem, −2 Spark → +1 Verdict, +3 Skull Meister, +2 Typhoon, +2 Triple Tactics Thrust | −2 Effect Veiler, −2 Ghost Mourner, −1 Droll, −3 Spark, −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos, +1 Verdict, +3 Skull Meister, +2 Typhoon, +2 Triple Tactics Thrust |
 | Branded ROLAD | −2 Effect Veiler, −1 Endgame Problem, −2 Ghost Mourner, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −2 Effect Veiler, −1 Terraforming → +3 Fuwalos |
 | Power Patron / Artmage | −1 Endgame Problem, −2 Ghost Mourner, −1 Effect Veiler, −2 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
 | Yummy | −1 Endgame Problem, −2 Ghost Mourner, −2 Effect Veiler, −1 Droll → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
 | Mitsurugi | −3 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Effect Veiler → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict, +1 Skull Meister | −3 Ghost Ogre, −1 Terraforming → +3 Fuwalos, +1 Skull Meister |
 | Fairy Tail | −1 Endgame Problem, −2 Ghost Mourner, −2 Effect Veiler, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
-| Blitzclique | −2 Effect Veiler, −1 Endgame Problem, −2 Ghost Mourner, −1 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −2 Effect Veiler, −1 Terraforming → +2 Cosmic Cyclone, +1 Skull Meister |
+| Blitzclique | −2 Effect Veiler, −1 Endgame Problem, −2 Ghost Mourner, −1 Ghost Ogre → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −2 Effect Veiler, −1 Terraforming → +2 Typhoon, +1 Skull Meister |
 | Branded | −1 Endgame Problem, −1 Droll, −2 Ghost Mourner, −1 Effect Veiler, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Droll, −1 Terraforming, −1 Pot of Prosperity → +3 Fuwalos |
-| Destiny HERO | −3 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Effect Veiler → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict, +1 Cosmic Cyclone | −3 Ghost Ogre, −1 Terraforming → +3 Fuwalos, +1 Skull Meister |
+| Destiny HERO | −3 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Effect Veiler → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict, +1 Skull Meister | −3 Ghost Ogre, −1 Terraforming → +3 Fuwalos, +1 Skull Meister |
 | Dark Time Wizard | −1 Endgame Problem, −2 Ghost Mourner, −3 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −3 Spark → +3 Fuwalos |
-| Sky Striker | −2 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −3 Spark, −1 Terraforming, −1 Pot of Prosperity → +3 Fuwalos, +2 Cosmic Cyclone |
+| Sky Striker | −2 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −3 Spark → +3 Fuwalos |
 | Invoked | −3 Ghost Ogre, −1 Endgame Problem, −2 Ghost Mourner, −1 Effect Veiler → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict, +1 Skull Meister | −2 Ghost Ogre, −1 Terraforming → +3 Fuwalos |
 | Maliss | −1 Endgame Problem, −1 Ghost Mourner, −1 Effect Veiler, −1 Droll, −1 Ghost Ogre, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
 | Sacred Beast | −1 Endgame Problem, −2 Ghost Mourner, −2 Effect Veiler, −1 Spark → +3 Inspector Boarder, +2 Triple Tactics Thrust, +1 Verdict | −1 Terraforming, −1 Pot of Prosperity, −1 Foolish Burial Goods → +3 Fuwalos |
@@ -124,3 +124,6 @@ Also: the 2nd Endgame (brick; user Oct 23: "just bad", not even a flex option), 
 - "I always want verdict sided in when going first" + "base our siding somewhat on triffs siding ... removing any handtrap that is not super relevant when going first against the specific matchup and keeping in the e4s".
 - Every going-1st plan: keep all 3 e4, +1 Verdict, +3 Boarder +2 Thrust (no Boarder in the mirror), −Endgame (stays vs Elfnote), and cut the 5 least relevant hand traps for that matchup. Source of truth: build/side_oct27.py (check() asserts it).
 - After-siding going-1st odds: play 90%, survives a hand trap 78% (69% mirror). Home stat + Odds table updated.
+
+## Oct 30 — side: 3 Typhoon replace 3 Cosmic Cyclone (user)
+- Typhoon = face-up only, destroys; from hand only while you control no S/T. Never on Dark City or Area Zero. Plans: mirror +2 (both turns), Blitz 2nd +2; Sky Striker 2nd −3 Spark +3 Fuwalos only; D-HERO 1st +1 Skull Meister.

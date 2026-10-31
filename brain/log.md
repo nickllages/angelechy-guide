@@ -215,3 +215,10 @@
 - New: Tenpai Angelechy San Pedro Sula Top 8 deck profile (mLf-1Scqi1g, read; notes in sources.md). Already in the Meta results; nothing for the pure build. OTS-store 1st and a $2k store event 2nd skipped (locals).
 - Merged: nothing (guide not republished). Proposed: none. Radiant Typhoon siding row still waiting on the user (Thrust/Ogre question).
 - Oct 30 (third run, follow-up): user — "I think ogre can be sided out" vs Radiant Typhoon. Added the RT siding row (18th row; v2.py ROWID; side_oct27.py RT1 + radiant plan, n==18): 1st −3 Ogre −2 Veiler −Endgame → +3 Boarder +2 Thrust +Verdict; 2nd −Terraforming −Prosperity −1 FBG → +3 Skull Meister (26 · 90%). Regression PASS, presets 36/36. Live already: a parallel session's v120 publish (3 Typhoon in the mirror) went out at 15:12 from the same guide file, so the artifact + Pages carry the row.
+
+## 2026-10-31 (daily run, Saturday) — anti-Angelechy tech from Sacco's "How to beat Angelechy" (v121)
+- Checked: YGOPRODeck Tournament Meta Decks (nothing newer than the Oct 24–25 lists; this weekend's events not posted yet); DB Grinder search 'angelechy' (only Ashtra/Genesys uploads since last run); YouTube 'angelechy' + 'angelechy deck profile' by upload date.
+- Read: Sacco T79V007n2GY (Oct 30) — notes in sources.md. Open question 4: best free-source answer is Skull Meister; Shiina + Maple Maiden confirmed as the masterclass Houston tech.
+- Merged (chapter 4, build/v3/techs.html): new entry #tech-count (their own Angelechy Synchro / Odin / Double Star Shaman off Seneschal pushes the count to 5+, so your Verdict can't negate their breaker); backrow section + table rows: Spiritualism (unnegatable), Evenly Matched (face-down banish), their own Verdict via Triple Tactics Thrust; GY section: Ogre + Skull Meister pairing. Replays: Dutch Open R1 feature match vs Kewl Tune (81 games). Card texts checked (YGOPRODeck API). Regression PASS, no JS errors; phone checked.
+- Proposed: none.
+- Publish: artifact v121 (full Read of the live file + fresh read needed again).

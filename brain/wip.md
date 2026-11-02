@@ -129,3 +129,5 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Oct 30: user — 3 Typhoon in the mirror (both turns); "you can cut sparks". DONE, artifact v120: going 1st −3 Spark (was −2) for +3 Typhoon; going 2nd Spark already all out, so +3 Typhoon costs one Thrust (2→1). Texts: 2.2 More mirrors, Spark, 2.3 Typhoon/Thrust, templates.
 - Oct 30: user — Ogre out vs Radiant Typhoon. DONE: RT siding row added (side_oct27.py, v2.py ROWID); live via the v120 publish; presets 36/36, regression PASS. Going-2nd half (Skull Meister) is Claude's call, reported.
 - Oct 31 (daily run): DONE — chapter 4 tech from Sacco video, Dutch Open replay; artifact v121.
+
+- Nov 2 (daily run): DONE — Oct 31–Nov 1 results in #meta, cash-tourney replay (Elfnote + new Radiant group on Replays); artifact v122 + Pages.

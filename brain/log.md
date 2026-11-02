@@ -222,3 +222,10 @@
 - Merged (chapter 4, build/v3/techs.html): new entry #tech-count (their own Angelechy Synchro / Odin / Double Star Shaman off Seneschal pushes the count to 5+, so your Verdict can't negate their breaker); backrow section + table rows: Spiritualism (unnegatable), Evenly Matched (face-down banish), their own Verdict via Triple Tactics Thrust; GY section: Ogre + Skull Meister pairing. Replays: Dutch Open R1 feature match vs Kewl Tune (81 games). Card texts checked (YGOPRODeck API). Regression PASS, no JS errors; phone checked.
 - Proposed: none.
 - Publish: artifact v121 (full Read of the live file + fresh read needed again).
+
+## 2026-11-02 (daily run, Monday) — Oct 31–Nov 1 regionals + cash-tourney replay (v122)
+- Checked: YGOPRODeck tournaments + Tournament Meta Decks (Oct 31–Nov 1 events), 8 Angelechy lists decoded by card ID; DB Grinder search 'angelechy' (1 new: _CfR5o5plfw); YouTube 'angelechy' / 'deck profile' / 'regional' (nothing new besides already-logged profiles; MqTzEtj7pM4 Fort Worth T8 profile not read).
+- New results: Angelechy 9 of 11 posted top cuts, 0 wins, 2nd at Bremen, Dutch Open (188), Graz, Rio, Side Deck Remote (notes in meta.md).
+- Merged: #meta results list (9 events) + note (25 of 27 post-list top cuts, nine 2nd places); Replays page: _CfR5o5plfw in Elfnote and a new Radiant Typhoon group (moved the 3 "other:Radiant Typhoon" games there; ORDER += radiant); mu_v2_a/c replays fields (not rendered). Tests PASS, phone Meta OK.
+- Proposed: optional −1 Chaos Angel +1 Masterflare Hyperion (Extra). Open question 4 (Trif's hand trap): nothing new in free sources.
+- Publish: artifact v122 + Pages + brain.

@@ -229,3 +229,12 @@
 - Merged: #meta results list (9 events) + note (25 of 27 post-list top cuts, nine 2nd places); Replays page: _CfR5o5plfw in Elfnote and a new Radiant Typhoon group (moved the 3 "other:Radiant Typhoon" games there; ORDER += radiant); mu_v2_a/c replays fields (not rendered). Tests PASS, phone Meta OK.
 - Proposed: optional −1 Chaos Angel +1 Masterflare Hyperion (Extra). Open question 4 (Trif's hand trap): nothing new in free sources.
 - Publish: artifact v122 + Pages + brain.
+
+## 2026-11-04 (daily run, Wednesday) — late Nov 1 results + Luxembourg feature match (v123)
+- Checked: YGOPRODeck tournaments (San Salvador, Panama City, Eclubens were unposted on Nov 2) + Tournament Meta Decks; DB Grinder search 'angelechy' (nothing new since _CfR5o5plfw); YouTube 'angelechy' / 'deck profile' / 'regional' / 'vs angelechy' by upload date.
+- New results: San Salvador (150, Nov 1) posted — Angelechy Top 8 (Paul Berlin, no list); winner L&D Ritual. Guadalajara Top 8 list now posted (742567, Miguel Angel Hernandez Morales). Panama City + Eclubens still unposted.
+- Guadalajara list vs user's: main 3 Fuwalos + 1 Purulia (no Veiler/Mourner), 2 Verdict, 2 Spark; Extra 1 Castellan, 2 Seneschal, Masterflare Hyperion (no Chaos Angel); side 3 Boarder, 1 Purulia, 3 Hey Space Trunade, 2 Pot of Sloth, 3 Typhoon, 2 Solemn Accusation, 1 Solemn Judgment (mirror/backrow package).
+- Read: Chain Link 3 tcfT_CyZ9Ss (Nov 3) — Differdange/Luxembourg WCQ R4, Angelechy vs Elfnote, 1–2 (notes in sources.md).
+- Merged: #meta results (San Salvador row, Guadalajara list link, tally 26 of 28); Replays page +tcfT_CyZ9Ss in Elfnote (84 games). Regression PASS, no JS errors.
+- Proposed: none. Open question 4: nothing new in free sources.
+- Publish: artifact v123 (full Read of the live file + a fresh read were needed again).

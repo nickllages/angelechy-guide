@@ -131,3 +131,5 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Oct 31 (daily run): DONE — chapter 4 tech from Sacco video, Dutch Open replay; artifact v121.
 
 - Nov 2 (daily run): DONE — Oct 31–Nov 1 results in #meta, cash-tourney replay (Elfnote + new Radiant group on Replays); artifact v122 + Pages.
+
+- Nov 4 (daily run): DONE — San Salvador + Guadalajara list in #meta, Luxembourg R4 feature match on Replays; artifact v123 + Pages.

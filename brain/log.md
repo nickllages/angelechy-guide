@@ -238,3 +238,8 @@
 - Merged: #meta results (San Salvador row, Guadalajara list link, tally 26 of 28); Replays page +tcfT_CyZ9Ss in Elfnote (84 games). Regression PASS, no JS errors.
 - Proposed: none. Open question 4: nothing new in free sources.
 - Publish: artifact v123 (full Read of the live file + a fresh read were needed again).
+
+## 2026-11-04 (second run, Wednesday) — quiet
+- Checked: YGOPRODeck tournaments (Panama City + Eclubens still have no players/lists posted) + Tournament Meta Decks (nothing newer than the Nov 1 lists); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'angelechy deck profile' / 'vs angelechy' by upload date.
+- Skipped (locals / no top): Wenster "Undefeated Angelechy Deck Profile" vkF9SNVas5w (OTS, Nov 3) and Ashtra vs Angelechy OTS e44zbQEMhaM; Chico Dino "Clean" Angelechy profile kB4QPXnL4x0 (no event); Lost Zone locals WcEvg-5-_xg (vs Radiant Typhoon), wiP3YAMay-w (vs Sky Striker).
+- Merged: nothing (guide not republished). Proposed: none. Open question 4: nothing new in free sources.

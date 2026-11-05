@@ -250,3 +250,11 @@
 - Merged: #meta results (Panama City row; San Salvador link + label; tally 27 of 29); Replays page +3 Differdange feature matches (R6/R7 vs ROLAD Power Patron, R8 vs Artmage) → 87 games. Regression PASS, no JS errors.
 - Proposed: none. Open question 4: nothing new in free sources (Lancea ×3 + Ghost Belle ×3 in the Panama City Angelechy side; still no named "number one hand trap").
 - Publish: artifact v124 (full Read of the live file + a fresh read again).
+
+## 2026-11-05 (second run, Thursday) — Graz Top 4 list (Pages only)
+- Checked: YGOPRODeck tournaments (this weekend's events Bern/Bologna/Puebla/YCS Orlando… not played yet; Eclubens only a Sacred Beasts Top 4 posted) + Tournament Meta Decks (new: Graz Angelechy 742823, Eclubens Sacred Beasts 742809, San Salvador Maliss 742845); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'angelechy deck profile' by upload date.
+- New result: Graz (37, Oct 31) Top 4 Ben Grandl, Angelechy 742823 — main = user's 40 with +1 Veiler −1 Spark; Extra Stardust Dragon for the 2nd Castellan; side 3 Boarder, 3 Ghost Belle, 3 Skull Meister, 3 Nibiru, 3 Solemn Accusation (meta.md).
+- Skipped: OldDogsYGO "1st place OTS Championship" Angelechy profile 2OP1i40OTR8 (store event).
+- Merged: #meta results — Graz row now 2nd + Top 4 (tally unchanged, Graz already counted).
+- Proposed: none (one small-event list; Nibiru was cut by the user Oct 27). Open question 4: nothing new in free sources.
+- Publish: GitHub Pages + brain only. Artifact NOT republished (it refuses until the whole 554KB live file is Read; skipped for a one-link change). Local guide is ahead of the artifact by this one link; the next run that republishes carries it.

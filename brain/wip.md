@@ -135,3 +135,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Nov 4 (daily run): DONE — San Salvador + Guadalajara list in #meta, Luxembourg R4 feature match on Replays; artifact v123 + Pages.
 - Nov 4 (second run): quiet, nothing merged.
 - Nov 5 (daily run): DONE — Panama City in #meta, 3 Luxembourg feature matches on Replays; artifact v124 + Pages.
+- Nov 5 (second run): DONE — Graz Top 4 list link in #meta; Pages + brain pushed; artifact republish deferred (one link).

@@ -192,3 +192,11 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
 - San Salvador WCQ (150): 1st Moises Barrios L&D Ritual, 2nd Maliss, Top 4 Blitzclique + Fairy Tail, Top 8 L&D Ritual, 2 Elfnote, **Angelechy (Paul Berlin, no list)**.
 - Guadalajara Top 8 Angelechy list posted: https://ygoprodeck.com/deck/angelechy-742567 — main 3 Ash, 3 Ogre, 1 Droll, 3 Fuwalos, 1 Purulia, 3 Problem, 3 SS, 3 Opposition, 1 Endgame, 3 FBG, 1 Prosperity, 1 Terra, 3 Purge, 3 Impulse, 2 Spark, 3 e4, 1 Disturbance, 2 Verdict; Extra 2 Shatranga, 2 Enlisted, 1 Castellan, 2 Seneschal, 2 Bastion, 2 Destrier, Legatia, Masterflare Hyperion, Kusanagi, BWAD; side 3 Boarder, 1 Purulia, 3 Hey Space Trunade!, 2 Pot of Sloth, 3 Typhoon, 2 Solemn Accusation, 1 Solemn Judgment.
 - Post-list tally: Angelechy 26 of 28 posted top cuts, 0 wins. Panama City and Eclubens still unposted.
+
+### Nov 5 — late Nov 1 lists posted (YGOPRODeck)
+- Panama City WCQ (60, Nov 1): 1st Moises Pedraza Sky Striker, 2nd Martin Jovane Elfnote, Top 4 **David Vega Angelechy (742728)** + Rafael Baloyes Invoked, Top 8 Maliss, Fairy Tail, Elfnote, Sky Striker (Radiant Typhoon Sky Striker list 742726).
+  - Vega's list vs user's: main 3 Fuwalos + 3 Veiler (no Mourner, no Spark, no Prosperity), Brilliant Move + Rainbow Bridge Bifrost, 1 Verdict; Extra 3 Shatranga, 1 Castellan, 1 Seneschal, Masterflare Hyperion (no BWAD); side 3 Boarder, **3 Artifact Lancea**, 3 Purulia, **3 Ghost Belle**, 1 Disturbance, 2 Verdict. Small event; no proposal.
+- San Salvador Top 8 Paul Berlin list posted (742722): it's **Elfnote Power Patron with an Angelechy splash** (3 e4, 1 Problem, Shatranga/2 Enlisted/Bastion/2 Destrier; Witness of the Ancient; Ultimaya Tzolkin). Side: 2 Lancea, Santa Claws, Lava Golem, 2 Nibiru, Duster, 2 Thrust, 3 Evenly Matched, 2 Typhoon, Magic Deflector. Guide row relabelled "Elfnote with an Angelechy splash" (still counted like the Tenpai splash rows).
+- Eclubens (56→80): only Top 4 Arthur Damiano Sacred Beasts posted; rest unknown.
+- Cluj-Napoca Top 8 lists posted (2 Elfnote, Sky Striker, Power Patron Artmage) — no Angelechy (already known).
+- Post-list tally: Angelechy 27 of 29 posted top cuts, 0 wins.

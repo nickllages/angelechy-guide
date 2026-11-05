@@ -243,3 +243,10 @@
 - Checked: YGOPRODeck tournaments (Panama City + Eclubens still have no players/lists posted) + Tournament Meta Decks (nothing newer than the Nov 1 lists); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'angelechy deck profile' / 'vs angelechy' by upload date.
 - Skipped (locals / no top): Wenster "Undefeated Angelechy Deck Profile" vkF9SNVas5w (OTS, Nov 3) and Ashtra vs Angelechy OTS e44zbQEMhaM; Chico Dino "Clean" Angelechy profile kB4QPXnL4x0 (no event); Lost Zone locals WcEvg-5-_xg (vs Radiant Typhoon), wiP3YAMay-w (vs Sky Striker).
 - Merged: nothing (guide not republished). Proposed: none. Open question 4: nothing new in free sources.
+
+## 2026-11-05 (daily run, Thursday) — Panama City + 3 Luxembourg feature matches (v124)
+- Checked: YGOPRODeck tournaments + Tournament Meta Decks (Panama City, San Salvador list, Eclubens partial, Cluj lists); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'deck profile' / 'vs angelechy' / 'regional' by upload date.
+- New results: Panama City (60, Nov 1) Angelechy Top 4 (742728); San Salvador Top 8 list is Elfnote with an Angelechy splash (742722). Notes in meta.md.
+- Merged: #meta results (Panama City row; San Salvador link + label; tally 27 of 29); Replays page +3 Differdange feature matches (R6/R7 vs ROLAD Power Patron, R8 vs Artmage) → 87 games. Regression PASS, no JS errors.
+- Proposed: none. Open question 4: nothing new in free sources (Lancea ×3 + Ghost Belle ×3 in the Panama City Angelechy side; still no named "number one hand trap").
+- Publish: artifact v124 (full Read of the live file + a fresh read again).

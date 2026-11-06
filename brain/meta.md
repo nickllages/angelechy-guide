@@ -207,3 +207,10 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
   - Extra: 1 Castellan (not 2) + Stardust Dragon.
   - Side 15: 3 Inspector Boarder, 3 Ghost Belle & Haunted Mansion, 3 Skull Meister, 3 Nibiru, 3 Solemn Accusation (no Fuwalos, no Typhoon, no Thrust, no 2nd Verdict) — going-2nd plan is GY hate + Nibiru; Solemn Accusation is mirror/backrow tech.
 - Eclubens (Nov 1) partially posted: only a Sacred Beasts Top 4 (Arthur Damiano 742809); winner/2nd unknown.
+
+### Nov 6 — Modbury (Adelaide) WCQ Regional, Oct 24 (≈32, YGOPRODeck slug modbury-wcq-regional-5214, no top cut posted)
+- 1st: Jack Henderson, Angelechy (source: OldDogsYGO profile 8Yy7Nn7y0co, Nov 5; hand-held cards, names not legible on video — list reconstructed from the audio, items marked ? are uncertain).
+- Main 40: 3 Strategy Score? ("starter field spell" ×3 = Problem), 1 Disturbance? ("use a trap the same turn you set it" — probably Endgame or Disturbance), 3+3 starters (Opposition, Strategy Score), 3 e4, 1 Endgame?, 2 Verdict ("two is correct… don't listen to [creators] who want another hand trap in that slot"), 3 Foolish Burial Goods (says it can be sided out), 3 Ash, 3 Ogre, 1 Droll (40th card), 3 Impulse, 3 Purge, 3 Spark. No Veiler, Mourner or Prosperity in the main.
+- Extra: 2 Enlisted, 2 Destrier, 2 Castellan, 2 Bastion, 2 Shatranga, 1 Seneschal, Kusanagi, Black-Winged Assault Dragon, 1 Chaos Angel? ("Squirtangle"), 1 borrowed negate Synchro (probably Baronne de Fleur).
+- Side: 3 Inspector Boarder, 3 Skull Meister ("kept beating Branded"), 3 Nibiru ("not that good"), 3 Effect Veiler (vs Black-Winged Assault Dragon lines/burn), 2 Triple Tactics Thrust, 1 Hey, Space Trunade!.
+- vs user's: 2 Verdict main (user: 1 + 1 side), Veiler/Mourner moved to the side, Nibiru side. Small event; no proposal.

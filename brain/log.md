@@ -258,3 +258,12 @@
 - Merged: #meta results — Graz row now 2nd + Top 4 (tally unchanged, Graz already counted).
 - Proposed: none (one small-event list; Nibiru was cut by the user Oct 27). Open question 4: nothing new in free sources.
 - Publish: GitHub Pages + brain only. Artifact NOT republished (it refuses until the whole 554KB live file is Read; skipped for a one-link change). Local guide is ahead of the artifact by this one link; the next run that republishes carries it.
+
+## 2026-11-06 (daily run, Friday) — Modbury win found + Dutch Open profile (v125)
+- Checked: YGOPRODeck tournaments (this weekend's events — YCS Orlando, Bern, Puebla, Bologna… — not played yet; nothing new posted) + Tournament Meta Decks (nothing newer than Nov 5's); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'angelechy deck profile' / 'vs angelechy' / 'angelechy regional' / 'angelechy feature match' / 'side against angelechy' by upload date.
+- New result: Modbury WCQ Regional (Adelaide, Australia, Oct 24, ≈32 players, YGOPRODeck has no top cut posted) — 1st Jack Henderson, Angelechy (OldDogsYGO profile 8Yy7Nn7y0co, Nov 5). First post-list regional win for Angelechy.
+- Read (transcripts): Modbury profile (hand-held cards, names not legible; list from the audio, see meta.md) and Bronas Ygo "Dutch Open 2026 2nd place Angelechy" 2n0zI4gpPtI (Nov 4; the list already counted as 742092) — reasons in sources.md.
+- Merged: #meta results (Modbury row, tally now 28 of 30 top cuts, 1 win); Sources footer +2 profiles; Replays page +NV9QRDmZgaQ (Toph Sinex high-rated DB vs Elfnote, Nov 4) → 88 games. Regression PASS, no JS errors.
+- Proposed: none (both lists sit close to the user's; nothing strong enough to re-raise Nibiru / 2nd Verdict main / Hyperion beyond what's already on record). Open question 4: nothing new in free sources.
+- Skipped: Yu-Gi-Phil OTS Blitzclique vs Angelechy ci_k_aWe5cM (store event); Carlos Talamantes "Hero vs Angelechy" MLNnxuQ9KI0 (no event); Team Solemn Circus locals nTdH8dB8_Js (vs Radiant Typhoon).
+- Publish: artifact v125 (full Read of the live file again; publish from a merged copy) + Pages + brain.

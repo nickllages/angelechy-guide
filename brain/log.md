@@ -267,3 +267,10 @@
 - Proposed: none (both lists sit close to the user's; nothing strong enough to re-raise Nibiru / 2nd Verdict main / Hyperion beyond what's already on record). Open question 4: nothing new in free sources.
 - Skipped: Yu-Gi-Phil OTS Blitzclique vs Angelechy ci_k_aWe5cM (store event); Carlos Talamantes "Hero vs Angelechy" MLNnxuQ9KI0 (no event); Team Solemn Circus locals nTdH8dB8_Js (vs Radiant Typhoon).
 - Publish: artifact v125 (full Read of the live file again; publish from a merged copy) + Pages + brain.
+
+## 2026-11-07 (daily run, Saturday) — quiet; 2 missed feature matches added to Replays (Pages only)
+- Checked: YGOPRODeck tournaments (YCS Orlando, Bern, Puebla, Madrid, Wien, Grantham… are being played Nov 7–8; nothing posted) + Tournament Meta Decks (nothing newer than Nov 5's); DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'deck profile' / 'vs angelechy' / 'regional' / 'feature match' by upload date.
+- Merged: Replays page +3aeqeDJCwMU (Chain Link 3, Dutch Open R5 vs Invoked, uploaded Nov 1; earlier runs missed it) and +YAZPlGPjBHE (YGO duel replays, YCS Houston R8 mirror, Oct 18, before the list; the Houston R14 re-upload CrWYTSykBkU is a duplicate of Owx2iDsuU9E) → 90 games. Not read (no notes). Regression PASS, no JS errors.
+- Skipped: YCS Orlando Genesys feature matches (Chain Link 3: Ancient Fairy / Ashtra / Blitzclique / DTW Angelechy variants, Genesys format); OldDogsYGO OTS 1st profile NBBYhEUg6IA (store); psaiYGO locals vs Sacred Beasts Pvx_tOVf7SU.
+- Proposed: none. Open question 4: nothing new in free sources.
+- Publish: Pages + brain. Artifact NOT republished (two replay links; the next republish carries them, like Nov 5).

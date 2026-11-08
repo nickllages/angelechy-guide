@@ -214,3 +214,9 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
 - Extra: 2 Enlisted, 2 Destrier, 2 Castellan, 2 Bastion, 2 Shatranga, 1 Seneschal, Kusanagi, Black-Winged Assault Dragon, 1 Chaos Angel? ("Squirtangle"), 1 borrowed negate Synchro (probably Baronne de Fleur).
 - Side: 3 Inspector Boarder, 3 Skull Meister ("kept beating Branded"), 3 Nibiru ("not that good"), 3 Effect Veiler (vs Black-Winged Assault Dragon lines/burn), 2 Triple Tactics Thrust, 1 Hey, Space Trunade!.
 - vs user's: 2 Verdict main (user: 1 + 1 side), Veiler/Mourner moved to the side, Nibiru side. Small event; no proposal.
+
+### Nov 7 regionals (checked Nov 8, YGOPRODeck)
+- Wien WCQ (50): 1st Manuel Kiefer Destiny HERO (743381), 2nd Daniel Kiefer Sacred Beasts (743382), Top 4 Benjamin Grenier Radiant Typhoon (743384) + Max Grandl Sacred Beasts, Top 8 Elfnote ×3 (743379), Maliss (743378). No Angelechy.
+- Gothenburg WCQ (27): 1st Mikael Westlund Sky Striker, 2nd + Top 4 Elfnote (743373), Top 4 Mermail, Top 8 L&D Ritual, Artmage ×2, Ashtra. No Angelechy.
+- Grantham WCQ (63, partial): 2nd Liam Davis Radiant Typhoon (743372), Top 8 Thomas Rolph Elfnote (743374).
+- Post-list tally: Angelechy 28 of 32 posted top cuts, 1 win. Sacred Beasts 2 of Wien's top 4; D-HERO's first post-list win seen.

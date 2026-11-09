@@ -290,3 +290,4 @@
 - Read: champion profile udweWgY_iks (reasons in sources.md).
 - Merged: #meta results (YCS Orlando + Mar del Plata rows, tally); Sources footer +champion profile; mirror deep dive 'what they do to you' + grind plan (go 2nd, Sloth/Trunade/Desires/Brilliant Move, Chaos Angel to bait Verdict). Tests PASS, no JS errors.
 - Proposed: Extra +Masterflare Hyperion (8/8 lists) over the 2nd Castellan (user's own flex rule) or BWAD; side −2 Thrust +2 Nibiru (6/8 incl. winner + Sacco; 0/8 run Thrust). Noted, not proposed: Fuwalos main 5/8, Pot of Desires, Trunade 6/8, winner's Boarder doubt.
+- Publish: Pages + brain. Artifact NOT republished (publish gate needs a full ~260k-token Read; diff of live vs local shows only our Nov 7–9 edits missing, no outside edits). Next run with spare budget should do the full read + republish.

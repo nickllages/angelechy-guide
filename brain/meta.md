@@ -220,3 +220,10 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
 - Gothenburg WCQ (27): 1st Mikael Westlund Sky Striker, 2nd + Top 4 Elfnote (743373), Top 4 Mermail, Top 8 L&D Ritual, Artmage ×2, Ashtra. No Angelechy.
 - Grantham WCQ (63, partial): 2nd Liam Davis Radiant Typhoon (743372), Top 8 Thomas Rolph Elfnote (743374).
 - Post-list tally: Angelechy 28 of 32 posted top cuts, 1 win. Sacred Beasts 2 of Wien's top 4; D-HERO's first post-list win seen.
+
+## Nov 7–8 — YCS Orlando (1,417) + Mar del Plata (60)
+- YCS Orlando Top 32 (YGOPRODeck ycs-orlando-5264): Angelechy 8 (1st Logan Kite 743571, Top 4 Brandon Hagen 743578, Top 8 Lennard Klein 743584 + Luka Kovac 743581, Top 16 Lucas Sacco 743595 + Fredy Ruiz 743587, Top 32 Noah Williams 743604 + Levi Dudley (no list)); Elfnote 7 (2nd Joseph Bellafiore, Top 4 Patrick Hoban); Radiant Typhoon Top 8 (Sylvia Dupee) + RT Sky Striker; Sky Striker 3; Power Patron 2; Fairy Tail 1; Invoked 1. Also Top 32 Angelechy Ashtra (Alfred Danklefsen, TEAM BORTLE profile fbfcBsNIMLg).
+- Mar del Plata WCQ (60): 1st Rodrigo Britez, Angelechy (743585).
+- Winner's list (Kite) vs user: main −2 Veiler −2 Mourner −1 Spark −1 Prosperity → +3 Fuwalos +2 Pot of Desires +1 Verdict; Extra −BWAD +Masterflare Hyperion (keeps 2 Castellan + Chaos Angel); side 3 Boarder, 3 Nibiru, 2 Trunade, 2 Purulia, 2 Pot of Sloth, 1 Brilliant Move, 1 Desires, 1 Bifrost.
+- Sacco (Top 16): main = user's main exactly; Extra 3 Destrier, 1 Castellan, Hyperion, no Chaos Angel; side 3 Boarder, 3 Fuwalos, 3 Nibiru, 3 Skull Meister, 2 Bifrost, 1 Verdict (Shiina → Nibiru since Oct 27).
+- 8 lists (7 Orlando + Mar del Plata): Hyperion 8/8; Nibiru side 6/8; Trunade side 6/8; Fuwalos main 5/8; Boarder side 7/8; 2 Verdict main 3/8; Brilliant Move main 4/8; Typhoon side 2/8; Skull Meister 2/8; Thrust 0/8; Cosmic Cyclone 2/8; Pot of Sloth 3/8; Castellan ×2 3/8; Chaos Angel 5/8; BWAD 5/8. Raw: data/decks/Angelechy_YCS_Orlando.txt.

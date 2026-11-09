@@ -139,3 +139,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Nov 6 (daily run): DONE — Modbury win in #meta, 2 profiles in Sources, Toph Sinex DB game on Replays; artifact v125 + Pages.
 - Nov 7 (daily run): DONE — 2 missed feature matches on Replays (90); Pages + brain; artifact deferred.
 - Nov 8 (daily run): DONE — Wien/Gothenburg (no Angelechy) in #meta tally, 3 new games on Replays (93), Sky Striker deep dive breakers; Pages + brain; artifact deferred (lags Nov 7–8).
+- Nov 9 (daily run): YCS Orlando + Mar del Plata in #meta, champion profile in Sources, mirror grind plan; Pages + brain pushed; artifact republish in progress (needs full read).

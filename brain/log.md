@@ -283,3 +283,10 @@
 - Skipped: N-dNjqO7h6o (Angelechy Blitzclique variant, YCS Orlando bonus); KingJae kOZ_1OPHVvI (own-POV YCS round, not a feature match); SoloGames VIP-qualifier store games; KingJae Tenpai Angelechy. Not read: Graz 2nd profile qkiXWtxYheY (Sheep, Nov 7; list 741999 already in meta.md) — read next run.
 - Proposed: none. Open question 4: nothing new in free sources.
 - Publish: Pages + brain. Artifact NOT republished (needs a full ~270k-token Read of the live file; three links + one paragraph). Live artifact now lags local by the Nov 7 + Nov 8 Replays/Meta edits; the next run (YCS Orlando results) should republish.
+
+## 2026-11-09 (daily run, Monday) — YCS Orlando won by Angelechy (8 of Top 32) + Mar del Plata win
+- Checked: YGOPRODeck tournaments + Tournament Meta Decks (YCS Orlando Top 32 posted; Mar del Plata winner); YouTube 'angelechy ycs orlando' / 'angelechy deck profile' / 'trif angelechy' by upload date; DB Grinder search 'angelechy' (nothing new).
+- New results: YCS Orlando (1,417): Angelechy 1st, Top 4, 2× Top 8, 2× Top 16, 2× Top 32; Elfnote 2nd + 6 more; RT Top 8. Mar del Plata WCQ (60): Angelechy 1st. Tally 30 of 34 post-list top cuts, 3 wins. Details meta.md.
+- Read: champion profile udweWgY_iks (reasons in sources.md).
+- Merged: #meta results (YCS Orlando + Mar del Plata rows, tally); Sources footer +champion profile; mirror deep dive 'what they do to you' + grind plan (go 2nd, Sloth/Trunade/Desires/Brilliant Move, Chaos Angel to bait Verdict). Tests PASS, no JS errors.
+- Proposed: Extra +Masterflare Hyperion (8/8 lists) over the 2nd Castellan (user's own flex rule) or BWAD; side −2 Thrust +2 Nibiru (6/8 incl. winner + Sacco; 0/8 run Thrust). Noted, not proposed: Fuwalos main 5/8, Pot of Desires, Trunade 6/8, winner's Boarder doubt.

@@ -291,3 +291,11 @@
 - Merged: #meta results (YCS Orlando + Mar del Plata rows, tally); Sources footer +champion profile; mirror deep dive 'what they do to you' + grind plan (go 2nd, Sloth/Trunade/Desires/Brilliant Move, Chaos Angel to bait Verdict). Tests PASS, no JS errors.
 - Proposed: Extra +Masterflare Hyperion (8/8 lists) over the 2nd Castellan (user's own flex rule) or BWAD; side −2 Thrust +2 Nibiru (6/8 incl. winner + Sacco; 0/8 run Thrust). Noted, not proposed: Fuwalos main 5/8, Pot of Desires, Trunade 6/8, winner's Boarder doubt.
 - Publish: Pages + brain. Artifact NOT republished (publish gate needs a full ~260k-token Read; diff of live vs local shows only our Nov 7–9 edits missing, no outside edits). Next run with spare budget should do the full read + republish.
+
+## 2026-11-10 (daily run, Monday) — Nov 7–8 regionals: 8 more Angelechy tops; Fuwalos main 10/13 (Pages only)
+- Checked: YGOPRODeck tournaments (all Nov 7–8 TCG events) + Tournament Meta Decks; DB Grinder search 'angelechy' (nothing after _CfR5o5plfw); YouTube 'angelechy' / 'deck profile' / 'vs angelechy' / 'regional' / 'top 8' by upload date.
+- New results: Weston-super-Mare Top 4 (743694), Brasília Top 4 + Top 8 (no lists), Braunschweig Top 8 (743472), Mar del Plata 2× Top 8 (743705, 743714), Bern Top 8 (743433), Madrid Top 8 (no list). No Angelechy at Montevideo or Grantham. Tally 35 of 41, 3 wins. Details meta.md.
+- Merged: #meta results (6 rows/links, tally, no-Angelechy list); Replays +2 YCS Orlando Top 8 feature matches (im5QIyHM-5M vs RT, o6TFykOoJkk vs Elfnote) → 95, no notes. Tests PASS, no JS errors.
+- Proposed: Fuwalos to the main (5/5 new lists, 10/13 incl. Orlando/Mar del Plata); repeated Hyperion (11/13). Nibiru-over-Thrust from Nov 9 now weaker (Nibiru 1/5, Thrust 1/5 in the new lists).
+- Open question 4: nothing new in free sources (Lancea ×3 again in 743714's side).
+- Publish: Pages + brain. Artifact NOT republished (full-read gate; live has no outside edits per diff; lags Nov 7–10).

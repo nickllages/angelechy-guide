@@ -140,3 +140,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Nov 7 (daily run): DONE — 2 missed feature matches on Replays (90); Pages + brain; artifact deferred.
 - Nov 8 (daily run): DONE — Wien/Gothenburg (no Angelechy) in #meta tally, 3 new games on Replays (93), Sky Striker deep dive breakers; Pages + brain; artifact deferred (lags Nov 7–8).
 - Nov 9 (daily run): YCS Orlando + Mar del Plata in #meta, champion profile in Sources, mirror grind plan; Pages + brain pushed; artifact NOT republished (full ~260k-token read gate; live copy has no outside edits per diff, lags Nov 7–9).
+- Nov 10 (daily run): Nov 7–8 regionals in #meta, 2 Orlando Top 8 feature matches on Replays (95); Pages + brain; artifact deferred (lags Nov 7–10).

@@ -299,3 +299,11 @@
 - Proposed: Fuwalos to the main (5/5 new lists, 10/13 incl. Orlando/Mar del Plata); repeated Hyperion (11/13). Nibiru-over-Thrust from Nov 9 now weaker (Nibiru 1/5, Thrust 1/5 in the new lists).
 - Open question 4: nothing new in free sources (Lancea ×3 again in 743714's side).
 - Publish: Pages + brain. Artifact NOT republished (full-read gate; live has no outside edits per diff; lags Nov 7–10).
+
+## 2026-11-16 (daily run, Monday) — French Open + Toronto won by Angelechy; MAMS Toon deep dive
+- Checked: YGOPRODeck tournaments (Nov 8 late postings + all Nov 14–15 TCG events) and 10 new pure Angelechy lists; MAMS (Nov 12) / UP02 card lists; F&L (no change); YouTube 'angelechy deck profile' / 'french open' / '1st place' / 'feature match' / 'tri-brigade toon' by upload date; DB Grinder search 'angelechy' (new: WuPXR5TmzD0).
+- New results: French Open (671) 1st/2nd/Top 4/Top 8; Toronto (250) 1st; Bonn (512) Top 4 + Top 8; Zoetermeer, Roeselare, Warsaw 2nd + more; Spijkenisse 2nd; Caracas 2× Top 8; OKC Top 8; late Nov 8: Milan 1st, Barentin 1st/Top 4/Top 8, Mechelen 2nd + Top 8, Cape Town Top 8. Tally 48 of 56, 7 wins. Details meta.md.
+- Read (captions): Trif/Kovac Toronto 1st profile; DB Grinder Toon vs Angelechy (3–0). Notes sources.md.
+- Merged: #meta results (15 rows), tally, tier list (+Toon Tier 1; +Unchained / Witchcrafter Tier 3); new deep dive #toon (build/mu_v2_d.py, wired into v2.py + chapters.py; art data/assets/art/toon.jpg; read Even provisional; no siding row); Replays +2 Toon games (97); Sources +3. Deckbuilder data rebuilt for MAMS/UP02 (35 new cards; Pillow installed; s109 + 15 text shards + cards.json changed). Tests PASS, no JS errors.
+- Proposed: main = Toronto winner shape (−3 Spark −2 Mourner −1 Prosperity → +3 Fuwalos +1 Veiler +1 Brilliant Move +1 Verdict); side: freed 4 slots → +3 Purulia +1 Trunade (or keep Thrust); Extra: Tri-Edge Master + Hyperion over BWAD + 2nd Castellan; Toon siding row. Read Toon Even→Favored candidate.
+- Open question 4: nothing new in free sources (Toronto winner's 2 side cards kept secret — Metafy).

@@ -308,3 +308,12 @@
 - Proposed: main = Toronto winner shape (−3 Spark −2 Mourner −1 Prosperity → +3 Fuwalos +1 Veiler +1 Brilliant Move +1 Verdict); side: freed 4 slots → +3 Purulia +1 Trunade (or keep Thrust); Extra: Tri-Edge Master + Hyperion over BWAD + 2nd Castellan; Toon siding row. Read Toon Even→Favored candidate.
 - Open question 4: nothing new in free sources (Toronto winner's 2 side cards kept secret — Metafy).
 - Publish: Pages + assets (19 files) + brain pushed. Artifact NOT republished: the publish gate needs a full Read of the 7,165-line live file (~170k tokens). Live copy checked by diff: no outside edits, only our own content since Nov 5 is missing. Asked the user whether Pages can be the main copy.
+
+## 2026-11-17 (daily run, Tuesday) — Lima 1st+2nd, 3 more top cuts; 8 missed feature matches (Pages only)
+- Checked: YGOPRODeck tournaments (Nov 14–15 late postings) + Tournament Meta Decks (ids > 745017); DB Grinder search 'angelechy' (nothing after WuPXR5TmzD0); Chain Link 3 channel search; YouTube 'angelechy' / 'deck profile' / 'lima' / 'heredia' / 'duluth' / 'feature match' / 'vs angelechy' by upload date.
+- New results: Lima (200) 1st + 2nd; Heredia (150) 2nd + 2× Top 8; Duluth (152) Top 8; Side Deck Remote (120) Top 8; Caracas Top 4 list 745137; Toronto full Top 8 (no other Angelechy). Tally 52 of 60, 8 wins.
+- Read: YCS Orlando final captions (notes sources.md).
+- Merged: #meta results (4 rows + Caracas Top 4 link, tally); Replays +8 games (105), final with a note. Tests PASS, no JS errors.
+- Proposed: none new (745137's 2 Dominus Spiral / 2 Endgame / main Thrust are one 76-player list). Nov 16 proposals (Toronto shape, side, Extra, Toon row) still open.
+- Open question 4: nothing new in free sources.
+- Publish: Pages + brain. Artifact NOT republished (full-read gate, same as Nov 9–16).

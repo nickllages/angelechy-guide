@@ -254,3 +254,13 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
 - **Ten new pure lists (744887, 744781, 745010, 744850, 744825, 744852, 744739, 745017, 745011, 744976):** Fuwalos main 9/10 (with Nov 7–8: 19/23); 2 Verdict main 7/10 (both big winners); Brilliant Move 8/10 (both winners); 3 Veiler 7/10; Spark 4/10 (0 in the winners); Mourner 1/10; Prosperity main 1/10; Pot of Desires 4/10; Hyperion 7/10; Tri-Edge Master 4/10. Sides: Purulia 7/10, Typhoon 6/10, Boarder 6/10, Trunade 4/10, Veidos 4/10, Skull Meister 3/10, Bishop (Witness builds) 3/10, Thrust 1/10. French Open winner side: 3 Boarder, 3 Denko Sekka, 2 Gallant Bandit, 2 Skull Meister, 3 Purulia, 2 Trunade; main had Set Rotation and 2 Impulse.
 - Toronto winner main = the user's main −2 Mourner −1 Prosperity −3 Spark +3 Fuwalos +1 Veiler +1 Brilliant Move +1 Verdict. Extra: 1 Castellan, Tri-Edge Master, Hyperion. Side: 3 Skull Meister, 3 Purulia, 2 Bifrost, 1 Prosperity, 1 Verdict, 3 Typhoon, 2 undisclosed.
 - New decks: Tri-Brigade Toon (wins Nancy, OKC; 2nd Spanish Fork; Top 4 Spijkenisse, Warsaw), Ryzeal Toon (OKC Top 4 + 2 Top 8, Spanish Fork Top 8), Unchained (OKC, Spijkenisse, Zoetermeer Top 4), Witchcrafter/Endymion (Zoetermeer 1st). Guide tier: Toon → Tier 1, Unchained / Witchcrafter → Tier 3 and rogue.
+
+## Nov 14–15 late postings (checked Nov 17)
+- **Lima (200, Nov 15):** Angelechy 1st + 2nd (no lists); Artmage, Toon Top 4; Elfnote ×2, Sky Striker, Unchained Top 8.
+- **Heredia (150, Nov 15):** 1st Power Patron; Angelechy 2nd + 2× Top 8 (no lists); Artmage ×2, Toon, Fairy Tail.
+- **Duluth (152, Nov 15):** 1st Elfnote; Toon 2nd + Top 4; Artmage Top 4; Angelechy Top 8 (no list); Blitzclique ×2, Elfnote Top 8.
+- **The Side Deck Remote (120, Nov 15):** 1st Toon (745046); Rokket 2nd; DoomZ, Toon Top 4; Angelechy Top 8 (no list); Elfnote ×2, Gem-Knight Top 8.
+- **Toronto (250) full:** Angelechy 1st; RT 2nd (745053); Dracotail (745063), D-HERO Top 4; Pendulum Magician Power Patron, L&D Ritual, Toon, DoomZ Top 8.
+- **Caracas (76):** Angelechy Top 4 (745137) added to the 2 Top 8s. 745137: main 3 Fuwalos, 3 Ash, 2 Ogre, 1 Droll, 3 Problem, 2 Strategy Score, 3 Opposition, **2 Endgame**, Set Rotation, **2 Thrust main**, 3 FBG, Terraforming, 2 Purge, 2 Impulse, 2 Spark, **2 Dominus Spiral** (TCG 2025-09-25; Quick-Play-ish trap from hand the turn they activated a hand/GY monster effect: bounce 1 opponent's monster; from hand → no LIGHT/DARK effects rest of Duel), 3 e4, 1 Disturbance, 2 Verdict. Extra: Centur-Ion Auxila, no Legatia. Side: 2 Boarder, 3 Lancea, 2 Gallant Bandit, 2 Purulia, 2 Nibiru, Harpie's Feather Duster, Brilliant Move, 2 Traptantalizing Tune.
+- Managua, La Paz unposted.
+- Tally (guide #meta): 52 of 60, 8 wins (+Lima).

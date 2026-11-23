@@ -317,3 +317,12 @@
 - Proposed: none new (745137's 2 Dominus Spiral / 2 Endgame / main Thrust are one 76-player list). Nov 16 proposals (Toronto shape, side, Extra, Toon row) still open.
 - Open question 4: nothing new in free sources.
 - Publish: Pages + brain. Artifact NOT republished (full-read gate, same as Nov 9–16).
+
+## 2026-11-23 (daily run, Monday) — 4 Angelechy wins (Hénin-Beaumont, Tuggerah, La Spezia, Ourense), 3 in UK Open Top 8
+- Checked: YGOPRODeck tournaments (all Nov 20–22 TCG events + Nov 15 late postings), 13 new pure lists via ydk.py; YouTube 'angelechy' / 'deck profile' / 'uk open' by upload date; DB Grinder search 'angelechy' (new: CgaGxha8wT8, tMqtsPwzLNU).
+- New results: UK Open (404) Top 4 ×2 + Top 8; Hénin-Beaumont 1st+2nd; Tuggerah 1st+2nd+Top 8; La Spezia 1st+2nd+Top 8; Ourense 1st; Doha 2nd; Münster Top 4+Top 8; Hoorn Top 8; Bordeaux Top 8. Tally 61 of 69, 12 wins. Details meta.md.
+- Read (captions): DBG Sky Striker + Toon games, Shipsides UK Open 3rd profile (sources.md).
+- Merged: #meta results (9 rows + Lima/Heredia list links, tally text); Replays +4 (109); skystriker deep dive (main-deck Typhoon/Cosmic, Seneschal stuck + Bastion protects it, replay); toon deep dive (replay: Boarder, Bandit). Tests PASS, no JS errors.
+- Proposed: repeat Toronto-shape main (Fuwalos main 12/13, 2 Verdict 11/13, Brilliant Move 11/13, Spark 4/13, Mourner 0/13); side −2 Thrust (0/13) −3 Fuwalos (if main) → +3 Purulia (10/13) +2 Gallant Bandit (8/13); Extra Hyperion (12/13).
+- Open question 4: nothing new in free sources.
+- Publish: Pages + brain. Artifact NOT republished (full-read gate, as Nov 9–17).

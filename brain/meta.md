@@ -264,3 +264,19 @@ Other notes: Radiant Typhoon in 6 top cuts (+1 DTW hybrid, won Graz); Artmage/Po
 - **Caracas (76):** Angelechy Top 4 (745137) added to the 2 Top 8s. 745137: main 3 Fuwalos, 3 Ash, 2 Ogre, 1 Droll, 3 Problem, 2 Strategy Score, 3 Opposition, **2 Endgame**, Set Rotation, **2 Thrust main**, 3 FBG, Terraforming, 2 Purge, 2 Impulse, 2 Spark, **2 Dominus Spiral** (TCG 2025-09-25; Quick-Play-ish trap from hand the turn they activated a hand/GY monster effect: bounce 1 opponent's monster; from hand → no LIGHT/DARK effects rest of Duel), 3 e4, 1 Disturbance, 2 Verdict. Extra: Centur-Ion Auxila, no Legatia. Side: 2 Boarder, 3 Lancea, 2 Gallant Bandit, 2 Purulia, 2 Nibiru, Harpie's Feather Duster, Brilliant Move, 2 Traptantalizing Tune.
 - Managua, La Paz unposted.
 - Tally (guide #meta): 52 of 60, 8 wins (+Lima).
+
+## Nov 20–22 weekend (checked Nov 23)
+- **UK Open London (404, Nov 21):** 1st + 2nd Elfnote (Amy D., Matthew Cane); Angelechy Top 4 (Charles Shipsides 745996) + Top 4 (Matthieu Bricard) + Top 8 (Leonardo S.); L&D Ritual, Unchained, Power Patron Top 8.
+- **Hénin-Beaumont (107, Nov 21):** Angelechy 1st (Gabriel Huart 746178) + 2nd (Dieudonne Muaka 746179, 44 cards); Maliss ×2, Toon, L&D Top 4/8.
+- **Tuggerah (69, Nov 21):** Angelechy 1st (Oscar Van Niekerk), 2nd (Dhruv Passi), Top 8 (Xavier Zielonka) — no lists; Elfnote ×2, RT, L&D, Unchained.
+- **La Spezia (68, Nov 22):** Angelechy 1st (Ifran Khan 746186), 2nd (Matteo Altemura), Top 8; Elfnote ×3, Toon, Fairy Tail (Witchcrafter Magistus).
+- **Ourense (34, Nov 22):** Angelechy 1st (746180); Blue-Eyes 2nd; Unchained, Memento Top 4; Elfnote, Power Patron, Ashtra, RT Top 8.
+- **Doha (39, Nov 20):** 1st Toon (745998); Angelechy 2nd (745997); L&D Top 4; Elfnote Top 8.
+- **Münster (74, Nov 21):** 1st Elfnote, 2nd Artmage; Angelechy Top 4 (745978) + Top 8 (746001); Witchcrafter Top 4; Artmage, Elfnote, Toon Top 8.
+- **Hoorn (64, Nov 21):** 1st Artmage (745973), 2nd Branded Dracotail; Elfnote, Unchained Top 4; Branded, Toon, Angelechy (745819) Top 8.
+- **Bordeaux (64, Nov 22):** partial; Angelechy Top 8 (746009).
+- Partial/unposted: Sofia (L&D, Elfnote, Fairy Tail known), Ljubljana (Artmage, Elfnote), Rome (Elfnote), Centurion (1st Primite Blue-Eyes), Tenerife, Rende, Barreiro, Viana do Castelo, Managua.
+- Late Nov 15 lists: Lima 1st 745558, 2nd 745557; Heredia Top 8 745366 (2 Songs of the Dominators main, Fuwalos side, 3 Lancea + 2 Veidos side).
+- Tally (guide #meta): 61 of 69, 12 wins (+Hénin-Beaumont, Tuggerah, La Spezia, Ourense).
+- **13 new pure lists** (745996, 746178, 746179, 745978, 746001, 745819, 746186, 746009, 746180, 745997, 745366, 745558, 745557): Fuwalos main 12/13; 2 Verdict main 11/13; Brilliant Move 11/13; Spark main 4/13 (0 in 3 of 4 winners' lists posted); Mourner 0/13; Prosperity main 1/13; Pot of Desires 6/13; Set Rotation 4/13; 3 Veiler 5/13; Imperm main 1 (Bordeaux, 3). Extra: Hyperion 12/13, BWAD 7/13, Tri-Edge 2/13. Side: Boarder 10/13, Purulia 10/13, **The Great Gallant Bandit 8/13 (new trend)**, Typhoon 7/13, Skull Meister 6/13, Trunade 6/13, Pot of Sloth 4/13, Denko Sekka 3/13, Nibiru 3/13, Veidos 2/13, **Thrust 0/13**.
+- Meta: Elfnote won UK Open + Münster; Artmage Hoorn; Toon Doha; Witchcrafter/Fairy Tail Magistus, Unchained, Maliss keep making top cuts; Memento and Primite Blue-Eyes appear. No tier change made.

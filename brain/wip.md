@@ -143,3 +143,4 @@ Progress: rebuilt (render_matchups + v3_apply), link check clean, reg test updat
 - Nov 10 (daily run): Nov 7–8 regionals in #meta, 2 Orlando Top 8 feature matches on Replays (95); Pages + brain; artifact deferred (lags Nov 7–10).
 - Nov 16 (daily run): French Open/Toronto + Nov 8 late results in #meta, Toon deep dive (#toon, mu_v2_d.py), 2 Toon games on Replays, deckbuilder data for MAMS. Pages + brain pushed; artifact deferred (full-read gate).
 - Nov 17 (daily run): DONE — Lima/Heredia/Duluth/SDR + Caracas Top 4 in #meta, 8 feature matches on Replays (105); Pages + brain; artifact deferred.
+- Nov 23 (daily run): DONE — Nov 20–22 results in #meta, 4 games on Replays (109), Sky Striker + Toon deep dives; Pages + brain; artifact deferred.
